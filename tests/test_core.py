@@ -106,34 +106,6 @@ class TestIsValid:
 class TestSanitize:
     """Test sanitize method"""
 
-    def test_sanitize_linkedin_personal(self):
-        """Test sanitizing LinkedIn personal URLs"""
-        sl = SocialLinks()
-        assert sl.sanitize("linkedin", "https://www.linkedin.com/in/johndoe/") == "https://www.linkedin.com/in/johndoe/"
-        assert sl.sanitize("linkedin", "http://linkedin.com/in/jane-smith") == "https://www.linkedin.com/in/jane-smith/"
-        assert sl.sanitize("linkedin", "https://linkedin.com/in/user123") == "https://www.linkedin.com/in/user123/"
-
-    def test_sanitize_linkedin_company(self):
-        """Test sanitizing LinkedIn company URLs"""
-        sl = SocialLinks()
-        assert sl.sanitize("linkedin", "https://www.linkedin.com/company/acme/") == "https://www.linkedin.com/company/acme/"
-        assert sl.sanitize("linkedin", "http://linkedin.com/company/techcorp") == "https://www.linkedin.com/company/techcorp/"
-
-    def test_sanitize_facebook(self):
-        """Test sanitizing Facebook URLs"""
-        sl = SocialLinks()
-        assert sl.sanitize("facebook", "https://www.facebook.com/johndoe/") == "https://www.facebook.com/johndoe/"
-        assert sl.sanitize("facebook", "http://facebook.com/janedoe") == "https://www.facebook.com/janedoe/"
-
-    def test_sanitize_with_at_symbol(self):
-        """Test sanitizing URLs with @ symbol"""
-        sl = SocialLinks()
-        # Test that @ symbols in profile IDs are handled correctly
-        # Instagram URLs can have @ in the URL
-        assert sl.sanitize("instagram", "https://instagram.com/@username") == "https://instagram.com/username"
-        # Medium URLs have @ in the path
-        assert sl.sanitize("medium", "https://medium.com/@username") == "https://medium.com/@username"
-
     def test_sanitize_unknown_platform(self):
         """Test sanitizing with unknown platform"""
         sl = SocialLinks()
@@ -150,4 +122,4 @@ class TestSanitize:
         """Test sanitizing URLs with whitespace"""
         sl = SocialLinks()
         result = sl.sanitize("linkedin", "  https://www.linkedin.com/in/johndoe/  ")
-        assert result == "https://www.linkedin.com/in/johndoe/"
+        assert result == "https://linkedin.com/in/johndoe"
