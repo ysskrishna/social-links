@@ -8,27 +8,27 @@ class SocialLinksError(Exception):
     pass
 
 
-class ProfileNotFoundError(SocialLinksError):
-    """Raised when a profile is not found."""
+class PlatformNotFoundError(SocialLinksError):
+    """Raised when a platform is not found."""
     pass
 
 
-class ProfileAlreadyExistsError(SocialLinksError):
-    """Raised when attempting to create a profile that already exists."""
+class PlatformAlreadyExistsError(SocialLinksError):
+    """Raised when attempting to create a platform that already exists."""
     pass
 
 
-class InvalidProfileError(SocialLinksError):
-    """Raised when a profile has invalid configuration (missing patterns, templates, etc.)."""
+class InvalidPlatformError(SocialLinksError):
+    """Raised when a platform has invalid configuration (missing patterns, templates, etc.)."""
     pass
 
 
-class ProfileIDExtractionError(SocialLinksError):
-    """Raised when a profile ID cannot be extracted from a URL."""
+class PlatformIDExtractionError(SocialLinksError):
+    """Raised when a platform ID cannot be extracted from a URL."""
     pass
 
 
 class URLMismatchError(SocialLinksError):
-    """Raised when a URL does not match the expected profile pattern."""
+    """Raised when a URL does not match the expected platform pattern."""
     pass
 

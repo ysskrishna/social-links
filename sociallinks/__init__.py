@@ -3,20 +3,20 @@
 from .core import SocialLinks
 from .exceptions import (
     SocialLinksError,
-    ProfileNotFoundError,
-    ProfileAlreadyExistsError,
-    InvalidProfileError,
-    ProfileIDExtractionError,
+    PlatformNotFoundError,
+    PlatformAlreadyExistsError,
+    InvalidPlatformError,
+    PlatformIDExtractionError,
     URLMismatchError,
 )
 
 __all__ = [
     "SocialLinks",
     "SocialLinksError",
-    "ProfileNotFoundError",
-    "ProfileAlreadyExistsError",
-    "InvalidProfileError",
-    "ProfileIDExtractionError",
+    "PlatformNotFoundError",
+    "PlatformAlreadyExistsError",
+    "InvalidPlatformError",
+    "PlatformIDExtractionError",
     "URLMismatchError",
 ]
 

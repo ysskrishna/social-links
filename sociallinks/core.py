@@ -1,41 +1,41 @@
 import re
 from typing import Dict, List, Optional, Any, Tuple
-from sociallinks.profiles import PREDEFINED_PROFILES
+from sociallinks.platforms import PREDEFINED_PLATFORMS
 from sociallinks.exceptions import (
-    ProfileNotFoundError,
-    ProfileAlreadyExistsError,
-    InvalidProfileError,
-    ProfileIDExtractionError,
+    PlatformNotFoundError,
+    PlatformAlreadyExistsError,
+    InvalidPlatformError,
+    PlatformIDExtractionError,
     URLMismatchError,
 )
 
 
 class SocialLinks:
     """
-    Social media URL normalizer.
+    Social Media URL Sanitizer.
     """
 
     def __init__(
         self,
-        use_predefined_profiles: bool = True,
+        use_predefined_platforms: bool = True,
         regex_flags: int = re.IGNORECASE,
     ):
-        self.profiles: Dict[str, Any] = {}
+        self.platforms: Dict[str, Any] = {}
         self._compiled: Dict[str, List[Tuple[re.Pattern, str]]] = {}
         self.regex_flags = regex_flags
 
-        if use_predefined_profiles:
-            self.profiles.update(PREDEFINED_PROFILES)
+        if use_predefined_platforms:
+            self.platforms.update(PREDEFINED_PLATFORMS)
 
         # Compile all
-        for name, data in self.profiles.items():
-            self._compile_profile(name, data)
+        for name, data in self.platforms.items():
+            self._compile_platform(name, data)
 
     # ------------------------------------------------------------------
     # Internal Helpers
     # ------------------------------------------------------------------
 
-    def _compile_profile(self, name: str, data: Any) -> None:
+    def _compile_platform(self, name: str, data: Any) -> None:
         compiled_entries: List[Tuple[re.Pattern, str]] = []
         entries = data if isinstance(data, list) else [data]
 
@@ -55,7 +55,7 @@ class SocialLinks:
                 )
 
         if not compiled_entries:
-            raise InvalidProfileError(f"Profile '{name}' has no valid patterns or templates.")
+            raise InvalidPlatformError(f"Platform '{name}' has no valid patterns or templates.")
 
         self._compiled[name] = compiled_entries
 
@@ -73,24 +73,24 @@ class SocialLinks:
     # Core API
     # ------------------------------------------------------------------
 
-    def detect_profile(self, url: str) -> Optional[str]:
+    def detect_platform(self, url: str) -> Optional[str]:
         u = url.strip()
         for name, entries in self._compiled.items():
             if any(pattern.search(u) for pattern, _ in entries):
                 return name
         return None
 
-    def is_valid(self, profile_name: str, url: str) -> bool:
-        entries = self._compiled.get(profile_name)
+    def is_valid(self, platform_name: str, url: str) -> bool:
+        entries = self._compiled.get(platform_name)
         if not entries:
             return False
         u = url.strip()
         return any(pattern.search(u) for pattern, _ in entries)
 
-    def sanitize(self, profile_name: str, url: str) -> str:
-        entries = self._compiled.get(profile_name)
+    def sanitize(self, platform_name: str, url: str) -> str:
+        entries = self._compiled.get(platform_name)
         if not entries:
-            raise ProfileNotFoundError(f"Unknown profile: {profile_name}")
+            raise PlatformNotFoundError(f"Unknown platform: {platform_name}")
 
         u = url.strip()
         for pattern, sanitized in entries:
@@ -98,70 +98,70 @@ class SocialLinks:
             if m:
                 pid = self._extract_id(m)
                 if not pid:
-                    raise ProfileIDExtractionError("Could not extract profile ID")
+                    raise PlatformIDExtractionError("Could not extract platform ID")
                 pid = pid.strip().lstrip("@").rstrip("/")
                 return sanitized.format(id=pid)
 
-        raise URLMismatchError(f"URL does not match profile '{profile_name}'")
+        raise URLMismatchError(f"URL does not match platform '{platform_name}'")
 
-    def get_clean_link(self, profile_name: str, profile_id: str) -> str:
-        entries = self._compiled.get(profile_name)
+    def get_clean_link(self, platform_name: str, platform_id: str) -> str:
+        entries = self._compiled.get(platform_name)
         if not entries:
-            raise ProfileNotFoundError(f"Unknown profile: {profile_name}")
-        pid = profile_id.strip().lstrip("@").rstrip("/")
+            raise PlatformNotFoundError(f"Unknown platform: {platform_name}")
+        pid = platform_id.strip().lstrip("@").rstrip("/")
         sanitized = entries[0][1]
         return sanitized.format(id=pid)
 
     # ------------------------------------------------------------------
-    # Profile CRUD (single + bulk)
+    # Platform CRUD (single + bulk)
     # ------------------------------------------------------------------
 
-    def set_profile(self, name: str, data: Any, *, override: bool = False) -> None:
+    def set_platform(self, name: str, data: Any, *, override: bool = False) -> None:
         """
         Unified add/override method.
         - override=False → error if exists
         - override=True → force replace
         """
-        exists = name in self.profiles
+        exists = name in self.platforms
         if exists and not override:
-            raise ProfileAlreadyExistsError(f"Profile '{name}' already exists. Use override=True.")
+            raise PlatformAlreadyExistsError(f"Platform '{name}' already exists. Use override=True.")
 
-        self.profiles[name] = data
-        self._compile_profile(name, data)
+        self.platforms[name] = data
+        self._compile_platform(name, data)
 
-    def delete_profile(self, name: str) -> None:
-        if name not in self.profiles:
-            raise ProfileNotFoundError(f"Profile '{name}' not found")
-        del self.profiles[name]
+    def delete_platform(self, name: str) -> None:
+        if name not in self.platforms:
+            raise PlatformNotFoundError(f"Platform '{name}' not found")
+        del self.platforms[name]
         self._compiled.pop(name, None)
 
-    def set_profiles(self, profiles: Dict[str, Any], *, override: bool = False) -> None:
+    def set_platforms(self, platforms: Dict[str, Any], *, override: bool = False) -> None:
         """
         Bulk add/override.
         """
         if not override:
-            conflicts = [name for name in profiles if name in self.profiles]
+            conflicts = [name for name in platforms if name in self.platforms]
             if conflicts:
-                raise ProfileAlreadyExistsError(f"Profiles already exist: {', '.join(conflicts)}")
+                raise PlatformAlreadyExistsError(f"Platforms already exist: {', '.join(conflicts)}")
 
-        for name, data in profiles.items():
-            self.set_profile(name, data, override=override)
+        for name, data in platforms.items():
+            self.set_platform(name, data, override=override)
 
-    def delete_profiles(self, names: List[str]) -> None:
-        missing = [n for n in names if n not in self.profiles]
+    def delete_platforms(self, names: List[str]) -> None:
+        missing = [n for n in names if n not in self.platforms]
         if missing:
-            raise ProfileNotFoundError(f"Profiles not found: {', '.join(missing)}")
+            raise PlatformNotFoundError(f"Platforms not found: {', '.join(missing)}")
         for n in names:
-            self.delete_profile(n)
+            self.delete_platform(n)
 
-    def clear_profiles(self) -> None:
-        self.profiles.clear()
+    def clear_platforms(self) -> None:
+        self.platforms.clear()
         self._compiled.clear()
 
-    def get_profile(self, name: str) -> Any:
-        if name not in self.profiles:
-            raise ProfileNotFoundError(f"Profile '{name}' not found")
-        return self.profiles[name]
+    def get_platform(self, name: str) -> Any:
+        if name not in self.platforms:
+            raise PlatformNotFoundError(f"Platform '{name}' not found")
+        return self.platforms[name]
 
-    def list_profiles(self) -> List[str]:
-        return list(self.profiles.keys())
+    def list_platforms(self) -> List[str]:
+        return list(self.platforms.keys())

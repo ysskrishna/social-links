@@ -1,10 +1,10 @@
 import pytest
 from sociallinks.core import SocialLinks
 from sociallinks.exceptions import (
-    ProfileNotFoundError,
-    ProfileAlreadyExistsError,
-    InvalidProfileError,
-    ProfileIDExtractionError,
+    PlatformNotFoundError,
+    PlatformAlreadyExistsError,
+    InvalidPlatformError,
+    PlatformIDExtractionError,
     URLMismatchError,
 )
 
@@ -12,17 +12,17 @@ from sociallinks.exceptions import (
 class TestSocialLinksInitialization:
     """Test SocialLinks initialization"""
 
-    def test_init_with_predefined_profiles(self):
-        """Test initialization with predefined profiles"""
+    def test_init_with_predefined_platforms(self):
+        """Test initialization with predefined platforms"""
         sl = SocialLinks()
-        assert len(sl.profiles) > 0
-        assert "linkedin" in sl.profiles
-        assert "facebook" in sl.profiles
+        assert len(sl.platforms) > 0
+        assert "linkedin" in sl.platforms
+        assert "facebook" in sl.platforms
 
-    def test_init_without_predefined_profiles(self):
-        """Test initialization without predefined profiles"""
-        sl = SocialLinks(use_predefined_profiles=False)
-        assert len(sl.profiles) == 0
+    def test_init_without_predefined_platforms(self):
+        """Test initialization without predefined platforms"""
+        sl = SocialLinks(use_predefined_platforms=False)
+        assert len(sl.platforms) == 0
         assert len(sl._compiled) == 0
 
     def test_init_with_custom_regex_flags(self):
@@ -32,39 +32,39 @@ class TestSocialLinksInitialization:
         assert sl.regex_flags == (re.IGNORECASE | re.MULTILINE)
 
 
-class TestDetectProfile:
-    """Test detect_profile method"""
+class TestDetectPlatform:
+    """Test detect_platform method"""
 
     def test_detect_linkedin_personal(self):
-        """Test detecting LinkedIn personal profile"""
+        """Test detecting LinkedIn personal platform"""
         sl = SocialLinks()
-        assert sl.detect_profile("https://www.linkedin.com/in/johndoe/") == "linkedin"
-        assert sl.detect_profile("http://linkedin.com/in/johndoe") == "linkedin"
-        assert sl.detect_profile("https://linkedin.com/in/jane-smith") == "linkedin"
+        assert sl.detect_platform("https://www.linkedin.com/in/johndoe/") == "linkedin"
+        assert sl.detect_platform("http://linkedin.com/in/johndoe") == "linkedin"
+        assert sl.detect_platform("https://linkedin.com/in/jane-smith") == "linkedin"
 
     def test_detect_linkedin_company(self):
-        """Test detecting LinkedIn company profile"""
+        """Test detecting LinkedIn company platform"""
         sl = SocialLinks()
-        assert sl.detect_profile("https://www.linkedin.com/company/acme/") == "linkedin"
-        assert sl.detect_profile("http://linkedin.com/company/techcorp") == "linkedin"
+        assert sl.detect_platform("https://www.linkedin.com/company/acme/") == "linkedin"
+        assert sl.detect_platform("http://linkedin.com/company/techcorp") == "linkedin"
 
     def test_detect_facebook(self):
-        """Test detecting Facebook profile"""
+        """Test detecting Facebook platform"""
         sl = SocialLinks()
-        assert sl.detect_profile("https://www.facebook.com/johndoe/") == "facebook"
-        assert sl.detect_profile("http://facebook.com/janedoe") == "facebook"
+        assert sl.detect_platform("https://www.facebook.com/johndoe/") == "facebook"
+        assert sl.detect_platform("http://facebook.com/janedoe") == "facebook"
 
     def test_detect_none_for_invalid_url(self):
         """Test that invalid URLs return None"""
         sl = SocialLinks()
-        assert sl.detect_profile("https://example.com") is None
-        assert sl.detect_profile("not a url") is None
-        assert sl.detect_profile("") is None
+        assert sl.detect_platform("https://example.com") is None
+        assert sl.detect_platform("not a url") is None
+        assert sl.detect_platform("") is None
 
     def test_detect_with_whitespace(self):
         """Test that URLs with whitespace are handled"""
         sl = SocialLinks()
-        assert sl.detect_profile("  https://www.linkedin.com/in/johndoe/  ") == "linkedin"
+        assert sl.detect_platform("  https://www.linkedin.com/in/johndoe/  ") == "linkedin"
 
 
 class TestIsValid:
@@ -90,8 +90,8 @@ class TestIsValid:
         assert sl.is_valid("facebook", "http://facebook.com/janedoe") is True
         assert sl.is_valid("facebook", "https://example.com") is False
 
-    def test_is_valid_unknown_profile(self):
-        """Test validating with unknown profile"""
+    def test_is_valid_unknown_platform(self):
+        """Test validating with unknown platform"""
         sl = SocialLinks()
         assert sl.is_valid("unknown", "https://www.linkedin.com/in/johndoe/") is False
 
@@ -129,16 +129,16 @@ class TestSanitize:
         # This tests the lstrip("@") logic
         # Note: The actual behavior depends on the regex pattern matching
 
-    def test_sanitize_unknown_profile(self):
-        """Test sanitizing with unknown profile"""
+    def test_sanitize_unknown_platform(self):
+        """Test sanitizing with unknown platform"""
         sl = SocialLinks()
-        with pytest.raises(ProfileNotFoundError, match="Unknown profile"):
+        with pytest.raises(PlatformNotFoundError, match="Unknown platform"):
             sl.sanitize("unknown", "https://www.linkedin.com/in/johndoe/")
 
     def test_sanitize_invalid_url(self):
-        """Test sanitizing invalid URL for profile"""
+        """Test sanitizing invalid URL for platform"""
         sl = SocialLinks()
-        with pytest.raises(URLMismatchError, match="does not match profile"):
+        with pytest.raises(URLMismatchError, match="does not match platform"):
             sl.sanitize("linkedin", "https://example.com")
 
     def test_sanitize_with_whitespace(self):
@@ -169,52 +169,52 @@ class TestGetCleanLink:
         sl = SocialLinks()
         assert sl.get_clean_link("linkedin", "  johndoe  ") == "https://www.linkedin.com/in/johndoe/"
 
-    def test_get_clean_link_unknown_profile(self):
-        """Test getting clean link for unknown profile"""
+    def test_get_clean_link_unknown_platform(self):
+        """Test getting clean link for unknown platform"""
         sl = SocialLinks()
-        with pytest.raises(ProfileNotFoundError, match="Unknown profile"):
+        with pytest.raises(PlatformNotFoundError, match="Unknown platform"):
             sl.get_clean_link("unknown", "johndoe")
 
 
-class TestSetProfile:
-    """Test set_profile method"""
+class TestSetPlatform:
+    """Test set_platform method"""
 
-    def test_set_profile_new(self):
-        """Test adding a new profile"""
-        sl = SocialLinks(use_predefined_profiles=False)
-        profile_data = {
+    def test_set_platform_new(self):
+        """Test adding a new platform"""
+        sl = SocialLinks(use_predefined_platforms=False)
+        platform_data = {
             "patterns": ["https?://(www\\.)?twitter\\.com/(?P<id>[A-Za-z0-9_]+)/?$"],
             "sanitized": "https://www.twitter.com/{id}/"
         }
-        sl.set_profile("twitter", profile_data)
-        assert "twitter" in sl.profiles
-        assert sl.detect_profile("https://www.twitter.com/johndoe") == "twitter"
+        sl.set_platform("twitter", platform_data)
+        assert "twitter" in sl.platforms
+        assert sl.detect_platform("https://www.twitter.com/johndoe") == "twitter"
 
-    def test_set_profile_override_false(self):
-        """Test that setting existing profile without override raises error"""
+    def test_set_platform_override_false(self):
+        """Test that setting existing platform without override raises error"""
         sl = SocialLinks()
-        profile_data = {
+        platform_data = {
             "patterns": ["https?://(www\\.)?twitter\\.com/(?P<id>[A-Za-z0-9_]+)/?$"],
             "sanitized": "https://www.twitter.com/{id}/"
         }
-        with pytest.raises(ProfileAlreadyExistsError, match="already exists"):
-            sl.set_profile("linkedin", profile_data)
+        with pytest.raises(PlatformAlreadyExistsError, match="already exists"):
+            sl.set_platform("linkedin", platform_data)
 
-    def test_set_profile_override_true(self):
-        """Test overriding existing profile"""
+    def test_set_platform_override_true(self):
+        """Test overriding existing platform"""
         sl = SocialLinks()
-        profile_data = {
+        platform_data = {
             "patterns": ["https?://(www\\.)?linkedin\\.com/custom/(?P<id>[A-Za-z0-9_]+)/?$"],
             "sanitized": "https://www.linkedin.com/custom/{id}/"
         }
-        sl.set_profile("linkedin", profile_data, override=True)
-        assert sl.detect_profile("https://www.linkedin.com/custom/johndoe") == "linkedin"
-        assert sl.detect_profile("https://www.linkedin.com/in/johndoe") is None
+        sl.set_platform("linkedin", platform_data, override=True)
+        assert sl.detect_platform("https://www.linkedin.com/custom/johndoe") == "linkedin"
+        assert sl.detect_platform("https://www.linkedin.com/in/johndoe") is None
 
-    def test_set_profile_with_list(self):
-        """Test setting profile with list of patterns"""
-        sl = SocialLinks(use_predefined_profiles=False)
-        profile_data = [
+    def test_set_platform_with_list(self):
+        """Test setting platform with list of patterns"""
+        sl = SocialLinks(use_predefined_platforms=False)
+        platform_data = [
             {
                 "patterns": ["https?://(www\\.)?twitter\\.com/(?P<id>[A-Za-z0-9_]+)/?$"],
                 "sanitized": "https://www.twitter.com/{id}/"
@@ -224,55 +224,55 @@ class TestSetProfile:
                 "sanitized": "https://www.twitter.com/x/{id}/"
             }
         ]
-        sl.set_profile("twitter", profile_data)
-        assert sl.detect_profile("https://www.twitter.com/johndoe") == "twitter"
-        assert sl.detect_profile("https://twitter.com/x/johndoe") == "twitter"
+        sl.set_platform("twitter", platform_data)
+        assert sl.detect_platform("https://www.twitter.com/johndoe") == "twitter"
+        assert sl.detect_platform("https://twitter.com/x/johndoe") == "twitter"
 
-    def test_set_profile_invalid_patterns(self):
-        """Test setting profile with invalid patterns"""
-        sl = SocialLinks(use_predefined_profiles=False)
-        profile_data = {
+    def test_set_platform_invalid_patterns(self):
+        """Test setting platform with invalid patterns"""
+        sl = SocialLinks(use_predefined_platforms=False)
+        platform_data = {
             "patterns": [],
             "sanitized": "https://www.example.com/{id}/"
         }
-        with pytest.raises(InvalidProfileError, match="no valid patterns"):
-            sl.set_profile("example", profile_data)
+        with pytest.raises(InvalidPlatformError, match="no valid patterns"):
+            sl.set_platform("example", platform_data)
 
-    def test_set_profile_missing_sanitized(self):
-        """Test setting profile without sanitized template"""
-        sl = SocialLinks(use_predefined_profiles=False)
-        profile_data = {
+    def test_set_platform_missing_sanitized(self):
+        """Test setting platform without sanitized template"""
+        sl = SocialLinks(use_predefined_platforms=False)
+        platform_data = {
             "patterns": ["https?://example\\.com/(?P<id>[A-Za-z0-9_]+)/?$"]
         }
-        with pytest.raises(InvalidProfileError, match="no valid patterns"):
-            sl.set_profile("example", profile_data)
+        with pytest.raises(InvalidPlatformError, match="no valid patterns"):
+            sl.set_platform("example", platform_data)
 
 
-class TestDeleteProfile:
-    """Test delete_profile method"""
+class TestDeletePlatform:
+    """Test delete_platform method"""
 
-    def test_delete_profile(self):
-        """Test deleting a profile"""
+    def test_delete_platform(self):
+        """Test deleting a platform"""
         sl = SocialLinks()
-        assert "linkedin" in sl.profiles
-        sl.delete_profile("linkedin")
-        assert "linkedin" not in sl.profiles
+        assert "linkedin" in sl.platforms
+        sl.delete_platform("linkedin")
+        assert "linkedin" not in sl.platforms
         assert "linkedin" not in sl._compiled
 
-    def test_delete_profile_not_found(self):
-        """Test deleting non-existent profile"""
+    def test_delete_platform_not_found(self):
+        """Test deleting non-existent platform"""
         sl = SocialLinks()
-        with pytest.raises(ProfileNotFoundError, match="not found"):
-            sl.delete_profile("nonexistent")
+        with pytest.raises(PlatformNotFoundError, match="not found"):
+            sl.delete_platform("nonexistent")
 
 
-class TestSetProfiles:
-    """Test set_profiles method"""
+class TestSetPlatforms:
+    """Test set_platforms method"""
 
-    def test_set_profiles_new(self):
-        """Test bulk adding new profiles"""
-        sl = SocialLinks(use_predefined_profiles=False)
-        profiles = {
+    def test_set_platforms_new(self):
+        """Test bulk adding new platforms"""
+        sl = SocialLinks(use_predefined_platforms=False)
+        platforms = {
             "twitter": {
                 "patterns": ["https?://(www\\.)?twitter\\.com/(?P<id>[A-Za-z0-9_]+)/?$"],
                 "sanitized": "https://www.twitter.com/{id}/"
@@ -282,99 +282,99 @@ class TestSetProfiles:
                 "sanitized": "https://www.instagram.com/{id}/"
             }
         }
-        sl.set_profiles(profiles)
-        assert "twitter" in sl.profiles
-        assert "instagram" in sl.profiles
+        sl.set_platforms(platforms)
+        assert "twitter" in sl.platforms
+        assert "instagram" in sl.platforms
 
-    def test_set_profiles_with_conflicts(self):
-        """Test bulk adding profiles with conflicts"""
+    def test_set_platforms_with_conflicts(self):
+        """Test bulk adding platforms with conflicts"""
         sl = SocialLinks()
-        profiles = {
+        platforms = {
             "linkedin": {
                 "patterns": ["https?://example\\.com/(?P<id>[A-Za-z0-9_]+)/?$"],
                 "sanitized": "https://example.com/{id}/"
             }
         }
-        with pytest.raises(ProfileAlreadyExistsError, match="already exist"):
-            sl.set_profiles(profiles)
+        with pytest.raises(PlatformAlreadyExistsError, match="already exist"):
+            sl.set_platforms(platforms)
 
-    def test_set_profiles_override(self):
-        """Test bulk adding profiles with override"""
+    def test_set_platforms_override(self):
+        """Test bulk adding platforms with override"""
         sl = SocialLinks()
-        profiles = {
+        platforms = {
             "linkedin": {
                 "patterns": ["https?://example\\.com/(?P<id>[A-Za-z0-9_]+)/?$"],
                 "sanitized": "https://example.com/{id}/"
             }
         }
-        sl.set_profiles(profiles, override=True)
-        assert sl.detect_profile("https://example.com/johndoe") == "linkedin"
+        sl.set_platforms(platforms, override=True)
+        assert sl.detect_platform("https://example.com/johndoe") == "linkedin"
 
 
-class TestDeleteProfiles:
-    """Test delete_profiles method"""
+class TestDeletePlatforms:
+    """Test delete_platforms method"""
 
-    def test_delete_profiles(self):
-        """Test bulk deleting profiles"""
+    def test_delete_platforms(self):
+        """Test bulk deleting platforms"""
         sl = SocialLinks()
-        assert "linkedin" in sl.profiles
-        assert "facebook" in sl.profiles
-        sl.delete_profiles(["linkedin", "facebook"])
-        assert "linkedin" not in sl.profiles
-        assert "facebook" not in sl.profiles
+        assert "linkedin" in sl.platforms
+        assert "facebook" in sl.platforms
+        sl.delete_platforms(["linkedin", "facebook"])
+        assert "linkedin" not in sl.platforms
+        assert "facebook" not in sl.platforms
 
-    def test_delete_profiles_missing(self):
-        """Test bulk deleting with missing profiles"""
+    def test_delete_platforms_missing(self):
+        """Test bulk deleting with missing platforms"""
         sl = SocialLinks()
-        with pytest.raises(ProfileNotFoundError, match="not found"):
-            sl.delete_profiles(["linkedin", "nonexistent"])
+        with pytest.raises(PlatformNotFoundError, match="not found"):
+            sl.delete_platforms(["linkedin", "nonexistent"])
 
 
-class TestClearProfiles:
-    """Test clear_profiles method"""
+class TestClearPlatforms:
+    """Test clear_platforms method"""
 
-    def test_clear_profiles(self):
-        """Test clearing all profiles"""
+    def test_clear_platforms(self):
+        """Test clearing all platforms"""
         sl = SocialLinks()
-        assert len(sl.profiles) > 0
-        sl.clear_profiles()
-        assert len(sl.profiles) == 0
+        assert len(sl.platforms) > 0
+        sl.clear_platforms()
+        assert len(sl.platforms) == 0
         assert len(sl._compiled) == 0
 
 
-class TestGetProfile:
-    """Test get_profile method"""
+class TestGetPlatform:
+    """Test get_platform method"""
 
-    def test_get_profile(self):
-        """Test getting a profile"""
+    def test_get_platform(self):
+        """Test getting a platform"""
         sl = SocialLinks()
-        profile = sl.get_profile("linkedin")
-        assert profile is not None
-        assert isinstance(profile, list)
+        platform = sl.get_platform("linkedin")
+        assert platform is not None
+        assert isinstance(platform, list)
 
-    def test_get_profile_not_found(self):
-        """Test getting non-existent profile"""
+    def test_get_platform_not_found(self):
+        """Test getting non-existent platform"""
         sl = SocialLinks()
-        with pytest.raises(ProfileNotFoundError, match="not found"):
-            sl.get_profile("nonexistent")
+        with pytest.raises(PlatformNotFoundError, match="not found"):
+            sl.get_platform("nonexistent")
 
 
-class TestListProfiles:
-    """Test list_profiles method"""
+class TestListPlatforms:
+    """Test list_platforms method"""
 
-    def test_list_profiles(self):
-        """Test listing all profiles"""
+    def test_list_platforms(self):
+        """Test listing all platforms"""
         sl = SocialLinks()
-        profiles = sl.list_profiles()
-        assert isinstance(profiles, list)
-        assert "linkedin" in profiles
-        assert "facebook" in profiles
+        platforms = sl.list_platforms()
+        assert isinstance(platforms, list)
+        assert "linkedin" in platforms
+        assert "facebook" in platforms
 
-    def test_list_profiles_empty(self):
-        """Test listing profiles when empty"""
-        sl = SocialLinks(use_predefined_profiles=False)
-        profiles = sl.list_profiles()
-        assert profiles == []
+    def test_list_platforms_empty(self):
+        """Test listing platforms when empty"""
+        sl = SocialLinks(use_predefined_platforms=False)
+        platforms = sl.list_platforms()
+        assert platforms == []
 
 
 class TestExtractId:
@@ -410,25 +410,25 @@ class TestEdgeCases:
 
     def test_sanitize_no_id_extracted(self):
         """Test sanitize when ID cannot be extracted"""
-        sl = SocialLinks(use_predefined_profiles=False)
-        # Create a profile with pattern that doesn't capture ID
-        profile_data = {
+        sl = SocialLinks(use_predefined_platforms=False)
+        # Create a platform with pattern that doesn't capture ID
+        platform_data = {
             "patterns": ["https?://example\\.com/static/?$"],
             "sanitized": "https://example.com/{id}/"
         }
-        sl.set_profile("example", profile_data)
-        with pytest.raises(ProfileIDExtractionError, match="Could not extract profile ID"):
+        sl.set_platform("example", platform_data)
+        with pytest.raises(PlatformIDExtractionError, match="Could not extract platform ID"):
             sl.sanitize("example", "https://example.com/static")
 
     def test_case_insensitive_matching(self):
         """Test case insensitive URL matching"""
         sl = SocialLinks()
         # Should work with uppercase
-        assert sl.detect_profile("HTTPS://WWW.LINKEDIN.COM/IN/JOHNDOE/") == "linkedin"
+        assert sl.detect_platform("HTTPS://WWW.LINKEDIN.COM/IN/JOHNDOE/") == "linkedin"
         assert sl.is_valid("linkedin", "HTTPS://WWW.LINKEDIN.COM/IN/JOHNDOE/") is True
 
-    def test_multiple_patterns_same_profile(self):
-        """Test profile with multiple patterns"""
+    def test_multiple_patterns_same_platform(self):
+        """Test platform with multiple patterns"""
         sl = SocialLinks()
         # LinkedIn has both personal and company patterns
         assert sl.is_valid("linkedin", "https://www.linkedin.com/in/johndoe/") is True

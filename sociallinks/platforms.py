@@ -1,6 +1,6 @@
 from typing import Dict, List, Any
 
-PREDEFINED_PROFILES: Dict[str, List[Dict[str, Any]]] = {
+PREDEFINED_PLATFORMS: Dict[str, List[Dict[str, Any]]] = {
     "linkedin": [
         {
             "patterns": [
@@ -24,3 +24,4 @@ PREDEFINED_PROFILES: Dict[str, List[Dict[str, Any]]] = {
         }
     ]
 }
+
