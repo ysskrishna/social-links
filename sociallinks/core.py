@@ -1,6 +1,13 @@
 import re
 from typing import Dict, List, Optional, Any, Tuple
 from sociallinks.profiles import PREDEFINED_PROFILES
+from sociallinks.exceptions import (
+    ProfileNotFoundError,
+    ProfileAlreadyExistsError,
+    InvalidProfileError,
+    ProfileIDExtractionError,
+    URLMismatchError,
+)
 
 
 class SocialLinks:
@@ -48,7 +55,7 @@ class SocialLinks:
                 )
 
         if not compiled_entries:
-            raise ValueError(f"Profile '{name}' has no valid patterns or templates.")
+            raise InvalidProfileError(f"Profile '{name}' has no valid patterns or templates.")
 
         self._compiled[name] = compiled_entries
 
@@ -83,7 +90,7 @@ class SocialLinks:
     def sanitize(self, profile_name: str, url: str) -> str:
         entries = self._compiled.get(profile_name)
         if not entries:
-            raise ValueError(f"Unknown profile: {profile_name}")
+            raise ProfileNotFoundError(f"Unknown profile: {profile_name}")
 
         u = url.strip()
         for pattern, sanitized in entries:
@@ -91,16 +98,16 @@ class SocialLinks:
             if m:
                 pid = self._extract_id(m)
                 if not pid:
-                    raise ValueError("Could not extract profile ID")
+                    raise ProfileIDExtractionError("Could not extract profile ID")
                 pid = pid.strip().lstrip("@").rstrip("/")
                 return sanitized.format(id=pid)
 
-        raise ValueError(f"URL does not match profile '{profile_name}'")
+        raise URLMismatchError(f"URL does not match profile '{profile_name}'")
 
     def get_clean_link(self, profile_name: str, profile_id: str) -> str:
         entries = self._compiled.get(profile_name)
         if not entries:
-            raise ValueError(f"Unknown profile: {profile_name}")
+            raise ProfileNotFoundError(f"Unknown profile: {profile_name}")
         pid = profile_id.strip().lstrip("@").rstrip("/")
         sanitized = entries[0][1]
         return sanitized.format(id=pid)
@@ -117,14 +124,14 @@ class SocialLinks:
         """
         exists = name in self.profiles
         if exists and not override:
-            raise ValueError(f"Profile '{name}' already exists. Use override=True.")
+            raise ProfileAlreadyExistsError(f"Profile '{name}' already exists. Use override=True.")
 
         self.profiles[name] = data
         self._compile_profile(name, data)
 
     def delete_profile(self, name: str) -> None:
         if name not in self.profiles:
-            raise ValueError(f"Profile '{name}' not found")
+            raise ProfileNotFoundError(f"Profile '{name}' not found")
         del self.profiles[name]
         self._compiled.pop(name, None)
 
@@ -135,7 +142,7 @@ class SocialLinks:
         if not override:
             conflicts = [name for name in profiles if name in self.profiles]
             if conflicts:
-                raise ValueError(f"Profiles already exist: {', '.join(conflicts)}")
+                raise ProfileAlreadyExistsError(f"Profiles already exist: {', '.join(conflicts)}")
 
         for name, data in profiles.items():
             self.set_profile(name, data, override=override)
@@ -143,7 +150,7 @@ class SocialLinks:
     def delete_profiles(self, names: List[str]) -> None:
         missing = [n for n in names if n not in self.profiles]
         if missing:
-            raise ValueError(f"Profiles not found: {', '.join(missing)}")
+            raise ProfileNotFoundError(f"Profiles not found: {', '.join(missing)}")
         for n in names:
             self.delete_profile(n)
 
@@ -153,7 +160,7 @@ class SocialLinks:
 
     def get_profile(self, name: str) -> Any:
         if name not in self.profiles:
-            raise ValueError(f"Profile '{name}' not found")
+            raise ProfileNotFoundError(f"Profile '{name}' not found")
         return self.profiles[name]
 
     def list_profiles(self) -> List[str]:

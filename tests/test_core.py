@@ -1,5 +1,12 @@
 import pytest
 from sociallinks.core import SocialLinks
+from sociallinks.exceptions import (
+    ProfileNotFoundError,
+    ProfileAlreadyExistsError,
+    InvalidProfileError,
+    ProfileIDExtractionError,
+    URLMismatchError,
+)
 
 
 class TestSocialLinksInitialization:
@@ -125,13 +132,13 @@ class TestSanitize:
     def test_sanitize_unknown_profile(self):
         """Test sanitizing with unknown profile"""
         sl = SocialLinks()
-        with pytest.raises(ValueError, match="Unknown profile"):
+        with pytest.raises(ProfileNotFoundError, match="Unknown profile"):
             sl.sanitize("unknown", "https://www.linkedin.com/in/johndoe/")
 
     def test_sanitize_invalid_url(self):
         """Test sanitizing invalid URL for profile"""
         sl = SocialLinks()
-        with pytest.raises(ValueError, match="does not match profile"):
+        with pytest.raises(URLMismatchError, match="does not match profile"):
             sl.sanitize("linkedin", "https://example.com")
 
     def test_sanitize_with_whitespace(self):
@@ -165,7 +172,7 @@ class TestGetCleanLink:
     def test_get_clean_link_unknown_profile(self):
         """Test getting clean link for unknown profile"""
         sl = SocialLinks()
-        with pytest.raises(ValueError, match="Unknown profile"):
+        with pytest.raises(ProfileNotFoundError, match="Unknown profile"):
             sl.get_clean_link("unknown", "johndoe")
 
 
@@ -190,7 +197,7 @@ class TestSetProfile:
             "patterns": ["https?://(www\\.)?twitter\\.com/(?P<id>[A-Za-z0-9_]+)/?$"],
             "sanitized": "https://www.twitter.com/{id}/"
         }
-        with pytest.raises(ValueError, match="already exists"):
+        with pytest.raises(ProfileAlreadyExistsError, match="already exists"):
             sl.set_profile("linkedin", profile_data)
 
     def test_set_profile_override_true(self):
@@ -228,7 +235,7 @@ class TestSetProfile:
             "patterns": [],
             "sanitized": "https://www.example.com/{id}/"
         }
-        with pytest.raises(ValueError, match="no valid patterns"):
+        with pytest.raises(InvalidProfileError, match="no valid patterns"):
             sl.set_profile("example", profile_data)
 
     def test_set_profile_missing_sanitized(self):
@@ -237,7 +244,7 @@ class TestSetProfile:
         profile_data = {
             "patterns": ["https?://example\\.com/(?P<id>[A-Za-z0-9_]+)/?$"]
         }
-        with pytest.raises(ValueError, match="no valid patterns"):
+        with pytest.raises(InvalidProfileError, match="no valid patterns"):
             sl.set_profile("example", profile_data)
 
 
@@ -255,7 +262,7 @@ class TestDeleteProfile:
     def test_delete_profile_not_found(self):
         """Test deleting non-existent profile"""
         sl = SocialLinks()
-        with pytest.raises(ValueError, match="not found"):
+        with pytest.raises(ProfileNotFoundError, match="not found"):
             sl.delete_profile("nonexistent")
 
 
@@ -288,7 +295,7 @@ class TestSetProfiles:
                 "sanitized": "https://example.com/{id}/"
             }
         }
-        with pytest.raises(ValueError, match="already exist"):
+        with pytest.raises(ProfileAlreadyExistsError, match="already exist"):
             sl.set_profiles(profiles)
 
     def test_set_profiles_override(self):
@@ -319,7 +326,7 @@ class TestDeleteProfiles:
     def test_delete_profiles_missing(self):
         """Test bulk deleting with missing profiles"""
         sl = SocialLinks()
-        with pytest.raises(ValueError, match="not found"):
+        with pytest.raises(ProfileNotFoundError, match="not found"):
             sl.delete_profiles(["linkedin", "nonexistent"])
 
 
@@ -348,7 +355,7 @@ class TestGetProfile:
     def test_get_profile_not_found(self):
         """Test getting non-existent profile"""
         sl = SocialLinks()
-        with pytest.raises(ValueError, match="not found"):
+        with pytest.raises(ProfileNotFoundError, match="not found"):
             sl.get_profile("nonexistent")
 
 
@@ -410,7 +417,7 @@ class TestEdgeCases:
             "sanitized": "https://example.com/{id}/"
         }
         sl.set_profile("example", profile_data)
-        with pytest.raises(ValueError, match="Could not extract profile ID"):
+        with pytest.raises(ProfileIDExtractionError, match="Could not extract profile ID"):
             sl.sanitize("example", "https://example.com/static")
 
     def test_case_insensitive_matching(self):
