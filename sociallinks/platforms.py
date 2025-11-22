@@ -1,10 +1,18 @@
 from typing import Dict, List, Any
 
+# ----------------------------------------------------------------------
+# Common ID regex
+# ----------------------------------------------------------------------
+PROFILE_ID = r"(?P<id>[A-Za-z0-9_.-]+)"
+
+# ----------------------------------------------------------------------
+# Predefined platforms
+# ----------------------------------------------------------------------
 PREDEFINED_PLATFORMS: Dict[str, List[Dict[str, Any]]] = {
     "behance": [
         {
             "patterns": [
-                "https?://(www\\.)?behance\\.net/(?P<id>[A-Za-z0-9_.-]+)/?$"
+                rf"https?://(www\.)?behance\.net/{PROFILE_ID}/?$"
             ],
             "sanitized": "https://behance.net/{id}"
         }
@@ -12,7 +20,7 @@ PREDEFINED_PLATFORMS: Dict[str, List[Dict[str, Any]]] = {
     "dev_to": [
         {
             "patterns": [
-                "https?://(www\\.)?dev\\.to/(?P<id>[A-Za-z0-9_.-]+)/?$"
+                rf"https?://(www\.)?dev\.to/{PROFILE_ID}/?$"
             ],
             "sanitized": "https://dev.to/{id}"
         }
@@ -20,7 +28,7 @@ PREDEFINED_PLATFORMS: Dict[str, List[Dict[str, Any]]] = {
     "dribbble": [
         {
             "patterns": [
-                "https?://(www\\.)?dribbble\\.com/(?P<id>[A-Za-z0-9_.-]+)/?$"
+                rf"https?://(www\.)?dribbble\.com/{PROFILE_ID}/?$"
             ],
             "sanitized": "https://dribbble.com/{id}"
         }
@@ -28,7 +36,7 @@ PREDEFINED_PLATFORMS: Dict[str, List[Dict[str, Any]]] = {
     "exercism": [
         {
             "patterns": [
-                "https?://(www\\.)?exercism\\.io/profiles/(?P<id>[A-Za-z0-9_.-]+)/?$"
+                rf"https?://(www\.)?exercism\.io/profiles/{PROFILE_ID}/?$"
             ],
             "sanitized": "https://exercism.io/profiles/{id}"
         }
@@ -36,8 +44,8 @@ PREDEFINED_PLATFORMS: Dict[str, List[Dict[str, Any]]] = {
     "facebook": [
         {
             "patterns": [
-                "https?://(www\\.)?facebook\\.com/(?P<id>[A-Za-z0-9_.-]+)/?$",
-                "https?://m\\.facebook\\.com/(?P<id>[A-Za-z0-9_.-]+)/?$"
+                rf"https?://(www\.)?facebook\.com/{PROFILE_ID}/?$",
+                rf"https?://m\.facebook\.com/{PROFILE_ID}/?$"
             ],
             "sanitized": "https://facebook.com/{id}"
         }
@@ -45,7 +53,7 @@ PREDEFINED_PLATFORMS: Dict[str, List[Dict[str, Any]]] = {
     "github": [
         {
             "patterns": [
-                "https?://(www\\.)?github\\.com/(?P<id>[A-Za-z0-9_.-]+)/?$"
+                rf"https?://(www\.)?github\.com/{PROFILE_ID}/?$"
             ],
             "sanitized": "https://github.com/{id}"
         }
@@ -53,8 +61,8 @@ PREDEFINED_PLATFORMS: Dict[str, List[Dict[str, Any]]] = {
     "instagram": [
         {
             "patterns": [
-                "https?://(www\\.)?instagram\\.com/(?P<id>[A-Za-z0-9_.-]+)/?$",
-                "https?://m\\.instagram\\.com/(?P<id>[A-Za-z0-9_.-]+)/?$"
+                rf"https?://(www\.)?instagram\.com/{PROFILE_ID}/?$",
+                rf"https?://m\.instagram\.com/{PROFILE_ID}/?$"
             ],
             "sanitized": "https://instagram.com/{id}"
         }
@@ -62,7 +70,7 @@ PREDEFINED_PLATFORMS: Dict[str, List[Dict[str, Any]]] = {
     "keybase": [
         {
             "patterns": [
-                "https?://(www\\.)?keybase\\.io/(?P<id>[A-Za-z0-9_.-]+)/?$"
+                rf"https?://(www\.)?keybase\.io/{PROFILE_ID}/?$"
             ],
             "sanitized": "https://keybase.io/{id}"
         }
@@ -70,7 +78,7 @@ PREDEFINED_PLATFORMS: Dict[str, List[Dict[str, Any]]] = {
     "lemmy_world": [
         {
             "patterns": [
-                "https?://lemmy\\.world/u/(?P<id>[A-Za-z0-9_.-]+)/?$"
+                rf"https?://lemmy\.world/u/{PROFILE_ID}/?$"
             ],
             "sanitized": "https://lemmy.world/u/{id}"
         }
@@ -78,14 +86,14 @@ PREDEFINED_PLATFORMS: Dict[str, List[Dict[str, Any]]] = {
     "linkedin": [
         {
             "patterns": [
-                "https?://([a-z]{2,3}\\.)?linkedin\\.com/in/(?P<id>[A-Za-z0-9_.-]+)/?$",
-                "https?://([a-z]{2,3}\\.)?linkedin\\.com/mwlite/in/(?P<id>[A-Za-z0-9_.-]+)/?$"
+                rf"https?://([a-z]{{2,3}}\.)?linkedin\.com/in/{PROFILE_ID}/?$",
+                rf"https?://([a-z]{{2,3}}\.)?linkedin\.com/mwlite/in/{PROFILE_ID}/?$"
             ],
             "sanitized": "https://linkedin.com/in/{id}"
         },
         {
             "patterns": [
-                "https?://(www\\.)?linkedin\\.com/company/(?P<id>[A-Za-z0-9_.-]+)/?$"
+                rf"https?://(www\.)?linkedin\.com/company/{PROFILE_ID}/?$"
             ],
             "sanitized": "https://www.linkedin.com/company/{id}/"
         }
@@ -93,7 +101,7 @@ PREDEFINED_PLATFORMS: Dict[str, List[Dict[str, Any]]] = {
     "linktree": [
         {
             "patterns": [
-                "https?://(www\\.)?linktr\\.ee/(?P<id>[A-Za-z0-9_.-]+)/?$"
+                rf"https?://(www\.)?linktr\.ee/{PROFILE_ID}/?$"
             ],
             "sanitized": "https://linktr.ee/{id}"
         }
@@ -101,9 +109,9 @@ PREDEFINED_PLATFORMS: Dict[str, List[Dict[str, Any]]] = {
     "mastodon": [
         {
             "patterns": [
-                "https?://(www\\.)?mastodon\\.social/@(?P<id>[A-Za-z0-9_.-]+)/?$",
-                "https?://(www\\.)?mstdn\\.social/@(?P<id>[A-Za-z0-9_.-]+)/?$",
-                "https?://(www\\.)?mastodon\\.world/@(?P<id>[A-Za-z0-9_.-]+)/?$"
+                rf"https?://(www\.)?mastodon\.social/@{PROFILE_ID}/?$",
+                rf"https?://(www\.)?mstdn\.social/@{PROFILE_ID}/?$",
+                rf"https?://(www\.)?mastodon\.world/@{PROFILE_ID}/?$"
             ],
             "sanitized": "https://mastodon.social/@{id}"
         }
@@ -111,7 +119,7 @@ PREDEFINED_PLATFORMS: Dict[str, List[Dict[str, Any]]] = {
     "medium": [
         {
             "patterns": [
-                "https?://(www\\.)?medium\\.com/@(?P<id>[A-Za-z0-9_.-]+)/?$"
+                rf"https?://(www\.)?medium\.com/@{PROFILE_ID}/?$"
             ],
             "sanitized": "https://medium.com/@{id}"
         }
@@ -119,7 +127,7 @@ PREDEFINED_PLATFORMS: Dict[str, List[Dict[str, Any]]] = {
     "patreon": [
         {
             "patterns": [
-                "https?://(www\\.)?patreon\\.com/(?P<id>[A-Za-z0-9_.-]+)/?$"
+                rf"https?://(www\.)?patreon\.com/{PROFILE_ID}/?$"
             ],
             "sanitized": "https://patreon.com/{id}"
         }
@@ -127,7 +135,7 @@ PREDEFINED_PLATFORMS: Dict[str, List[Dict[str, Any]]] = {
     "pinterest": [
         {
             "patterns": [
-                "https?://([a-z]{1,3}\\.)?pinterest\\.com/(?P<id>[A-Za-z0-9_.-]+)/?$"
+                rf"https?://([a-z]{{1,3}}\.)?pinterest\.com/{PROFILE_ID}/?$"
             ],
             "sanitized": "https://pinterest.com/{id}"
         }
@@ -135,7 +143,7 @@ PREDEFINED_PLATFORMS: Dict[str, List[Dict[str, Any]]] = {
     "soundcloud": [
         {
             "patterns": [
-                "https?://(www\\.)?soundcloud\\.com/(?P<id>[A-Za-z0-9_.-]+)/?$"
+                rf"https?://(www\.)?soundcloud\.com/{PROFILE_ID}/?$"
             ],
             "sanitized": "https://soundcloud.com/{id}"
         }
@@ -143,7 +151,7 @@ PREDEFINED_PLATFORMS: Dict[str, List[Dict[str, Any]]] = {
     "spotify": [
         {
             "patterns": [
-                "https?://(open\\.)?spotify\\.com/artist/(?P<id>[A-Za-z0-9_.-]+)/?$"
+                rf"https?://(open\.)?spotify\.com/artist/{PROFILE_ID}/?$"
             ],
             "sanitized": "https://open.spotify.com/artist/{id}"
         }
@@ -151,7 +159,7 @@ PREDEFINED_PLATFORMS: Dict[str, List[Dict[str, Any]]] = {
     "stackoverflow": [
         {
             "patterns": [
-                "https?://(www\\.)?stackoverflow\\.com/users/(?P<id>[A-Za-z0-9_.-]+)(/[A-Za-z0-9_\\-\\.]+)?/?$"
+                rf"https?://(www\.)?stackoverflow\.com/users/{PROFILE_ID}(/[A-Za-z0-9_\\-\\.]+)?/?$"
             ],
             "sanitized": "https://stackoverflow.com/users/{id}"
         }
@@ -159,7 +167,7 @@ PREDEFINED_PLATFORMS: Dict[str, List[Dict[str, Any]]] = {
     "substack": [
         {
             "patterns": [
-                "https?://(?P<id>[A-Za-z0-9_.-]+)\\.substack\\.com/?$"
+                rf"https?://{PROFILE_ID}\.substack\.com/?$"
             ],
             "sanitized": "https://{id}.substack.com"
         }
@@ -167,7 +175,7 @@ PREDEFINED_PLATFORMS: Dict[str, List[Dict[str, Any]]] = {
     "telegram": [
         {
             "patterns": [
-                "https?://(www\\.)?(t\\.me|telegram\\.me)/(?P<id>[a-z0-9_]{5,32})/?$"
+                rf"https?://(www\.)?(t\.me|telegram\.me)/{PROFILE_ID}/?$"
             ],
             "sanitized": "https://t.me/{id}"
         }
@@ -175,7 +183,7 @@ PREDEFINED_PLATFORMS: Dict[str, List[Dict[str, Any]]] = {
     "tiktok": [
         {
             "patterns": [
-                "https?://(www\\.)?tiktok\\.com/@(?P<id>[A-Za-z0-9_.-]+)/?$"
+                rf"https?://(www\.)?tiktok\.com/@{PROFILE_ID}/?$"
             ],
             "sanitized": "https://tiktok.com/@{id}"
         }
@@ -183,8 +191,8 @@ PREDEFINED_PLATFORMS: Dict[str, List[Dict[str, Any]]] = {
     "twitch": [
         {
             "patterns": [
-                "https?://(www\\.)?twitch\\.tv/(?P<id>[A-Za-z0-9_.-]+)/?$",
-                "https?://m\\.twitch\\.tv/(?P<id>[A-Za-z0-9_.-]+)/?$"
+                rf"https?://(www\.)?twitch\.tv/{PROFILE_ID}/?$",
+                rf"https?://m\.twitch\.tv/{PROFILE_ID}/?$"
             ],
             "sanitized": "https://twitch.tv/{id}"
         }
@@ -192,8 +200,8 @@ PREDEFINED_PLATFORMS: Dict[str, List[Dict[str, Any]]] = {
     "vk": [
         {
             "patterns": [
-                "https?://(www\\.)?vk\\.com/(?P<id>[A-Za-z0-9_.-]+)/?$",
-                "https?://m\\.vk\\.com/@?(?P<id>[A-Za-z0-9_.-]+)/?$"
+                rf"https?://(www\.)?vk\.com/{PROFILE_ID}/?$",
+                rf"https?://m\.vk\.com/@?{PROFILE_ID}/?$"
             ],
             "sanitized": "https://vk.com/{id}"
         }
@@ -201,9 +209,9 @@ PREDEFINED_PLATFORMS: Dict[str, List[Dict[str, Any]]] = {
     "x": [
         {
             "patterns": [
-                "https?://(www\\.)?twitter\\.com/@?(?P<id>[A-Za-z0-9_.-]+)/?$",
-                "https?://mobile\\.twitter\\.com/@?(?P<id>[A-Za-z0-9_.-]+)/?$",
-                "https?://x\\.com/@?(?P<id>[A-Za-z0-9_.-]+)/?$"
+                rf"https?://(www\.)?twitter\.com/@?{PROFILE_ID}/?$",
+                rf"https?://mobile\.twitter\.com/@?{PROFILE_ID}/?$",
+                rf"https?://x\.com/@?{PROFILE_ID}/?$"
             ],
             "sanitized": "https://x.com/{id}"
         }
@@ -211,10 +219,10 @@ PREDEFINED_PLATFORMS: Dict[str, List[Dict[str, Any]]] = {
     "youtube": [
         {
             "patterns": [
-                "https?://(www\\.)?youtube\\.com/@?(?P<id>[A-Za-z0-9_.-]+)/?$",
-                "https?://(www\\.)?youtube\\.com/channel/(?P<id>[A-Za-z0-9_.-]+)/?$",
-                "https?://(www\\.)?youtube\\.com/user/(?P<id>[A-Za-z0-9_.-]+)/?$",
-                "https?://m\\.youtube\\.com/c/(?P<id>[A-Za-z0-9_.-]+)/?$"
+                rf"https?://(www\.)?youtube\.com/@?{PROFILE_ID}/?$",
+                rf"https?://(www\.)?youtube\.com/channel/{PROFILE_ID}/?$",
+                rf"https?://(www\.)?youtube\.com/user/{PROFILE_ID}/?$",
+                rf"https?://m\.youtube\.com/c/{PROFILE_ID}/?$"
             ],
             "sanitized": "https://youtube.com/@{id}"
         }

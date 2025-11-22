@@ -76,6 +76,15 @@ class TestAllPlatforms:
         assert sl.is_valid("instagram", "https://m.instagram.com/username") is True
         assert sl.sanitize("instagram", "https://m.instagram.com/username") == "https://instagram.com/username"
 
+    def test_instagram_with_at_symbol(self):
+        """Test Instagram URLs with @ symbol in path"""
+        sl = SocialLinks()
+        profile_id = "username"
+        # Instagram URLs can have @ in the URL path
+        assert sl.is_valid("instagram", "https://instagram.com/username") is True
+        assert sl.detect_platform("https://instagram.com/username") == "instagram"
+        assert sl.sanitize("instagram", "https://instagram.com/username") == "https://instagram.com/username"
+
     def test_keybase(self):
         """Test Keybase platform"""
         sl = SocialLinks()
@@ -115,6 +124,17 @@ class TestAllPlatforms:
         assert sl.detect_platform("https://linkedin.com/mwlite/in/johndoe") == "linkedin"
         assert sl.is_valid("linkedin", "https://linkedin.com/mwlite/in/johndoe") is True
         assert sl.sanitize("linkedin", "https://linkedin.com/mwlite/in/johndoe") == "https://linkedin.com/in/johndoe"
+
+    def test_linkedin_localized(self):
+        """Test LinkedIn localized URLs (e.g., de.linkedin.com)"""
+        sl = SocialLinks()
+        profile_id = "anton-begehr"
+        # Test localized personal profile
+        assert sl.is_valid("linkedin", "https://de.linkedin.com/in/anton-begehr/") is True
+        assert sl.sanitize("linkedin", "https://de.linkedin.com/in/anton-begehr/") == "https://linkedin.com/in/anton-begehr"
+        # Test localized mobile profile
+        assert sl.is_valid("linkedin", "https://de.linkedin.com/mwlite/in/anton-begehr/") is True
+        assert sl.sanitize("linkedin", "https://de.linkedin.com/mwlite/in/anton-begehr/") == "https://linkedin.com/in/anton-begehr"
 
     def test_linktree(self):
         """Test Linktree platform"""
@@ -165,6 +185,16 @@ class TestAllPlatforms:
         assert sl.is_valid("pinterest", "https://pinterest.com/username") is True
         assert sl.sanitize("pinterest", "https://pinterest.com/username") == "https://pinterest.com/username"
 
+    def test_pinterest_localized(self):
+        """Test Pinterest localized subdomains"""
+        sl = SocialLinks()
+        profile_id = "gkucmierz"
+        # Test with country code subdomain (1-3 characters)
+        assert sl.is_valid("pinterest", "https://pl.pinterest.com/gkucmierz") is True
+        assert sl.is_valid("pinterest", "https://www.pinterest.com/gkucmierz") is True
+        # Test that subdomains with more than 3 characters are rejected
+        assert sl.is_valid("pinterest", "https://abcd.pinterest.com/gkucmierz") is False
+
     def test_soundcloud(self):
         """Test SoundCloud platform"""
         sl = SocialLinks()
@@ -188,6 +218,15 @@ class TestAllPlatforms:
         assert sl.detect_platform("https://stackoverflow.com/users/12345") == "stackoverflow"
         assert sl.is_valid("stackoverflow", "https://stackoverflow.com/users/12345") is True
         assert sl.sanitize("stackoverflow", "https://stackoverflow.com/users/12345") == "https://stackoverflow.com/users/12345"
+
+    def test_stackoverflow_full_link(self):
+        """Test Stack Overflow with full link including username"""
+        sl = SocialLinks()
+        profile_id = "3573210"
+        full_link = "https://stackoverflow.com/users/3573210/gkucmierz"
+        assert sl.is_valid("stackoverflow", full_link) is True
+        assert sl.detect_platform(full_link) == "stackoverflow"
+        assert sl.sanitize("stackoverflow", full_link) == "https://stackoverflow.com/users/3573210"
 
     def test_substack(self):
         """Test Substack platform"""
