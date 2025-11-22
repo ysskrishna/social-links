@@ -15,14 +15,6 @@ PREDEFINED_PROFILES: Dict[str, List[Dict[str, Any]]] = {
             "sanitized": "https://www.linkedin.com/company/{id}/"
         }
     ],
-    "twitter": [
-        {
-            "patterns": [
-                "https?://(www\\.)?twitter\\.com/(?P<id>[A-Za-z0-9_-]+)/?/?$"
-            ],
-            "sanitized": "https://www.twitter.com/{id}/"
-        }
-    ],
     "facebook": [
         {
             "patterns": [
