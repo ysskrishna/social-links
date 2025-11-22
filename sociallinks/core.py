@@ -104,14 +104,6 @@ class SocialLinks:
 
         raise URLMismatchError(f"URL does not match platform '{platform_name}'")
 
-    def get_clean_link(self, platform_name: str, platform_id: str) -> str:
-        entries = self._compiled.get(platform_name)
-        if not entries:
-            raise PlatformNotFoundError(f"Unknown platform: {platform_name}")
-        pid = platform_id.strip().lstrip("@").rstrip("/")
-        sanitized = entries[0][1]
-        return sanitized.format(id=pid)
-
     # ------------------------------------------------------------------
     # Platform CRUD (single + bulk)
     # ------------------------------------------------------------------
