@@ -251,6 +251,10 @@ Sanitize a URL to its canonical format.
 
 See [DEVELOPMENT.md](DEVELOPMENT.md) for development setup and contribution guidelines.
 
+## Acknowledgments
+
+This Python library was inspired by the excellent [social-links](https://www.npmjs.com/package/social-links) npm package by [gkucmierz](https://github.com/gkucmierz). Special thanks to the original author.
+
 ## License
 
 MIT License - see [LICENSE](LICENSE) for details.
