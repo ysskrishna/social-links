@@ -1,6 +1,6 @@
 # Social Links
 
-A lightweight Python library for detecting, validating, and sanitizing social media profile URLs. Supports 25+ platforms with customizable regex patterns and automatic URL normalization.
+A lightweight, zero-dependency Python library for detecting, validating, and sanitizing social media profile URLs. Supports 25+ platforms out of the box with automatic URL normalization, username extraction, and customizable regex patterns for extensibility.
 
 ## Features
 
