@@ -1,5 +1,10 @@
 # Social Links
 
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![Tests](https://github.com/ysskrishna/social-links/actions/workflows/test.yml/badge.svg)
+![Python](https://img.shields.io/badge/python-3.8%2B-blue.svg)
+[![PyPI](https://img.shields.io/pypi/v/social-links)](https://pypi.org/project/social-links/)
+
 A lightweight, zero-dependency Python library for detecting, validating, and sanitizing social media profile URLs. Supports 25+ platforms out of the box with automatic URL normalization, username extraction, and customizable regex patterns for extensibility.
 
 ## Features
@@ -10,7 +15,6 @@ A lightweight, zero-dependency Python library for detecting, validating, and san
 - 🎯 **25+ predefined platforms** (LinkedIn, GitHub, Twitter/X, Facebook, Instagram, YouTube, and more)
 - 🔧 **Customizable** - Add your own platforms with regex patterns
 - 🚀 **Zero dependencies** - Pure Python, no external libraries
-- 🐍 **Python 3.8+** compatible
 
 ## Installation
 
