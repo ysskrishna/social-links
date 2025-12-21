@@ -4,10 +4,11 @@
 ![Tests](https://github.com/ysskrishna/social-links/actions/workflows/test.yml/badge.svg)
 ![Python](https://img.shields.io/badge/python-3.8%2B-blue.svg)
 [![PyPI](https://img.shields.io/pypi/v/social-links)](https://pypi.org/project/social-links/)
+[![Documentation](https://img.shields.io/badge/docs-ysskrishna.github.io%2Fsocial--links-blue.svg)](https://ysskrishna.github.io/social-links/)
 
 A lightweight, zero-dependency Python library for detecting, validating, and sanitizing social media profile URLs. Supports 25+ platforms out of the box with automatic URL normalization, username extraction, and customizable regex patterns for extensibility.
 
-![OG Image](media/og.png)
+![OG Image](https://raw.githubusercontent.com/ysskrishna/nestedutils/main/media/og.png)
 
 ## Features
 
@@ -253,34 +254,47 @@ Sanitize a URL to its canonical format.
 - `get_platform(name: str)` - Get platform configuration
 - `list_platforms()` - List all platform names
 
-## Development
+## Changelog
 
-See [DEVELOPMENT.md](DEVELOPMENT.md) for development setup and contribution guidelines.
+See [CHANGELOG.md](https://github.com/ysskrishna/social-links/blob/main/CHANGELOG.md) for a detailed list of changes and version history.
 
-## Acknowledgments
 
-This Python library was inspired by the excellent [social-links](https://www.npmjs.com/package/social-links) npm package by [gkucmierz](https://github.com/gkucmierz). Special thanks to the original author.
 
-## License
+## Contributing
 
-MIT License - see [LICENSE](LICENSE) for details.
+Contributions are welcome! Please read our [Contributing Guide](https://github.com/ysskrishna/social-links/blob/main/CONTRIBUTING.md) for details on our code of conduct, development setup, and the process for submitting pull requests.
 
 ## Support
 
 If you find this library useful, please consider:
 
 - ⭐ **Starring** the repository on GitHub to help others discover it.
+
 - 💖 **Sponsoring** to support ongoing maintenance and development.
 
 [Become a Sponsor on GitHub](https://github.com/sponsors/ysskrishna) | [Support on Patreon](https://patreon.com/ysskrishna)
 
 ## Links
 
+- **Documentation**: [ysskrishna.github.io/social-links](https://ysskrishna.github.io/social-links/)
+
 - **PyPI**: [pypi.org/project/social-links](https://pypi.org/project/social-links/)
+
 - **Homepage**: [github.com/ysskrishna/social-links](https://github.com/ysskrishna/social-links)
+
 - **Repository**: [github.com/ysskrishna/social-links.git](https://github.com/ysskrishna/social-links.git)
+
 - **Issues**: [github.com/ysskrishna/social-links/issues](https://github.com/ysskrishna/social-links/issues)
 
-## Changelog
 
-See [CHANGELOG.md](CHANGELOG.md) for a list of changes.
+## License
+
+MIT License - see [LICENSE](https://github.com/ysskrishna/social-links/blob/main/LICENSE) file for details.
+
+## Author
+
+**Y. Siva Sai Krishna**
+
+- GitHub: [@ysskrishna](https://github.com/ysskrishna)
+
+- LinkedIn: [ysskrishna](https://linkedin.com/in/ysskrishna)
