@@ -265,6 +265,22 @@ This Python library was inspired by the excellent [social-links](https://www.npm
 
 MIT License - see [LICENSE](LICENSE) for details.
 
+## Support
+
+If you find this library useful, please consider:
+
+- ⭐ **Starring** the repository on GitHub to help others discover it.
+- 💖 **Sponsoring** to support ongoing maintenance and development.
+
+[Become a Sponsor on GitHub](https://github.com/sponsors/ysskrishna) | [Support on Patreon](https://patreon.com/ysskrishna)
+
+## Links
+
+- **PyPI**: [pypi.org/project/social-links](https://pypi.org/project/social-links/)
+- **Homepage**: [github.com/ysskrishna/social-links](https://github.com/ysskrishna/social-links)
+- **Repository**: [github.com/ysskrishna/social-links.git](https://github.com/ysskrishna/social-links.git)
+- **Issues**: [github.com/ysskrishna/social-links/issues](https://github.com/ysskrishna/social-links/issues)
+
 ## Changelog
 
 See [CHANGELOG.md](CHANGELOG.md) for a list of changes.

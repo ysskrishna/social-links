@@ -79,12 +79,16 @@ dependencies = []
 [dependency-groups]
 dev = [
     "pytest>=8.3.5",
+    "mkdocs>=1.6.1",
+    "mkdocs-material>=9.7.1",
+    "mkdocstrings>=0.26.1",
+    "mkdocstrings-python>=1.11.1",
 ]
 
 
 [project.urls]
 Homepage = "https://github.com/ysskrishna/social-links"
-Documentation = "https://github.com/ysskrishna/social-links#readme"
+Documentation = "https://ysskrishna.github.io/social-links/"
 Repository = "https://github.com/ysskrishna/social-links.git"
 Issues = "https://github.com/ysskrishna/social-links/issues"
 
