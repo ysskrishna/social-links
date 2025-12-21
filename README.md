@@ -56,31 +56,31 @@ print(sanitized)  # "https://linkedin.com/in/johndoe"
 
 The library comes with 25+ predefined platforms:
 
-- Behance
-- Dev.to
-- Dribbble
-- Exercism
-- Facebook
-- GitHub
-- Instagram
-- Keybase
-- Lemmy World
-- LinkedIn (personal & company)
-- Linktree
-- Mastodon
-- Medium
-- Patreon
-- Pinterest
-- SoundCloud
-- Spotify
-- Stack Overflow
-- Substack
-- Telegram
-- TikTok
-- Twitch
-- VK
-- X (Twitter)
-- YouTube
+- [Behance](https://behance.net)
+- [Dev.to](https://dev.to)
+- [Dribbble](https://dribbble.com)
+- [Exercism](https://exercism.io)
+- [Facebook](https://facebook.com)
+- [GitHub](https://github.com)
+- [Instagram](https://instagram.com)
+- [Keybase](https://keybase.io)
+- [Lemmy World](https://lemmy.world)
+- [LinkedIn](https://linkedin.com) (personal & company)
+- [Linktree](https://linktr.ee)
+- [Mastodon](https://mastodon.social)
+- [Medium](https://medium.com)
+- [Patreon](https://patreon.com)
+- [Pinterest](https://pinterest.com)
+- [SoundCloud](https://soundcloud.com)
+- [Spotify](https://spotify.com)
+- [Stack Overflow](https://stackoverflow.com)
+- [Substack](https://substack.com)
+- [Telegram](https://telegram.org)
+- [TikTok](https://tiktok.com)
+- [Twitch](https://twitch.tv)
+- [VK](https://vk.com)
+- [X (Twitter)](https://x.com)
+- [YouTube](https://youtube.com)
 
 ## Usage Examples
 
