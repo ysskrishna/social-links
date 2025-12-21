@@ -4,6 +4,7 @@
 ![Tests](https://github.com/ysskrishna/social-links/actions/workflows/test.yml/badge.svg)
 ![Python](https://img.shields.io/badge/python-3.8%2B-blue.svg)
 [![PyPI](https://img.shields.io/pypi/v/social-links)](https://pypi.org/project/social-links/)
+[![PyPI Downloads](https://static.pepy.tech/personalized-badge/social-links?period=total&units=INTERNATIONAL_SYSTEM&left_color=GREY&right_color=BLUE&left_text=downloads)](https://pepy.tech/projects/social-links)
 [![Documentation](https://img.shields.io/badge/docs-ysskrishna.github.io%2Fsocial--links-blue.svg)](https://ysskrishna.github.io/social-links/)
 
 A lightweight, zero-dependency Python library for detecting, validating, and sanitizing social media profile URLs. Supports 25+ platforms out of the box with automatic URL normalization, username extraction, and customizable regex patterns for extensibility.

@@ -5,6 +5,24 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.0]
+
+### Added
+
+- MkDocs documentation setup with Material theme
+- Comprehensive Contributing Guide (CONTRIBUTING.md) with development setup instructions
+- GitHub Actions workflow for automated documentation deployment
+- Documentation badge in README linking to hosted documentation
+- Links section in README with all project resources
+- Added py.typed file for type hinting
+
+### Changed
+
+- Updated README with clickable links for all 25+ supported platforms
+- Enhanced README structure with Changelog, Contributing, and Support sections
+- Improved documentation organization with dedicated docs/ directory
+
+
 ## [1.0.0]
 
 ### Added
@@ -47,4 +65,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Automatic @ symbol handling
 - URL normalization and sanitization
 
+[1.1.0]: https://github.com/ysskrishna/social-links/releases/tag/v1.1.0
 [1.0.0]: https://github.com/ysskrishna/social-links/releases/tag/v1.0.0
