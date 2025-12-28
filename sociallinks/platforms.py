@@ -6,6 +6,7 @@ from typing import Dict, List, Any
 PROFILE_ID = r"(?P<id>[A-Za-z0-9_.-]+)"
 PROFILE_ID_AT = r"(?P<id>@?[A-Za-z0-9_.-]+)" #Youtube channel links can be with or without @
 PROFILE_ID_UNICODE = r"(?P<id>[\w&%'–®\.-]+)" #LinkedIn profile IDs can contain Unicode characters (e.g., ü in peter-müller-81a8), ampersand, apostrophe, en dash, and registered trademark. \w matches Unicode letters, digits, and underscore
+PROFILE_ID_DOMAIN = r"(?P<id>[A-Za-z0-9_.-]+\.[A-Za-z0-9_.-]+)" #Profile IDs that require domain format (e.g., Bluesky handles like user.bsky.social)
 PHONE_NUMBER = r"(?P<id>\+?[0-9]+)" #Phone numbers for WhatsApp, can optionally start with +
 
 # ----------------------------------------------------------------------
@@ -19,6 +20,15 @@ PREDEFINED_PLATFORMS: Dict[str, List[Dict[str, Any]]] = {
                 rf"^{PROFILE_ID}$"
             ],
             "sanitized": "https://behance.net/{id}"
+        }
+    ],
+    "bluesky": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?bsky\.app/profile/{PROFILE_ID_DOMAIN}/?$",
+                rf"^@?{PROFILE_ID_DOMAIN}$"
+            ],
+            "sanitized": "https://bsky.app/profile/{id}"
         }
     ],
     "dev_to": [
@@ -47,6 +57,15 @@ PREDEFINED_PLATFORMS: Dict[str, List[Dict[str, Any]]] = {
                 rf"^{PROFILE_ID}$"
             ],
             "sanitized": "https://dribbble.com/{id}"
+        }
+    ],
+    "etsy": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?etsy\.com/shop/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://etsy.com/shop/{id}"
         }
     ],
     "exercism": [
@@ -180,6 +199,15 @@ PREDEFINED_PLATFORMS: Dict[str, List[Dict[str, Any]]] = {
                 rf"^{PROFILE_ID}$"
             ],
             "sanitized": "https://reddit.com/user/{id}"
+        }
+    ],
+    "signal": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?signal\.me/#p/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://signal.me/#p/{id}"
         }
     ],
     "snapchat": [

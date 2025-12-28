@@ -15,6 +15,56 @@ class TestAllPlatforms:
         assert sl.is_valid("behance", profile_id) is True
         assert sl.sanitize("behance", profile_id) == f"https://behance.net/{profile_id}"
 
+    def test_bluesky(self):
+        """Test Bluesky platform"""
+        sl = SocialLinks()
+        profile_id = "ysskrishna.bsky.social"
+        assert sl.detect_platform(f"https://bsky.app/profile/{profile_id}") == "bluesky"
+        assert sl.is_valid("bluesky", f"https://bsky.app/profile/{profile_id}") is True
+        assert sl.sanitize("bluesky", f"https://bsky.app/profile/{profile_id}") == f"https://bsky.app/profile/{profile_id}"
+        # Test direct handle
+        assert sl.is_valid("bluesky", profile_id) is True
+        assert sl.sanitize("bluesky", profile_id) == f"https://bsky.app/profile/{profile_id}"
+
+    def test_bluesky_with_at(self):
+        """Test Bluesky with @ prefix"""
+        sl = SocialLinks()
+        profile_id = "ysskrishna.bsky.social"
+        # Test with @ prefix
+        assert sl.is_valid("bluesky", f"@{profile_id}") is True
+        assert sl.sanitize("bluesky", f"@{profile_id}") == f"https://bsky.app/profile/{profile_id}"
+
+    def test_bluesky_with_www(self):
+        """Test Bluesky with www subdomain"""
+        sl = SocialLinks()
+        profile_id = "ysskrishna.bsky.social"
+        assert sl.detect_platform(f"https://www.bsky.app/profile/{profile_id}") == "bluesky"
+        assert sl.is_valid("bluesky", f"https://www.bsky.app/profile/{profile_id}") is True
+        assert sl.sanitize("bluesky", f"https://www.bsky.app/profile/{profile_id}") == f"https://bsky.app/profile/{profile_id}"
+
+    def test_bluesky_with_http(self):
+        """Test Bluesky with http protocol"""
+        sl = SocialLinks()
+        profile_id = "ysskrishna.bsky.social"
+        assert sl.detect_platform(f"http://bsky.app/profile/{profile_id}") == "bluesky"
+        assert sl.is_valid("bluesky", f"http://bsky.app/profile/{profile_id}") is True
+        assert sl.sanitize("bluesky", f"http://bsky.app/profile/{profile_id}") == f"https://bsky.app/profile/{profile_id}"
+
+    def test_bluesky_with_trailing_slash(self):
+        """Test Bluesky with trailing slash"""
+        sl = SocialLinks()
+        profile_id = "ysskrishna.bsky.social"
+        assert sl.is_valid("bluesky", f"https://bsky.app/profile/{profile_id}/") is True
+        assert sl.sanitize("bluesky", f"https://bsky.app/profile/{profile_id}/") == f"https://bsky.app/profile/{profile_id}"
+
+    def test_bluesky_custom_domain(self):
+        """Test Bluesky with custom domain"""
+        sl = SocialLinks()
+        profile_id = "example.com"
+        assert sl.detect_platform(f"https://bsky.app/profile/{profile_id}") == "bluesky"
+        assert sl.is_valid("bluesky", f"https://bsky.app/profile/{profile_id}") is True
+        assert sl.sanitize("bluesky", f"https://bsky.app/profile/{profile_id}") == f"https://bsky.app/profile/{profile_id}"
+
     def test_dev_to(self):
         """Test Dev.to platform"""
         sl = SocialLinks()
@@ -85,6 +135,40 @@ class TestAllPlatforms:
         # Test direct username
         assert sl.is_valid("dribbble", profile_id) is True
         assert sl.sanitize("dribbble", profile_id) == f"https://dribbble.com/{profile_id}"
+
+    def test_etsy(self):
+        """Test Etsy platform"""
+        sl = SocialLinks()
+        shop_name = "MyShopName"
+        assert sl.detect_platform(f"https://etsy.com/shop/{shop_name}") == "etsy"
+        assert sl.is_valid("etsy", f"https://etsy.com/shop/{shop_name}") is True
+        assert sl.sanitize("etsy", f"https://etsy.com/shop/{shop_name}") == f"https://etsy.com/shop/{shop_name}"
+        # Test direct shop name
+        assert sl.is_valid("etsy", shop_name) is True
+        assert sl.sanitize("etsy", shop_name) == f"https://etsy.com/shop/{shop_name}"
+
+    def test_etsy_with_www(self):
+        """Test Etsy with www subdomain"""
+        sl = SocialLinks()
+        shop_name = "MyShopName"
+        assert sl.detect_platform(f"https://www.etsy.com/shop/{shop_name}") == "etsy"
+        assert sl.is_valid("etsy", f"https://www.etsy.com/shop/{shop_name}") is True
+        assert sl.sanitize("etsy", f"https://www.etsy.com/shop/{shop_name}") == f"https://etsy.com/shop/{shop_name}"
+
+    def test_etsy_with_http(self):
+        """Test Etsy with http protocol"""
+        sl = SocialLinks()
+        shop_name = "MyShopName"
+        assert sl.detect_platform(f"http://etsy.com/shop/{shop_name}") == "etsy"
+        assert sl.is_valid("etsy", f"http://etsy.com/shop/{shop_name}") is True
+        assert sl.sanitize("etsy", f"http://etsy.com/shop/{shop_name}") == f"https://etsy.com/shop/{shop_name}"
+
+    def test_etsy_with_trailing_slash(self):
+        """Test Etsy with trailing slash"""
+        sl = SocialLinks()
+        shop_name = "MyShopName"
+        assert sl.is_valid("etsy", f"https://etsy.com/shop/{shop_name}/") is True
+        assert sl.sanitize("etsy", f"https://etsy.com/shop/{shop_name}/") == f"https://etsy.com/shop/{shop_name}"
 
     def test_exercism(self):
         """Test Exercism platform"""
@@ -726,6 +810,40 @@ class TestAllPlatforms:
         assert sl.detect_platform(f"https://snapchat.com/@{profile_id}") == "snapchat"
         assert sl.is_valid("snapchat", f"https://snapchat.com/@{profile_id}") is True
         assert sl.sanitize("snapchat", f"https://snapchat.com/@{profile_id}") == f"https://snapchat.com/@{profile_id}"
+
+    def test_signal(self):
+        """Test Signal platform"""
+        sl = SocialLinks()
+        profile_id = "abc123xyz"
+        assert sl.detect_platform(f"https://signal.me/#p/{profile_id}") == "signal"
+        assert sl.is_valid("signal", f"https://signal.me/#p/{profile_id}") is True
+        assert sl.sanitize("signal", f"https://signal.me/#p/{profile_id}") == f"https://signal.me/#p/{profile_id}"
+        # Test direct profile ID
+        assert sl.is_valid("signal", profile_id) is True
+        assert sl.sanitize("signal", profile_id) == f"https://signal.me/#p/{profile_id}"
+
+    def test_signal_with_www(self):
+        """Test Signal with www subdomain"""
+        sl = SocialLinks()
+        profile_id = "abc123xyz"
+        assert sl.detect_platform(f"https://www.signal.me/#p/{profile_id}") == "signal"
+        assert sl.is_valid("signal", f"https://www.signal.me/#p/{profile_id}") is True
+        assert sl.sanitize("signal", f"https://www.signal.me/#p/{profile_id}") == f"https://signal.me/#p/{profile_id}"
+
+    def test_signal_with_http(self):
+        """Test Signal with http protocol"""
+        sl = SocialLinks()
+        profile_id = "abc123xyz"
+        assert sl.detect_platform(f"http://signal.me/#p/{profile_id}") == "signal"
+        assert sl.is_valid("signal", f"http://signal.me/#p/{profile_id}") is True
+        assert sl.sanitize("signal", f"http://signal.me/#p/{profile_id}") == f"https://signal.me/#p/{profile_id}"
+
+    def test_signal_with_trailing_slash(self):
+        """Test Signal with trailing slash"""
+        sl = SocialLinks()
+        profile_id = "abc123xyz"
+        assert sl.is_valid("signal", f"https://signal.me/#p/{profile_id}/") is True
+        assert sl.sanitize("signal", f"https://signal.me/#p/{profile_id}/") == f"https://signal.me/#p/{profile_id}"
 
     def test_tumblr(self):
         """Test Tumblr platform with subdomain"""

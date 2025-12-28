@@ -7,7 +7,7 @@
 [![PyPI Downloads](https://static.pepy.tech/personalized-badge/social-links?period=total&units=INTERNATIONAL_SYSTEM&left_color=GREY&right_color=BLUE&left_text=downloads)](https://pepy.tech/projects/social-links)
 [![Documentation](https://img.shields.io/badge/docs-ysskrishna.github.io%2Fsocial--links-blue.svg)](https://ysskrishna.github.io/social-links/)
 
-A lightweight, zero-dependency Python library for detecting, validating, and sanitizing social media profile URLs. Supports 25+ platforms out of the box with automatic URL normalization, username extraction, and customizable regex patterns for extensibility.
+A lightweight, zero-dependency Python library for detecting, validating, and sanitizing social media profile URLs. Supports 35+ platforms out of the box with automatic URL normalization, username extraction, and customizable regex patterns for extensibility.
 
 ![OG Image](https://raw.githubusercontent.com/ysskrishna/nestedutils/main/media/og.png)
 
@@ -16,7 +16,7 @@ A lightweight, zero-dependency Python library for detecting, validating, and san
 - 🔍 **Auto-detect** social media platforms from URLs
 - ✅ **Validate** URLs against specific platforms
 - 🧹 **Sanitize** URLs to canonical format
-- 🎯 **25+ predefined platforms** (LinkedIn, GitHub, Twitter/X, Facebook, Instagram, YouTube, and more)
+- 🎯 **35+ predefined platforms** (LinkedIn, GitHub, Twitter/X, Facebook, Instagram, YouTube, and more)
 - 🔧 **Customizable** - Add your own platforms with regex patterns
 - 🚀 **Zero dependencies** - Pure Python, no external libraries
 
@@ -55,11 +55,16 @@ print(sanitized)  # "https://linkedin.com/in/johndoe"
 
 ## Supported Platforms
 
-The library comes with 25+ predefined platforms:
+The library comes with 35+ predefined platforms:
 
+- [Apple Music](https://music.apple.com)
+- [Bandcamp](https://bandcamp.com)
 - [Behance](https://behance.net)
+- [Bluesky](https://bsky.app)
 - [Dev.to](https://dev.to)
+- [Discord](https://discord.com)
 - [Dribbble](https://dribbble.com)
+- [Etsy](https://etsy.com)
 - [Exercism](https://exercism.io)
 - [Facebook](https://facebook.com)
 - [GitHub](https://github.com)
@@ -72,14 +77,21 @@ The library comes with 25+ predefined platforms:
 - [Medium](https://medium.com)
 - [Patreon](https://patreon.com)
 - [Pinterest](https://pinterest.com)
+- [Reddit](https://reddit.com)
+- [Signal](https://signal.me)
+- [Snapchat](https://snapchat.com)
 - [SoundCloud](https://soundcloud.com)
 - [Spotify](https://spotify.com)
 - [Stack Overflow](https://stackoverflow.com)
 - [Substack](https://substack.com)
 - [Telegram](https://telegram.org)
+- [Threads](https://threads.net)
 - [TikTok](https://tiktok.com)
+- [Tumblr](https://tumblr.com)
 - [Twitch](https://twitch.tv)
+- [Vimeo](https://vimeo.com)
 - [VK](https://vk.com)
+- [WhatsApp](https://whatsapp.com)
 - [X (Twitter)](https://x.com)
 - [YouTube](https://youtube.com)
 
