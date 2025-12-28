@@ -362,6 +362,41 @@ class TestAllPlatforms:
             assert sl.is_valid("apple_music", source) is True
             assert sl.sanitize("apple_music", source) == expected
 
+    def test_bandcamp(self):
+        """Test Bandcamp platform with subdomain"""
+        sl = SocialLinks()
+        profile_id = "ysskrishna"
+        assert sl.detect_platform(f"https://{profile_id}.bandcamp.com") == "bandcamp"
+        assert sl.is_valid("bandcamp", f"https://{profile_id}.bandcamp.com") is True
+        assert sl.sanitize("bandcamp", f"https://{profile_id}.bandcamp.com") == f"https://{profile_id}.bandcamp.com"
+        # Test direct username
+        assert sl.is_valid("bandcamp", profile_id) is True
+        assert sl.sanitize("bandcamp", profile_id) == f"https://{profile_id}.bandcamp.com"
+
+    def test_bandcamp_with_trailing_slash(self):
+        """Test Bandcamp with trailing slash"""
+        sl = SocialLinks()
+        profile_id = "ysskrishna"
+        assert sl.is_valid("bandcamp", f"https://{profile_id}.bandcamp.com/") is True
+        assert sl.sanitize("bandcamp", f"https://{profile_id}.bandcamp.com/") == f"https://{profile_id}.bandcamp.com"
+
+    def test_bandcamp_with_http(self):
+        """Test Bandcamp with http protocol"""
+        sl = SocialLinks()
+        profile_id = "ysskrishna"
+        # Test http instead of https
+        assert sl.detect_platform(f"http://{profile_id}.bandcamp.com") == "bandcamp"
+        assert sl.is_valid("bandcamp", f"http://{profile_id}.bandcamp.com") is True
+        assert sl.sanitize("bandcamp", f"http://{profile_id}.bandcamp.com") == f"https://{profile_id}.bandcamp.com"
+
+    def test_bandcamp_with_dashes(self):
+        """Test Bandcamp with dashes in username"""
+        sl = SocialLinks()
+        profile_id = "my-band-name"
+        assert sl.detect_platform(f"https://{profile_id}.bandcamp.com") == "bandcamp"
+        assert sl.is_valid("bandcamp", f"https://{profile_id}.bandcamp.com") is True
+        assert sl.sanitize("bandcamp", f"https://{profile_id}.bandcamp.com") == f"https://{profile_id}.bandcamp.com"
+
     def test_spotify(self):
         """Test Spotify platform"""
         sl = SocialLinks()

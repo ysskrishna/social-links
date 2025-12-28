@@ -202,6 +202,15 @@ PREDEFINED_PLATFORMS: Dict[str, List[Dict[str, Any]]] = {
             "sanitized": "https://music.apple.com/artist/{id}"
         }
     ],
+    "bandcamp": [
+        {
+            "patterns": [
+                rf"https?://{PROFILE_ID}\.bandcamp\.com/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://{id}.bandcamp.com"
+        }
+    ],
     "soundcloud": [
         {
             "patterns": [
