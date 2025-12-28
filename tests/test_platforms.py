@@ -328,6 +328,12 @@ class TestAllPlatforms:
             ('https://www.linkedin.com/company/magis_official', 'https://linkedin.com/company/magis_official'),
             ('https://www.linkedin.com/company/cake-–-ridecake.com/', 'https://linkedin.com/company/cake-–-ridecake.com'),
             ('https://www.linkedin.com/company/brigham-and-women%27s-hospital/', 'https://linkedin.com/company/brigham-and-women%27s-hospital'),
+            ('https://www.linkedin.com/school/linkedinschool/', 'https://linkedin.com/company/linkedinschool'),
+            ('https://www.linkedin.com/school/linkedinschool', 'https://linkedin.com/company/linkedinschool'),
+            ('http://www.linkedin.com/school/linkedinschool/', 'https://linkedin.com/company/linkedinschool'),
+            ('https://linkedin.com/school/linkedinschool/', 'https://linkedin.com/company/linkedinschool'),
+            ('https://www.linkedin.com/school/stanford-university/', 'https://linkedin.com/company/stanford-university'),
+            ('https://www.linkedin.com/school/mit/', 'https://linkedin.com/company/mit'),
         ]
         
         for source, expected in company_test_cases:

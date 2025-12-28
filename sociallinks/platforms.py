@@ -137,7 +137,9 @@ PREDEFINED_PLATFORMS: Dict[str, List[Dict[str, Any]]] = {
         },
         {
             "patterns": [
-                rf"https?://(www\.)?linkedin\.com/company/{PROFILE_ID_UNICODE}/?$"
+                
+                rf"https?://(www\.)?linkedin\.com/company/{PROFILE_ID_UNICODE}/?$",
+                rf"https?://(www\.)?linkedin\.com/school/{PROFILE_ID_UNICODE}/?$",
             ],
             "sanitized": "https://linkedin.com/company/{id}"
         }
