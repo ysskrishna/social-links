@@ -26,6 +26,55 @@ class TestAllPlatforms:
         assert sl.is_valid("dev_to", profile_id) is True
         assert sl.sanitize("dev_to", profile_id) == f"https://dev.to/{profile_id}"
 
+    def test_discord(self):
+        """Test Discord platform with discord.gg"""
+        sl = SocialLinks()
+        invite_code = "ysskrishna"
+        assert sl.detect_platform(f"https://discord.gg/{invite_code}") == "discord"
+        assert sl.is_valid("discord", f"https://discord.gg/{invite_code}") is True
+        assert sl.sanitize("discord", f"https://discord.gg/{invite_code}") == f"https://discord.gg/{invite_code}"
+        # Test direct invite code
+        assert sl.is_valid("discord", invite_code) is True
+        assert sl.sanitize("discord", invite_code) == f"https://discord.gg/{invite_code}"
+
+    def test_discord_invite_url(self):
+        """Test Discord platform with discord.com/invite"""
+        sl = SocialLinks()
+        invite_code = "ysskrishna"
+        # Test discord.com/invite format - should normalize to discord.gg
+        assert sl.detect_platform(f"https://discord.com/invite/{invite_code}") == "discord"
+        assert sl.is_valid("discord", f"https://discord.com/invite/{invite_code}") is True
+        assert sl.sanitize("discord", f"https://discord.com/invite/{invite_code}") == f"https://discord.gg/{invite_code}"
+
+    def test_discord_with_www(self):
+        """Test Discord with www subdomain"""
+        sl = SocialLinks()
+        invite_code = "ysskrishna"
+        # Test with www on discord.gg
+        assert sl.detect_platform(f"https://www.discord.gg/{invite_code}") == "discord"
+        assert sl.is_valid("discord", f"https://www.discord.gg/{invite_code}") is True
+        assert sl.sanitize("discord", f"https://www.discord.gg/{invite_code}") == f"https://discord.gg/{invite_code}"
+        # Test with www on discord.com/invite
+        assert sl.detect_platform(f"https://www.discord.com/invite/{invite_code}") == "discord"
+        assert sl.is_valid("discord", f"https://www.discord.com/invite/{invite_code}") is True
+        assert sl.sanitize("discord", f"https://www.discord.com/invite/{invite_code}") == f"https://discord.gg/{invite_code}"
+
+    def test_discord_with_http(self):
+        """Test Discord with http protocol"""
+        sl = SocialLinks()
+        invite_code = "abc123XYZ"
+        # Test http instead of https
+        assert sl.detect_platform(f"http://discord.gg/{invite_code}") == "discord"
+        assert sl.is_valid("discord", f"http://discord.gg/{invite_code}") is True
+        assert sl.sanitize("discord", f"http://discord.gg/{invite_code}") == f"https://discord.gg/{invite_code}"
+
+    def test_discord_with_trailing_slash(self):
+        """Test Discord with trailing slash"""
+        sl = SocialLinks()
+        invite_code = "abc123XYZ"
+        assert sl.is_valid("discord", f"https://discord.gg/{invite_code}/") is True
+        assert sl.sanitize("discord", f"https://discord.gg/{invite_code}/") == f"https://discord.gg/{invite_code}"
+
     def test_dribbble(self):
         """Test Dribbble platform"""
         sl = SocialLinks()

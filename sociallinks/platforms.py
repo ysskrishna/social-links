@@ -30,6 +30,16 @@ PREDEFINED_PLATFORMS: Dict[str, List[Dict[str, Any]]] = {
             "sanitized": "https://dev.to/{id}"
         }
     ],
+    "discord": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?discord\.gg/{PROFILE_ID}/?$",
+                rf"https?://(www\.)?discord\.com/invite/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://discord.gg/{id}"
+        }
+    ],
     "dribbble": [
         {
             "patterns": [
