@@ -284,6 +284,15 @@ PREDEFINED_PLATFORMS: Dict[str, List[Dict[str, Any]]] = {
             "sanitized": "https://signal.me/#p/{id}"
         }
     ],
+    "slideshare": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?slideshare\.net/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.slideshare.net/{id}"
+        }
+    ],
     "snapchat": [
         {
             "patterns": [
