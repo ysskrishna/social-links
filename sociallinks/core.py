@@ -74,25 +74,48 @@ class SocialLinks:
     # ------------------------------------------------------------------
 
     def detect_platform(self, url: str) -> Optional[str]:
+        if not isinstance(url, str):
+            raise TypeError(f"url must be str, not {type(url).__name__}")
+        
         u = url.strip()
+        if not u:
+            return None
+        
         for name, entries in self._compiled.items():
             if any(pattern.search(u) for pattern, _ in entries):
                 return name
         return None
 
     def is_valid(self, platform_name: str, url: str) -> bool:
+        if not isinstance(platform_name, str):
+            raise TypeError(f"platform_name must be str, not {type(platform_name).__name__}")
+        if not isinstance(url, str):
+            raise TypeError(f"url must be str, not {type(url).__name__}")
+        
         entries = self._compiled.get(platform_name)
         if not entries:
             return False
+        
         u = url.strip()
+        if not u:
+            return False
+        
         return any(pattern.search(u) for pattern, _ in entries)
 
     def sanitize(self, platform_name: str, url: str) -> str:
+        if not isinstance(platform_name, str):
+            raise TypeError(f"platform_name must be str, not {type(platform_name).__name__}")
+        if not isinstance(url, str):
+            raise TypeError(f"url must be str, not {type(url).__name__}")
+        
         entries = self._compiled.get(platform_name)
         if not entries:
             raise PlatformNotFoundError(f"Unknown platform: {platform_name}")
 
         u = url.strip()
+        if not u:
+            raise URLMismatchError("URL cannot be empty")
+        
         for pattern, sanitized in entries:
             m = pattern.search(u)
             if m:
