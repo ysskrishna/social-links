@@ -432,3 +432,123 @@ class TestAllPlatforms:
         assert sl.is_valid("youtube", f"https://m.youtube.com/c/{profile_id}") is True
         assert sl.sanitize("youtube", f"https://m.youtube.com/c/{profile_id}") == f"https://youtube.com/@{profile_id}"
 
+    def test_reddit(self):
+        """Test Reddit platform"""
+        sl = SocialLinks()
+        profile_id = "ysskrishna"
+        assert sl.detect_platform(f"https://reddit.com/user/{profile_id}") == "reddit"
+        assert sl.is_valid("reddit", f"https://reddit.com/user/{profile_id}") is True
+        assert sl.sanitize("reddit", f"https://reddit.com/user/{profile_id}") == f"https://www.reddit.com/user/{profile_id}"
+        # Test direct username
+        assert sl.is_valid("reddit", profile_id) is True
+        assert sl.sanitize("reddit", profile_id) == f"https://www.reddit.com/user/{profile_id}"
+
+    def test_reddit_u_path(self):
+        """Test Reddit /u/ path"""
+        sl = SocialLinks()
+        profile_id = "ysskrishna"
+        assert sl.detect_platform(f"https://reddit.com/u/{profile_id}") == "reddit"
+        assert sl.is_valid("reddit", f"https://reddit.com/u/{profile_id}") is True
+        assert sl.sanitize("reddit", f"https://reddit.com/u/{profile_id}") == f"https://www.reddit.com/user/{profile_id}"
+
+    def test_reddit_old(self):
+        """Test Reddit old.reddit.com"""
+        sl = SocialLinks()
+        profile_id = "ysskrishna"
+        assert sl.detect_platform(f"https://old.reddit.com/user/{profile_id}") == "reddit"
+        assert sl.is_valid("reddit", f"https://old.reddit.com/user/{profile_id}") is True
+        assert sl.sanitize("reddit", f"https://old.reddit.com/user/{profile_id}") == f"https://www.reddit.com/user/{profile_id}"
+        # Test old.reddit.com with /u/ path
+        assert sl.detect_platform(f"https://old.reddit.com/u/{profile_id}") == "reddit"
+        assert sl.is_valid("reddit", f"https://old.reddit.com/u/{profile_id}") is True
+        assert sl.sanitize("reddit", f"https://old.reddit.com/u/{profile_id}") == f"https://www.reddit.com/user/{profile_id}"
+
+    def test_snapchat(self):
+        """Test Snapchat platform"""
+        sl = SocialLinks()
+        profile_id = "ysskrishna"
+        assert sl.detect_platform(f"https://snapchat.com/add/{profile_id}") == "snapchat"
+        assert sl.is_valid("snapchat", f"https://snapchat.com/add/{profile_id}") is True
+        assert sl.sanitize("snapchat", f"https://snapchat.com/add/{profile_id}") == f"https://www.snapchat.com/@{profile_id}"
+        # Test direct username (with and without @)
+        assert sl.is_valid("snapchat", profile_id) is True
+        assert sl.is_valid("snapchat", f"@{profile_id}") is True
+        assert sl.sanitize("snapchat", profile_id) == f"https://www.snapchat.com/@{profile_id}"
+        assert sl.sanitize("snapchat", f"@{profile_id}") == f"https://www.snapchat.com/@{profile_id}"
+
+    def test_snapchat_at_path(self):
+        """Test Snapchat @username path"""
+        sl = SocialLinks()
+        profile_id = "ysskrishna"
+        assert sl.detect_platform(f"https://snapchat.com/@{profile_id}") == "snapchat"
+        assert sl.is_valid("snapchat", f"https://snapchat.com/@{profile_id}") is True
+        assert sl.sanitize("snapchat", f"https://snapchat.com/@{profile_id}") == f"https://www.snapchat.com/@{profile_id}"
+
+    def test_tumblr(self):
+        """Test Tumblr platform with subdomain"""
+        sl = SocialLinks()
+        profile_id = "ysskrishna"
+        assert sl.detect_platform(f"https://{profile_id}.tumblr.com") == "tumblr"
+        assert sl.is_valid("tumblr", f"https://{profile_id}.tumblr.com") is True
+        assert sl.sanitize("tumblr", f"https://{profile_id}.tumblr.com") == f"https://www.tumblr.com/{profile_id}"
+        # Test direct username
+        assert sl.is_valid("tumblr", profile_id) is True
+        assert sl.sanitize("tumblr", profile_id) == f"https://www.tumblr.com/{profile_id}"
+
+    def test_tumblr_blog_path(self):
+        """Test Tumblr /blog/ path"""
+        sl = SocialLinks()
+        profile_id = "ysskrishna"
+        assert sl.detect_platform(f"https://tumblr.com/blog/{profile_id}") == "tumblr"
+        assert sl.is_valid("tumblr", f"https://tumblr.com/blog/{profile_id}") is True
+        assert sl.sanitize("tumblr", f"https://tumblr.com/blog/{profile_id}") == f"https://www.tumblr.com/{profile_id}"
+
+    def test_tumblr_with_trailing_slash(self):
+        """Test Tumblr with trailing slash"""
+        sl = SocialLinks()
+        profile_id = "ysskrishna"
+        assert sl.is_valid("tumblr", f"https://{profile_id}.tumblr.com/") is True
+        assert sl.sanitize("tumblr", f"https://{profile_id}.tumblr.com/") == f"https://www.tumblr.com/{profile_id}"
+
+    def test_vimeo(self):
+        """Test Vimeo platform"""
+        sl = SocialLinks()
+        profile_id = "ysskrishna"
+        assert sl.detect_platform(f"https://vimeo.com/{profile_id}") == "vimeo"
+        assert sl.is_valid("vimeo", f"https://vimeo.com/{profile_id}") is True
+        assert sl.sanitize("vimeo", f"https://vimeo.com/{profile_id}") == f"https://vimeo.com/{profile_id}"
+        # Test direct username
+        assert sl.is_valid("vimeo", profile_id) is True
+        assert sl.sanitize("vimeo", profile_id) == f"https://vimeo.com/{profile_id}"
+
+    def test_vimeo_with_www(self):
+        """Test Vimeo with www subdomain"""
+        sl = SocialLinks()
+        profile_id = "ysskrishna"
+        assert sl.detect_platform(f"https://www.vimeo.com/{profile_id}") == "vimeo"
+        assert sl.is_valid("vimeo", f"https://www.vimeo.com/{profile_id}") is True
+        assert sl.sanitize("vimeo", f"https://www.vimeo.com/{profile_id}") == f"https://vimeo.com/{profile_id}"
+
+    def test_whatsapp(self):
+        """Test WhatsApp platform with wa.me"""
+        sl = SocialLinks()
+        phone_number = "1234567890"
+        assert sl.detect_platform(f"https://wa.me/{phone_number}") == "whatsapp"
+        assert sl.is_valid("whatsapp", f"https://wa.me/{phone_number}") is True
+        assert sl.sanitize("whatsapp", f"https://wa.me/{phone_number}") == f"https://wa.me/{phone_number}"
+        # Test direct phone number
+        assert sl.is_valid("whatsapp", phone_number) is True
+        assert sl.sanitize("whatsapp", phone_number) == f"https://wa.me/{phone_number}"
+
+    def test_whatsapp_with_plus(self):
+        """Test WhatsApp with international format (+)"""
+        sl = SocialLinks()
+        phone_number = "+1234567890"
+        assert sl.detect_platform(f"https://wa.me/{phone_number}") == "whatsapp"
+        assert sl.is_valid("whatsapp", f"https://wa.me/{phone_number}") is True
+        assert sl.sanitize("whatsapp", f"https://wa.me/{phone_number}") == f"https://wa.me/{phone_number}"
+        # Test direct phone number with + (note: + is kept in sanitized output)
+        assert sl.is_valid("whatsapp", phone_number) is True
+        assert sl.sanitize("whatsapp", phone_number) == f"https://wa.me/{phone_number}"
+
+

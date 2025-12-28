@@ -155,6 +155,28 @@ PREDEFINED_PLATFORMS: Dict[str, List[Dict[str, Any]]] = {
             "sanitized": "https://pinterest.com/{id}"
         }
     ],
+    "reddit": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?reddit\.com/user/{PROFILE_ID}/?$",
+                rf"https?://(www\.)?reddit\.com/u/{PROFILE_ID}/?$",
+                rf"https?://old\.reddit\.com/user/{PROFILE_ID}/?$",
+                rf"https?://old\.reddit\.com/u/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.reddit.com/user/{id}"
+        }
+    ],
+    "snapchat": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?snapchat\.com/add/{PROFILE_ID}/?$",
+                rf"https?://(www\.)?snapchat\.com/@{PROFILE_ID}/?$",
+                rf"^@?{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.snapchat.com/@{id}"
+        }
+    ],
     "soundcloud": [
         {
             "patterns": [
@@ -209,6 +231,17 @@ PREDEFINED_PLATFORMS: Dict[str, List[Dict[str, Any]]] = {
             "sanitized": "https://tiktok.com/@{id}"
         }
     ],
+    "tumblr": [
+        {
+            "patterns": [
+                rf"https?://{PROFILE_ID}\.tumblr\.com/?$",
+                rf"https?://(www\.)?tumblr\.com/blog/{PROFILE_ID}/?$",
+                rf"https?://(www\.)?tumblr\.com/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.tumblr.com/{id}"
+        }
+    ],
     "twitch": [
         {
             "patterns": [
@@ -227,6 +260,24 @@ PREDEFINED_PLATFORMS: Dict[str, List[Dict[str, Any]]] = {
                 rf"^@?{PROFILE_ID}$"
             ],
             "sanitized": "https://vk.com/{id}"
+        }
+    ],
+    "vimeo": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?vimeo\.com/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://vimeo.com/{id}"
+        }
+    ],
+    "whatsapp": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?wa\.me/(?P<id>\+?[0-9]+)/?$",
+                rf"^(?P<id>\+?[0-9]+)$"
+            ],
+            "sanitized": "https://wa.me/{id}"
         }
     ],
     "x": [
