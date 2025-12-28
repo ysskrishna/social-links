@@ -346,6 +346,76 @@ class TestAllPlatforms:
         assert sl.is_valid("linktree", profile_id) is True
         assert sl.sanitize("linktree", profile_id) == f"https://linktr.ee/{profile_id}"
 
+    def test_wellfound_user(self):
+        """Test Wellfound user profile"""
+        sl = SocialLinks()
+        profile_id = "ysskrishna"
+        assert sl.detect_platform(f"https://wellfound.com/u/{profile_id}") == "wellfound"
+        assert sl.is_valid("wellfound", f"https://wellfound.com/u/{profile_id}") is True
+        assert sl.sanitize("wellfound", f"https://wellfound.com/u/{profile_id}") == f"https://wellfound.com/u/{profile_id}"
+        # Test direct username
+        assert sl.is_valid("wellfound", profile_id) is True
+        assert sl.sanitize("wellfound", profile_id) == f"https://wellfound.com/u/{profile_id}"
+
+    def test_wellfound_company(self):
+        """Test Wellfound company profile"""
+        sl = SocialLinks()
+        profile_id = "homelight"
+        assert sl.detect_platform(f"https://wellfound.com/company/{profile_id}") == "wellfound"
+        assert sl.is_valid("wellfound", f"https://wellfound.com/company/{profile_id}") is True
+        assert sl.sanitize("wellfound", f"https://wellfound.com/company/{profile_id}") == f"https://wellfound.com/company/{profile_id}"
+
+    def test_wellfound_legacy_angellist_user(self):
+        """Test legacy AngelList user profile URLs (angel.co/u/)"""
+        sl = SocialLinks()
+        profile_id = "ysskrishna"
+        assert sl.detect_platform(f"https://angel.co/u/{profile_id}") == "wellfound"
+        assert sl.is_valid("wellfound", f"https://angel.co/u/{profile_id}") is True
+        assert sl.sanitize("wellfound", f"https://angel.co/u/{profile_id}") == f"https://wellfound.com/u/{profile_id}"
+
+    def test_wellfound_legacy_angellist_company(self):
+        """Test legacy AngelList company URLs (angel.co/company/ and angel.co/)"""
+        sl = SocialLinks()
+        profile_id = "slack"
+        # Test angel.co/company/ format
+        assert sl.detect_platform(f"https://angel.co/company/{profile_id}") == "wellfound"
+        assert sl.is_valid("wellfound", f"https://angel.co/company/{profile_id}") is True
+        assert sl.sanitize("wellfound", f"https://angel.co/company/{profile_id}") == f"https://wellfound.com/company/{profile_id}"
+        # Test old angel.co/ format (without /company/)
+        assert sl.detect_platform(f"https://angel.co/{profile_id}") == "wellfound"
+        assert sl.is_valid("wellfound", f"https://angel.co/{profile_id}") is True
+        assert sl.sanitize("wellfound", f"https://angel.co/{profile_id}") == f"https://wellfound.com/company/{profile_id}"
+
+    def test_wellfound_with_www(self):
+        """Test Wellfound with www subdomain"""
+        sl = SocialLinks()
+        profile_id = "ysskrishna"
+        # Test user profile with www
+        assert sl.detect_platform(f"https://www.wellfound.com/u/{profile_id}") == "wellfound"
+        assert sl.is_valid("wellfound", f"https://www.wellfound.com/u/{profile_id}") is True
+        assert sl.sanitize("wellfound", f"https://www.wellfound.com/u/{profile_id}") == f"https://wellfound.com/u/{profile_id}"
+        # Test company profile with www
+        company_id = "homelight"
+        assert sl.detect_platform(f"https://www.wellfound.com/company/{company_id}") == "wellfound"
+        assert sl.is_valid("wellfound", f"https://www.wellfound.com/company/{company_id}") is True
+        assert sl.sanitize("wellfound", f"https://www.wellfound.com/company/{company_id}") == f"https://wellfound.com/company/{company_id}"
+
+    def test_wellfound_with_http(self):
+        """Test Wellfound with http protocol"""
+        sl = SocialLinks()
+        profile_id = "ysskrishna"
+        # Test http instead of https
+        assert sl.detect_platform(f"http://wellfound.com/u/{profile_id}") == "wellfound"
+        assert sl.is_valid("wellfound", f"http://wellfound.com/u/{profile_id}") is True
+        assert sl.sanitize("wellfound", f"http://wellfound.com/u/{profile_id}") == f"https://wellfound.com/u/{profile_id}"
+
+    def test_wellfound_with_trailing_slash(self):
+        """Test Wellfound with trailing slash"""
+        sl = SocialLinks()
+        profile_id = "ysskrishna"
+        assert sl.is_valid("wellfound", f"https://wellfound.com/u/{profile_id}/") is True
+        assert sl.sanitize("wellfound", f"https://wellfound.com/u/{profile_id}/") == f"https://wellfound.com/u/{profile_id}"
+
     def test_mastodon(self):
         """Test Mastodon platform"""
         sl = SocialLinks()

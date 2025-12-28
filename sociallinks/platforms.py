@@ -141,6 +141,24 @@ PREDEFINED_PLATFORMS: Dict[str, List[Dict[str, Any]]] = {
             "sanitized": "https://linkedin.com/company/{id}"
         }
     ],
+    "wellfound": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?wellfound\.com/u/{PROFILE_ID}/?$",
+                rf"https?://(www\.)?angel\.co/u/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://wellfound.com/u/{id}"
+        },
+        {
+            "patterns": [
+                rf"https?://(www\.)?wellfound\.com/company/{PROFILE_ID}/?$",
+                rf"https?://(www\.)?angel\.co/company/{PROFILE_ID}/?$",
+                rf"https?://(www\.)?angel\.co/{PROFILE_ID}/?$"
+            ],
+            "sanitized": "https://wellfound.com/company/{id}"
+        }
+    ],
     "linktree": [
         {
             "patterns": [
