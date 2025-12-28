@@ -177,6 +177,16 @@ PREDEFINED_PLATFORMS: Dict[str, List[Dict[str, Any]]] = {
             "sanitized": "https://snapchat.com/@{id}"
         }
     ],
+    "apple_music": [
+        {
+            "patterns": [
+                rf"https?://(?:itunes|music)\.apple\.com/(?:[a-z]{{2}}/)?artist/(?:[A-Za-z0-9_\-\%\.]+/)?(?:id)?(?P<id>\d+)/?$",
+                rf"https?://(?:itunes|music)\.apple\.com/(?:[a-z]{{2}}/)?artist/(?P<id>\d+)/?$",
+                rf"^(?P<id>\d+)$"
+            ],
+            "sanitized": "https://music.apple.com/artist/{id}"
+        }
+    ],
     "soundcloud": [
         {
             "patterns": [

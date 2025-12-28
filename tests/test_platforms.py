@@ -255,6 +255,28 @@ class TestAllPlatforms:
         assert sl.is_valid("soundcloud", profile_id) is True
         assert sl.sanitize("soundcloud", profile_id) == f"https://soundcloud.com/{profile_id}"
 
+    def test_apple_music(self):
+        """Test Apple Music platform"""
+        sl = SocialLinks()
+        artist_id = "136975"
+        assert sl.detect_platform(f"https://music.apple.com/artist/{artist_id}") == "apple_music"
+        assert sl.is_valid("apple_music", f"https://music.apple.com/artist/{artist_id}") is True
+        assert sl.sanitize("apple_music", f"https://music.apple.com/artist/{artist_id}") == f"https://music.apple.com/artist/{artist_id}"
+        # Test direct ID
+        assert sl.is_valid("apple_music", artist_id) is True
+        assert sl.sanitize("apple_music", artist_id) == f"https://music.apple.com/artist/{artist_id}"
+        # Test specific cases from PHP
+        test_cases = [
+            ('https://music.apple.com/us/artist/the-beatles/136975', 'https://music.apple.com/artist/136975'),
+            ('https://music.apple.com/us/artist/beatles/136975', 'https://music.apple.com/artist/136975'),
+            ('https://music.apple.com/artist/beatles/136975', 'https://music.apple.com/artist/136975'),
+            ('https://music.apple.com/artist/136975', 'https://music.apple.com/artist/136975'),
+            ('https://itunes.apple.com/us/artist/id136975', 'https://music.apple.com/artist/136975'),
+        ]
+        for source, expected in test_cases:
+            assert sl.is_valid("apple_music", source) is True
+            assert sl.sanitize("apple_music", source) == expected
+
     def test_spotify(self):
         """Test Spotify platform"""
         sl = SocialLinks()
@@ -328,6 +350,11 @@ class TestAllPlatforms:
         assert sl.is_valid("tiktok", f"@{profile_id}") is True
         assert sl.sanitize("tiktok", profile_id) == f"https://tiktok.com/@{profile_id}"
         assert sl.sanitize("tiktok", f"@{profile_id}") == f"https://tiktok.com/@{profile_id}"
+        # Test www and http variations
+        assert sl.is_valid("tiktok", f"https://www.tiktok.com/@{profile_id}") is True
+        assert sl.sanitize("tiktok", f"https://www.tiktok.com/@{profile_id}") == f"https://tiktok.com/@{profile_id}"
+        assert sl.is_valid("tiktok", f"http://www.tiktok.com/@{profile_id}") is True
+        assert sl.sanitize("tiktok", f"http://www.tiktok.com/@{profile_id}") == f"https://tiktok.com/@{profile_id}"
 
     def test_twitch(self):
         """Test Twitch platform"""
