@@ -932,6 +932,47 @@ class TestAllPlatforms:
         assert sl.is_valid("reddit", f"u/{profile_id}") is True
         assert sl.sanitize("reddit", f"u/{profile_id}") == f"https://reddit.com/user/{profile_id}"
 
+    def test_reddit_subreddit(self):
+        """Test Reddit subreddit /r/ path"""
+        sl = SocialLinks()
+        subreddit_name = "python"
+        assert sl.detect_platform(f"https://reddit.com/r/{subreddit_name}") == "reddit"
+        assert sl.is_valid("reddit", f"https://reddit.com/r/{subreddit_name}") is True
+        assert sl.sanitize("reddit", f"https://reddit.com/r/{subreddit_name}") == f"https://reddit.com/r/{subreddit_name}"
+
+    def test_reddit_subreddit_variations(self):
+        """Test Reddit subreddit with various URL formats"""
+        sl = SocialLinks()
+        subreddit_name = "learnprogramming"
+        
+        # Test www subdomain
+        assert sl.detect_platform(f"https://www.reddit.com/r/{subreddit_name}") == "reddit"
+        assert sl.is_valid("reddit", f"https://www.reddit.com/r/{subreddit_name}") is True
+        assert sl.sanitize("reddit", f"https://www.reddit.com/r/{subreddit_name}") == f"https://reddit.com/r/{subreddit_name}"
+        
+        # Test old.reddit.com
+        assert sl.detect_platform(f"https://old.reddit.com/r/{subreddit_name}") == "reddit"
+        assert sl.is_valid("reddit", f"https://old.reddit.com/r/{subreddit_name}") is True
+        assert sl.sanitize("reddit", f"https://old.reddit.com/r/{subreddit_name}") == f"https://reddit.com/r/{subreddit_name}"
+        
+        # Test with trailing slash
+        assert sl.is_valid("reddit", f"https://reddit.com/r/{subreddit_name}/") is True
+        assert sl.sanitize("reddit", f"https://reddit.com/r/{subreddit_name}/") == f"https://reddit.com/r/{subreddit_name}"
+        
+        # Test http protocol
+        assert sl.detect_platform(f"http://reddit.com/r/{subreddit_name}") == "reddit"
+        assert sl.is_valid("reddit", f"http://reddit.com/r/{subreddit_name}") is True
+        assert sl.sanitize("reddit", f"http://reddit.com/r/{subreddit_name}") == f"https://reddit.com/r/{subreddit_name}"
+
+    def test_reddit_subreddit_r_prefix(self):
+        """Test Reddit r/ prefix format (e.g., r/subreddit)"""
+        sl = SocialLinks()
+        subreddit_name = "python"
+        # Test r/subreddit format
+        assert sl.detect_platform(f"r/{subreddit_name}") == "reddit"
+        assert sl.is_valid("reddit", f"r/{subreddit_name}") is True
+        assert sl.sanitize("reddit", f"r/{subreddit_name}") == f"https://reddit.com/r/{subreddit_name}"
+
     def test_snapchat(self):
         """Test Snapchat platform"""
         sl = SocialLinks()

@@ -230,6 +230,14 @@ PREDEFINED_PLATFORMS: Dict[str, List[Dict[str, Any]]] = {
                 rf"^{PROFILE_ID}$"
             ],
             "sanitized": "https://reddit.com/user/{id}"
+        },
+        {
+            "patterns": [
+                rf"https?://(www\.)?reddit\.com/r/{PROFILE_ID}/?$",
+                rf"https?://old\.reddit\.com/r/{PROFILE_ID}/?$",
+                rf"^r/{PROFILE_ID}$"
+            ],
+            "sanitized": "https://reddit.com/r/{id}"
         }
     ],
     "signal": [
