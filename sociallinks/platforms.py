@@ -5,7 +5,7 @@ from typing import Dict, List, Any
 # ----------------------------------------------------------------------
 PROFILE_ID = r"(?P<id>[A-Za-z0-9_.-]+)"
 PROFILE_ID_AT = r"(?P<id>@?[A-Za-z0-9_.-]+)" #Youtube channel links can be with or without @
-PROFILE_ID_UNICODE = r"(?P<id>[\w&'–®\.-]+)" #LinkedIn profile IDs can contain Unicode characters (e.g., ü in peter-müller-81a8), ampersand, apostrophe, en dash, and registered trademark. \w matches Unicode letters, digits, and underscore
+PROFILE_ID_UNICODE = r"(?P<id>[\w&%'–®\.-]+)" #LinkedIn profile IDs can contain Unicode characters (e.g., ü in peter-müller-81a8), ampersand, apostrophe, en dash, and registered trademark. \w matches Unicode letters, digits, and underscore
 
 # ----------------------------------------------------------------------
 # Predefined platforms

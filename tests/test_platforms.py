@@ -193,7 +193,8 @@ class TestAllPlatforms:
             ('https://www.linkedin.com/company/dealroom-co/', 'https://linkedin.com/company/dealroom-co'),
             ('https://www.linkedin.com/company/upjers-gmbh-&-co.-kg', 'https://linkedin.com/company/upjers-gmbh-&-co.-kg'),
             ('https://www.linkedin.com/company/magis_official', 'https://linkedin.com/company/magis_official'),
-            ('https://www.linkedin.com/company/cake-–-ridecake.com/', 'https://linkedin.com/company/cake-–-ridecake.com'),   
+            ('https://www.linkedin.com/company/cake-–-ridecake.com/', 'https://linkedin.com/company/cake-–-ridecake.com'),
+            ('https://www.linkedin.com/company/brigham-and-women%27s-hospital/', 'https://linkedin.com/company/brigham-and-women%27s-hospital'),
         ]
         
         for source, expected in company_test_cases:
