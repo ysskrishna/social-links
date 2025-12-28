@@ -224,9 +224,10 @@ PREDEFINED_PLATFORMS: Dict[str, List[Dict[str, Any]]] = {
         {
             "patterns": [
                 rf"https?://{PROFILE_ID}\.substack\.com/?$",
+                rf"https?://(www\.)?substack\.com/@{PROFILE_ID}/?$",
                 rf"^{PROFILE_ID}$"
             ],
-            "sanitized": "https://{id}.substack.com"
+            "sanitized": "https://substack.com/@{id}"
         }
     ],
     "telegram": [
