@@ -406,6 +406,21 @@ PREDEFINED_PLATFORMS: Dict[str, List[Dict[str, Any]]] = {
             "sanitized": "https://open.weixin.qq.com/qr/code?username={id}"
         }
     ],
+    "weibo": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?weibo\.com/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://weibo.com/{id}"
+        },
+        {
+            "patterns": [
+                rf"https?://(www\.)?weibo\.com/u/{PROFILE_ID}/?$"
+            ],
+            "sanitized": "https://weibo.com/u/{id}"
+        }
+    ],
     "vimeo": [
         {
             "patterns": [
