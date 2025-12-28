@@ -432,15 +432,10 @@ class TestAllPlatforms:
     def test_youtube(self):
         """Test YouTube platform"""
         sl = SocialLinks()
-        profile_id = "ysskrishna"
-        assert sl.detect_platform(f"https://youtube.com/@{profile_id}") == "youtube"
-        assert sl.is_valid("youtube", f"https://youtube.com/@{profile_id}") is True
-        assert sl.sanitize("youtube", f"https://youtube.com/@{profile_id}") == f"https://youtube.com/@{profile_id}"
-        # Test direct username (with and without @)
-        assert sl.is_valid("youtube", profile_id) is True
-        assert sl.is_valid("youtube", f"@{profile_id}") is True
-        assert sl.sanitize("youtube", profile_id) == f"https://youtube.com/@{profile_id}"
-        assert sl.sanitize("youtube", f"@{profile_id}") == f"https://youtube.com/@{profile_id}"
+        profile_id = "@ysskrishna"
+        assert sl.detect_platform(f"https://youtube.com/{profile_id}") == "youtube"
+        assert sl.is_valid("youtube", f"https://youtube.com/{profile_id}") is True
+        assert sl.sanitize("youtube", f"https://youtube.com/{profile_id}") == f"https://youtube.com/{profile_id}"
 
     def test_youtube_channel(self):
         """Test YouTube channel URL"""
@@ -448,7 +443,7 @@ class TestAllPlatforms:
         profile_id = "UC1234567890"
         assert sl.detect_platform(f"https://youtube.com/channel/{profile_id}") == "youtube"
         assert sl.is_valid("youtube", f"https://youtube.com/channel/{profile_id}") is True
-        assert sl.sanitize("youtube", f"https://youtube.com/channel/{profile_id}") == f"https://youtube.com/@{profile_id}"
+        assert sl.sanitize("youtube", f"https://youtube.com/channel/{profile_id}") == f"https://youtube.com/{profile_id}"
 
     def test_youtube_user(self):
         """Test YouTube user URL"""
@@ -456,7 +451,7 @@ class TestAllPlatforms:
         profile_id = "ysskrishna"
         assert sl.detect_platform(f"https://youtube.com/user/{profile_id}") == "youtube"
         assert sl.is_valid("youtube", f"https://youtube.com/user/{profile_id}") is True
-        assert sl.sanitize("youtube", f"https://youtube.com/user/{profile_id}") == f"https://youtube.com/@{profile_id}"
+        assert sl.sanitize("youtube", f"https://youtube.com/user/{profile_id}") == f"https://youtube.com/{profile_id}"
 
     def test_youtube_mobile(self):
         """Test YouTube mobile URL"""
@@ -464,7 +459,36 @@ class TestAllPlatforms:
         profile_id = "ysskrishna"
         assert sl.detect_platform(f"https://m.youtube.com/c/{profile_id}") == "youtube"
         assert sl.is_valid("youtube", f"https://m.youtube.com/c/{profile_id}") is True
-        assert sl.sanitize("youtube", f"https://m.youtube.com/c/{profile_id}") == f"https://youtube.com/@{profile_id}"
+        assert sl.sanitize("youtube", f"https://m.youtube.com/c/{profile_id}") == f"https://youtube.com/{profile_id}"
+
+    def test_youtube_various_formats(self):
+        """Test YouTube with various URL formats (matching PHP test cases)"""
+        sl = SocialLinks()
+        profile_id = "Google"
+        # Test www.youtube.com/user/Google
+        assert sl.detect_platform(f"https://www.youtube.com/user/{profile_id}") == "youtube"
+        assert sl.is_valid("youtube", f"https://www.youtube.com/user/{profile_id}") is True
+        assert sl.sanitize("youtube", f"https://www.youtube.com/user/{profile_id}") == f"https://youtube.com/{profile_id}"
+        # Test www.youtube.com/c/Google
+        assert sl.detect_platform(f"https://www.youtube.com/c/{profile_id}") == "youtube"
+        assert sl.is_valid("youtube", f"https://www.youtube.com/c/{profile_id}") is True
+        assert sl.sanitize("youtube", f"https://www.youtube.com/c/{profile_id}") == f"https://youtube.com/{profile_id}"
+        # Test www.youtube.com/Google
+        assert sl.detect_platform(f"https://www.youtube.com/{profile_id}") == "youtube"
+        assert sl.is_valid("youtube", f"https://www.youtube.com/{profile_id}") is True
+        assert sl.sanitize("youtube", f"https://www.youtube.com/{profile_id}") == f"https://youtube.com/{profile_id}"
+        # Test www.youtube.com/Google/ (with trailing slash)
+        assert sl.detect_platform(f"https://www.youtube.com/{profile_id}/") == "youtube"
+        assert sl.is_valid("youtube", f"https://www.youtube.com/{profile_id}/") is True
+        assert sl.sanitize("youtube", f"https://www.youtube.com/{profile_id}/") == f"https://youtube.com/{profile_id}"
+        # Test youtube.com/Google (without www)
+        assert sl.detect_platform(f"https://youtube.com/{profile_id}") == "youtube"
+        assert sl.is_valid("youtube", f"https://youtube.com/{profile_id}") is True
+        assert sl.sanitize("youtube", f"https://youtube.com/{profile_id}") == f"https://youtube.com/{profile_id}"
+        # Test http://www.youtube.com/Google (http instead of https)
+        assert sl.detect_platform(f"http://www.youtube.com/{profile_id}") == "youtube"
+        assert sl.is_valid("youtube", f"http://www.youtube.com/{profile_id}") is True
+        assert sl.sanitize("youtube", f"http://www.youtube.com/{profile_id}") == f"https://youtube.com/{profile_id}"
 
     def test_reddit(self):
         """Test Reddit platform"""

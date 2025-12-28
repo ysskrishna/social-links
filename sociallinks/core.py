@@ -99,7 +99,7 @@ class SocialLinks:
                 pid = self._extract_id(m)
                 if not pid:
                     raise PlatformIDExtractionError("Could not extract platform ID")
-                pid = pid.strip().lstrip("@").rstrip("/")
+                pid = pid.strip().rstrip("/")
                 return sanitized.format(id=pid)
 
         raise URLMismatchError(f"URL does not match platform '{platform_name}'")

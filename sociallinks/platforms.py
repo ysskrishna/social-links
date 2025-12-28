@@ -4,6 +4,7 @@ from typing import Dict, List, Any
 # Common ID regex
 # ----------------------------------------------------------------------
 PROFILE_ID = r"(?P<id>[A-Za-z0-9_.-]+)"
+PROFILE_ID_AT = r"(?P<id>@?[A-Za-z0-9_.-]+)"
 
 # ----------------------------------------------------------------------
 # Predefined platforms
@@ -305,13 +306,14 @@ PREDEFINED_PLATFORMS: Dict[str, List[Dict[str, Any]]] = {
     "youtube": [
         {
             "patterns": [
-                rf"https?://(www\.)?youtube\.com/@?{PROFILE_ID}/?$",
+                rf"https?://(www\.)?youtube\.com/{PROFILE_ID_AT}/?$",
                 rf"https?://(www\.)?youtube\.com/channel/{PROFILE_ID}/?$",
                 rf"https?://(www\.)?youtube\.com/user/{PROFILE_ID}/?$",
+                rf"https?://(www\.)?youtube\.com/c/{PROFILE_ID}/?$",
                 rf"https?://m\.youtube\.com/c/{PROFILE_ID}/?$",
-                rf"^@?{PROFILE_ID}$"
+                rf"^{PROFILE_ID_AT}$"
             ],
-            "sanitized": "https://youtube.com/@{id}"
+            "sanitized": "https://youtube.com/{id}"
         }
     ]
 }
