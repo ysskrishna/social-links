@@ -330,6 +330,40 @@ class TestAllPlatforms:
         assert sl.is_valid("github", profile_id) is True
         assert sl.sanitize("github", profile_id) == f"https://github.com/{profile_id}"
 
+    def test_gitlab(self):
+        """Test GitLab platform"""
+        sl = SocialLinks()
+        profile_id = "ysskrishna"
+        assert sl.detect_platform(f"https://gitlab.com/{profile_id}") == "gitlab"
+        assert sl.is_valid("gitlab", f"https://gitlab.com/{profile_id}") is True
+        assert sl.sanitize("gitlab", f"https://gitlab.com/{profile_id}") == f"https://gitlab.com/{profile_id}"
+        # Test direct username
+        assert sl.is_valid("gitlab", profile_id) is True
+        assert sl.sanitize("gitlab", profile_id) == f"https://gitlab.com/{profile_id}"
+
+    def test_gitlab_with_www(self):
+        """Test GitLab with www subdomain"""
+        sl = SocialLinks()
+        profile_id = "ysskrishna"
+        assert sl.detect_platform(f"https://www.gitlab.com/{profile_id}") == "gitlab"
+        assert sl.is_valid("gitlab", f"https://www.gitlab.com/{profile_id}") is True
+        assert sl.sanitize("gitlab", f"https://www.gitlab.com/{profile_id}") == f"https://gitlab.com/{profile_id}"
+
+    def test_gitlab_with_http(self):
+        """Test GitLab with http protocol"""
+        sl = SocialLinks()
+        profile_id = "ysskrishna"
+        assert sl.detect_platform(f"http://gitlab.com/{profile_id}") == "gitlab"
+        assert sl.is_valid("gitlab", f"http://gitlab.com/{profile_id}") is True
+        assert sl.sanitize("gitlab", f"http://gitlab.com/{profile_id}") == f"https://gitlab.com/{profile_id}"
+
+    def test_gitlab_with_trailing_slash(self):
+        """Test GitLab with trailing slash"""
+        sl = SocialLinks()
+        profile_id = "ysskrishna"
+        assert sl.is_valid("gitlab", f"https://gitlab.com/{profile_id}/") is True
+        assert sl.sanitize("gitlab", f"https://gitlab.com/{profile_id}/") == f"https://gitlab.com/{profile_id}"
+
     def test_gravatar(self):
         """Test Gravatar platform"""
         sl = SocialLinks()
@@ -375,6 +409,40 @@ class TestAllPlatforms:
         profile_id = "ysskrishna"
         assert sl.is_valid("gravatar", f"https://gravatar.com/{profile_id}/") is True
         assert sl.sanitize("gravatar", f"https://gravatar.com/{profile_id}/") == f"https://gravatar.com/{profile_id}"
+
+    def test_hackernews(self):
+        """Test Hacker News platform"""
+        sl = SocialLinks()
+        profile_id = "pg"
+        assert sl.detect_platform(f"https://news.ycombinator.com/user?id={profile_id}") == "hackernews"
+        assert sl.is_valid("hackernews", f"https://news.ycombinator.com/user?id={profile_id}") is True
+        assert sl.sanitize("hackernews", f"https://news.ycombinator.com/user?id={profile_id}") == f"https://news.ycombinator.com/user?id={profile_id}"
+        # Test direct username
+        assert sl.is_valid("hackernews", profile_id) is True
+        assert sl.sanitize("hackernews", profile_id) == f"https://news.ycombinator.com/user?id={profile_id}"
+
+    def test_hackernews_with_www(self):
+        """Test Hacker News with www subdomain"""
+        sl = SocialLinks()
+        profile_id = "pg"
+        assert sl.detect_platform(f"https://www.news.ycombinator.com/user?id={profile_id}") == "hackernews"
+        assert sl.is_valid("hackernews", f"https://www.news.ycombinator.com/user?id={profile_id}") is True
+        assert sl.sanitize("hackernews", f"https://www.news.ycombinator.com/user?id={profile_id}") == f"https://news.ycombinator.com/user?id={profile_id}"
+
+    def test_hackernews_with_http(self):
+        """Test Hacker News with http protocol"""
+        sl = SocialLinks()
+        profile_id = "pg"
+        assert sl.detect_platform(f"http://news.ycombinator.com/user?id={profile_id}") == "hackernews"
+        assert sl.is_valid("hackernews", f"http://news.ycombinator.com/user?id={profile_id}") is True
+        assert sl.sanitize("hackernews", f"http://news.ycombinator.com/user?id={profile_id}") == f"https://news.ycombinator.com/user?id={profile_id}"
+
+    def test_hackernews_with_trailing_slash(self):
+        """Test Hacker News with trailing slash"""
+        sl = SocialLinks()
+        profile_id = "pg"
+        assert sl.is_valid("hackernews", f"https://news.ycombinator.com/user?id={profile_id}/") is True
+        assert sl.sanitize("hackernews", f"https://news.ycombinator.com/user?id={profile_id}/") == f"https://news.ycombinator.com/user?id={profile_id}"
 
     def test_instagram(self):
         """Test Instagram platform"""

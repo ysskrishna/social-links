@@ -129,6 +129,15 @@ PREDEFINED_PLATFORMS: Dict[str, List[Dict[str, Any]]] = {
             "sanitized": "https://github.com/{id}"
         }
     ],
+    "gitlab": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?gitlab\.com/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://gitlab.com/{id}"
+        }
+    ],
     "gravatar": [
         {
             "patterns": [
@@ -136,6 +145,15 @@ PREDEFINED_PLATFORMS: Dict[str, List[Dict[str, Any]]] = {
                 rf"^{PROFILE_ID}$"
             ],
             "sanitized": "https://gravatar.com/{id}"
+        }
+    ],
+    "hackernews": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?news\.ycombinator\.com/user\?id={PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://news.ycombinator.com/user?id={id}"
         }
     ],
     "instagram": [
