@@ -551,23 +551,41 @@ class TestAllPlatforms:
         assert sl.is_valid("bandcamp", f"https://{profile_id}.bandcamp.com") is True
         assert sl.sanitize("bandcamp", f"https://{profile_id}.bandcamp.com") == f"https://{profile_id}.bandcamp.com"
 
-    def test_spotify(self):
-        """Test Spotify platform"""
+    def test_spotify_artist(self):
+        """Test Spotify artist profile"""
         sl = SocialLinks()
-        profile_id = "3WrFJ7ztbogyGnTHbHJFl2"
-        assert sl.detect_platform(f"https://open.spotify.com/artist/{profile_id}") == "spotify"
-        assert sl.is_valid("spotify", f"https://open.spotify.com/artist/{profile_id}") is True
-        assert sl.sanitize("spotify", f"https://open.spotify.com/artist/{profile_id}") == f"https://open.spotify.com/artist/{profile_id}"
-        # Test direct username
-        assert sl.is_valid("spotify", profile_id) is True
-        assert sl.sanitize("spotify", profile_id) == f"https://open.spotify.com/artist/{profile_id}"
+        artist_id = "3WrFJ7ztbogyGnTHbHJFl2"
+        assert sl.detect_platform(f"https://open.spotify.com/artist/{artist_id}") == "spotify"
+        assert sl.is_valid("spotify", f"https://open.spotify.com/artist/{artist_id}") is True
+        assert sl.sanitize("spotify", f"https://open.spotify.com/artist/{artist_id}") == f"https://open.spotify.com/artist/{artist_id}"
+        # Test direct artist ID (defaults to artist)
+        assert sl.is_valid("spotify", artist_id) is True
+        assert sl.sanitize("spotify", artist_id) == f"https://open.spotify.com/artist/{artist_id}"
         
-        test_cases = [
-            ('spotify:artist:3WrFJ7ztbogyGnTHbHJFl2', 'https://open.spotify.com/artist/3WrFJ7ztbogyGnTHbHJFl2'),
-        ]
-        for source, expected in test_cases:
-            assert sl.is_valid("spotify", source) is True
-            assert sl.sanitize("spotify", source) == expected
+    def test_spotify_artist_uri(self):
+        """Test Spotify artist URI format (spotify:artist:id)"""
+        sl = SocialLinks()
+        artist_id = "3WrFJ7ztbogyGnTHbHJFl2"
+        uri = f"spotify:artist:{artist_id}"
+        assert sl.detect_platform(uri) == "spotify"
+        assert sl.is_valid("spotify", uri) is True
+        assert sl.sanitize("spotify", uri) == f"https://open.spotify.com/artist/{artist_id}"
+
+    def test_spotify_user(self):
+        """Test Spotify user profile"""
+        sl = SocialLinks()
+        user_id = "vanesamartinoficial"
+        assert sl.detect_platform(f"https://open.spotify.com/user/{user_id}") == "spotify"
+        assert sl.is_valid("spotify", f"https://open.spotify.com/user/{user_id}") is True
+        assert sl.sanitize("spotify", f"https://open.spotify.com/user/{user_id}") == f"https://open.spotify.com/user/{user_id}"
+        
+    def test_spotify_user_long_id(self):
+        """Test Spotify user profile with long generated ID"""
+        sl = SocialLinks()
+        user_id = "31wwwnrvhv3i2l2z43ipcmpapoya"
+        assert sl.detect_platform(f"https://open.spotify.com/user/{user_id}") == "spotify"
+        assert sl.is_valid("spotify", f"https://open.spotify.com/user/{user_id}") is True
+        assert sl.sanitize("spotify", f"https://open.spotify.com/user/{user_id}") == f"https://open.spotify.com/user/{user_id}"
 
     def test_stackoverflow(self):
         """Test Stack Overflow platform"""

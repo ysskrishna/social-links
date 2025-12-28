@@ -284,6 +284,12 @@ PREDEFINED_PLATFORMS: Dict[str, List[Dict[str, Any]]] = {
                 rf"^{PROFILE_ID}$"
             ],
             "sanitized": "https://open.spotify.com/artist/{id}"
+        },
+        {
+            "patterns": [
+                rf"https?://(open\.)?spotify\.com/user/{PROFILE_ID}/?$"
+            ],
+            "sanitized": "https://open.spotify.com/user/{id}"
         }
     ],
     "stackoverflow": [
