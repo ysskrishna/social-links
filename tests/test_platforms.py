@@ -654,4 +654,28 @@ class TestAllPlatforms:
         assert sl.is_valid("whatsapp", phone_number) is True
         assert sl.sanitize("whatsapp", phone_number) == f"https://wa.me/{phone_number}"
 
+    def test_whatsapp_send_format(self):
+        """Test WhatsApp whatsapp.com/send?phone= format"""
+        sl = SocialLinks()
+        phone_number = "1234567890"
+        # Test whatsapp.com/send?phone= format
+        assert sl.detect_platform(f"https://whatsapp.com/send?phone={phone_number}") == "whatsapp"
+        assert sl.is_valid("whatsapp", f"https://whatsapp.com/send?phone={phone_number}") is True
+        assert sl.sanitize("whatsapp", f"https://whatsapp.com/send?phone={phone_number}") == f"https://wa.me/{phone_number}"
+        # Test with www subdomain
+        assert sl.is_valid("whatsapp", f"https://www.whatsapp.com/send?phone={phone_number}") is True
+        assert sl.sanitize("whatsapp", f"https://www.whatsapp.com/send?phone={phone_number}") == f"https://wa.me/{phone_number}"
+        # Test http protocol
+        assert sl.is_valid("whatsapp", f"http://whatsapp.com/send?phone={phone_number}") is True
+        assert sl.sanitize("whatsapp", f"http://whatsapp.com/send?phone={phone_number}") == f"https://wa.me/{phone_number}"
+
+    def test_whatsapp_send_format_with_plus(self):
+        """Test WhatsApp whatsapp.com/send?phone= format with international format"""
+        sl = SocialLinks()
+        phone_number = "+1234567890"
+        # Test whatsapp.com/send?phone= format with +
+        assert sl.detect_platform(f"https://whatsapp.com/send?phone={phone_number}") == "whatsapp"
+        assert sl.is_valid("whatsapp", f"https://whatsapp.com/send?phone={phone_number}") is True
+        assert sl.sanitize("whatsapp", f"https://whatsapp.com/send?phone={phone_number}") == f"https://wa.me/{phone_number}"
+
 
