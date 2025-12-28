@@ -262,10 +262,10 @@ class TestAllPlatforms:
         assert sl.detect_platform(f"https://music.apple.com/artist/{artist_id}") == "apple_music"
         assert sl.is_valid("apple_music", f"https://music.apple.com/artist/{artist_id}") is True
         assert sl.sanitize("apple_music", f"https://music.apple.com/artist/{artist_id}") == f"https://music.apple.com/artist/{artist_id}"
-        # Test direct ID
+        
         assert sl.is_valid("apple_music", artist_id) is True
         assert sl.sanitize("apple_music", artist_id) == f"https://music.apple.com/artist/{artist_id}"
-        # Test specific cases from PHP
+        
         test_cases = [
             ('https://music.apple.com/us/artist/the-beatles/136975', 'https://music.apple.com/artist/136975'),
             ('https://music.apple.com/us/artist/beatles/136975', 'https://music.apple.com/artist/136975'),
@@ -280,13 +280,20 @@ class TestAllPlatforms:
     def test_spotify(self):
         """Test Spotify platform"""
         sl = SocialLinks()
-        profile_id = "ysskrishna"
+        profile_id = "3WrFJ7ztbogyGnTHbHJFl2"
         assert sl.detect_platform(f"https://open.spotify.com/artist/{profile_id}") == "spotify"
         assert sl.is_valid("spotify", f"https://open.spotify.com/artist/{profile_id}") is True
         assert sl.sanitize("spotify", f"https://open.spotify.com/artist/{profile_id}") == f"https://open.spotify.com/artist/{profile_id}"
         # Test direct username
         assert sl.is_valid("spotify", profile_id) is True
         assert sl.sanitize("spotify", profile_id) == f"https://open.spotify.com/artist/{profile_id}"
+        
+        test_cases = [
+            ('spotify:artist:3WrFJ7ztbogyGnTHbHJFl2', 'https://open.spotify.com/artist/3WrFJ7ztbogyGnTHbHJFl2'),
+        ]
+        for source, expected in test_cases:
+            assert sl.is_valid("spotify", source) is True
+            assert sl.sanitize("spotify", source) == expected
 
     def test_stackoverflow(self):
         """Test Stack Overflow platform"""
