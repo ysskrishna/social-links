@@ -22,6 +22,21 @@ PREDEFINED_PLATFORMS: Dict[str, List[Dict[str, Any]]] = {
             "sanitized": "https://behance.net/{id}"
         }
     ],
+    "crunchbase": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?crunchbase\.com/organization/{PROFILE_ID}/?$",
+                rf"https?://(www\.)?crunchbase\.com/company/{PROFILE_ID}/?$",
+            ],
+            "sanitized": "https://www.crunchbase.com/organization/{id}"
+        },
+        {
+            "patterns": [
+                rf"https?://(www\.)?crunchbase\.com/person/{PROFILE_ID}/?$",
+            ],
+            "sanitized": "https://www.crunchbase.com/person/{id}"
+        }
+    ],
     "bluesky": [
         {
             "patterns": [

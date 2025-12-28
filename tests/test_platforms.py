@@ -15,6 +15,53 @@ class TestAllPlatforms:
         assert sl.is_valid("behance", profile_id) is True
         assert sl.sanitize("behance", profile_id) == f"https://behance.net/{profile_id}"
 
+    def test_crunchbase_organization(self):
+        """Test Crunchbase organization profile"""
+        sl = SocialLinks()
+        profile_id = "slack"
+        assert sl.detect_platform(f"https://www.crunchbase.com/organization/{profile_id}") == "crunchbase"
+        assert sl.is_valid("crunchbase", f"https://www.crunchbase.com/organization/{profile_id}") is True
+        assert sl.sanitize("crunchbase", f"https://www.crunchbase.com/organization/{profile_id}") == f"https://www.crunchbase.com/organization/{profile_id}"
+
+    def test_crunchbase_company(self):
+        """Test Crunchbase company profile"""
+        sl = SocialLinks()
+        profile_id = "tiny-speck"
+        assert sl.detect_platform(f"https://www.crunchbase.com/company/{profile_id}") == "crunchbase"
+        assert sl.is_valid("crunchbase", f"https://www.crunchbase.com/company/{profile_id}") is True
+        assert sl.sanitize("crunchbase", f"https://www.crunchbase.com/company/{profile_id}") == f"https://www.crunchbase.com/organization/{profile_id}"
+
+    def test_crunchbase_person(self):
+        """Test Crunchbase person profile"""
+        sl = SocialLinks()
+        profile_id = "elon-musk"
+        assert sl.detect_platform(f"https://www.crunchbase.com/person/{profile_id}") == "crunchbase"
+        assert sl.is_valid("crunchbase", f"https://www.crunchbase.com/person/{profile_id}") is True
+        assert sl.sanitize("crunchbase", f"https://www.crunchbase.com/person/{profile_id}") == f"https://www.crunchbase.com/person/{profile_id}"
+
+    def test_crunchbase_without_www(self):
+        """Test Crunchbase without www subdomain"""
+        sl = SocialLinks()
+        profile_id = "slack"
+        assert sl.detect_platform(f"https://crunchbase.com/organization/{profile_id}") == "crunchbase"
+        assert sl.is_valid("crunchbase", f"https://crunchbase.com/organization/{profile_id}") is True
+        assert sl.sanitize("crunchbase", f"https://crunchbase.com/organization/{profile_id}") == f"https://www.crunchbase.com/organization/{profile_id}"
+
+    def test_crunchbase_with_http(self):
+        """Test Crunchbase with http protocol"""
+        sl = SocialLinks()
+        profile_id = "slack"
+        assert sl.detect_platform(f"http://www.crunchbase.com/organization/{profile_id}") == "crunchbase"
+        assert sl.is_valid("crunchbase", f"http://www.crunchbase.com/organization/{profile_id}") is True
+        assert sl.sanitize("crunchbase", f"http://www.crunchbase.com/organization/{profile_id}") == f"https://www.crunchbase.com/organization/{profile_id}"
+
+    def test_crunchbase_with_trailing_slash(self):
+        """Test Crunchbase with trailing slash"""
+        sl = SocialLinks()
+        profile_id = "slack"
+        assert sl.is_valid("crunchbase", f"https://www.crunchbase.com/organization/{profile_id}/") is True
+        assert sl.sanitize("crunchbase", f"https://www.crunchbase.com/organization/{profile_id}/") == f"https://www.crunchbase.com/organization/{profile_id}"
+
     def test_bluesky(self):
         """Test Bluesky platform"""
         sl = SocialLinks()
