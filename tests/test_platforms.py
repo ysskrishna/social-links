@@ -280,6 +280,40 @@ class TestAllPlatforms:
         assert sl.is_valid("keybase", profile_id) is True
         assert sl.sanitize("keybase", profile_id) == f"https://keybase.io/{profile_id}"
 
+    def test_kuaishou(self):
+        """Test Kuaishou platform"""
+        sl = SocialLinks()
+        profile_id = "3xxdnfw963m6abu"
+        assert sl.detect_platform(f"https://www.kuaishou.com/profile/{profile_id}") == "kuaishou"
+        assert sl.is_valid("kuaishou", f"https://www.kuaishou.com/profile/{profile_id}") is True
+        assert sl.sanitize("kuaishou", f"https://www.kuaishou.com/profile/{profile_id}") == f"https://www.kuaishou.com/profile/{profile_id}"
+        # Test direct username
+        assert sl.is_valid("kuaishou", profile_id) is True
+        assert sl.sanitize("kuaishou", profile_id) == f"https://www.kuaishou.com/profile/{profile_id}"
+
+    def test_kuaishou_without_www(self):
+        """Test Kuaishou without www subdomain"""
+        sl = SocialLinks()
+        profile_id = "3xxdnfw963m6abu"
+        assert sl.detect_platform(f"https://kuaishou.com/profile/{profile_id}") == "kuaishou"
+        assert sl.is_valid("kuaishou", f"https://kuaishou.com/profile/{profile_id}") is True
+        assert sl.sanitize("kuaishou", f"https://kuaishou.com/profile/{profile_id}") == f"https://www.kuaishou.com/profile/{profile_id}"
+
+    def test_kuaishou_with_http(self):
+        """Test Kuaishou with http protocol"""
+        sl = SocialLinks()
+        profile_id = "3xxdnfw963m6abu"
+        assert sl.detect_platform(f"http://www.kuaishou.com/profile/{profile_id}") == "kuaishou"
+        assert sl.is_valid("kuaishou", f"http://www.kuaishou.com/profile/{profile_id}") is True
+        assert sl.sanitize("kuaishou", f"http://www.kuaishou.com/profile/{profile_id}") == f"https://www.kuaishou.com/profile/{profile_id}"
+
+    def test_kuaishou_with_trailing_slash(self):
+        """Test Kuaishou with trailing slash"""
+        sl = SocialLinks()
+        profile_id = "3xxdnfw963m6abu"
+        assert sl.is_valid("kuaishou", f"https://www.kuaishou.com/profile/{profile_id}/") is True
+        assert sl.sanitize("kuaishou", f"https://www.kuaishou.com/profile/{profile_id}/") == f"https://www.kuaishou.com/profile/{profile_id}"
+
     def test_lemmy_world(self):
         """Test Lemmy World platform"""
         sl = SocialLinks()

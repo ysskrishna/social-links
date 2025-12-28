@@ -126,6 +126,15 @@ PREDEFINED_PLATFORMS: Dict[str, List[Dict[str, Any]]] = {
             "sanitized": "https://keybase.io/{id}"
         }
     ],
+    "kuaishou": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?kuaishou\.com/profile/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.kuaishou.com/profile/{id}"
+        }
+    ],
     "lemmy_world": [
         {
             "patterns": [
