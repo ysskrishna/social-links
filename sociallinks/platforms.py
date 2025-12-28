@@ -105,7 +105,7 @@ PREDEFINED_PLATFORMS: Dict[str, List[Dict[str, Any]]] = {
             "patterns": [
                 rf"https?://(www\.)?linkedin\.com/company/{PROFILE_ID}/?$"
             ],
-            "sanitized": "https://www.linkedin.com/company/{id}/"
+            "sanitized": "https://linkedin.com/company/{id}/"
         }
     ],
     "linktree": [
@@ -164,7 +164,7 @@ PREDEFINED_PLATFORMS: Dict[str, List[Dict[str, Any]]] = {
                 rf"https?://old\.reddit\.com/u/{PROFILE_ID}/?$",
                 rf"^{PROFILE_ID}$"
             ],
-            "sanitized": "https://www.reddit.com/user/{id}"
+            "sanitized": "https://reddit.com/user/{id}"
         }
     ],
     "snapchat": [
@@ -174,7 +174,7 @@ PREDEFINED_PLATFORMS: Dict[str, List[Dict[str, Any]]] = {
                 rf"https?://(www\.)?snapchat\.com/@{PROFILE_ID}/?$",
                 rf"^@?{PROFILE_ID}$"
             ],
-            "sanitized": "https://www.snapchat.com/@{id}"
+            "sanitized": "https://snapchat.com/@{id}"
         }
     ],
     "soundcloud": [
@@ -239,7 +239,7 @@ PREDEFINED_PLATFORMS: Dict[str, List[Dict[str, Any]]] = {
                 rf"https?://(www\.)?tumblr\.com/{PROFILE_ID}/?$",
                 rf"^{PROFILE_ID}$"
             ],
-            "sanitized": "https://www.tumblr.com/{id}"
+            "sanitized": "https://tumblr.com/{id}"
         }
     ],
     "twitch": [
