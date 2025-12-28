@@ -107,6 +107,15 @@ PREDEFINED_PLATFORMS: Dict[str, List[Dict[str, Any]]] = {
             "sanitized": "https://github.com/{id}"
         }
     ],
+    "gravatar": [
+        {
+            "patterns": [
+                rf"https?://([a-z]{{2,3}}\.)?gravatar\.com/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://gravatar.com/{id}"
+        }
+    ],
     "instagram": [
         {
             "patterns": [

@@ -241,6 +241,52 @@ class TestAllPlatforms:
         assert sl.is_valid("github", profile_id) is True
         assert sl.sanitize("github", profile_id) == f"https://github.com/{profile_id}"
 
+    def test_gravatar(self):
+        """Test Gravatar platform"""
+        sl = SocialLinks()
+        profile_id = "ysskrishna"
+        assert sl.detect_platform(f"https://gravatar.com/{profile_id}") == "gravatar"
+        assert sl.is_valid("gravatar", f"https://gravatar.com/{profile_id}") is True
+        assert sl.sanitize("gravatar", f"https://gravatar.com/{profile_id}") == f"https://gravatar.com/{profile_id}"
+        # Test direct username
+        assert sl.is_valid("gravatar", profile_id) is True
+        assert sl.sanitize("gravatar", profile_id) == f"https://gravatar.com/{profile_id}"
+
+    def test_gravatar_with_language(self):
+        """Test Gravatar with language subdomain"""
+        sl = SocialLinks()
+        profile_id = "ysskrishna"
+        # Test with en subdomain
+        assert sl.detect_platform(f"https://en.gravatar.com/{profile_id}") == "gravatar"
+        assert sl.is_valid("gravatar", f"https://en.gravatar.com/{profile_id}") is True
+        assert sl.sanitize("gravatar", f"https://en.gravatar.com/{profile_id}") == f"https://gravatar.com/{profile_id}"
+        # Test with other language codes
+        assert sl.is_valid("gravatar", f"https://fr.gravatar.com/{profile_id}") is True
+        assert sl.sanitize("gravatar", f"https://fr.gravatar.com/{profile_id}") == f"https://gravatar.com/{profile_id}"
+
+    def test_gravatar_with_www(self):
+        """Test Gravatar with www subdomain"""
+        sl = SocialLinks()
+        profile_id = "ysskrishna"
+        assert sl.detect_platform(f"https://www.gravatar.com/{profile_id}") == "gravatar"
+        assert sl.is_valid("gravatar", f"https://www.gravatar.com/{profile_id}") is True
+        assert sl.sanitize("gravatar", f"https://www.gravatar.com/{profile_id}") == f"https://gravatar.com/{profile_id}"
+
+    def test_gravatar_with_http(self):
+        """Test Gravatar with http protocol"""
+        sl = SocialLinks()
+        profile_id = "ysskrishna"
+        assert sl.detect_platform(f"http://gravatar.com/{profile_id}") == "gravatar"
+        assert sl.is_valid("gravatar", f"http://gravatar.com/{profile_id}") is True
+        assert sl.sanitize("gravatar", f"http://gravatar.com/{profile_id}") == f"https://gravatar.com/{profile_id}"
+
+    def test_gravatar_with_trailing_slash(self):
+        """Test Gravatar with trailing slash"""
+        sl = SocialLinks()
+        profile_id = "ysskrishna"
+        assert sl.is_valid("gravatar", f"https://gravatar.com/{profile_id}/") is True
+        assert sl.sanitize("gravatar", f"https://gravatar.com/{profile_id}/") == f"https://gravatar.com/{profile_id}"
+
     def test_instagram(self):
         """Test Instagram platform"""
         sl = SocialLinks()
