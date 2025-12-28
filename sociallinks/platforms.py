@@ -8,6 +8,7 @@ PROFILE_ID_AT = r"(?P<id>@?[A-Za-z0-9_.-]+)" #Youtube channel links can be with 
 PROFILE_ID_UNICODE = r"(?P<id>[\w&%'–®\.-]+)" #LinkedIn profile IDs can contain Unicode characters (e.g., ü in peter-müller-81a8), ampersand, apostrophe, en dash, and registered trademark. \w matches Unicode letters, digits, and underscore
 PROFILE_ID_DOMAIN = r"(?P<id>[A-Za-z0-9_.-]+\.[A-Za-z0-9_.-]+)" #Profile IDs that require domain format (e.g., Bluesky handles like user.bsky.social)
 PROFILE_ID_NUMERIC = r"(?P<id>-?[A-Za-z0-9_.-]+)" #Telegram web client IDs can be negative (for groups/channels) like -2128475717
+PROFILE_ID_BASE64 = r"(?P<id>[A-Za-z0-9_=\-]+)" #Douyin user IDs can contain base64-like characters including equals signs
 PHONE_NUMBER = r"(?P<id>\+?[0-9]+)" #Phone numbers for WhatsApp, can optionally start with +
 
 # ----------------------------------------------------------------------
@@ -49,6 +50,15 @@ PREDEFINED_PLATFORMS: Dict[str, List[Dict[str, Any]]] = {
                 rf"^{PROFILE_ID}$"
             ],
             "sanitized": "https://discord.gg/{id}"
+        }
+    ],
+    "douyin": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?douyin\.com/user/{PROFILE_ID_BASE64}/?$",
+                rf"^{PROFILE_ID_BASE64}$"
+            ],
+            "sanitized": "https://www.douyin.com/user/{id}"
         }
     ],
     "dribbble": [
