@@ -4,7 +4,8 @@ from typing import Dict, List, Any
 # Common ID regex
 # ----------------------------------------------------------------------
 PROFILE_ID = r"(?P<id>[A-Za-z0-9_.-]+)"
-PROFILE_ID_AT = r"(?P<id>@?[A-Za-z0-9_.-]+)"
+PROFILE_ID_AT = r"(?P<id>@?[A-Za-z0-9_.-]+)" #Youtube channel links can be with or without @
+PROFILE_ID_UNICODE = r"(?P<id>[\w&'–®\.-]+)" #LinkedIn profile IDs can contain Unicode characters (e.g., ü in peter-müller-81a8), ampersand, apostrophe, en dash, and registered trademark. \w matches Unicode letters, digits, and underscore
 
 # ----------------------------------------------------------------------
 # Predefined platforms
@@ -96,17 +97,18 @@ PREDEFINED_PLATFORMS: Dict[str, List[Dict[str, Any]]] = {
     "linkedin": [
         {
             "patterns": [
-                rf"https?://([a-z]{{2,3}}\.)?linkedin\.com/in/{PROFILE_ID}/?$",
-                rf"https?://([a-z]{{2,3}}\.)?linkedin\.com/mwlite/in/{PROFILE_ID}/?$",
-                rf"^{PROFILE_ID}$"
+                # LinkedIn profile IDs can contain Unicode characters (e.g., ü in peter-müller-81a8)
+                rf"https?://([a-z]{{2,3}}\.)?linkedin\.com/in/{PROFILE_ID_UNICODE}/?$",
+                rf"https?://([a-z]{{2,3}}\.)?linkedin\.com/mwlite/in/{PROFILE_ID_UNICODE}/?$",
+                rf"^{PROFILE_ID_UNICODE}$"
             ],
             "sanitized": "https://linkedin.com/in/{id}"
         },
         {
             "patterns": [
-                rf"https?://(www\.)?linkedin\.com/company/{PROFILE_ID}/?$"
+                rf"https?://(www\.)?linkedin\.com/company/{PROFILE_ID_UNICODE}/?$"
             ],
-            "sanitized": "https://linkedin.com/company/{id}/"
+            "sanitized": "https://linkedin.com/company/{id}"
         }
     ],
     "linktree": [
