@@ -258,6 +258,15 @@ PREDEFINED_PLATFORMS: Dict[str, List[Dict[str, Any]]] = {
             "sanitized": "https://t.me/{id}"
         }
     ],
+    "threads": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?threads\.net/@{PROFILE_ID}/?$",
+                rf"^@?{PROFILE_ID}$"
+            ],
+            "sanitized": "https://threads.net/@{id}"
+        }
+    ],
     "tiktok": [
         {
             "patterns": [
