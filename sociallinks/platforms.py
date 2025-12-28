@@ -540,5 +540,34 @@ PREDEFINED_PLATFORMS: Dict[str, List[Dict[str, Any]]] = {
             ],
             "sanitized": "https://youtube.com/{id}"
         }
+    ],
+    "producthunt": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?producthunt\.com/@{PROFILE_ID}/?$",
+                rf"^@?{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.producthunt.com/@{id}"
+        }
+    ],
+    "gumroad": [
+        {
+            "patterns": [
+                rf"https?://{PROFILE_ID}\.gumroad\.com/?$",
+                rf"https?://(www\.)?gumroad\.com/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://gumroad.com/{id}"
+        }
+    ],
+    "hashnode": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?hashnode\.com/@{PROFILE_ID}/?$",
+                rf"https?://{PROFILE_ID}\.hashnode\.dev/?$",
+                rf"^@?{PROFILE_ID}$"
+            ],
+            "sanitized": "https://hashnode.com/@{id}"
+        }
     ]
 }

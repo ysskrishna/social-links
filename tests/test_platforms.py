@@ -1567,4 +1567,140 @@ class TestAllPlatforms:
         assert sl.is_valid("steam", f"https://steamcommunity.com/id/{username}/") is True
         assert sl.sanitize("steam", f"https://steamcommunity.com/id/{username}/") == f"https://steamcommunity.com/id/{username}"
 
+    def test_producthunt(self):
+        """Test ProductHunt platform"""
+        sl = SocialLinks()
+        profile_id = "ysskrishna"
+        assert sl.detect_platform(f"https://www.producthunt.com/@{profile_id}") == "producthunt"
+        assert sl.is_valid("producthunt", f"https://www.producthunt.com/@{profile_id}") is True
+        assert sl.sanitize("producthunt", f"https://www.producthunt.com/@{profile_id}") == f"https://www.producthunt.com/@{profile_id}"
+        # Test direct username (with and without @)
+        assert sl.is_valid("producthunt", profile_id) is True
+        assert sl.is_valid("producthunt", f"@{profile_id}") is True
+        assert sl.sanitize("producthunt", profile_id) == f"https://www.producthunt.com/@{profile_id}"
+        assert sl.sanitize("producthunt", f"@{profile_id}") == f"https://www.producthunt.com/@{profile_id}"
+
+    def test_producthunt_without_www(self):
+        """Test ProductHunt without www subdomain"""
+        sl = SocialLinks()
+        profile_id = "ysskrishna"
+        assert sl.detect_platform(f"https://producthunt.com/@{profile_id}") == "producthunt"
+        assert sl.is_valid("producthunt", f"https://producthunt.com/@{profile_id}") is True
+        assert sl.sanitize("producthunt", f"https://producthunt.com/@{profile_id}") == f"https://www.producthunt.com/@{profile_id}"
+
+    def test_producthunt_with_http(self):
+        """Test ProductHunt with http protocol"""
+        sl = SocialLinks()
+        profile_id = "ysskrishna"
+        assert sl.detect_platform(f"http://www.producthunt.com/@{profile_id}") == "producthunt"
+        assert sl.is_valid("producthunt", f"http://www.producthunt.com/@{profile_id}") is True
+        assert sl.sanitize("producthunt", f"http://www.producthunt.com/@{profile_id}") == f"https://www.producthunt.com/@{profile_id}"
+
+    def test_producthunt_with_trailing_slash(self):
+        """Test ProductHunt with trailing slash"""
+        sl = SocialLinks()
+        profile_id = "ysskrishna"
+        assert sl.is_valid("producthunt", f"https://www.producthunt.com/@{profile_id}/") is True
+        assert sl.sanitize("producthunt", f"https://www.producthunt.com/@{profile_id}/") == f"https://www.producthunt.com/@{profile_id}"
+
+    def test_gumroad_subdomain(self):
+        """Test Gumroad platform with subdomain format"""
+        sl = SocialLinks()
+        profile_id = "ysskrishna"
+        assert sl.detect_platform(f"https://{profile_id}.gumroad.com") == "gumroad"
+        assert sl.is_valid("gumroad", f"https://{profile_id}.gumroad.com") is True
+        assert sl.sanitize("gumroad", f"https://{profile_id}.gumroad.com") == f"https://gumroad.com/{profile_id}"
+        # Test direct username
+        assert sl.is_valid("gumroad", profile_id) is True
+        assert sl.sanitize("gumroad", profile_id) == f"https://gumroad.com/{profile_id}"
+
+    def test_gumroad_path_format(self):
+        """Test Gumroad platform with path format"""
+        sl = SocialLinks()
+        profile_id = "ysskrishna"
+        assert sl.detect_platform(f"https://gumroad.com/{profile_id}") == "gumroad"
+        assert sl.is_valid("gumroad", f"https://gumroad.com/{profile_id}") is True
+        assert sl.sanitize("gumroad", f"https://gumroad.com/{profile_id}") == f"https://gumroad.com/{profile_id}"
+
+    def test_gumroad_with_www(self):
+        """Test Gumroad with www subdomain"""
+        sl = SocialLinks()
+        profile_id = "ysskrishna"
+        assert sl.detect_platform(f"https://www.gumroad.com/{profile_id}") == "gumroad"
+        assert sl.is_valid("gumroad", f"https://www.gumroad.com/{profile_id}") is True
+        assert sl.sanitize("gumroad", f"https://www.gumroad.com/{profile_id}") == f"https://gumroad.com/{profile_id}"
+
+    def test_gumroad_with_http(self):
+        """Test Gumroad with http protocol"""
+        sl = SocialLinks()
+        profile_id = "ysskrishna"
+        # Test subdomain format with http
+        assert sl.detect_platform(f"http://{profile_id}.gumroad.com") == "gumroad"
+        assert sl.is_valid("gumroad", f"http://{profile_id}.gumroad.com") is True
+        assert sl.sanitize("gumroad", f"http://{profile_id}.gumroad.com") == f"https://gumroad.com/{profile_id}"
+        # Test path format with http
+        assert sl.detect_platform(f"http://gumroad.com/{profile_id}") == "gumroad"
+        assert sl.is_valid("gumroad", f"http://gumroad.com/{profile_id}") is True
+        assert sl.sanitize("gumroad", f"http://gumroad.com/{profile_id}") == f"https://gumroad.com/{profile_id}"
+
+    def test_gumroad_with_trailing_slash(self):
+        """Test Gumroad with trailing slash"""
+        sl = SocialLinks()
+        profile_id = "ysskrishna"
+        assert sl.is_valid("gumroad", f"https://{profile_id}.gumroad.com/") is True
+        assert sl.sanitize("gumroad", f"https://{profile_id}.gumroad.com/") == f"https://gumroad.com/{profile_id}"
+        assert sl.is_valid("gumroad", f"https://gumroad.com/{profile_id}/") is True
+        assert sl.sanitize("gumroad", f"https://gumroad.com/{profile_id}/") == f"https://gumroad.com/{profile_id}"
+
+    def test_hashnode(self):
+        """Test Hashnode platform with main domain"""
+        sl = SocialLinks()
+        profile_id = "ysskrishna"
+        assert sl.detect_platform(f"https://hashnode.com/@{profile_id}") == "hashnode"
+        assert sl.is_valid("hashnode", f"https://hashnode.com/@{profile_id}") is True
+        assert sl.sanitize("hashnode", f"https://hashnode.com/@{profile_id}") == f"https://hashnode.com/@{profile_id}"
+        # Test direct username (with and without @)
+        assert sl.is_valid("hashnode", profile_id) is True
+        assert sl.is_valid("hashnode", f"@{profile_id}") is True
+        assert sl.sanitize("hashnode", profile_id) == f"https://hashnode.com/@{profile_id}"
+        assert sl.sanitize("hashnode", f"@{profile_id}") == f"https://hashnode.com/@{profile_id}"
+
+    def test_hashnode_dev_subdomain(self):
+        """Test Hashnode platform with .hashnode.dev subdomain"""
+        sl = SocialLinks()
+        profile_id = "ysskrishna"
+        assert sl.detect_platform(f"https://{profile_id}.hashnode.dev") == "hashnode"
+        assert sl.is_valid("hashnode", f"https://{profile_id}.hashnode.dev") is True
+        assert sl.sanitize("hashnode", f"https://{profile_id}.hashnode.dev") == f"https://hashnode.com/@{profile_id}"
+
+    def test_hashnode_with_www(self):
+        """Test Hashnode with www subdomain"""
+        sl = SocialLinks()
+        profile_id = "ysskrishna"
+        assert sl.detect_platform(f"https://www.hashnode.com/@{profile_id}") == "hashnode"
+        assert sl.is_valid("hashnode", f"https://www.hashnode.com/@{profile_id}") is True
+        assert sl.sanitize("hashnode", f"https://www.hashnode.com/@{profile_id}") == f"https://hashnode.com/@{profile_id}"
+
+    def test_hashnode_with_http(self):
+        """Test Hashnode with http protocol"""
+        sl = SocialLinks()
+        profile_id = "ysskrishna"
+        # Test main domain with http
+        assert sl.detect_platform(f"http://hashnode.com/@{profile_id}") == "hashnode"
+        assert sl.is_valid("hashnode", f"http://hashnode.com/@{profile_id}") is True
+        assert sl.sanitize("hashnode", f"http://hashnode.com/@{profile_id}") == f"https://hashnode.com/@{profile_id}"
+        # Test .hashnode.dev subdomain with http
+        assert sl.detect_platform(f"http://{profile_id}.hashnode.dev") == "hashnode"
+        assert sl.is_valid("hashnode", f"http://{profile_id}.hashnode.dev") is True
+        assert sl.sanitize("hashnode", f"http://{profile_id}.hashnode.dev") == f"https://hashnode.com/@{profile_id}"
+
+    def test_hashnode_with_trailing_slash(self):
+        """Test Hashnode with trailing slash"""
+        sl = SocialLinks()
+        profile_id = "ysskrishna"
+        assert sl.is_valid("hashnode", f"https://hashnode.com/@{profile_id}/") is True
+        assert sl.sanitize("hashnode", f"https://hashnode.com/@{profile_id}/") == f"https://hashnode.com/@{profile_id}"
+        assert sl.is_valid("hashnode", f"https://{profile_id}.hashnode.dev/") is True
+        assert sl.sanitize("hashnode", f"https://{profile_id}.hashnode.dev/") == f"https://hashnode.com/@{profile_id}"
+
 
