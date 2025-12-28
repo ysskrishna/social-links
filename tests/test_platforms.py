@@ -557,6 +557,15 @@ class TestAllPlatforms:
         assert sl.is_valid("reddit", f"https://old.reddit.com/u/{profile_id}") is True
         assert sl.sanitize("reddit", f"https://old.reddit.com/u/{profile_id}") == f"https://reddit.com/user/{profile_id}"
 
+    def test_reddit_u_prefix(self):
+        """Test Reddit u/ prefix format (e.g., u/username)"""
+        sl = SocialLinks()
+        profile_id = "ysskrishna"
+        # Test u/username format
+        assert sl.detect_platform(f"u/{profile_id}") == "reddit"
+        assert sl.is_valid("reddit", f"u/{profile_id}") is True
+        assert sl.sanitize("reddit", f"u/{profile_id}") == f"https://reddit.com/user/{profile_id}"
+
     def test_snapchat(self):
         """Test Snapchat platform"""
         sl = SocialLinks()

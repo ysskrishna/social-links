@@ -165,6 +165,7 @@ PREDEFINED_PLATFORMS: Dict[str, List[Dict[str, Any]]] = {
                 rf"https?://(www\.)?reddit\.com/u/{PROFILE_ID}/?$",
                 rf"https?://old\.reddit\.com/user/{PROFILE_ID}/?$",
                 rf"https?://old\.reddit\.com/u/{PROFILE_ID}/?$",
+                rf"^u/{PROFILE_ID}$",
                 rf"^{PROFILE_ID}$"
             ],
             "sanitized": "https://reddit.com/user/{id}"
