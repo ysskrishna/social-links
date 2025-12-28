@@ -6,9 +6,7 @@ from typing import Dict, List, Any
 PROFILE_ID = r"(?P<id>[A-Za-z0-9_.-]+)"
 PROFILE_ID_AT = r"(?P<id>@?[A-Za-z0-9_.-]+)" #Youtube channel links can be with or without @
 PROFILE_ID_UNICODE = r"(?P<id>[\w&%'–®\.-]+)" #LinkedIn profile IDs can contain Unicode characters (e.g., ü in peter-müller-81a8), ampersand, apostrophe, en dash, and registered trademark. \w matches Unicode letters, digits, and underscore
-PROFILE_ID_DOMAIN = r"(?P<id>[A-Za-z0-9_.-]+\.[A-Za-z0-9_.-]+)" #Profile IDs that require domain format (e.g., Bluesky handles like user.bsky.social)
-PROFILE_ID_NUMERIC = r"(?P<id>-?[A-Za-z0-9_.-]+)" #Telegram web client IDs can be negative (for groups/channels) like -2128475717
-PROFILE_ID_BASE64 = r"(?P<id>[A-Za-z0-9_=\-]+)" #Douyin user IDs can contain base64-like characters including equals signs
+PROFILE_ID_EXTENDED = r"(?P<id>-?[A-Za-z0-9_@=.\-]+)" #Extended profile IDs supporting: optional negative prefix (Telegram groups), @ symbol (Flickr), equals sign (Douyin base64), and standard characters
 PHONE_NUMBER = r"(?P<id>\+?[0-9]+)" #Phone numbers for WhatsApp, can optionally start with +
 
 # ----------------------------------------------------------------------
@@ -27,8 +25,8 @@ PREDEFINED_PLATFORMS: Dict[str, List[Dict[str, Any]]] = {
     "bluesky": [
         {
             "patterns": [
-                rf"https?://(www\.)?bsky\.app/profile/{PROFILE_ID_DOMAIN}/?$",
-                rf"^@?{PROFILE_ID_DOMAIN}$"
+                rf"https?://(www\.)?bsky\.app/profile/{PROFILE_ID}/?$",
+                rf"^@?{PROFILE_ID}$"
             ],
             "sanitized": "https://bsky.app/profile/{id}"
         }
@@ -55,8 +53,8 @@ PREDEFINED_PLATFORMS: Dict[str, List[Dict[str, Any]]] = {
     "douyin": [
         {
             "patterns": [
-                rf"https?://(www\.)?douyin\.com/user/{PROFILE_ID_BASE64}/?$",
-                rf"^{PROFILE_ID_BASE64}$"
+                rf"https?://(www\.)?douyin\.com/user/{PROFILE_ID_EXTENDED}/?$",
+                rf"^{PROFILE_ID_EXTENDED}$"
             ],
             "sanitized": "https://www.douyin.com/user/{id}"
         }
@@ -96,6 +94,15 @@ PREDEFINED_PLATFORMS: Dict[str, List[Dict[str, Any]]] = {
                 rf"^{PROFILE_ID}$"
             ],
             "sanitized": "https://facebook.com/{id}"
+        }
+    ],
+    "flickr": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?flickr\.com/people/{PROFILE_ID_EXTENDED}/?$",
+                rf"^{PROFILE_ID_EXTENDED}$"
+            ],
+            "sanitized": "https://www.flickr.com/people/{id}"
         }
     ],
     "github": [
@@ -368,9 +375,9 @@ PREDEFINED_PLATFORMS: Dict[str, List[Dict[str, Any]]] = {
     "telegram": [
         {
             "patterns": [
-                rf"https?://(www\.)?(t\.me|telegram\.me|telegram\.dog)/{PROFILE_ID_NUMERIC}/?$",
-                rf"https?://(www\.)?web\.telegram\.org/[ak]/#@?{PROFILE_ID_NUMERIC}/?$",
-                rf"^{PROFILE_ID_NUMERIC}$"
+                rf"https?://(www\.)?(t\.me|telegram\.me|telegram\.dog)/{PROFILE_ID_EXTENDED}/?$",
+                rf"https?://(www\.)?web\.telegram\.org/[ak]/#@?{PROFILE_ID_EXTENDED}/?$",
+                rf"^{PROFILE_ID_EXTENDED}$"
             ],
             "sanitized": "https://t.me/{id}"
         }
