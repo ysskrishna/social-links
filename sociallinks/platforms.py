@@ -206,6 +206,16 @@ PREDEFINED_PLATFORMS: Dict[str, List[Dict[str, Any]]] = {
             "sanitized": "https://pinterest.com/{id}"
         }
     ],
+    "quora": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?quora\.com/profile/{PROFILE_ID}/?$",
+                rf"https?://(www\.)?quora\.com/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://quora.com/profile/{id}"
+        }
+    ],
     "reddit": [
         {
             "patterns": [
@@ -285,6 +295,21 @@ PREDEFINED_PLATFORMS: Dict[str, List[Dict[str, Any]]] = {
             "sanitized": "https://stackoverflow.com/users/{id}"
         }
     ],
+    "steam": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?steamcommunity\.com/id/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://steamcommunity.com/id/{id}"
+        },
+        {
+            "patterns": [
+                rf"https?://(www\.)?steamcommunity\.com/profiles/{PROFILE_ID}/?$"
+            ],
+            "sanitized": "https://steamcommunity.com/profiles/{id}"
+        }
+    ],
     "substack": [
         {
             "patterns": [
@@ -351,6 +376,16 @@ PREDEFINED_PLATFORMS: Dict[str, List[Dict[str, Any]]] = {
                 rf"^@?{PROFILE_ID}$"
             ],
             "sanitized": "https://vk.com/{id}"
+        }
+    ],
+    "wechat": [
+        {
+            "patterns": [
+                rf"https?://open\.weixin\.qq\.com/qr/code\?username={PROFILE_ID}$",
+                rf"weixin://dl/chat\?{PROFILE_ID}$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://open.weixin.qq.com/qr/code?username={id}"
         }
     ],
     "vimeo": [
