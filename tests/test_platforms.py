@@ -1059,6 +1059,14 @@ class TestAllPlatforms:
         assert sl.is_valid("quora", f"https://quora.com/profile/{username}/") is True
         assert sl.sanitize("quora", f"https://quora.com/profile/{username}/") == f"https://quora.com/profile/{username}"
 
+    def test_quora_with_unicode(self):
+        """Test Quora profile with Unicode characters (URL-encoded)"""
+        sl = SocialLinks()
+        username = "Nitish-Kumar-%E0%A4%A8%E0%A5%80%E0%A4%A4%E0%A5%80%E0%A4%B6"
+        assert sl.detect_platform(f"https://www.quora.com/profile/{username}") == "quora"
+        assert sl.is_valid("quora", f"https://www.quora.com/profile/{username}") is True
+        assert sl.sanitize("quora", f"https://www.quora.com/profile/{username}") == f"https://quora.com/profile/{username}"
+
     def test_steam_id(self):
         """Test Steam platform with /id/ path"""
         sl = SocialLinks()

@@ -209,9 +209,9 @@ PREDEFINED_PLATFORMS: Dict[str, List[Dict[str, Any]]] = {
     "quora": [
         {
             "patterns": [
-                rf"https?://(www\.)?quora\.com/profile/{PROFILE_ID}/?$",
-                rf"https?://(www\.)?quora\.com/{PROFILE_ID}/?$",
-                rf"^{PROFILE_ID}$"
+                rf"https?://(www\.)?quora\.com/profile/{PROFILE_ID_UNICODE}/?$",
+                rf"https?://(www\.)?quora\.com/{PROFILE_ID_UNICODE}/?$",
+                rf"^{PROFILE_ID_UNICODE}$"
             ],
             "sanitized": "https://quora.com/profile/{id}"
         }
