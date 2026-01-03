@@ -1,3 +1,12 @@
+"""Constants and type aliases for the sociallinks library.
+
+This module provides:
+- Type aliases for platform configuration structures
+- Common regex patterns for matching profile IDs and phone numbers
+
+These constants are used internally by the :class:`SocialLinks` class and can
+also be imported for use in custom platform definitions.
+"""
 from typing import List, Dict, Any
 
 # ----------------------------------------------------------------------
@@ -5,12 +14,16 @@ from typing import List, Dict, Any
 # ----------------------------------------------------------------------
 
 PlatformEntry = List[Dict[str, Any]]
-"""Type alias for a platform configuration.
+"""Type alias for a platform configuration entry.
 
 A platform entry is a list of dictionaries, where each dictionary contains
 platform configuration such as patterns and sanitized URL templates.
 A platform can have multiple configuration variants (e.g., different URL
 patterns for profiles vs. companies).
+
+Each dictionary in the list must contain:
+- ``patterns``: A list of regex pattern strings that match URLs for this platform
+- ``sanitized``: A template string for the sanitized URL format (optional)
 
 Example:
     ```python
@@ -26,7 +39,9 @@ Example:
 PlatformEntries = Dict[str, PlatformEntry]
 """Type alias for a collection of platform configurations.
 
-A dictionary mapping platform names to their configuration entries.
+A dictionary mapping platform names (strings) to their configuration entries.
+This is the structure used internally by :class:`SocialLinks` to store all
+registered platforms.
 
 Example:
     ```python
@@ -35,6 +50,12 @@ Example:
             {
                 "patterns": [r"https?://example.com/(?P<id>\\w+)"],
                 "sanitized": "https://example.com/{id}"
+            }
+        ],
+        "another": [
+            {
+                "patterns": [r"https?://another.com/user/(?P<id>\\w+)"],
+                "sanitized": "https://another.com/user/{id}"
             }
         ]
     }
