@@ -57,59 +57,26 @@ print(sanitized)  # "https://linkedin.com/in/johndoe"
 
 The library comes with 50+ predefined platforms:
 
-- [Apple Music](https://music.apple.com)
-- [Bandcamp](https://bandcamp.com)
-- [Behance](https://behance.net)
-- [Bluesky](https://bsky.app)
-- [Crunchbase](https://crunchbase.com)
-- [Dev.to](https://dev.to)
-- [Discord](https://discord.com)
-- [Douyin](https://douyin.com)
-- [Dribbble](https://dribbble.com)
-- [Etsy](https://etsy.com)
-- [Exercism](https://exercism.io)
-- [Facebook](https://facebook.com)
-- [Flickr](https://flickr.com)
-- [GitHub](https://github.com)
-- [GitLab](https://gitlab.com)
-- [Gravatar](https://gravatar.com)
-- [Gumroad](https://gumroad.com)
-- [Hacker News](https://news.ycombinator.com)
-- [Hashnode](https://hashnode.com)
-- [Instagram](https://instagram.com)
-- [Keybase](https://keybase.io)
-- [Kuaishou](https://kuaishou.com)
-- [Lemmy World](https://lemmy.world)
-- [LinkedIn](https://linkedin.com) (personal & company)
-- [Linktree](https://linktr.ee)
-- [Mastodon](https://mastodon.social)
-- [Medium](https://medium.com)
-- [Patreon](https://patreon.com)
-- [Pinterest](https://pinterest.com)
-- [Product Hunt](https://producthunt.com)
-- [Quora](https://quora.com)
-- [Reddit](https://reddit.com)
-- [Signal](https://signal.me)
-- [SlideShare](https://slideshare.net)
-- [Snapchat](https://snapchat.com)
-- [SoundCloud](https://soundcloud.com)
-- [Spotify](https://spotify.com)
-- [Stack Overflow](https://stackoverflow.com)
-- [Steam](https://steamcommunity.com)
-- [Substack](https://substack.com)
-- [Telegram](https://telegram.org)
-- [Threads](https://threads.net)
-- [TikTok](https://tiktok.com)
-- [Tumblr](https://tumblr.com)
-- [Twitch](https://twitch.tv)
-- [Vimeo](https://vimeo.com)
-- [VK](https://vk.com)
-- [WeChat](https://weixin.qq.com)
-- [Weibo](https://weibo.com)
-- [Wellfound (AngelList)](https://wellfound.com)
-- [WhatsApp](https://whatsapp.com)
-- [X (Twitter)](https://x.com)
-- [YouTube](https://youtube.com)
+| Predefined Platforms| | |
+|---|---|---|
+| [Apple Music](https://music.apple.com) | [Bandcamp](https://bandcamp.com) | [Behance](https://behance.net) |
+| [Bluesky](https://bsky.app) | [Crunchbase](https://crunchbase.com) | [Dev.to](https://dev.to) |
+| [Discord](https://discord.com) | [Douyin](https://douyin.com) | [Dribbble](https://dribbble.com) |
+| [Etsy](https://etsy.com) | [Exercism](https://exercism.io) | [Facebook](https://facebook.com) |
+| [Flickr](https://flickr.com) | [GitHub](https://github.com) | [GitLab](https://gitlab.com) |
+| [Gravatar](https://gravatar.com) | [Gumroad](https://gumroad.com) | [Hacker News](https://news.ycombinator.com) |
+| [Hashnode](https://hashnode.com) | [Instagram](https://instagram.com) | [Keybase](https://keybase.io) |
+| [Kuaishou](https://kuaishou.com) | [Lemmy World](https://lemmy.world) | [LinkedIn](https://linkedin.com) (personal & company) |
+| [Linktree](https://linktr.ee) | [Mastodon](https://mastodon.social) | [Medium](https://medium.com) |
+| [Patreon](https://patreon.com) | [Pinterest](https://pinterest.com) | [Product Hunt](https://producthunt.com) |
+| [Quora](https://quora.com) | [Reddit](https://reddit.com) | [Signal](https://signal.me) |
+| [SlideShare](https://slideshare.net) | [Snapchat](https://snapchat.com) | [SoundCloud](https://soundcloud.com) |
+| [Spotify](https://spotify.com) | [Stack Overflow](https://stackoverflow.com) | [Steam](https://steamcommunity.com) |
+| [Substack](https://substack.com) | [Telegram](https://telegram.org) | [Threads](https://threads.net) |
+| [TikTok](https://tiktok.com) | [Tumblr](https://tumblr.com) | [Twitch](https://twitch.tv) |
+| [Vimeo](https://vimeo.com) | [VK](https://vk.com) | [WeChat](https://weixin.qq.com) |
+| [Weibo](https://weibo.com) | [Wellfound (AngelList)](https://wellfound.com) | [WhatsApp](https://whatsapp.com) |
+| [X (Twitter)](https://x.com) | [YouTube](https://youtube.com) | |
 
 ## Usage Examples
 
@@ -218,33 +185,6 @@ from sociallinks import SocialLinks
 
 # Use custom regex flags
 sl = SocialLinks(regex_flags=re.IGNORECASE | re.MULTILINE)
-```
-
-## Error Handling
-
-The library provides custom exceptions for better error handling:
-
-```python
-from sociallinks import (
-    SocialLinks,
-    PlatformNotFoundError,
-    PlatformAlreadyExistsError,
-    InvalidPlatformError,
-    PlatformIDExtractionError,
-    URLMismatchError,
-)
-
-sl = SocialLinks()
-
-try:
-    sl.sanitize("unknown", "https://example.com")
-except PlatformNotFoundError:
-    print("Platform not found")
-
-try:
-    sl.sanitize("linkedin", "https://example.com")
-except URLMismatchError:
-    print("URL doesn't match platform pattern")
 ```
 
 ## Changelog
