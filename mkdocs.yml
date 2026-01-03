@@ -29,6 +29,7 @@ plugins:
             merge_init_into_class: true
 theme:
   name: material
+  custom_dir: docs/theme/overrides
   locale: en
   features:
     - navigation.top
@@ -45,6 +46,7 @@ markdown_extensions:
       base_path: .
 
 extra:
+  google_site_verification: your-google-site-verification-key
   social:
     - icon: fontawesome/brands/python
       link: https://pypi.org/project/social-links/
