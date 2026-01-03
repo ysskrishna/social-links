@@ -191,8 +191,14 @@ config = sl.get_platform("github")
 
 # Add multiple platforms
 new_platforms = {
-    "platform1": {...},
-    "platform2": {...}
+    "platform1": [{
+        "patterns": [r"https?://example1.com/(?P<id>\w+)"],
+        "sanitized": "https://example1.com/{id}"
+    }],
+    "platform2": [{
+        "patterns": [r"https?://example2.com/(?P<id>\w+)"],
+        "sanitized": "https://example2.com/{id}"
+    }]
 }
 sl.set_platforms(new_platforms, override=False)
 
@@ -240,48 +246,6 @@ try:
 except URLMismatchError:
     print("URL doesn't match platform pattern")
 ```
-
-## API Reference
-
-### `SocialLinks`
-
-Main class for social media URL operations.
-
-#### `__init__(use_predefined_platforms=True, regex_flags=re.IGNORECASE)`
-
-Initialize the SocialLinks instance.
-
-- `use_predefined_platforms` (bool): Load predefined platforms (default: True)
-- `regex_flags` (int): Regex flags for pattern matching (default: `re.IGNORECASE`)
-
-#### `detect_platform(url: str) -> Optional[str]`
-
-Detect the platform from a URL.
-
-- Returns: Platform name or `None` if not detected
-
-#### `is_valid(platform_name: str, url: str) -> bool`
-
-Validate a URL against a specific platform.
-
-- Returns: `True` if valid, `False` otherwise
-
-#### `sanitize(platform_name: str, url: str) -> str`
-
-Sanitize a URL to its canonical format.
-
-- Returns: Sanitized URL
-- Raises: `PlatformNotFoundError`, `URLMismatchError`, `PlatformIDExtractionError`
-
-#### Platform Management Methods
-
-- `set_platform(name: str, data: List[Dict[str, Any]], *, override: bool = False)` - Add/override a platform
-- `delete_platform(name: str)` - Delete a platform
-- `set_platforms(platforms: Dict[str, List[Dict[str, Any]]], *, override: bool = False)` - Bulk add/override
-- `delete_platforms(names: List[str])` - Bulk delete
-- `clear_platforms()` - Clear all platforms
-- `get_platform(name: str)` - Get platform configuration
-- `list_platforms()` - List all platform names
 
 ## Changelog
 
