@@ -1,22 +1,32 @@
+{# --- SET VARIABLES --- #}
+{% set description = (page.meta.description if page and page.meta else none) or config.site_description %}
+{% set title = (page.title if page and page.title else none) or config.site_name %}
+{% set raw_keywords = page.meta.keywords if page and page.meta and page.meta.keywords else config.extra.keywords %}
+{% if raw_keywords is iterable and raw_keywords is not string %}
+  {% set keywords = raw_keywords | join(', ') %}
+{% else %}
+  {% set keywords = raw_keywords %}
+{% endif %}
 
 <meta name="google-site-verification" content="{{ config.extra.google_site_verification }}" />
+<meta name="description" content="{{ description }}">
+{% if keywords %}
+  <meta name="keywords" content="{{ keywords }}">
+{% endif %}
 
 {# Open Graph Meta Tags #}
 <meta property="og:type" content="website">
 <meta property="og:url" content="{{ config.site_url }}/">
-<meta property="og:title" content="{{ config.site_name }}">
-<meta property="og:description" content="{{ config.site_description }}">
+<meta property="og:title" content="{{ title }}">
+<meta property="og:description" content="{{ description }}">
 <meta property="og:image" content="{{ config.extra.og_image }}">
 
 {# Twitter Card Meta Tags #}
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:url" content="{{ config.site_url }}/">
-<meta property="twitter:title" content="{{ config.site_name }}">
-<meta property="twitter:description" content="{{ config.site_description }}">
+<meta property="twitter:title" content="{{ title }}">
+<meta property="twitter:description" content="{{ description }}">
 <meta property="twitter:image" content="{{ config.extra.og_image }}">
-
-{# Keywords Meta Tag #}
-<meta name="keywords" content="python, social media, url validation, regex, sanitization, username extraction, web scraping, automation, social links, profile url parser">
 
 {# Robots Meta Tag #}
 <meta name="robots" content="index, follow">
@@ -26,8 +36,8 @@
 {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "{{ config.site_name }}",
-  "description": "{{ config.site_description }}",
+  "name": "{{ title }}",
+  "description": "{{ description }}",
   "applicationCategory": "DeveloperApplication",
   "operatingSystem": "Cross-platform",
   "author": {

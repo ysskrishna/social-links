@@ -48,6 +48,12 @@ markdown_extensions:
 extra:
   google_site_verification: your-google-site-verification-key
   og_image: https://raw.githubusercontent.com/ysskrishna/social-links/main/media/og.png
+  keywords:
+    - python
+    - social media
+    - url validation
+    - profile detection
+    - social links
   social:
     - icon: fontawesome/brands/python
       link: https://pypi.org/project/social-links/
