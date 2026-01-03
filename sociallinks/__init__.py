@@ -6,6 +6,7 @@ from .exceptions import (
     PlatformNotFoundError,
     PlatformAlreadyExistsError,
     InvalidPlatformError,
+    InvalidPlatformRegexError,
     PlatformIDExtractionError,
     URLMismatchError,
 )
@@ -16,6 +17,7 @@ __all__ = [
     "PlatformNotFoundError",
     "PlatformAlreadyExistsError",
     "InvalidPlatformError",
+    "InvalidPlatformRegexError",
     "PlatformIDExtractionError",
     "URLMismatchError",
 ]

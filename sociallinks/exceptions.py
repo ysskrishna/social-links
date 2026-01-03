@@ -23,6 +23,11 @@ class InvalidPlatformError(SocialLinksError):
     pass
 
 
+class InvalidPlatformRegexError(SocialLinksError):
+    """Raised when a platform has an invalid regex pattern."""
+    pass
+
+
 class PlatformIDExtractionError(SocialLinksError):
     """Raised when a platform ID cannot be extracted from a URL."""
     pass

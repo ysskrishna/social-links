@@ -6,6 +6,7 @@ from sociallinks.exceptions import (
     PlatformNotFoundError,
     PlatformAlreadyExistsError,
     InvalidPlatformError,
+    InvalidPlatformRegexError,
     PlatformIDExtractionError,
     URLMismatchError,
 )
@@ -50,9 +51,14 @@ class SocialLinks:
                 continue
 
             for p in (patterns if isinstance(patterns, list) else [patterns]):
-                compiled_entries.append(
-                    (re.compile(p, flags=self.regex_flags), sanitized)
-                )
+                try:
+                    compiled_entries.append(
+                        (re.compile(p, flags=self.regex_flags), sanitized)
+                    )
+                except re.error as e:
+                    raise InvalidPlatformRegexError(
+                        f"Invalid regex pattern for platform '{name}': {p}"
+                    ) from e
 
         if not compiled_entries:
             raise InvalidPlatformError(f"Platform '{name}' has no valid patterns or templates.")

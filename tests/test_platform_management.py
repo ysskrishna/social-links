@@ -4,6 +4,7 @@ from sociallinks.exceptions import (
     PlatformNotFoundError,
     PlatformAlreadyExistsError,
     InvalidPlatformError,
+    InvalidPlatformRegexError,
 )
 
 
@@ -77,6 +78,26 @@ class TestSetPlatform:
         }]
         with pytest.raises(InvalidPlatformError, match="no valid patterns"):
             sl.set_platform("example", platform_data)
+
+    def test_set_platform_invalid_regex_pattern(self):
+        """Test setting platform with invalid regex pattern syntax"""
+        sl = SocialLinks(use_predefined_platforms=False)
+        platform_data = [{
+            "patterns": ["[invalid regex["],  # Unclosed bracket
+            "sanitized": "https://www.example.com/{id}/"
+        }]
+        with pytest.raises(InvalidPlatformRegexError, match="Invalid regex pattern"):
+            sl.set_platform("example", platform_data)
+
+    def test_set_platform_invalid_regex_pattern_with_platform_name(self):
+        """Test that InvalidPlatformRegexError includes platform name in message"""
+        sl = SocialLinks(use_predefined_platforms=False)
+        platform_data = [{
+            "patterns": ["(unclosed group"],  # Unclosed parenthesis
+            "sanitized": "https://www.example.com/{id}/"
+        }]
+        with pytest.raises(InvalidPlatformRegexError, match="platform 'test_platform'"):
+            sl.set_platform("test_platform", platform_data)
 
 
 class TestDeletePlatform:
