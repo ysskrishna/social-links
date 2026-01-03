@@ -162,13 +162,13 @@ sl.sanitize("x", "https://twitter.com/username")
 sl = SocialLinks(use_predefined_platforms=False)
 
 # Add a custom platform
-custom_platform = {
+custom_platform = [{
     "patterns": [
         r"https?://(www\.)?example\.com/(?P<id>[A-Za-z0-9_]+)/?$",
         r"^(?P<id>[A-Za-z0-9_]+)$"  # Username-only pattern
     ],
     "sanitized": "https://example.com/{id}"
-}
+}]
 
 sl.set_platform("example", custom_platform)
 
@@ -275,9 +275,9 @@ Sanitize a URL to its canonical format.
 
 #### Platform Management Methods
 
-- `set_platform(name: str, data: Any, *, override: bool = False)` - Add/override a platform
+- `set_platform(name: str, data: List[Dict[str, Any]], *, override: bool = False)` - Add/override a platform
 - `delete_platform(name: str)` - Delete a platform
-- `set_platforms(platforms: Dict[str, Any], *, override: bool = False)` - Bulk add/override
+- `set_platforms(platforms: Dict[str, List[Dict[str, Any]]], *, override: bool = False)` - Bulk add/override
 - `delete_platforms(names: List[str])` - Bulk delete
 - `clear_platforms()` - Clear all platforms
 - `get_platform(name: str)` - Get platform configuration

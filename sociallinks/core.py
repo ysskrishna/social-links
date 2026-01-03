@@ -1,5 +1,6 @@
 import re
 from typing import Dict, List, Optional, Any, Tuple
+from sociallinks.constants import PlatformEntry, PlatformEntries
 from sociallinks.platforms import PREDEFINED_PLATFORMS
 from sociallinks.exceptions import (
     PlatformNotFoundError,
@@ -20,9 +21,9 @@ class SocialLinks:
         use_predefined_platforms: bool = True,
         regex_flags: int = re.IGNORECASE,
     ):
-        self.platforms: Dict[str, Any] = {}
+        self.platforms: PlatformEntries = {}
         self._compiled: Dict[str, List[Tuple[re.Pattern, str]]] = {}
-        self.regex_flags = regex_flags
+        self.regex_flags: int = regex_flags
 
         if use_predefined_platforms:
             self.platforms.update(PREDEFINED_PLATFORMS)
@@ -35,11 +36,10 @@ class SocialLinks:
     # Internal Helpers
     # ------------------------------------------------------------------
 
-    def _compile_platform(self, name: str, data: Any) -> None:
+    def _compile_platform(self, name: str, data: PlatformEntry) -> None:
         compiled_entries: List[Tuple[re.Pattern, str]] = []
-        entries = data if isinstance(data, list) else [data]
 
-        for entry in entries:
+        for entry in data:
             if not isinstance(entry, dict):
                 continue
 
@@ -131,7 +131,7 @@ class SocialLinks:
     # Platform CRUD (single + bulk)
     # ------------------------------------------------------------------
 
-    def set_platform(self, name: str, data: Any, *, override: bool = False) -> None:
+    def set_platform(self, name: str, data: PlatformEntry, *, override: bool = False) -> None:
         """
         Unified add/override method.
         - override=False → error if exists
@@ -150,7 +150,7 @@ class SocialLinks:
         del self.platforms[name]
         self._compiled.pop(name, None)
 
-    def set_platforms(self, platforms: Dict[str, Any], *, override: bool = False) -> None:
+    def set_platforms(self, platforms: PlatformEntries, *, override: bool = False) -> None:
         """
         Bulk add/override.
         """
@@ -173,7 +173,7 @@ class SocialLinks:
         self.platforms.clear()
         self._compiled.clear()
 
-    def get_platform(self, name: str) -> Any:
+    def get_platform(self, name: str) -> PlatformEntry:
         if name not in self.platforms:
             raise PlatformNotFoundError(f"Platform '{name}' not found")
         return self.platforms[name]

@@ -13,10 +13,10 @@ class TestSetPlatform:
     def test_set_platform_new(self):
         """Test adding a new platform"""
         sl = SocialLinks(use_predefined_platforms=False)
-        platform_data = {
+        platform_data = [{
             "patterns": ["https?://(www\\.)?twitter\\.com/(?P<id>[A-Za-z0-9_]+)/?$"],
             "sanitized": "https://www.twitter.com/{id}/"
-        }
+        }]
         sl.set_platform("twitter", platform_data)
         assert "twitter" in sl.platforms
         assert sl.detect_platform("https://www.twitter.com/johndoe") == "twitter"
@@ -24,20 +24,20 @@ class TestSetPlatform:
     def test_set_platform_override_false(self):
         """Test that setting existing platform without override raises error"""
         sl = SocialLinks()
-        platform_data = {
+        platform_data = [{
             "patterns": ["https?://(www\\.)?twitter\\.com/(?P<id>[A-Za-z0-9_]+)/?$"],
             "sanitized": "https://www.twitter.com/{id}/"
-        }
+        }]
         with pytest.raises(PlatformAlreadyExistsError, match="already exists"):
             sl.set_platform("linkedin", platform_data)
 
     def test_set_platform_override_true(self):
         """Test overriding existing platform"""
         sl = SocialLinks()
-        platform_data = {
+        platform_data = [{
             "patterns": ["https?://(www\\.)?linkedin\\.com/custom/(?P<id>[A-Za-z0-9_]+)/?$"],
             "sanitized": "https://www.linkedin.com/custom/{id}/"
-        }
+        }]
         sl.set_platform("linkedin", platform_data, override=True)
         assert sl.detect_platform("https://www.linkedin.com/custom/johndoe") == "linkedin"
         assert sl.detect_platform("https://www.linkedin.com/in/johndoe") is None
@@ -62,19 +62,19 @@ class TestSetPlatform:
     def test_set_platform_invalid_patterns(self):
         """Test setting platform with invalid patterns"""
         sl = SocialLinks(use_predefined_platforms=False)
-        platform_data = {
+        platform_data = [{
             "patterns": [],
             "sanitized": "https://www.example.com/{id}/"
-        }
+        }]
         with pytest.raises(InvalidPlatformError, match="no valid patterns"):
             sl.set_platform("example", platform_data)
 
     def test_set_platform_missing_sanitized(self):
         """Test setting platform without sanitized template"""
         sl = SocialLinks(use_predefined_platforms=False)
-        platform_data = {
+        platform_data = [{
             "patterns": ["https?://example\\.com/(?P<id>[A-Za-z0-9_]+)/?$"]
-        }
+        }]
         with pytest.raises(InvalidPlatformError, match="no valid patterns"):
             sl.set_platform("example", platform_data)
 
@@ -104,14 +104,14 @@ class TestSetPlatforms:
         """Test bulk adding new platforms"""
         sl = SocialLinks(use_predefined_platforms=False)
         platforms = {
-            "twitter": {
+            "twitter": [{
                 "patterns": ["https?://(www\\.)?twitter\\.com/(?P<id>[A-Za-z0-9_]+)/?$"],
                 "sanitized": "https://www.twitter.com/{id}/"
-            },
-            "instagram": {
+            }],
+            "instagram": [{
                 "patterns": ["https?://(www\\.)?instagram\\.com/(?P<id>[A-Za-z0-9_]+)/?$"],
                 "sanitized": "https://www.instagram.com/{id}/"
-            }
+            }]
         }
         sl.set_platforms(platforms)
         assert "twitter" in sl.platforms
@@ -121,10 +121,10 @@ class TestSetPlatforms:
         """Test bulk adding platforms with conflicts"""
         sl = SocialLinks()
         platforms = {
-            "linkedin": {
+            "linkedin": [{
                 "patterns": ["https?://example\\.com/(?P<id>[A-Za-z0-9_]+)/?$"],
                 "sanitized": "https://example.com/{id}/"
-            }
+            }]
         }
         with pytest.raises(PlatformAlreadyExistsError, match="already exist"):
             sl.set_platforms(platforms)
@@ -133,10 +133,10 @@ class TestSetPlatforms:
         """Test bulk adding platforms with override"""
         sl = SocialLinks()
         platforms = {
-            "linkedin": {
+            "linkedin": [{
                 "patterns": ["https?://example\\.com/(?P<id>[A-Za-z0-9_]+)/?$"],
                 "sanitized": "https://example.com/{id}/"
-            }
+            }]
         }
         sl.set_platforms(platforms, override=True)
         assert sl.detect_platform("https://example.com/johndoe") == "linkedin"

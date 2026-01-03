@@ -1,18 +1,16 @@
-from typing import Dict, List, Any
-
-# ----------------------------------------------------------------------
-# Common ID regex
-# ----------------------------------------------------------------------
-PROFILE_ID = r"(?P<id>[A-Za-z0-9_.-]+)"
-PROFILE_ID_AT = r"(?P<id>@?[A-Za-z0-9_.-]+)" #Youtube channel links can be with or without @
-PROFILE_ID_UNICODE = r"(?P<id>[\w&%'–®\.-]+)" #LinkedIn profile IDs can contain Unicode characters (e.g., ü in peter-müller-81a8), ampersand, apostrophe, en dash, and registered trademark. \w matches Unicode letters, digits, and underscore
-PROFILE_ID_EXTENDED = r"(?P<id>-?[A-Za-z0-9_@=.\-]+)" #Extended profile IDs supporting: optional negative prefix (Telegram groups), @ symbol (Flickr), equals sign (Douyin base64), and standard characters
-PHONE_NUMBER = r"(?P<id>\+?[0-9]+)" #Phone numbers for WhatsApp, can optionally start with +
+from sociallinks.constants import (
+    PROFILE_ID,
+    PROFILE_ID_AT,
+    PROFILE_ID_UNICODE,
+    PROFILE_ID_EXTENDED,
+    PHONE_NUMBER,
+    PlatformEntries,
+)
 
 # ----------------------------------------------------------------------
 # Predefined platforms
 # ----------------------------------------------------------------------
-PREDEFINED_PLATFORMS: Dict[str, List[Dict[str, Any]]] = {
+PREDEFINED_PLATFORMS: PlatformEntries = {
     "behance": [
         {
             "patterns": [

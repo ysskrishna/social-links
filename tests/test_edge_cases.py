@@ -39,10 +39,10 @@ class TestEdgeCases:
         """Test sanitize when ID cannot be extracted"""
         sl = SocialLinks(use_predefined_platforms=False)
         # Create a platform with pattern that doesn't capture ID
-        platform_data = {
+        platform_data = [{
             "patterns": ["https?://example\\.com/static/?$"],
             "sanitized": "https://example.com/{id}/"
-        }
+        }]
         sl.set_platform("example", platform_data)
         with pytest.raises(PlatformIDExtractionError, match="Could not extract platform ID"):
             sl.sanitize("example", "https://example.com/static")
