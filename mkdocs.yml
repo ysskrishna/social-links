@@ -47,10 +47,10 @@ markdown_extensions:
 
 extra:
   google_site_verification: your-google-site-verification-key
+  og_image: https://raw.githubusercontent.com/ysskrishna/social-links/main/media/og.png
   social:
     - icon: fontawesome/brands/python
       link: https://pypi.org/project/social-links/
-
     - icon: fontawesome/solid/external-link
       link: https://ysskrishna.vercel.app
     - icon: fontawesome/brands/github

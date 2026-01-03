@@ -1,0 +1,42 @@
+
+<meta name="google-site-verification" content="{{ config.extra.google_site_verification }}" />
+
+{# Open Graph Meta Tags #}
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ config.site_url }}/">
+<meta property="og:title" content="{{ config.site_name }}">
+<meta property="og:description" content="{{ config.site_description }}">
+<meta property="og:image" content="{{ config.extra.og_image }}">
+
+{# Twitter Card Meta Tags #}
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="{{ config.site_url }}/">
+<meta property="twitter:title" content="{{ config.site_name }}">
+<meta property="twitter:description" content="{{ config.site_description }}">
+<meta property="twitter:image" content="{{ config.extra.og_image }}">
+
+{# Keywords Meta Tag #}
+<meta name="keywords" content="python, social media, url validation, regex, sanitization, username extraction, web scraping, automation, social links, profile url parser">
+
+{# Robots Meta Tag #}
+<meta name="robots" content="index, follow">
+
+{# Structured Data (JSON-LD) #}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "{{ config.site_name }}",
+  "description": "{{ config.site_description }}",
+  "applicationCategory": "DeveloperApplication",
+  "operatingSystem": "Cross-platform",
+  "author": {
+    "@type": "Person",
+    "name": "{{ config.site_author }}"
+  },
+  "programmingLanguage": "Python",
+  "url": "{{ config.site_url }}",
+  "codeRepository": "{{ config.repo_url }}"
+}
+</script>
+

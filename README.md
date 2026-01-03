@@ -9,7 +9,7 @@
 
 A lightweight, zero-dependency Python library for detecting, validating, and sanitizing social media profile URLs. Supports 50+ platforms out of the box with automatic URL normalization, username extraction, and customizable regex patterns for extensibility.
 
-![OG Image](https://raw.githubusercontent.com/ysskrishna/nestedutils/main/media/og.png)
+![OG Image](https://raw.githubusercontent.com/ysskrishna/social-links/main/media/og.png)
 
 ## Features
 
