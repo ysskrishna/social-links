@@ -12,7 +12,7 @@ class TestSocialLinksInitialization:
     def test_init_with_predefined_platforms(self):
         """Test initialization with predefined platforms"""
         sl = SocialLinks()
-        assert len(sl.platforms) >= 35  # Should have all predefined platforms (37 as of current version)
+        assert len(sl.platforms) >= 50  # Should have all predefined platforms (37 as of current version)
         # Verify some key platforms exist
         assert "linkedin" in sl.platforms
         assert "facebook" in sl.platforms
