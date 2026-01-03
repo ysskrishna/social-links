@@ -191,7 +191,16 @@ sl = SocialLinks(regex_flags=re.IGNORECASE | re.MULTILINE)
 
 See [CHANGELOG.md](https://github.com/ysskrishna/social-links/blob/main/CHANGELOG.md) for a detailed list of changes and version history.
 
+## Roadmap
 
+The following improvements are planned for upcoming releases:
+
+- [ ] Add method to configure custom sanitization patterns
+- [ ] Create Streamlit demo application
+- [ ] Integrate development tools (flake8, black, isort) for code quality
+- [ ] Add code coverage reporting with pytest-cov
+- [ ] Refactor platform entries using dataclasses for better structure
+- [ ] Consider functional API alternative to SocialLinks class for simpler usage
 
 ## Contributing
 
