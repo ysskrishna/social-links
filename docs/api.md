@@ -1,3 +1,20 @@
+---
+title: API Reference
+
+description: "API reference for Social Links Python library. Detect, validate, and sanitize social media links with detailed code examples and custom platform support."
+
+keywords:
+  - API reference
+  - social-links
+  - Python library
+  - social media links
+  - validate
+  - sanitize
+  - custom platform
+  - code examples
+  - URL detection
+---
+
 # API Reference
 
 This page provides comprehensive documentation for all public APIs in the `social-links` library.

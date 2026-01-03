@@ -49,11 +49,41 @@ extra:
   google_site_verification: your-google-site-verification-key
   og_image: https://raw.githubusercontent.com/ysskrishna/social-links/main/media/og.png
   keywords:
-    - python
-    - social media
-    - url validation
-    - profile detection
-    - social links
+    - social-links
+    - Python library
+    - social media links
+    - validate
+    - sanitize
+    - normalize
+    - detect
+    - URL validation
+    - URL parser
+    - regular expression
+    - regex
+    - LinkedIn
+    - GitHub
+    - Twitter
+    - X
+    - Facebook
+    - Instagram
+    - YouTube
+    - Behance
+    - Dribbble
+    - Medium
+    - Reddit
+    - Quora
+    - Pinterest
+    - TikTok
+    - Discord
+    - Mastodon
+    - Bluesky
+    - open source
+    - API reference
+    - contribution guide
+    - changelog
+    - version history
+    - MIT license
+    - ysskrishna
   social:
     - icon: fontawesome/brands/python
       link: https://pypi.org/project/social-links/
