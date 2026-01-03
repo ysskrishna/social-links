@@ -14,60 +14,42 @@ The main class for social media URL operations.
       show_source: false
       heading_level: 3
 
+## Constants and Type Aliases
+
+This section documents all type aliases and constants available in the `sociallinks.constants` module.
+
+::: sociallinks.constants
+    options:
+      show_root_heading: true
+      show_source: false
+      heading_level: 3
+      members:
+        - PlatformEntry
+        - PlatformEntries
+        - PROFILE_ID
+        - PROFILE_ID_AT
+        - PROFILE_ID_UNICODE
+        - PROFILE_ID_EXTENDED
+        - PHONE_NUMBER
+      members_order: source
+
 ## Exceptions
 
 The library provides custom exceptions for better error handling:
 
-::: sociallinks.exceptions.SocialLinksError
+::: sociallinks.exceptions
     options:
       show_root_heading: true
       show_source: false
       heading_level: 3
-
-::: sociallinks.exceptions.PlatformError
-    options:
-      show_root_heading: true
-      show_source: false
-      heading_level: 3
-
-::: sociallinks.exceptions.PlatformNotFoundError
-    options:
-      show_root_heading: true
-      show_source: false
-      heading_level: 3
-
-::: sociallinks.exceptions.PlatformAlreadyExistsError
-    options:
-      show_root_heading: true
-      show_source: false
-      heading_level: 3
-
-::: sociallinks.exceptions.InvalidPlatformError
-    options:
-      show_root_heading: true
-      show_source: false
-      heading_level: 3
-
-::: sociallinks.exceptions.InvalidPlatformRegexError
-    options:
-      show_root_heading: true
-      show_source: false
-      heading_level: 3
-
-::: sociallinks.exceptions.URLParsingError
-    options:
-      show_root_heading: true
-      show_source: false
-      heading_level: 3
-
-::: sociallinks.exceptions.URLMismatchError
-    options:
-      show_root_heading: true
-      show_source: false
-      heading_level: 3
-
-::: sociallinks.exceptions.PlatformIDExtractionError
-    options:
-      show_root_heading: true
-      show_source: false
-      heading_level: 3
+      members:
+        - SocialLinksError
+        - PlatformError
+        - PlatformNotFoundError
+        - PlatformAlreadyExistsError
+        - InvalidPlatformError
+        - InvalidPlatformRegexError
+        - URLParsingError
+        - URLMismatchError
+        - PlatformIDExtractionError
+      members_order: source
