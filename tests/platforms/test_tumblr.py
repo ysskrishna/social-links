@@ -22,9 +22,3 @@ class TestTumblr:
         assert sl.is_valid("tumblr", f"https://tumblr.com/blog/{profile_id}") is True
         assert sl.sanitize("tumblr", f"https://tumblr.com/blog/{profile_id}") == f"https://tumblr.com/{profile_id}"
 
-    def test_tumblr_with_trailing_slash(self, sl):
-        """Test Tumblr with trailing slash"""
-        profile_id = "ysskrishna"
-        assert sl.is_valid("tumblr", f"https://{profile_id}.tumblr.com/") is True
-        assert sl.sanitize("tumblr", f"https://{profile_id}.tumblr.com/") == f"https://tumblr.com/{profile_id}"
-

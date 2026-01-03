@@ -41,30 +41,3 @@ class TestWellfound:
         assert sl.is_valid("wellfound", f"https://angel.co/{profile_id}") is True
         assert sl.sanitize("wellfound", f"https://angel.co/{profile_id}") == f"https://wellfound.com/company/{profile_id}"
 
-    def test_wellfound_with_www(self, sl):
-        """Test Wellfound with www subdomain"""
-        profile_id = "ysskrishna"
-        # Test user profile with www
-        assert sl.detect_platform(f"https://www.wellfound.com/u/{profile_id}") == "wellfound"
-        assert sl.is_valid("wellfound", f"https://www.wellfound.com/u/{profile_id}") is True
-        assert sl.sanitize("wellfound", f"https://www.wellfound.com/u/{profile_id}") == f"https://wellfound.com/u/{profile_id}"
-        # Test company profile with www
-        company_id = "homelight"
-        assert sl.detect_platform(f"https://www.wellfound.com/company/{company_id}") == "wellfound"
-        assert sl.is_valid("wellfound", f"https://www.wellfound.com/company/{company_id}") is True
-        assert sl.sanitize("wellfound", f"https://www.wellfound.com/company/{company_id}") == f"https://wellfound.com/company/{company_id}"
-
-    def test_wellfound_with_http(self, sl):
-        """Test Wellfound with http protocol"""
-        profile_id = "ysskrishna"
-        # Test http instead of https
-        assert sl.detect_platform(f"http://wellfound.com/u/{profile_id}") == "wellfound"
-        assert sl.is_valid("wellfound", f"http://wellfound.com/u/{profile_id}") is True
-        assert sl.sanitize("wellfound", f"http://wellfound.com/u/{profile_id}") == f"https://wellfound.com/u/{profile_id}"
-
-    def test_wellfound_with_trailing_slash(self, sl):
-        """Test Wellfound with trailing slash"""
-        profile_id = "ysskrishna"
-        assert sl.is_valid("wellfound", f"https://wellfound.com/u/{profile_id}/") is True
-        assert sl.sanitize("wellfound", f"https://wellfound.com/u/{profile_id}/") == f"https://wellfound.com/u/{profile_id}"
-

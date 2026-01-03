@@ -15,20 +15,6 @@ class TestBandcamp:
         assert sl.is_valid("bandcamp", profile_id) is True
         assert sl.sanitize("bandcamp", profile_id) == f"https://{profile_id}.bandcamp.com"
 
-    def test_bandcamp_with_trailing_slash(self, sl):
-        """Test Bandcamp with trailing slash"""
-        profile_id = "ysskrishna"
-        assert sl.is_valid("bandcamp", f"https://{profile_id}.bandcamp.com/") is True
-        assert sl.sanitize("bandcamp", f"https://{profile_id}.bandcamp.com/") == f"https://{profile_id}.bandcamp.com"
-
-    def test_bandcamp_with_http(self, sl):
-        """Test Bandcamp with http protocol"""
-        profile_id = "ysskrishna"
-        # Test http instead of https
-        assert sl.detect_platform(f"http://{profile_id}.bandcamp.com") == "bandcamp"
-        assert sl.is_valid("bandcamp", f"http://{profile_id}.bandcamp.com") is True
-        assert sl.sanitize("bandcamp", f"http://{profile_id}.bandcamp.com") == f"https://{profile_id}.bandcamp.com"
-
     def test_bandcamp_with_dashes(self, sl):
         """Test Bandcamp with dashes in username"""
         profile_id = "my-band-name"

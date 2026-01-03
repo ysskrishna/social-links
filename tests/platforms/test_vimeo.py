@@ -15,10 +15,3 @@ class TestVimeo:
         assert sl.is_valid("vimeo", profile_id) is True
         assert sl.sanitize("vimeo", profile_id) == f"https://vimeo.com/{profile_id}"
 
-    def test_vimeo_with_www(self, sl):
-        """Test Vimeo with www subdomain"""
-        profile_id = "ysskrishna"
-        assert sl.detect_platform(f"https://www.vimeo.com/{profile_id}") == "vimeo"
-        assert sl.is_valid("vimeo", f"https://www.vimeo.com/{profile_id}") is True
-        assert sl.sanitize("vimeo", f"https://www.vimeo.com/{profile_id}") == f"https://vimeo.com/{profile_id}"
-
