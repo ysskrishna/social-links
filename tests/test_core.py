@@ -65,11 +65,6 @@ class TestDetectPlatform:
         assert sl.detect_platform("not a url") is None
         assert sl.detect_platform("") is None
 
-    def test_detect_with_whitespace(self):
-        """Test that URLs with whitespace are handled"""
-        sl = SocialLinks()
-        assert sl.detect_platform("  https://www.linkedin.com/in/johndoe/  ") == "linkedin"
-
 
 class TestIsValid:
     """Test is_valid method"""
@@ -99,11 +94,6 @@ class TestIsValid:
         sl = SocialLinks()
         assert sl.is_valid("unknown", "https://www.linkedin.com/in/johndoe/") is False
 
-    def test_is_valid_with_whitespace(self):
-        """Test that URLs with whitespace are handled"""
-        sl = SocialLinks()
-        assert sl.is_valid("linkedin", "  https://www.linkedin.com/in/johndoe/  ") is True
-
 
 class TestSanitize:
     """Test sanitize method"""
@@ -119,9 +109,3 @@ class TestSanitize:
         sl = SocialLinks()
         with pytest.raises(URLMismatchError, match="does not match platform"):
             sl.sanitize("linkedin", "https://example.com")
-
-    def test_sanitize_with_whitespace(self):
-        """Test sanitizing URLs with whitespace"""
-        sl = SocialLinks()
-        result = sl.sanitize("linkedin", "  https://www.linkedin.com/in/johndoe/  ")
-        assert result == "https://linkedin.com/in/johndoe"

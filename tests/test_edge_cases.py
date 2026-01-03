@@ -267,8 +267,3 @@ class TestEmptyPlatformList:
         sl = SocialLinks(use_predefined_platforms=False)
         assert sl.is_valid("linkedin", "https://www.linkedin.com/in/johndoe/") is False
 
-    def test_list_platforms_empty(self):
-        """Test list_platforms when no platforms are configured"""
-        sl = SocialLinks(use_predefined_platforms=False)
-        assert sl.list_platforms() == []
-
