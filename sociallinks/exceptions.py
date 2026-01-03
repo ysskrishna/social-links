@@ -1,7 +1,7 @@
 """Custom exceptions for the sociallinks library.
 
 This module defines all custom exceptions used throughout the social-links
-library. All exceptions inherit from :class:`SocialLinksError`, allowing
+library. All exceptions inherit from `SocialLinksError`, allowing
 you to catch all social-links related errors with a single exception handler.
 """
 
@@ -42,8 +42,8 @@ class PlatformAlreadyExistsError(PlatformError):
     """Raised when attempting to create a platform that already exists.
     
     This exception is raised when trying to register a platform with a name
-    that is already in use. Use :meth:`SocialLinks.delete_platform` first
-    if you want to replace an existing platform.
+    that is already in use. To replace an existing platform, use the ``override=True``
+    parameter with `SocialLinks.set_platform` or `SocialLinks.set_platforms`.
     """
     pass
 
@@ -53,7 +53,9 @@ class InvalidPlatformError(PlatformError):
     
     This exception is raised when a platform configuration is missing required
     fields or has invalid structure. A valid platform entry must be a list
-    of dictionaries, each containing at least a "patterns" key.
+    of dictionaries, each containing both `patterns` and `sanitized` keys.
+    Entries missing either field are skipped, but at least one complete entry
+    is required for the platform to be valid.
     """
     pass
 

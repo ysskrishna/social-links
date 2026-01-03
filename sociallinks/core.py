@@ -317,7 +317,8 @@ class SocialLinks:
     def set_platform(self, name: str, data: PlatformEntry, *, override: bool = False) -> None:
         """Add or update a platform configuration.
 
-        Registers a new platform or updates an existing one. The platform
+        Registers a new platform. If the platform already exists, updates it
+        only when override=True (default behavior raises an error). The platform
         patterns are compiled immediately and made available for use.
 
         Args:
@@ -393,8 +394,10 @@ class SocialLinks:
     def set_platforms(self, platforms: PlatformEntries, *, override: bool = False) -> None:
         """Add or update multiple platform configurations at once.
 
-        Bulk operation to register multiple platforms. This is more efficient
-        than calling `set_platform()` multiple times.
+        Bulk operation to register multiple platforms. If any platform already
+        exists, updates occur only when override=True (default behavior raises
+        an error). This is more efficient than calling `set_platform()` multiple
+        times.
 
         Args:
             platforms: Dictionary mapping platform names to their

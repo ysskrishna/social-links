@@ -41,16 +41,16 @@ from sociallinks import SocialLinks
 sl = SocialLinks()
 
 # Detect platform from URL
-platform = sl.detect_platform("https://www.linkedin.com/in/johndoe/")
+platform = sl.detect_platform("https://www.linkedin.com/in/ysskrishna/")
 print(platform)  # "linkedin"
 
 # Validate URL for a specific platform
-is_valid = sl.is_valid("linkedin", "https://www.linkedin.com/in/johndoe/")
+is_valid = sl.is_valid("linkedin", "https://www.linkedin.com/in/ysskrishna/")
 print(is_valid)  # True
 
 # Sanitize URL to canonical format
-sanitized = sl.sanitize("linkedin", "https://www.linkedin.com/in/johndoe/")
-print(sanitized)  # "https://linkedin.com/in/johndoe"
+sanitized = sl.sanitize("linkedin", "https://www.linkedin.com/in/ysskrishna/")
+print(sanitized)  # "https://linkedin.com/in/ysskrishna"
 ```
 
 ## Supported Platforms
@@ -86,14 +86,14 @@ The library comes with 50+ predefined platforms:
 sl = SocialLinks()
 
 # Detect from full URL
-sl.detect_platform("https://github.com/username")  # "github"
-sl.detect_platform("https://x.com/username")      # "x"
+sl.detect_platform("https://github.com/ysskrishna")  # "github"
+sl.detect_platform("https://x.com/ysskrishna")      # "x"
 sl.detect_platform("https://example.com")         # None
 
 # Works with various URL formats
-sl.detect_platform("http://linkedin.com/in/johndoe")
-sl.detect_platform("www.facebook.com/johndoe")
-sl.detect_platform("  https://instagram.com/user  ")  # Handles whitespace
+sl.detect_platform("http://linkedin.com/in/ysskrishna")
+sl.detect_platform("www.facebook.com/ysskrishna")
+sl.detect_platform("  https://instagram.com/ysskrishna  ")  # Handles whitespace
 ```
 
 ### Validate URLs
@@ -102,9 +102,9 @@ sl.detect_platform("  https://instagram.com/user  ")  # Handles whitespace
 sl = SocialLinks()
 
 # Validate against specific platform
-sl.is_valid("linkedin", "https://www.linkedin.com/in/johndoe/")  # True
+sl.is_valid("linkedin", "https://www.linkedin.com/in/ysskrishna/")  # True
 sl.is_valid("linkedin", "https://example.com")                   # False
-sl.is_valid("github", "https://github.com/username")             # True
+sl.is_valid("github", "https://github.com/ysskrishna")             # True
 ```
 
 ### Sanitize URLs
@@ -113,14 +113,14 @@ sl.is_valid("github", "https://github.com/username")             # True
 sl = SocialLinks()
 
 # Normalize to canonical format
-sl.sanitize("linkedin", "https://www.linkedin.com/in/johndoe/")
-# Returns: "https://linkedin.com/in/johndoe"
+sl.sanitize("linkedin", "https://www.linkedin.com/in/ysskrishna/")
+# Returns: "https://linkedin.com/in/ysskrishna"
 
-sl.sanitize("github", "http://www.github.com/username")
-# Returns: "https://github.com/username"
+sl.sanitize("github", "http://www.github.com/ysskrishna")
+# Returns: "https://github.com/ysskrishna"
 
-sl.sanitize("x", "https://twitter.com/username")
-# Returns: "https://x.com/username"
+sl.sanitize("x", "https://twitter.com/ysskrishna")
+# Returns: "https://x.com/ysskrishna"
 ```
 
 ### Custom Platforms

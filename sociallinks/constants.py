@@ -4,7 +4,7 @@ This module provides:
 - Type aliases for platform configuration structures
 - Common regex patterns for matching profile IDs and phone numbers
 
-These constants are used internally by the :class:`SocialLinks` class and can
+These constants are used internally by the `SocialLinks` class and can
 also be imported for use in custom platform definitions.
 """
 from typing import List, Dict, Any
@@ -21,9 +21,13 @@ platform configuration such as patterns and sanitized URL templates.
 A platform can have multiple configuration variants (e.g., different URL
 patterns for profiles vs. companies).
 
-Each dictionary in the list must contain:
+Each dictionary in the list should contain:
 - ``patterns``: A list of regex pattern strings that match URLs for this platform
-- ``sanitized``: A template string for the sanitized URL format (optional)
+- ``sanitized``: A template string for the sanitized URL format
+
+Note: Entries missing either ``patterns`` or ``sanitized`` will be skipped during
+compilation. At least one complete entry (with both fields) is required for a
+valid platform configuration.
 
 Example:
     ```python
@@ -40,7 +44,7 @@ PlatformEntries = Dict[str, PlatformEntry]
 """Type alias for a collection of platform configurations.
 
 A dictionary mapping platform names (strings) to their configuration entries.
-This is the structure used internally by :class:`SocialLinks` to store all
+This is the structure used internally by `SocialLinks` to store all
 registered platforms.
 
 Example:
