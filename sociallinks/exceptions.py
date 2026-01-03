@@ -1,8 +1,3 @@
-"""
-Custom exceptions for the social-links library.
-"""
-
-
 class SocialLinksError(Exception):
     """Base exception for all social-links errors."""
     pass
@@ -54,4 +49,5 @@ class URLMismatchError(URLParsingError):
 class PlatformIDExtractionError(URLParsingError):
     """Raised when a platform identifier cannot be extracted from a URL."""
     pass
+
 
