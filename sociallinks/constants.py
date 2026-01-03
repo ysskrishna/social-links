@@ -5,12 +5,41 @@ from typing import List, Dict, Any
 # ----------------------------------------------------------------------
 
 PlatformEntry = List[Dict[str, Any]]
-"""Type alias for a platform entry, representing a list of dictionaries
-containing platform-specific configuration data."""
+"""Type alias for a platform configuration.
+
+A platform entry is a list of dictionaries, where each dictionary contains
+platform configuration such as patterns and sanitized URL templates.
+A platform can have multiple configuration variants (e.g., different URL
+patterns for profiles vs. companies).
+
+Example:
+    ```python
+    entry: PlatformEntry = [
+        {
+            "patterns": [r"https?://example.com/(?P<id>\\w+)"],
+            "sanitized": "https://example.com/{id}"
+        }
+    ]
+    ```
+"""
 
 PlatformEntries = Dict[str, PlatformEntry]
-"""Type alias for platform entries, mapping platform names to their
-respective PlatformEntry configurations."""
+"""Type alias for a collection of platform configurations.
+
+A dictionary mapping platform names to their configuration entries.
+
+Example:
+    ```python
+    platforms: PlatformEntries = {
+        "example": [
+            {
+                "patterns": [r"https?://example.com/(?P<id>\\w+)"],
+                "sanitized": "https://example.com/{id}"
+            }
+        ]
+    }
+    ```
+"""
 
 
 # ----------------------------------------------------------------------
@@ -18,25 +47,81 @@ respective PlatformEntry configurations."""
 # ----------------------------------------------------------------------
 
 PROFILE_ID = r"(?P<id>[A-Za-z0-9_.-]+)"
-"""Standard profile ID pattern matching alphanumeric characters,
-underscores, periods, and hyphens."""
+"""Standard profile ID regex pattern.
+
+Matches alphanumeric characters, underscore, period, and hyphen.
+
+Used for most social media platforms with standard username formats.
+
+Example matches:
+    - ``john_doe``
+    - ``user123``
+    - ``my.profile``
+    - ``user-name``
+"""
 
 PROFILE_ID_AT = r"(?P<id>@?[A-Za-z0-9_.-]+)"
-"""Profile ID pattern with optional @ prefix (e.g., YouTube channels)."""
+"""Profile ID regex pattern with optional @ prefix.
+
+Matches profile IDs that may optionally start with an @ symbol.
+
+Commonly used for platforms like YouTube channels.
+
+Example matches:
+    - ``@channel``
+    - ``channel``
+    - ``@user_name``
+"""
 
 PROFILE_ID_UNICODE = r"(?P<id>[\w&%'–®\.-]+)"
-"""Profile ID pattern supporting Unicode characters (e.g., LinkedIn: peter-müller-81a8).
-Supports Unicode letters, digits, underscore, ampersand, percent, apostrophe,
-en dash, registered trademark, period, and hyphen."""
+"""Profile ID regex pattern supporting Unicode characters.
+
+Matches Unicode word characters (via ``\w``, which includes Unicode letters
+and digits in Python 3), plus special characters including:
+- Ampersand (&)
+- Percent (%)
+- Apostrophe (')
+- En dash (–)
+- Registered trademark (®)
+- Period (.)
+- Hyphen (-)
+
+Used for platforms like LinkedIn that support international characters.
+
+Example matches:
+    - ``peter-müller-81a8``
+    - ``user&co``
+    - ``name's-profile``
+    - ``josé-garcía``
+"""
 
 PROFILE_ID_EXTENDED = r"(?P<id>-?[A-Za-z0-9_@=.\-]+)"
-"""Extended profile ID pattern supporting:
-- Optional negative prefix (Telegram groups)
-- @ symbol (Flickr)
-- Equals sign (Douyin base64)
-- Standard alphanumeric characters
+"""Extended profile ID regex pattern with additional character support.
+
+Supports:
+- Optional leading hyphen (for Telegram groups, e.g., ``-123456789``)
+- @ symbol (for platforms like Flickr)
+- Equals sign (for Douyin base64 encoded IDs)
+- Period (.)
+- Standard alphanumeric characters, underscore, and hyphen
+
+Example matches:
+    - ``-123456789`` (Telegram group)
+    - ``@username`` (Flickr)
+    - ``base64==`` (Douyin)
+    - ``normal_user``
 """
 
 PHONE_NUMBER = r"(?P<id>\+?[0-9]+)"
-"""Phone number pattern for WhatsApp (can optionally start with +)."""
+"""Phone number regex pattern.
+
+Matches phone numbers that may optionally start with a + sign.
+
+Primarily used for WhatsApp platform.
+
+Example matches:
+    - ``+1234567890``
+    - ``1234567890``
+    - ``+441234567890``
+"""
 
