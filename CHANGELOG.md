@@ -5,6 +5,62 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.0]
+
+### Added
+
+- Support for 28 new social media platforms:
+  - **Music & Audio**: Apple Music, Bandcamp
+  - **Video Platforms**: Douyin, Kuaishou, Vimeo
+  - **Social Networks**: Bluesky, Discord, Reddit, Snapchat, Tumblr, Threads (Instagram)
+  - **Professional & Business**: Crunchbase, GitLab, HackerNews, ProductHunt, Wellfound (AngelList)
+  - **E-commerce & Marketplaces**: Etsy, Gumroad
+  - **Content & Publishing**: Hashnode, Slideshare
+  - **Messaging & Communication**: Signal, WeChat, WhatsApp
+  - **Photo & Media**: Flickr, Gravatar
+  - **Gaming**: Steam
+  - **Q&A & Forums**: Quora
+  - **Chinese Platforms**: Weibo
+- `InvalidPlatformRegexError` exception for handling invalid regex patterns in platform configurations
+- `constants.py` module with reusable regex patterns and type aliases for platform configuration
+- Comprehensive API reference documentation
+- Function and constant docstrings throughout the codebase
+- Roadmap section in README
+- Google verification key for documentation
+- SEO meta tags and title templates for documentation pages
+- Common test patterns module for parametrized testing across platforms
+
+### Changed
+
+- Enhanced platform pattern matching:
+  - LinkedIn: Added support for school URLs and improved pattern matching with `%` character support
+  - Reddit: Added support for subreddit URLs and `u/` prefix format
+  - Telegram: Enhanced with additional URL patterns
+  - Spotify: Added support for artist profile URLs and improved user profile patterns
+  - Quora: Added support for Unicode characters in profile URLs
+  - Substack: Updated URL patterns for better matching
+  - WhatsApp: Added support for send URL format
+  - YouTube: Fixed channel pattern matching
+- Refactored exception hierarchy:
+  - Introduced `PlatformError` as base class for platform-related errors
+  - Introduced `URLParsingError` as base class for URL parsing errors
+  - Improved error categorization and inheritance structure
+- Refactored test suite:
+  - Split monolithic `test_platforms.py` into individual platform-specific test files
+  - Added `conftest.py` for shared test fixtures
+  - Parametrized common test cases (www, http, trailing_slash) for better coverage
+- Updated README:
+  - Formatted predefined platforms in a table for better readability
+  - Removed outdated error handling section
+- Enhanced `pyproject.toml` with improved keywords and metadata
+- Improved documentation structure with better organization and SEO optimization
+
+### Fixed
+
+- Fixed YouTube channel pattern matching issues
+- Fixed sanitization pattern edge cases
+- Fixed documentation bugs
+
 ## [1.1.0]
 
 ### Added
@@ -65,5 +121,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Automatic @ symbol handling
 - URL normalization and sanitization
 
-[1.1.0]: https://github.com/ysskrishna/social-links/releases/tag/v1.1.0
+[1.2.0]: https://github.com/ysskrishna/social-links/compare/v1.1.0...v1.2.0
+[1.1.0]: https://github.com/ysskrishna/social-links/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/ysskrishna/social-links/releases/tag/v1.0.0
