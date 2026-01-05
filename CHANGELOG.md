@@ -5,6 +5,22 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.1]
+
+### Added
+
+- Interactive demo page in documentation with Pyodide integration
+  - Browser-based testing interface for detecting platforms, validating URLs, and sanitizing links
+  - No installation required - runs entirely in the browser
+  - Real-time platform detection and validation feedback
+- Demo badge in README linking to interactive demo
+- Prominent callout in README highlighting the interactive demo feature
+
+### Changed
+
+- Enhanced README visibility for demo page with badge and callout placement
+- Improved user experience with easier access to interactive testing
+
 ## [1.2.0]
 
 ### Added
@@ -121,6 +137,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Automatic @ symbol handling
 - URL normalization and sanitization
 
+[1.2.1]: https://github.com/ysskrishna/social-links/compare/v1.2.0...v1.2.1
 [1.2.0]: https://github.com/ysskrishna/social-links/compare/v1.1.0...v1.2.0
 [1.1.0]: https://github.com/ysskrishna/social-links/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/ysskrishna/social-links/releases/tag/v1.0.0
