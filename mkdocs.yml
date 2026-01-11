@@ -13,6 +13,8 @@ nav:
   - Home: index.md
   - Interactive Demo: demo.md
   - API Reference: api.md
+  - Constants: constants.md
+  - Exceptions: exceptions.md
   - Contributing: CONTRIBUTING.md
   - Changelog: CHANGELOG.md
   - License: LICENSE.md
