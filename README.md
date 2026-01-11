@@ -174,28 +174,43 @@ Add your own platform definitions with custom regex patterns. This is useful whe
 
 #### Platform Configuration Structure
 
-A platform configuration is a **list of dictionaries**, where each dictionary defines URL patterns and a sanitization template:
+A platform configuration is a **list of dictionaries**, where each dictionary defines URL patterns and a sanitization template. Multiple dictionaries allow different URL formats to be handled with potentially different sanitization templates (e.g., personal profiles vs. company pages).
 
 ```python
+# Single dictionary with multiple patterns (same sanitization template)
 custom_platform = [{
     "patterns": [
         r"https?://(www\.)?example\.com/(?P<id>[A-Za-z0-9_]+)/?$",
-        r"^(?P<id>[A-Za-z0-9_]+)$"  # Username-only pattern
+        r"https?://example\.com/user/(?P<id>[A-Za-z0-9_]+)/?$"
     ],
     "sanitized": "https://example.com/{id}"
 }]
+
+# Multiple dictionaries (different URL formats, same or different sanitization)
+custom_platform = [
+    {
+        "patterns": [r"https?://example\.com/user/(?P<id>[A-Za-z0-9_]+)"],
+        "sanitized": "https://example.com/user/{id}"
+    },
+    {
+        "patterns": [r"https?://example\.com/u/(?P<id>[A-Za-z0-9_]+)"],
+        "sanitized": "https://example.com/user/{id}"  # Normalize to same format
+    }
+]
 ```
 
 **Configuration Fields:**
 
 - **`patterns`** (list of strings): Regex patterns that match URLs for this platform. 
   - Use named groups like `(?P<id>...)` to capture identifiers (username, ID, etc.)
-  - Multiple patterns allow matching different URL formats (e.g., with/without `www`, username-only)
-  - Patterns are matched in order until one succeeds
+  - Multiple patterns allow matching different URL formats (e.g., with/without `www`, different URL paths)
+  - **Pattern matching behavior:**
+    - For `detect_platform()`: All patterns are checked (order-independent for detection result)
+    - For `sanitize()`: Patterns are checked in order, and the **first matching pattern** is used for sanitization (order-dependent)
 
 - **`sanitized`** (string): Template for the canonical URL format
-  - Use `{id}` (or other named groups from patterns) as placeholders
-  - This is the format URLs will be normalized to when using `sanitize()`
+    - Use `{id}` (or other named groups from patterns) as placeholders
+    - This is the format URLs will be normalized to when using `sanitize()`
 
 **Example Usage:**
 
@@ -204,21 +219,33 @@ from sociallinks import SocialLinks
 
 sl = SocialLinks(use_predefined_platforms=False)
 
-# Add a custom platform
+# Example 1: Single dictionary with multiple patterns
 custom_platform = [{
     "patterns": [
         r"https?://(www\.)?example\.com/(?P<id>[A-Za-z0-9_]+)/?$",
-        r"^(?P<id>[A-Za-z0-9_]+)$"  # Username-only pattern
+        r"https?://example\.com/user/(?P<id>[A-Za-z0-9_]+)/?$"
     ],
     "sanitized": "https://example.com/{id}"
 }]
 
 sl.set_platform("example", custom_platform)
-
-# Now you can use it
 sl.detect_platform("https://example.com/user123")  # "example"
-sl.detect_platform("user123")  # "example" (matches username-only pattern)
 sl.sanitize("example", "https://www.example.com/user123/")  # "https://example.com/user123"
+
+# Example 2: Multiple dictionaries for different URL formats
+platform_with_variants = [
+    {
+        "patterns": [r"https?://example\.com/user/(?P<id>[A-Za-z0-9_]+)"],
+        "sanitized": "https://example.com/user/{id}"
+    },
+    {
+        "patterns": [r"https?://example\.com/u/(?P<id>[A-Za-z0-9_]+)"],
+        "sanitized": "https://example.com/user/{id}"  # Normalize /u/ to /user/
+    }
+]
+
+sl.set_platform("example_v2", platform_with_variants)
+sl.sanitize("example_v2", "https://example.com/u/johndoe")  # "https://example.com/user/johndoe"
 ```
 
 **Viewing and Editing Existing Platforms:**
@@ -236,7 +263,7 @@ print(github_config)  # See the patterns and sanitized template
 
 # Override an existing platform with custom configuration
 custom_github = [{
-    "patterns": [r"https?://github\.com/(?P<id>[A-Za-z0-9_-]+)/?$"],
+    "patterns": [r"https?://github\.com/(?P<id>[A-Za-z0-9_]+)/?$"],
     "sanitized": "https://github.com/{id}"
 }]
 sl.set_platform("github", custom_github, override=True)
@@ -260,7 +287,7 @@ config = sl.get_platform("github")
 
 # Add a new platform (raises error if platform already exists)
 custom_platform = [{
-    "patterns": [r"https?://example.com/(?P<id>\w+)"],
+    "patterns": [r"https?://example.com/(?P<id>[A-Za-z0-9_]+)"],
     "sanitized": "https://example.com/{id}"
 }]
 sl.set_platform("example", custom_platform)
@@ -271,11 +298,11 @@ sl.set_platform("github", custom_platform, override=True)
 # Add multiple platforms at once
 new_platforms = {
     "platform1": [{
-        "patterns": [r"https?://example1.com/(?P<id>\w+)"],
+        "patterns": [r"https?://example1.com/(?P<id>[A-Za-z0-9_]+)"],
         "sanitized": "https://example1.com/{id}"
     }],
     "platform2": [{
-        "patterns": [r"https?://example2.com/(?P<id>\w+)"],
+        "patterns": [r"https?://example2.com/(?P<id>[A-Za-z0-9_]+)"],
         "sanitized": "https://example2.com/{id}"
     }]
 }
