@@ -454,6 +454,10 @@ If you find this library useful, please consider:
 - **Issues**: [github.com/ysskrishna/social-links/issues](https://github.com/ysskrishna/social-links/issues)
 
 
+## Credits
+
+This package is inspired by the [social-links](https://www.npmjs.com/package/social-links) npm package by [gkucmierz](https://github.com/gkucmierz/social-links).
+
 ## License
 
 MIT License - see [LICENSE](https://github.com/ysskrishna/social-links/blob/main/LICENSE) file for details.
