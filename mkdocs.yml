@@ -1,6 +1,6 @@
 # mkdocs.yml
 site_name: social-links
-site_description: A lightweight, zero-dependency Python library for detecting, validating, and sanitizing social media profile URLs. Supports 50+ platforms out of the box with automatic URL normalization, username extraction, and customizable regex patterns for extensibility.
+site_description: Python library to validate, sanitize, and detect social media URLs. Support for LinkedIn, Instagram, TikTok, X/Twitter, GitHub, Facebook, YouTube, and 50+ platforms. Features automatic URL normalization and zero dependencies. Easy to use, regex-powered, and customizable.
 site_author: Y. Siva Sai Krishna
 site_url: "https://ysskrishna.github.io/social-links"
 repo_name: "ysskrishna/social-links"
