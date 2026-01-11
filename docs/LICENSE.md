@@ -1,18 +1,19 @@
 ---
-title: MIT Open Source License
+title: MIT License
 
-description: "MIT License for Social Links Python library – permissions and terms for using, modifying, and distributing this open source social media URL validation tool."
+description: "MIT License terms and permissions for social-links Python library. Free to use, modify, and distribute this open source social media URL validation and parsing tool."
 
 keywords:
   - MIT License
-  - open source
-  - social-links
-  - Python library
-  - social media links
-  - terms
-  - permissions
-  - redistribution
-  - modification
+  - open source license
+  - social-links license
+  - Python library license
+  - free software
+  - open source terms
+  - license permissions
+  - redistribution rights
+  - modification rights
+  - software license
 ---
 
 --8<-- "LICENSE"

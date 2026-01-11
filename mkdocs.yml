@@ -1,5 +1,5 @@
 # mkdocs.yml
-site_name: social-links
+site_name: Social Links - Python Social Media URL Validator & Parser
 site_description: Python library to validate, sanitize, and detect social media URLs. Support for LinkedIn, Instagram, TikTok, X/Twitter, GitHub, Facebook, YouTube, and 50+ platforms. Features automatic URL normalization and zero dependencies. Easy to use, regex-powered, and customizable.
 site_author: Y. Siva Sai Krishna
 site_url: "https://ysskrishna.github.io/social-links"

@@ -1,16 +1,20 @@
 ---
-title: Constants
+title: Constants & Type Definitions
 
-description: "Constants and type aliases for the social-links library. Common regex patterns and type definitions for custom platform configurations."
+description: "Complete reference for constants, type aliases, and regex patterns for social media URL validation. Build custom platform configurations with predefined patterns for profile IDs, usernames, and URL structures."
 
 keywords:
   - constants
-  - regex patterns
-  - type aliases
+  - regex patterns social media
+  - URL regex patterns
+  - type aliases Python
   - platform configuration
   - profile ID patterns
-  - social-links
-  - Python library
+  - username patterns
+  - social media regex
+  - custom platform regex
+  - URL pattern constants
+  - social-links constants
 ---
 
 # Constants

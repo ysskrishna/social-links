@@ -1,17 +1,20 @@
 ---
 title: Core API
 
-description: "Advanced API for custom platforms and platform management. The SocialLinks class provides full control over platform configurations, regex flags, and bulk operations."
+description: "Advanced Python API for custom social media platforms and URL validation. Add custom platforms, configure regex patterns, manage platform configurations. Full control over URL detection, validation, and sanitization."
 
 keywords:
   - core API
   - SocialLinks class
-  - custom platforms
-  - platform management
-  - advanced usage
-  - regex flags
-  - social-links
-  - Python library
+  - custom social platforms
+  - add custom URL patterns
+  - platform management Python
+  - regex URL validation
+  - custom platform configuration
+  - advanced URL processing
+  - social media platform API
+  - Python URL parser class
+  - regex patterns social media
 ---
 
 # Core API

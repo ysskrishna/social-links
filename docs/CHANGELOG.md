@@ -1,19 +1,20 @@
 ---
-title: Changelog & Version History
+title: Changelog
 
-description: "Track all updates, new features, and bug fixes in Social Links – Python library for detecting, validating, and sanitizing social media links."
+description: "Complete changelog and version history for social-links Python library. Track new features, bug fixes, platform additions, and updates for social media URL validation and parsing."
 
 keywords:
-  - social-links
   - changelog
   - version history
   - release notes
-  - Python library
-  - social media links
-  - validate
-  - sanitize
-  - update
+  - social-links updates
+  - Python library changelog
+  - social media URL validator updates
+  - new features
   - bug fixes
+  - platform additions
+  - version releases
+  - update history
 ---
 
 --8<-- "CHANGELOG.md"

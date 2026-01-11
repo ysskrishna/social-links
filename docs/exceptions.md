@@ -1,15 +1,20 @@
 ---
-title: Exceptions
+title: Exception Reference
 
-description: "Exception classes for the social-links library. Comprehensive error handling with detailed exception hierarchy for platform and URL operations."
+description: "Complete exception reference for social-links Python library. Handle platform errors, URL validation errors, and invalid configurations. Comprehensive error handling guide with exception hierarchy."
 
 keywords:
   - exceptions
-  - error handling
+  - error handling Python
   - platform errors
-  - URL errors
-  - social-links
-  - Python library
+  - URL validation errors
+  - social media validation errors
+  - exception handling
+  - Python exception hierarchy
+  - social-links errors
+  - platform not found error
+  - invalid URL error
+  - error handling guide
 ---
 
 # Exceptions
