@@ -170,7 +170,34 @@ sl.list_platforms()  # ["behance", "dev_to", ...]
 
 ### Custom Platforms
 
-Add your own platform definitions with custom regex patterns:
+Add your own platform definitions with custom regex patterns. This is useful when you need to support platforms not included in the predefined list, or when you want to customize how existing platforms are detected and sanitized.
+
+#### Platform Configuration Structure
+
+A platform configuration is a **list of dictionaries**, where each dictionary defines URL patterns and a sanitization template:
+
+```python
+custom_platform = [{
+    "patterns": [
+        r"https?://(www\.)?example\.com/(?P<id>[A-Za-z0-9_]+)/?$",
+        r"^(?P<id>[A-Za-z0-9_]+)$"  # Username-only pattern
+    ],
+    "sanitized": "https://example.com/{id}"
+}]
+```
+
+**Configuration Fields:**
+
+- **`patterns`** (list of strings): Regex patterns that match URLs for this platform. 
+  - Use named groups like `(?P<id>...)` to capture identifiers (username, ID, etc.)
+  - Multiple patterns allow matching different URL formats (e.g., with/without `www`, username-only)
+  - Patterns are matched in order until one succeeds
+
+- **`sanitized`** (string): Template for the canonical URL format
+  - Use `{id}` (or other named groups from patterns) as placeholders
+  - This is the format URLs will be normalized to when using `sanitize()`
+
+**Example Usage:**
 
 ```python
 from sociallinks import SocialLinks
@@ -190,7 +217,29 @@ sl.set_platform("example", custom_platform)
 
 # Now you can use it
 sl.detect_platform("https://example.com/user123")  # "example"
-sl.sanitize("example", "https://example.com/user123")  # "https://example.com/user123"
+sl.detect_platform("user123")  # "example" (matches username-only pattern)
+sl.sanitize("example", "https://www.example.com/user123/")  # "https://example.com/user123"
+```
+
+**Viewing and Editing Existing Platforms:**
+
+You can also view or modify existing platform configurations:
+
+```python
+from sociallinks import SocialLinks
+
+sl = SocialLinks()
+
+# Get existing platform configuration
+github_config = sl.get_platform("github")
+print(github_config)  # See the patterns and sanitized template
+
+# Override an existing platform with custom configuration
+custom_github = [{
+    "patterns": [r"https?://github\.com/(?P<id>[A-Za-z0-9_-]+)/?$"],
+    "sanitized": "https://github.com/{id}"
+}]
+sl.set_platform("github", custom_github, override=True)
 ```
 
 ### Platform Management
@@ -253,7 +302,6 @@ The following improvements are planned for upcoming releases:
 - [ ] Integrate development tools (flake8, black, isort) for code quality
 - [ ] Add code coverage reporting with pytest-cov
 - [ ] Refactor platform entries using dataclasses for better structure
-- [x] Functional API alternative to SocialLinks class for simpler usage
 
 ## Contributing
 
