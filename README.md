@@ -143,14 +143,21 @@ print(f"Supported platforms: {len(platforms)}")  # 50+
 ```
 
 ---
-
 ## Advanced Usage
 
-For custom configurations, custom platforms, or platform management, use the `SocialLinks` class directly.
+For custom configurations, custom platforms, or programmatic platform management, use the `SocialLinks` class directly instead of the module-level functions.
+
+### When to Use Advanced Features
+
+Use the class API when you need to:
+- Add support for platforms not in the predefined list
+- Customize how existing platforms are detected or sanitized
+- Manage platforms programmatically (add, remove, modify)
+- Configure regex flags or start with an empty platform list
 
 ### Using the Class API
 
-The class API provides the same methods as the module-level functions, but with more control:
+The `SocialLinks` class provides the same methods as module-level functions, but with additional configuration options:
 
 ```python
 from sociallinks import SocialLinks
@@ -161,65 +168,86 @@ sl = SocialLinks()
 sl.detect_platform("https://github.com/ysskrishna")  # "github"
 sl.is_valid("linkedin", "https://linkedin.com/in/user")  # True
 sl.sanitize("github", "https://github.com/user")  # "https://github.com/user"
-sl.list_platforms()  # ["behance", "dev_to", ...]
+sl.list_platforms()  # ["behance", "dev_to", "dribbble", ...]
 ```
 
-> **Note:** You can configure the `SocialLinks` instance during initialization:
-> - `use_predefined_platforms=False` - Start with an empty platform list (useful for custom platforms only)
-> - `regex_flags=re.IGNORECASE | re.MULTILINE` - Configure regex compilation flags
-
-### Custom Platforms
-
-Add your own platform definitions with custom regex patterns. This is useful when you need to support platforms not included in the predefined list, or when you want to customize how existing platforms are detected and sanitized.
-
-#### Platform Configuration Structure
-
-A platform configuration is a **list of dictionaries**, where each dictionary defines URL patterns and a sanitization template. Multiple dictionaries allow different URL formats to be handled with potentially different sanitization templates (e.g., personal profiles vs. company pages).
+#### Configuration Options
 
 ```python
-# Single dictionary with multiple patterns (same sanitization template)
-custom_platform = [{
+import re
+
+# Start with empty platform list (useful for custom platforms only)
+sl = SocialLinks(use_predefined_platforms=False)
+
+# Configure regex compilation flags
+sl = SocialLinks(regex_flags=re.IGNORECASE | re.MULTILINE)
+```
+
+### Understanding Platform Configuration
+
+A platform configuration is a **list of dictionaries**. Each dictionary contains:
+- **`patterns`**: List of regex patterns that match URLs for this platform
+- **`sanitized`**: Template string for the canonical URL format
+
+Multiple dictionaries are useful when a platform has different URL types that normalize to different canonical forms (e.g., LinkedIn personal profiles `/in/` vs company pages `/company/`).
+
+#### Configuration Structure
+
+**Single dictionary** - Multiple patterns sharing the same sanitization template:
+
+```python
+platform_config = [{
     "patterns": [
         r"https?://(www\.)?example\.com/(?P<id>[A-Za-z0-9_]+)/?$",
         r"https?://example\.com/user/(?P<id>[A-Za-z0-9_]+)/?$"
     ],
     "sanitized": "https://example.com/{id}"
 }]
+```
 
-# Multiple dictionaries (different URL formats, same or different sanitization)
-custom_platform = [
+**Multiple dictionaries** - Different URL formats with different sanitization templates (e.g., personal profiles vs company pages):
+
+```python
+# Example: LinkedIn supports both personal profiles and company pages
+platform_config = [
     {
-        "patterns": [r"https?://example\.com/user/(?P<id>[A-Za-z0-9_]+)"],
-        "sanitized": "https://example.com/user/{id}"
+        "patterns": [
+            r"https?://(www\.)?linkedin\.com/in/(?P<id>[A-Za-z0-9_-]+)/?$",
+            r"https?://linkedin\.com/mwlite/in/(?P<id>[A-Za-z0-9_-]+)/?$"
+        ],
+        "sanitized": "https://linkedin.com/in/{id}"  # Personal profiles
     },
     {
-        "patterns": [r"https?://example\.com/u/(?P<id>[A-Za-z0-9_]+)"],
-        "sanitized": "https://example.com/user/{id}"  # Normalize to same format
+        "patterns": [
+            r"https?://(www\.)?linkedin\.com/company/(?P<id>[A-Za-z0-9_-]+)/?$",
+            r"https?://(www\.)?linkedin\.com/school/(?P<id>[A-Za-z0-9_-]+)/?$"
+        ],
+        "sanitized": "https://linkedin.com/company/{id}"  # Company/school pages
     }
 ]
 ```
 
-**Configuration Fields:**
+#### Key Concepts
 
-- **`patterns`** (list of strings): Regex patterns that match URLs for this platform. 
-  - Use named groups like `(?P<id>...)` to capture identifiers (username, ID, etc.)
-  - Multiple patterns allow matching different URL formats (e.g., with/without `www`, different URL paths)
-  - **Pattern matching behavior:**
-    - For `detect_platform()`: All patterns are checked (order-independent for detection result)
-    - For `sanitize()`: Patterns are checked in order, and the **first matching pattern** is used for sanitization (order-dependent)
+**Pattern Matching:**
+- Use named groups like `(?P<id>...)` to capture identifiers (username, ID, etc.)
+- For `detect_platform()`: All patterns are checked (order-independent)
+- For `sanitize()`: Patterns are checked **in order**, and the **first match** is used
 
-- **`sanitized`** (string): Template for the canonical URL format
-    - Use `{id}` (or other named groups from patterns) as placeholders
-    - This is the format URLs will be normalized to when using `sanitize()`
+**Sanitization Template:**
+- Use `{id}` (or other named groups from patterns) as placeholders
+- This defines the canonical URL format returned by `sanitize()`
 
-**Example Usage:**
+## Adding Custom Platforms
+
+#### Basic Example
 
 ```python
 from sociallinks import SocialLinks
 
 sl = SocialLinks(use_predefined_platforms=False)
 
-# Example 1: Single dictionary with multiple patterns
+# Define a custom platform
 custom_platform = [{
     "patterns": [
         r"https?://(www\.)?example\.com/(?P<id>[A-Za-z0-9_]+)/?$",
@@ -228,63 +256,73 @@ custom_platform = [{
     "sanitized": "https://example.com/{id}"
 }]
 
+# Register the platform
 sl.set_platform("example", custom_platform)
+
+# Use it
 sl.detect_platform("https://example.com/user123")  # "example"
 sl.sanitize("example", "https://www.example.com/user123/")  # "https://example.com/user123"
+```
 
-# Example 2: Multiple dictionaries for different URL formats
-platform_with_variants = [
+#### Handling Multiple URL Formats
+
+When a platform supports different URL formats that normalize to **different** canonical forms (e.g., personal profiles vs company pages):
+
+```python
+from sociallinks import SocialLinks
+
+sl = SocialLinks(use_predefined_platforms=False)
+
+# Example: Platform with personal profiles and company pages
+linkedin_style_platform = [
     {
-        "patterns": [r"https?://example\.com/user/(?P<id>[A-Za-z0-9_]+)"],
-        "sanitized": "https://example.com/user/{id}"
+        "patterns": [
+            r"https?://(www\.)?example\.com/profile/(?P<id>[A-Za-z0-9_-]+)/?$",
+            r"https?://example\.com/user/(?P<id>[A-Za-z0-9_-]+)/?$"
+        ],
+        "sanitized": "https://example.com/profile/{id}"  # Personal profiles
     },
     {
-        "patterns": [r"https?://example\.com/u/(?P<id>[A-Za-z0-9_]+)"],
-        "sanitized": "https://example.com/user/{id}"  # Normalize /u/ to /user/
+        "patterns": [
+            r"https?://(www\.)?example\.com/company/(?P<id>[A-Za-z0-9_-]+)/?$",
+            r"https?://(www\.)?example\.com/org/(?P<id>[A-Za-z0-9_-]+)/?$"
+        ],
+        "sanitized": "https://example.com/company/{id}"  # Company pages
     }
 ]
 
-sl.set_platform("example_v2", platform_with_variants)
-sl.sanitize("example_v2", "https://example.com/u/johndoe")  # "https://example.com/user/johndoe"
+sl.set_platform("example", linkedin_style_platform)
+
+# Personal profile URLs normalize to /profile/
+sl.sanitize("example", "https://www.example.com/user/johndoe")  
+# Returns: "https://example.com/profile/johndoe"
+
+# Company URLs normalize to /company/
+sl.sanitize("example", "https://www.example.com/org/acme-corp")  
+# Returns: "https://example.com/company/acme-corp"
 ```
 
-**Viewing and Editing Existing Platforms:**
+### Managing Platforms
 
-You can also view or modify existing platform configurations:
+#### Viewing Platform Configurations
 
 ```python
 from sociallinks import SocialLinks
 
 sl = SocialLinks()
 
-# Get existing platform configuration
+# Get configuration for an existing platform
 github_config = sl.get_platform("github")
 print(github_config)  # See the patterns and sanitized template
 
-# Override an existing platform with custom configuration
-custom_github = [{
-    "patterns": [r"https?://github\.com/(?P<id>[A-Za-z0-9_]+)/?$"],
-    "sanitized": "https://github.com/{id}"
-}]
-sl.set_platform("github", custom_github, override=True)
+# List all available platforms
+platforms = sl.list_platforms()
+# Returns: ["behance", "dev_to", "dribbble", "github", "linkedin", ...]
 ```
 
-### Platform Management
-
-Manage platforms programmatically:
+#### Adding Platforms
 
 ```python
-from sociallinks import SocialLinks
-
-sl = SocialLinks()
-
-# List all platforms
-platforms = sl.list_platforms()
-# Returns: ["behance", "dev_to", "dribbble", ...]
-
-# Get platform configuration
-config = sl.get_platform("github")
-
 # Add a new platform (raises error if platform already exists)
 custom_platform = [{
     "patterns": [r"https?://example.com/(?P<id>[A-Za-z0-9_]+)"],
@@ -294,7 +332,11 @@ sl.set_platform("example", custom_platform)
 
 # Override an existing platform (including predefined ones)
 sl.set_platform("github", custom_platform, override=True)
+```
 
+#### Adding Multiple Platforms
+
+```python
 # Add multiple platforms at once
 new_platforms = {
     "platform1": [{
@@ -306,15 +348,67 @@ new_platforms = {
         "sanitized": "https://example2.com/{id}"
     }]
 }
+
 sl.set_platforms(new_platforms, override=False)  # Raises error if any exist
 sl.set_platforms(new_platforms, override=True)   # Overrides existing platforms
+```
 
-# Delete platforms
+#### Modifying Existing Platforms
+
+```python
+# Get existing configuration
+github_config = sl.get_platform("github")
+
+# Modify and override
+custom_github = [{
+    "patterns": [r"https?://github\.com/(?P<id>[A-Za-z0-9_]+)/?$"],
+    "sanitized": "https://github.com/{id}"
+}]
+sl.set_platform("github", custom_github, override=True)
+```
+
+#### Removing Platforms
+
+```python
+# Delete a single platform
 sl.delete_platform("custom_platform")
+
+# Delete multiple platforms
 sl.delete_platforms(["platform1", "platform2"])
 
 # Clear all platforms
 sl.clear_platforms()
+```
+
+### Complete Example
+
+Here's a complete example showing how to build a custom platform manager:
+
+```python
+from sociallinks import SocialLinks
+
+# Start with predefined platforms
+sl = SocialLinks()
+
+# Add a custom platform
+my_platform = [{
+    "patterns": [
+        r"https?://(www\.)?mysite\.com/profile/(?P<id>[A-Za-z0-9_]+)/?$",
+        r"https?://mysite\.com/u/(?P<id>[A-Za-z0-9_]+)/?$"
+    ],
+    "sanitized": "https://mysite.com/profile/{id}"
+}]
+sl.set_platform("mysite", my_platform)
+
+# Use it
+url = "https://www.mysite.com/u/johndoe"
+platform = sl.detect_platform(url)  # "mysite"
+sanitized = sl.sanitize(platform, url)  # "https://mysite.com/profile/johndoe"
+is_valid = sl.is_valid(platform, url)  # True
+
+# View all platforms
+all_platforms = sl.list_platforms()
+print(f"Total platforms: {len(all_platforms)}")
 ```
 
 ## Changelog
