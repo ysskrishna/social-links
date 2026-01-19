@@ -5,6 +5,28 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.0]
+
+### Added
+
+- Module-level convenience functions for simplified API usage:
+  - `detect_platform(url)` - Detect platform from URL without instantiating SocialLinks
+  - `is_valid(platform_name, url)` - Validate URL for a specific platform
+  - `sanitize(platform_name, url)` - Sanitize URL to canonical format
+  - `list_platforms()` - List all supported platform names
+- Separate documentation pages for better organization:
+  - `basic-api.md` - Documentation for module-level convenience functions
+  - `core-api.md` - Documentation for SocialLinks class and advanced features
+  - `constants.md` - Documentation for constants and type aliases
+  - `exceptions.md` - Documentation for exception hierarchy
+- Add test cases for module-level functions.
+
+### Changed
+
+- Enhanced README with improved Quick Start section using module functions
+- Added comprehensive "Basic Usage" section with extensive examples
+- Improved README organization with clearer separation between basic and advanced usage
+
 ## [1.2.1]
 
 ### Added
@@ -137,6 +159,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Automatic @ symbol handling
 - URL normalization and sanitization
 
+[1.3.0]: https://github.com/ysskrishna/social-links/compare/v1.2.1...v1.3.0
 [1.2.1]: https://github.com/ysskrishna/social-links/compare/v1.2.0...v1.2.1
 [1.2.0]: https://github.com/ysskrishna/social-links/compare/v1.1.0...v1.2.0
 [1.1.0]: https://github.com/ysskrishna/social-links/compare/v1.0.0...v1.1.0

@@ -15,9 +15,10 @@ from sociallinks.exceptions import (
 class SocialLinks:
     """Social Media URL Sanitizer and Validator.
 
-    A lightweight, zero-dependency library for detecting, validating, and
-    sanitizing social media profile URLs. Supports 50+ predefined platforms
-    out of the box with automatic URL normalization and username extraction.
+    Python library to validate, sanitize, and detect social media URLs.
+    Support for LinkedIn, Instagram, TikTok, X/Twitter, GitHub, Facebook,
+    YouTube, and 50+ platforms. Features automatic URL normalization and
+    zero dependencies. Easy to use, regex-powered, and customizable.
 
     The class uses regex patterns to match URLs against platform-specific
     formats and can normalize them to canonical forms. It also supports

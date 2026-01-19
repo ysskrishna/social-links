@@ -1,12 +1,16 @@
 ---
 title: Interactive Demo
-description: "Test the social-links library directly in your browser using Pyodide. Try detecting platforms, validating URLs, and sanitizing social media links."
+description: "Try social-links Python library in your browser. No installation required. Test URL validation, platform detection, and URL sanitization for LinkedIn, Instagram, GitHub, Twitter, Facebook, and 50+ social platforms."
 keywords:
-  - interactive test
-  - try it
-  - demo
-  - test social links
-  - browser test
+  - interactive demo
+  - test URL validator
+  - online social media validator
+  - try social links
+  - browser demo
+  - test social platform URLs
+  - validate URLs online
+  - detect platform online
+  - sanitize URLs online
 ---
 
 # Interactive Demo
