@@ -8,7 +8,8 @@
 [![Documentation](https://img.shields.io/badge/docs-ysskrishna.github.io%2Fsocial--links-blue.svg)](https://ysskrishna.github.io/social-links/)
 [![Interactive Demo](https://img.shields.io/badge/demo-Try%20it%20now!-green.svg)](https://ysskrishna.github.io/social-links/demo/)
 
-A lightweight, zero-dependency Python library for detecting, validating, and sanitizing social media profile URLs. Supports 50+ platforms out of the box with automatic URL normalization, username extraction, and customizable regex patterns for extensibility.
+Python library to validate, sanitize, and detect social media URLs. Support for LinkedIn, Instagram, TikTok, X/Twitter, GitHub, Facebook, YouTube, and 50+ platforms. Features automatic URL normalization and zero dependencies. Easy to use, regex-powered, and customizable.
+
 
 > 🚀 **Try it interactively in your browser!** Test the library with our [Interactive Demo](https://ysskrishna.github.io/social-links/demo/) - no installation required.
 
@@ -38,23 +39,26 @@ uv pip install social-links
 ## Quick Start
 
 ```python
-from sociallinks import SocialLinks
-
-# Initialize with predefined platforms
-sl = SocialLinks()
+from sociallinks import detect_platform, sanitize, is_valid, list_platforms
 
 # Detect platform from URL
-platform = sl.detect_platform("https://www.linkedin.com/in/ysskrishna/")
+platform = detect_platform("https://www.linkedin.com/in/ysskrishna/")
 print(platform)  # "linkedin"
 
 # Validate URL for a specific platform
-is_valid = sl.is_valid("linkedin", "https://www.linkedin.com/in/ysskrishna/")
-print(is_valid)  # True
+is_valid_url = is_valid("linkedin", "https://www.linkedin.com/in/ysskrishna/")
+print(is_valid_url)  # True
 
 # Sanitize URL to canonical format
-sanitized = sl.sanitize("linkedin", "https://www.linkedin.com/in/ysskrishna/")
+sanitized = sanitize("linkedin", "https://www.linkedin.com/in/ysskrishna/")
 print(sanitized)  # "https://linkedin.com/in/ysskrishna"
+
+# List all supported platforms
+platforms = list_platforms()
+print(f"Supported platforms: {len(platforms)}")  # Supported platforms: 50+
 ```
+
+That's it! For most use cases, you don't need anything more. See [Basic Usage](#basic-usage) for more examples, or [Advanced Usage](#advanced-usage) if you need custom platforms or configurations.
 
 ## Supported Platforms
 
@@ -81,113 +85,331 @@ The library comes with 50+ predefined platforms:
 | [Weibo](https://weibo.com) | [Wellfound (AngelList)](https://wellfound.com) | [WhatsApp](https://whatsapp.com) |
 | [X (Twitter)](https://x.com) | [YouTube](https://youtube.com) | |
 
-## Usage Examples
+## Basic Usage
+
+The simplest way to use social-links is with module-level functions. These work out of the box with 50+ predefined platforms - no configuration needed!
 
 ### Detect Platform
 
 ```python
-sl = SocialLinks()
+from sociallinks import detect_platform
 
 # Detect from full URL
-sl.detect_platform("https://github.com/ysskrishna")  # "github"
-sl.detect_platform("https://x.com/ysskrishna")      # "x"
-sl.detect_platform("https://example.com")         # None
+detect_platform("https://github.com/ysskrishna")  # "github"
+detect_platform("https://x.com/ysskrishna")      # "x"
+detect_platform("https://example.com")           # None
 
 # Works with various URL formats
-sl.detect_platform("http://linkedin.com/in/ysskrishna")
-sl.detect_platform("www.facebook.com/ysskrishna")
-sl.detect_platform("  https://instagram.com/ysskrishna  ")  # Handles whitespace
+detect_platform("http://linkedin.com/in/ysskrishna")
+detect_platform("www.facebook.com/ysskrishna")
+detect_platform("  https://instagram.com/ysskrishna  ")  # Handles whitespace
 ```
 
 ### Validate URLs
 
 ```python
-sl = SocialLinks()
+from sociallinks import is_valid
 
 # Validate against specific platform
-sl.is_valid("linkedin", "https://www.linkedin.com/in/ysskrishna/")  # True
-sl.is_valid("linkedin", "https://example.com")                   # False
-sl.is_valid("github", "https://github.com/ysskrishna")             # True
+is_valid("linkedin", "https://www.linkedin.com/in/ysskrishna/")  # True
+is_valid("linkedin", "https://example.com")                   # False
+is_valid("github", "https://github.com/ysskrishna")             # True
 ```
 
 ### Sanitize URLs
 
 ```python
-sl = SocialLinks()
+from sociallinks import sanitize
 
 # Normalize to canonical format
-sl.sanitize("linkedin", "https://www.linkedin.com/in/ysskrishna/")
+sanitize("linkedin", "https://www.linkedin.com/in/ysskrishna/")
 # Returns: "https://linkedin.com/in/ysskrishna"
 
-sl.sanitize("github", "http://www.github.com/ysskrishna")
+sanitize("github", "http://www.github.com/ysskrishna")
 # Returns: "https://github.com/ysskrishna"
 
-sl.sanitize("x", "https://twitter.com/ysskrishna")
+sanitize("x", "https://twitter.com/ysskrishna")
 # Returns: "https://x.com/ysskrishna"
 ```
 
-### Custom Platforms
+### List Platforms
 
 ```python
+from sociallinks import list_platforms
+
+# Get all available platforms
+platforms = list_platforms()
+# Returns: ["behance", "dev_to", "dribbble", "github", "linkedin", ...]
+print(f"Supported platforms: {len(platforms)}")  # 50+
+```
+
+---
+## Advanced Usage
+
+For custom configurations, custom platforms, or programmatic platform management, use the `SocialLinks` class directly instead of the module-level functions.
+
+### When to Use Advanced Features
+
+Use the class API when you need to:
+- Add support for platforms not in the predefined list
+- Customize how existing platforms are detected or sanitized
+- Manage platforms programmatically (add, remove, modify)
+- Configure regex flags or start with an empty platform list
+
+### Using the Class API
+
+The `SocialLinks` class provides the same methods as module-level functions, but with additional configuration options:
+
+```python
+from sociallinks import SocialLinks
+
+sl = SocialLinks()
+
+# Same methods as module functions
+sl.detect_platform("https://github.com/ysskrishna")  # "github"
+sl.is_valid("linkedin", "https://linkedin.com/in/user")  # True
+sl.sanitize("github", "https://github.com/user")  # "https://github.com/user"
+sl.list_platforms()  # ["behance", "dev_to", "dribbble", ...]
+```
+
+#### Configuration Options
+
+```python
+import re
+
+# Start with empty platform list (useful for custom platforms only)
 sl = SocialLinks(use_predefined_platforms=False)
 
-# Add a custom platform
+# Configure regex compilation flags
+sl = SocialLinks(regex_flags=re.IGNORECASE | re.MULTILINE)
+```
+
+### Understanding Platform Configuration
+
+A platform configuration is a **list of dictionaries**. Each dictionary contains:
+- **`patterns`**: List of regex patterns that match URLs for this platform
+- **`sanitized`**: Template string for the canonical URL format
+
+Multiple dictionaries are useful when a platform has different URL types that normalize to different canonical forms (e.g., LinkedIn personal profiles `/in/` vs company pages `/company/`).
+
+#### Configuration Structure
+
+**Single dictionary** - Multiple patterns sharing the same sanitization template:
+
+```python
+platform_config = [{
+    "patterns": [
+        r"https?://(www\.)?example\.com/(?P<id>[A-Za-z0-9_]+)/?$",
+        r"https?://example\.com/user/(?P<id>[A-Za-z0-9_]+)/?$"
+    ],
+    "sanitized": "https://example.com/{id}"
+}]
+```
+
+**Multiple dictionaries** - Different URL formats with different sanitization templates (e.g., personal profiles vs company pages):
+
+```python
+# Example: LinkedIn supports both personal profiles and company pages
+platform_config = [
+    {
+        "patterns": [
+            r"https?://(www\.)?linkedin\.com/in/(?P<id>[A-Za-z0-9_-]+)/?$",
+            r"https?://linkedin\.com/mwlite/in/(?P<id>[A-Za-z0-9_-]+)/?$"
+        ],
+        "sanitized": "https://linkedin.com/in/{id}"  # Personal profiles
+    },
+    {
+        "patterns": [
+            r"https?://(www\.)?linkedin\.com/company/(?P<id>[A-Za-z0-9_-]+)/?$",
+            r"https?://(www\.)?linkedin\.com/school/(?P<id>[A-Za-z0-9_-]+)/?$"
+        ],
+        "sanitized": "https://linkedin.com/company/{id}"  # Company/school pages
+    }
+]
+```
+
+#### Key Concepts
+
+**Pattern Matching:**
+- Use named groups like `(?P<id>...)` to capture identifiers (username, ID, etc.)
+- For `detect_platform()`: All patterns are checked (order-independent)
+- For `sanitize()`: Patterns are checked **in order**, and the **first match** is used
+
+**Sanitization Template:**
+- Use `{id}` (or other named groups from patterns) as placeholders
+- This defines the canonical URL format returned by `sanitize()`
+
+## Adding Custom Platforms
+
+#### Basic Example
+
+```python
+from sociallinks import SocialLinks
+
+sl = SocialLinks(use_predefined_platforms=False)
+
+# Define a custom platform
 custom_platform = [{
     "patterns": [
         r"https?://(www\.)?example\.com/(?P<id>[A-Za-z0-9_]+)/?$",
-        r"^(?P<id>[A-Za-z0-9_]+)$"  # Username-only pattern
+        r"https?://example\.com/user/(?P<id>[A-Za-z0-9_]+)/?$"
     ],
     "sanitized": "https://example.com/{id}"
 }]
 
+# Register the platform
 sl.set_platform("example", custom_platform)
 
-# Now you can use it
+# Use it
 sl.detect_platform("https://example.com/user123")  # "example"
-sl.sanitize("example", "https://example.com/user123")  # "https://example.com/user123"
+sl.sanitize("example", "https://www.example.com/user123/")  # "https://example.com/user123"
 ```
 
-### Platform Management
+#### Handling Multiple URL Formats
+
+When a platform supports different URL formats that normalize to **different** canonical forms (e.g., personal profiles vs company pages):
 
 ```python
+from sociallinks import SocialLinks
+
+sl = SocialLinks(use_predefined_platforms=False)
+
+# Example: Platform with personal profiles and company pages
+linkedin_style_platform = [
+    {
+        "patterns": [
+            r"https?://(www\.)?example\.com/profile/(?P<id>[A-Za-z0-9_-]+)/?$",
+            r"https?://example\.com/user/(?P<id>[A-Za-z0-9_-]+)/?$"
+        ],
+        "sanitized": "https://example.com/profile/{id}"  # Personal profiles
+    },
+    {
+        "patterns": [
+            r"https?://(www\.)?example\.com/company/(?P<id>[A-Za-z0-9_-]+)/?$",
+            r"https?://(www\.)?example\.com/org/(?P<id>[A-Za-z0-9_-]+)/?$"
+        ],
+        "sanitized": "https://example.com/company/{id}"  # Company pages
+    }
+]
+
+sl.set_platform("example", linkedin_style_platform)
+
+# Personal profile URLs normalize to /profile/
+sl.sanitize("example", "https://www.example.com/user/johndoe")  
+# Returns: "https://example.com/profile/johndoe"
+
+# Company URLs normalize to /company/
+sl.sanitize("example", "https://www.example.com/org/acme-corp")  
+# Returns: "https://example.com/company/acme-corp"
+```
+
+### Managing Platforms
+
+#### Viewing Platform Configurations
+
+```python
+from sociallinks import SocialLinks
+
 sl = SocialLinks()
 
-# List all platforms
+# Get configuration for an existing platform
+github_config = sl.get_platform("github")
+print(github_config)  # See the patterns and sanitized template
+
+# List all available platforms
 platforms = sl.list_platforms()
-# Returns: ["behance", "dev_to", "dribbble", ...]
+# Returns: ["behance", "dev_to", "dribbble", "github", "linkedin", ...]
+```
 
-# Get platform configuration
-config = sl.get_platform("github")
+#### Adding Platforms
 
-# Add multiple platforms
+```python
+# Add a new platform (raises error if platform already exists)
+custom_platform = [{
+    "patterns": [r"https?://example.com/(?P<id>[A-Za-z0-9_]+)"],
+    "sanitized": "https://example.com/{id}"
+}]
+sl.set_platform("example", custom_platform)
+
+# Override an existing platform (including predefined ones)
+sl.set_platform("github", custom_platform, override=True)
+```
+
+#### Adding Multiple Platforms
+
+```python
+# Add multiple platforms at once
 new_platforms = {
     "platform1": [{
-        "patterns": [r"https?://example1.com/(?P<id>\w+)"],
+        "patterns": [r"https?://example1.com/(?P<id>[A-Za-z0-9_]+)"],
         "sanitized": "https://example1.com/{id}"
     }],
     "platform2": [{
-        "patterns": [r"https?://example2.com/(?P<id>\w+)"],
+        "patterns": [r"https?://example2.com/(?P<id>[A-Za-z0-9_]+)"],
         "sanitized": "https://example2.com/{id}"
     }]
 }
-sl.set_platforms(new_platforms, override=False)
 
-# Delete platforms
+sl.set_platforms(new_platforms, override=False)  # Raises error if any exist
+sl.set_platforms(new_platforms, override=True)   # Overrides existing platforms
+```
+
+#### Modifying Existing Platforms
+
+```python
+# Get existing configuration
+github_config = sl.get_platform("github")
+
+# Modify and override
+custom_github = [{
+    "patterns": [r"https?://github\.com/(?P<id>[A-Za-z0-9_]+)/?$"],
+    "sanitized": "https://github.com/{id}"
+}]
+sl.set_platform("github", custom_github, override=True)
+```
+
+#### Removing Platforms
+
+```python
+# Delete a single platform
 sl.delete_platform("custom_platform")
+
+# Delete multiple platforms
 sl.delete_platforms(["platform1", "platform2"])
 
 # Clear all platforms
 sl.clear_platforms()
 ```
 
-### Custom Regex Flags
+### Complete Example
+
+Here's a complete example showing how to build a custom platform manager:
 
 ```python
-import re
 from sociallinks import SocialLinks
 
-# Use custom regex flags
-sl = SocialLinks(regex_flags=re.IGNORECASE | re.MULTILINE)
+# Start with predefined platforms
+sl = SocialLinks()
+
+# Add a custom platform
+my_platform = [{
+    "patterns": [
+        r"https?://(www\.)?mysite\.com/profile/(?P<id>[A-Za-z0-9_]+)/?$",
+        r"https?://mysite\.com/u/(?P<id>[A-Za-z0-9_]+)/?$"
+    ],
+    "sanitized": "https://mysite.com/profile/{id}"
+}]
+sl.set_platform("mysite", my_platform)
+
+# Use it
+url = "https://www.mysite.com/u/johndoe"
+platform = sl.detect_platform(url)  # "mysite"
+sanitized = sl.sanitize(platform, url)  # "https://mysite.com/profile/johndoe"
+is_valid = sl.is_valid(platform, url)  # True
+
+# View all platforms
+all_platforms = sl.list_platforms()
+print(f"Total platforms: {len(all_platforms)}")
 ```
 
 ## Changelog
@@ -199,11 +421,9 @@ See [CHANGELOG.md](https://github.com/ysskrishna/social-links/blob/main/CHANGELO
 The following improvements are planned for upcoming releases:
 
 - [ ] Add method to configure custom sanitization patterns
-- [ ] Create Streamlit demo application
 - [ ] Integrate development tools (flake8, black, isort) for code quality
 - [ ] Add code coverage reporting with pytest-cov
 - [ ] Refactor platform entries using dataclasses for better structure
-- [ ] Consider functional API alternative to SocialLinks class for simpler usage
 
 ## Contributing
 
@@ -233,6 +453,10 @@ If you find this library useful, please consider:
 
 - **Issues**: [github.com/ysskrishna/social-links/issues](https://github.com/ysskrishna/social-links/issues)
 
+
+## Credits
+
+This package is inspired by the [social-links](https://www.npmjs.com/package/social-links) npm package by [gkucmierz](https://github.com/gkucmierz/social-links).
 
 ## License
 

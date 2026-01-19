@@ -1,18 +1,20 @@
 ---
 title: Contributing Guide
 
-description: "Guide to contributing to Social Links – Python library for detecting, validating, and sanitizing social media links. Includes setup, testing, and pull request process."
+description: "How to contribute to social-links Python library for social media URL validation. Setup guide, testing instructions, pull request process, and code of conduct for open source contributors."
 
 keywords:
-  - contributing
-  - social-links
-  - Python library
-  - open source
+  - contributing guide
+  - contribute to social-links
+  - open source contribution
+  - Python library contribution
   - pull requests
-  - testing
-  - setup
-  - social media links
+  - testing guide
+  - development setup
+  - social media URL validator
   - code of conduct
+  - GitHub contribution
+  - open source Python
 ---
 
 --8<-- "CONTRIBUTING.md"
