@@ -567,5 +567,155 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://hashnode.com/@{id}"
         }
+    ],
+    "leetcode": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?leetcode\.com/{PROFILE_ID}/?$",
+                rf"https?://(www\.)?leetcode\.com/u/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://leetcode.com/{id}"
+        }
+    ],
+    "hackerrank": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?hackerrank\.com/profile/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.hackerrank.com/profile/{id}"
+        }
+    ],
+    "codepen": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?codepen\.io/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://codepen.io/{id}"
+        }
+    ],
+    "kaggle": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?kaggle\.com/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.kaggle.com/{id}"
+        }
+    ],
+    "pypi": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?pypi\.org/user/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://pypi.org/user/{id}"
+        }
+    ],
+    "dockerhub": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?hub\.docker\.com/u/{PROFILE_ID}/?$",
+                rf"https?://(www\.)?docker\.com/u/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://hub.docker.com/u/{id}"
+        }
+    ],
+    "replit": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?replit\.com/@{PROFILE_ID}/?$",
+                rf"^@?{PROFILE_ID}$"
+            ],
+            "sanitized": "https://replit.com/@{id}"
+        }
+    ],
+    "unsplash": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?unsplash\.com/@{PROFILE_ID}/?$",
+                rf"^@?{PROFILE_ID}$"
+            ],
+            "sanitized": "https://unsplash.com/@{id}"
+        }
+    ],
+    "fiverr": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?fiverr\.com/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.fiverr.com/{id}"
+        }
+    ],
+    "wordpress": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?wordpress\.com/people/{PROFILE_ID}/?$",
+                rf"https?://{PROFILE_ID}\.wordpress\.com/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://wordpress.com/people/{id}"
+        }
+    ],
+    "artstation": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?artstation\.com/{PROFILE_ID}/?$",
+                rf"https?://{PROFILE_ID}\.artstation\.com/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.artstation.com/{id}"
+        }
+    ],
+    "chess_com": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?chess\.com/member/{PROFILE_ID}/?$",
+                rf"https?://(www\.)?chess\.com/play/online/new\?opponent={PROFILE_ID}$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.chess.com/member/{id}"
+        }
+    ],
+    "lichess": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?lichess\.org/@/{PROFILE_ID}/?$",
+                rf"^@?{PROFILE_ID}$"
+            ],
+            "sanitized": "https://lichess.org/@/{id}"
+        }
+    ],
+    "dailymotion": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?dailymotion\.com/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.dailymotion.com/{id}"
+        }
+    ],
+    "rumble": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?rumble\.com/user/{PROFILE_ID}/?$",
+                rf"https?://(www\.)?rumble\.com/c/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://rumble.com/user/{id}"
+        }
+    ],
+    "trello": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?trello\.com/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://trello.com/{id}"
+        }
     ]
 }
