@@ -20,6 +20,7 @@ Python library to validate, sanitize, and detect social media URLs. Support for 
 - 🔍 **Auto-detect** social media platforms from URLs
 - ✅ **Validate** URLs against specific platforms
 - 🧹 **Sanitize** URLs to canonical format
+- 🆔 **Extract IDs** (usernames, profile IDs) from URLs
 - 🎯 **65+ predefined platforms** (LinkedIn, GitHub, Twitter/X, Facebook, Instagram, YouTube, and more)
 - 🔧 **Customizable** - Add your own platforms with regex patterns
 - 🚀 **Zero dependencies** - Pure Python, no external libraries
@@ -39,7 +40,7 @@ uv pip install social-links
 ## Quick Start
 
 ```python
-from sociallinks import detect_platform, sanitize, is_valid, list_platforms
+from sociallinks import detect_platform, sanitize, extract_id, is_valid, list_platforms
 
 # Detect platform from URL
 platform = detect_platform("https://www.linkedin.com/in/ysskrishna/")
@@ -52,6 +53,10 @@ print(is_valid_url)  # True
 # Sanitize URL to canonical format
 sanitized = sanitize("linkedin", "https://www.linkedin.com/in/ysskrishna/")
 print(sanitized)  # "https://linkedin.com/in/ysskrishna"
+
+# Extract username/ID from URL
+user_id = extract_id("linkedin", "https://www.linkedin.com/in/ysskrishna/")
+print(user_id)  # "ysskrishna"
 
 # List all supported platforms
 platforms = list_platforms()
@@ -137,6 +142,20 @@ sanitize("x", "https://twitter.com/ysskrishna")
 # Returns: "https://x.com/ysskrishna"
 ```
 
+### Extract IDs
+
+```python
+from sociallinks import extract_id
+
+# Extract username/profile ID from URL
+extract_id("linkedin", "https://www.linkedin.com/in/ysskrishna/")  # "ysskrishna"
+extract_id("github", "https://github.com/ysskrishna")              # "ysskrishna"
+extract_id("x", "https://twitter.com/ysskrishna")                  # "ysskrishna"
+
+# Works with company/org URLs too
+extract_id("linkedin", "https://linkedin.com/company/acme")  # "acme"
+```
+
 ### List Platforms
 
 ```python
@@ -174,6 +193,7 @@ sl = SocialLinks()
 sl.detect_platform("https://github.com/ysskrishna")  # "github"
 sl.is_valid("linkedin", "https://linkedin.com/in/user")  # True
 sl.sanitize("github", "https://github.com/user")  # "https://github.com/user"
+sl.extract_id("github", "https://github.com/user")  # "user"
 sl.list_platforms()  # ["behance", "dev_to", "dribbble", ...]
 ```
 
@@ -410,6 +430,7 @@ sl.set_platform("mysite", my_platform)
 url = "https://www.mysite.com/u/johndoe"
 platform = sl.detect_platform(url)  # "mysite"
 sanitized = sl.sanitize(platform, url)  # "https://mysite.com/profile/johndoe"
+user_id = sl.extract_id(platform, url)  # "johndoe"
 is_valid = sl.is_valid(platform, url)  # True
 
 # View all platforms

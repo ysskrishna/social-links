@@ -75,6 +75,7 @@ Try the `social-links` library directly in your browser! This page uses [Pyodide
         <button class="ops-tab active" data-op="detect">detect_platform</button>
         <button class="ops-tab" data-op="validate">is_valid</button>
         <button class="ops-tab" data-op="sanitize">sanitize</button>
+        <button class="ops-tab" data-op="extract_id">extract_id</button>
         <button class="ops-tab" data-op="platforms">list_platforms</button>
       </div>
 
@@ -178,6 +179,42 @@ Try the `social-links` library directly in your browser! This page uses [Pyodide
           </div>
 
           <div id="sanitize-result" class="result-panel"></div>
+        </div>
+
+        <!-- Extract ID Section -->
+        <div class="op-section" data-op="extract_id">
+          <h3 class="op-title">Extract ID</h3>
+          <p class="op-description">Extract the username or profile identifier from a social media URL.</p>
+
+          <div class="form-group">
+            <label class="form-label">Platform</label>
+            <select id="extract_id-platform" class="form-select">
+              <option value="">Select platform...</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">URL</label>
+            <input type="text" id="extract_id-url" class="form-input" placeholder="https://www.linkedin.com/in/username/" />
+            <p class="form-hint">Enter a URL to extract the ID from</p>
+          </div>
+
+          <button id="extract_id-btn" class="execute-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+            Execute
+          </button>
+
+          <div class="code-preview">
+            <div class="code-preview-header">
+              <span>Python Code</span>
+              <button class="copy-btn" onclick="copyCode('extract_id')">Copy</button>
+            </div>
+            <div class="code-preview-body" id="extract_id-code-preview">
+              <span class="code-fn">extract_id</span>(<span class="code-str">"platform"</span>, <span class="code-str">"url"</span>)
+            </div>
+          </div>
+
+          <div id="extract_id-result" class="result-panel"></div>
         </div>
 
         <!-- List Platforms Section -->
@@ -685,7 +722,7 @@ Try the `social-links` library directly in your browser! This page uses [Pyodide
 
     // Import and initialize
     pyodide.runPython(`
-      from sociallinks import detect_platform, is_valid, sanitize, list_platforms
+      from sociallinks import detect_platform, is_valid, sanitize, extract_id, list_platforms
       
       # Try to get package version
       try:
@@ -750,17 +787,23 @@ Try the `social-links` library directly in your browser! This page uses [Pyodide
     
     const validateSelect = document.getElementById("validate-platform");
     const sanitizeSelect = document.getElementById("sanitize-platform");
-    
+    const extractIdSelect = document.getElementById("extract_id-platform");
+
     sorted.forEach(platform => {
       const option1 = document.createElement("option");
       option1.value = platform;
       option1.textContent = platform;
       validateSelect.appendChild(option1);
-      
+
       const option2 = document.createElement("option");
       option2.value = platform;
       option2.textContent = platform;
       sanitizeSelect.appendChild(option2);
+
+      const option3 = document.createElement("option");
+      option3.value = platform;
+      option3.textContent = platform;
+      extractIdSelect.appendChild(option3);
     });
   }
 
@@ -814,9 +857,11 @@ Try the `social-links` library directly in your browser! This page uses [Pyodide
         document.getElementById("detect-url").value = url;
         document.getElementById("validate-url").value = url;
         document.getElementById("sanitize-url").value = url;
+        document.getElementById("extract_id-url").value = url;
         updateDetectCodePreview();
         updateValidateCodePreview();
         updateSanitizeCodePreview();
+        updateExtractIdCodePreview();
       } else {
         resetQuickStats();
       }
@@ -828,6 +873,8 @@ Try the `social-links` library directly in your browser! This page uses [Pyodide
     document.getElementById("validate-url").addEventListener("input", updateValidateCodePreview);
     document.getElementById("sanitize-platform").addEventListener("change", updateSanitizeCodePreview);
     document.getElementById("sanitize-url").addEventListener("input", updateSanitizeCodePreview);
+    document.getElementById("extract_id-platform").addEventListener("change", updateExtractIdCodePreview);
+    document.getElementById("extract_id-url").addEventListener("input", updateExtractIdCodePreview);
 
     // Detect platform
     document.getElementById("detect-btn").addEventListener("click", () => {
@@ -898,6 +945,26 @@ Try the `social-links` library directly in your browser! This page uses [Pyodide
       }
     });
 
+    // Extract ID
+    document.getElementById("extract_id-btn").addEventListener("click", () => {
+      const platform = document.getElementById("extract_id-platform").value;
+      const url = document.getElementById("extract_id-url").value.trim();
+      const resultDiv = document.getElementById("extract_id-result");
+
+      if (!platform || !url) {
+        showResult(resultDiv, "error", "Please select a platform and enter a URL");
+        return;
+      }
+
+      try {
+        showResult(resultDiv, "info", "Processing...");
+        const extractedId = pyodide.runPython(`extract_id(${JSON.stringify(platform)}, ${JSON.stringify(url)})`);
+        showResult(resultDiv, "success", "Extracted ID", extractedId);
+      } catch (error) {
+        showResult(resultDiv, "error", error.message);
+      }
+    });
+
     // List platforms
     document.getElementById("platforms-btn").addEventListener("click", () => {
       const resultDiv = document.getElementById("platforms-result");
@@ -912,7 +979,7 @@ Try the `social-links` library directly in your browser! This page uses [Pyodide
     });
 
     // Enter key handlers
-    ["detect-url", "validate-url", "sanitize-url"].forEach(id => {
+    ["detect-url", "validate-url", "sanitize-url", "extract_id-url"].forEach(id => {
       document.getElementById(id).addEventListener("keypress", (e) => {
         if (e.key === "Enter") {
           document.getElementById(id.replace("-url", "-btn")).click();
@@ -937,8 +1004,15 @@ Try the `social-links` library directly in your browser! This page uses [Pyodide
   function updateSanitizeCodePreview() {
     const platform = document.getElementById("sanitize-platform").value || "platform";
     const url = document.getElementById("sanitize-url").value.trim() || "url";
-    document.getElementById("sanitize-code-preview").innerHTML = 
+    document.getElementById("sanitize-code-preview").innerHTML =
       `<span class="code-fn">sanitize</span>(<span class="code-str">"${escapeHtml(platform)}"</span>, <span class="code-str">"${escapeHtml(url)}"</span>)`;
+  }
+
+  function updateExtractIdCodePreview() {
+    const platform = document.getElementById("extract_id-platform").value || "platform";
+    const url = document.getElementById("extract_id-url").value.trim() || "url";
+    document.getElementById("extract_id-code-preview").innerHTML =
+      `<span class="code-fn">extract_id</span>(<span class="code-str">"${escapeHtml(platform)}"</span>, <span class="code-str">"${escapeHtml(url)}"</span>)`;
   }
 
   function showResult(div, type, message, value = null) {
@@ -988,6 +1062,11 @@ Try the `social-links` library directly in your browser! This page uses [Pyodide
         const sanitizePlatform = document.getElementById("sanitize-platform").value || "platform";
         const sanitizeUrl = document.getElementById("sanitize-url").value.trim() || "url";
         code = `sanitize("${sanitizePlatform}", "${sanitizeUrl}")`;
+        break;
+      case 'extract_id':
+        const extractIdPlatform = document.getElementById("extract_id-platform").value || "platform";
+        const extractIdUrl = document.getElementById("extract_id-url").value.trim() || "url";
+        code = `extract_id("${extractIdPlatform}", "${extractIdUrl}")`;
         break;
       case 'platforms':
         code = 'list_platforms()';
