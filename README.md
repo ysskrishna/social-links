@@ -436,28 +436,12 @@ Contributions are welcome! Please read our [Contributing Guide](https://github.c
 
 ## Support
 
-If you find this library useful, please consider:
+If you find this library helpful:
 
-- ⭐ **Starring** the repository on GitHub to help others discover it.
-
-- 💖 **Sponsoring** to support ongoing maintenance and development.
-
-[Become a Sponsor on GitHub](https://github.com/sponsors/ysskrishna) | [Support on Patreon](https://patreon.com/ysskrishna)
-
-## Links
-
-- **Documentation**: [ysskrishna.github.io/social-links](https://ysskrishna.github.io/social-links/)
-
-- **Interactive Demo**: [ysskrishna.github.io/social-links/demo/](https://ysskrishna.github.io/social-links/demo/)
-
-- **PyPI**: [pypi.org/project/social-links](https://pypi.org/project/social-links/)
-
-- **Homepage**: [github.com/ysskrishna/social-links](https://github.com/ysskrishna/social-links)
-
-- **Repository**: [github.com/ysskrishna/social-links.git](https://github.com/ysskrishna/social-links.git)
-
-- **Issues**: [github.com/ysskrishna/social-links/issues](https://github.com/ysskrishna/social-links/issues)
-
+- ⭐ Star the repository
+- 🐛 Report issues
+- 🔀 Submit pull requests
+- 💝 [Sponsor on GitHub](https://github.com/sponsors/ysskrishna)
 
 ## Credits
 
@@ -465,12 +449,16 @@ This package is inspired by the [social-links](https://www.npmjs.com/package/soc
 
 ## License
 
-MIT License - see [LICENSE](https://github.com/ysskrishna/social-links/blob/main/LICENSE) file for details.
+MIT © [Y. Siva Sai Krishna](https://github.com/ysskrishna) - see [LICENSE](https://github.com/ysskrishna/social-links/blob/main/LICENSE) file for details.
 
-## Author
 
-**Y. Siva Sai Krishna**
+---
 
-- GitHub: [@ysskrishna](https://github.com/ysskrishna)
-
-- LinkedIn: [ysskrishna](https://linkedin.com/in/ysskrishna)
+<p align="left">
+  <a href="https://github.com/ysskrishna">Author's GitHub</a> •
+  <a href="https://linkedin.com/in/ysskrishna">Author's LinkedIn</a> •
+  <a href="https://github.com/ysskrishna/social-links/issues">Report Issues</a> •
+  <a href="https://pypi.org/project/social-links/">Package on PyPI</a> •
+  <a href="https://ysskrishna.github.io/social-links/">Package Documentation</a> •
+  <a href="https://ysskrishna.github.io/social-links/demo/">Interactive Demo</a>
+</p>
