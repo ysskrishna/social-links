@@ -132,7 +132,7 @@ class SocialLinks:
         self._compiled[name] = compiled_entries
 
     @staticmethod
-    def _extract_id(match: re.Match) -> Optional[str]:
+    def _id_from_match(match: re.Match) -> Optional[str]:
         """Extract platform identifier from a regex match.
 
         Attempts to extract the identifier using a named group "id",
@@ -151,6 +151,49 @@ class SocialLinks:
             if g:
                 return g
         return None
+
+    def _match_url(self, platform_name: str, url: str) -> Tuple[str, str]:
+        """Match a URL against a platform's patterns and extract the ID.
+
+        Shared logic for sanitize() and extract_id(). Validates inputs,
+        looks up the platform, matches the URL, and extracts/cleans the ID.
+
+        Args:
+            platform_name: The name of the platform.
+            url: The URL to match.
+
+        Returns:
+            A tuple of (cleaned_id, sanitized_template).
+
+        Raises:
+            TypeError: If platform_name or url is not a string.
+            PlatformNotFoundError: If the platform doesn't exist.
+            URLMismatchError: If the URL doesn't match or is empty.
+            PlatformIDExtractionError: If the ID cannot be extracted.
+        """
+        if not isinstance(platform_name, str):
+            raise TypeError(f"platform_name must be str, not {type(platform_name).__name__}")
+        if not isinstance(url, str):
+            raise TypeError(f"url must be str, not {type(url).__name__}")
+
+        entries = self._compiled.get(platform_name)
+        if not entries:
+            raise PlatformNotFoundError(f"Unknown platform: {platform_name}")
+
+        u = url.strip()
+        if not u:
+            raise URLMismatchError("URL cannot be empty")
+
+        for pattern, sanitized in entries:
+            m = pattern.search(u)
+            if m:
+                pid = self._id_from_match(m)
+                if not pid:
+                    raise PlatformIDExtractionError("Could not extract platform ID")
+                pid = pid.strip().rstrip("/")
+                return pid, sanitized
+
+        raise URLMismatchError(f"URL does not match platform '{platform_name}'")
 
     # ------------------------------------------------------------------
     # Core API
@@ -287,29 +330,47 @@ class SocialLinks:
             >>> sl.sanitize("linkedin", "https://linkedin.com/in/john-doe-123")
             'https://linkedin.com/in/john-doe-123'
         """
-        if not isinstance(platform_name, str):
-            raise TypeError(f"platform_name must be str, not {type(platform_name).__name__}")
-        if not isinstance(url, str):
-            raise TypeError(f"url must be str, not {type(url).__name__}")
-        
-        entries = self._compiled.get(platform_name)
-        if not entries:
-            raise PlatformNotFoundError(f"Unknown platform: {platform_name}")
+        pid, sanitized_template = self._match_url(platform_name, url)
+        return sanitized_template.format(id=pid)
 
-        u = url.strip()
-        if not u:
-            raise URLMismatchError("URL cannot be empty")
-        
-        for pattern, sanitized in entries:
-            m = pattern.search(u)
-            if m:
-                pid = self._extract_id(m)
-                if not pid:
-                    raise PlatformIDExtractionError("Could not extract platform ID")
-                pid = pid.strip().rstrip("/")
-                return sanitized.format(id=pid)
+    def extract_id(self, platform_name: str, url: str) -> str:
+        """Extract the platform identifier from a URL.
 
-        raise URLMismatchError(f"URL does not match platform '{platform_name}'")
+        Extracts the platform-specific identifier (username, profile ID, etc.)
+        from a URL. The identifier is cleaned by stripping whitespace and
+        trailing slashes. The URL is automatically stripped of leading/trailing
+        whitespace before processing.
+
+        Args:
+            platform_name: The name of the platform (e.g., "linkedin",
+                "github", "x").
+            url: The URL to extract the identifier from. Must match one of
+                the platform's patterns. Whitespace is automatically stripped.
+
+        Returns:
+            The extracted platform identifier string.
+
+        Raises:
+            TypeError: If platform_name or url is not a string.
+            PlatformNotFoundError: If the platform doesn't exist.
+            URLMismatchError: If the URL doesn't match any of the platform's
+                patterns or if the URL is empty.
+            PlatformIDExtractionError: If the platform identifier cannot be
+                extracted from the URL.
+
+        Examples:
+            >>> sl = SocialLinks()
+            >>> sl.extract_id("linkedin", "https://www.linkedin.com/in/johndoe/")
+            'johndoe'
+            >>> sl.extract_id("github", "https://github.com/username")
+            'username'
+            >>> sl.extract_id("x", "https://twitter.com/elonmusk")
+            'elonmusk'
+            >>> sl.extract_id("linkedin", "https://linkedin.com/company/acme")
+            'acme'
+        """
+        pid, _ = self._match_url(platform_name, url)
+        return pid
 
     # ------------------------------------------------------------------
     # Platform CRUD (single + bulk)

@@ -8,28 +8,28 @@ from sociallinks.exceptions import (
 
 
 class TestExtractId:
-    """Test _extract_id static method"""
+    """Test _id_from_match static method"""
 
-    def test_extract_id_with_named_group(self):
+    def test_id_from_match_with_named_group(self):
         """Test extracting ID from named group"""
         pattern = re.compile(r"https?://example\.com/(?P<id>[A-Za-z0-9_]+)/?$")
         match = pattern.search("https://example.com/johndoe")
         assert match is not None
-        assert SocialLinks._extract_id(match) == "johndoe"
+        assert SocialLinks._id_from_match(match) == "johndoe"
 
-    def test_extract_id_with_unnamed_group(self):
+    def test_id_from_match_with_unnamed_group(self):
         """Test extracting ID from unnamed group"""
         pattern = re.compile(r"https?://example\.com/([A-Za-z0-9_]+)/?$")
         match = pattern.search("https://example.com/johndoe")
         assert match is not None
-        assert SocialLinks._extract_id(match) == "johndoe"
+        assert SocialLinks._id_from_match(match) == "johndoe"
 
-    def test_extract_id_no_match(self):
+    def test_id_from_match_no_match(self):
         """Test extracting ID when no groups match"""
         pattern = re.compile(r"https?://example\.com/")
         match = pattern.search("https://example.com/")
         assert match is not None
-        assert SocialLinks._extract_id(match) is None
+        assert SocialLinks._id_from_match(match) is None
 
 
 class TestEdgeCases:

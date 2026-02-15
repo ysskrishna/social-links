@@ -3,6 +3,7 @@ from .basic import (
     detect_platform,
     is_valid,
     sanitize,
+    extract_id,
     list_platforms,
 )
 from .exceptions import (
@@ -25,6 +26,7 @@ __all__ = [
     "detect_platform",
     "is_valid",
     "sanitize",
+    "extract_id",
     "list_platforms",
     # Exceptions
     "SocialLinksError",

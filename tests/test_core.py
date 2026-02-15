@@ -3,6 +3,7 @@ from sociallinks.core import SocialLinks
 from sociallinks.exceptions import (
     PlatformNotFoundError,
     URLMismatchError,
+    PlatformIDExtractionError,
 )
 
 
@@ -109,3 +110,39 @@ class TestSanitize:
         sl = SocialLinks()
         with pytest.raises(URLMismatchError, match="does not match platform"):
             sl.sanitize("linkedin", "https://example.com")
+
+
+class TestExtractId:
+    """Test extract_id method"""
+
+    def test_extract_id_linkedin_personal(self):
+        """Test extracting ID from LinkedIn personal profile URL"""
+        sl = SocialLinks()
+        assert sl.extract_id("linkedin", "https://www.linkedin.com/in/johndoe/") == "johndoe"
+
+    def test_extract_id_linkedin_company(self):
+        """Test extracting ID from LinkedIn company URL"""
+        sl = SocialLinks()
+        assert sl.extract_id("linkedin", "https://www.linkedin.com/company/acme/") == "acme"
+
+    def test_extract_id_github(self):
+        """Test extracting ID from GitHub URL"""
+        sl = SocialLinks()
+        assert sl.extract_id("github", "https://github.com/username") == "username"
+
+    def test_extract_id_x_from_twitter(self):
+        """Test extracting ID from Twitter URL (X platform)"""
+        sl = SocialLinks()
+        assert sl.extract_id("x", "https://twitter.com/elonmusk") == "elonmusk"
+
+    def test_extract_id_unknown_platform(self):
+        """Test PlatformNotFoundError for unknown platform"""
+        sl = SocialLinks()
+        with pytest.raises(PlatformNotFoundError, match="Unknown platform"):
+            sl.extract_id("unknown", "https://example.com/user")
+
+    def test_extract_id_invalid_url(self):
+        """Test URLMismatchError for invalid URL"""
+        sl = SocialLinks()
+        with pytest.raises(URLMismatchError, match="does not match platform"):
+            sl.extract_id("linkedin", "https://example.com")
