@@ -5,6 +5,31 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.1]
+
+### Added
+
+- New `extract_id()` function to extract usernames/profile IDs from URLs:
+  - Available as both module-level function and `SocialLinks` class method
+  - Works seamlessly with all supported platforms
+  - Example: `extract_id("linkedin", "https://linkedin.com/in/johndoe")` returns `"johndoe"`
+- Support for 15 new platforms:
+  - **Developer**: CodePen, HackerRank, Kaggle, LeetCode, PyPI, Replit, Docker Hub
+  - **Creative**: ArtStation, Unsplash
+  - **Gaming**: Chess.com, Lichess
+  - **Video**: Dailymotion, Rumble
+  - **Other**: Fiverr, Trello, WordPress
+
+### Changed
+
+- Redesigned interactive demo page:
+  - Modern tabbed interface for all operations (detect, validate, sanitize, extract_id, list)
+  - Real-time Python code preview for each operation
+  - Quick stats bar showing instant platform detection and validation
+  - Pre-loaded examples for easy testing
+- Updated documentation to reflect 65+ supported platforms
+- Improved README footer with better link organization
+
 ## [1.3.0]
 
 ### Added
@@ -159,6 +184,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Automatic @ symbol handling
 - URL normalization and sanitization
 
+[1.3.1]: https://github.com/ysskrishna/social-links/compare/v1.3.0...v1.3.1
 [1.3.0]: https://github.com/ysskrishna/social-links/compare/v1.2.1...v1.3.0
 [1.2.1]: https://github.com/ysskrishna/social-links/compare/v1.2.0...v1.2.1
 [1.2.0]: https://github.com/ysskrishna/social-links/compare/v1.1.0...v1.2.0

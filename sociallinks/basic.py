@@ -130,6 +130,42 @@ def sanitize(platform_name: str, url: str) -> str:
     return _get_default_instance().sanitize(platform_name, url)
 
 
+def extract_id(platform_name: str, url: str) -> str:
+    """Extract the platform identifier from a URL.
+
+    This is a convenience function that uses a default SocialLinks instance
+    with predefined platforms. For custom configurations, use the SocialLinks
+    class directly.
+
+    Args:
+        platform_name: The name of the platform (e.g., "linkedin",
+            "github", "x").
+        url: The URL to extract the identifier from. Must match one of
+            the platform's patterns. Whitespace is automatically stripped.
+
+    Returns:
+        The extracted platform identifier string.
+
+    Raises:
+        TypeError: If platform_name or url is not a string.
+        PlatformNotFoundError: If the platform doesn't exist.
+        URLMismatchError: If the URL doesn't match any of the platform's
+            patterns or if the URL is empty.
+        PlatformIDExtractionError: If the platform identifier cannot be
+            extracted from the URL.
+
+    Examples:
+        >>> from sociallinks import extract_id
+        >>> extract_id("linkedin", "https://www.linkedin.com/in/johndoe/")
+        'johndoe'
+        >>> extract_id("github", "https://github.com/username")
+        'username'
+        >>> extract_id("x", "https://twitter.com/elonmusk")
+        'elonmusk'
+    """
+    return _get_default_instance().extract_id(platform_name, url)
+
+
 def list_platforms() -> List[str]:
     """List all registered platform names.
     

@@ -34,6 +34,7 @@ For advanced usage (custom platforms, regex flags, platform management), use the
         - detect_platform
         - is_valid
         - sanitize
+        - extract_id
         - list_platforms
       members_order: source
 

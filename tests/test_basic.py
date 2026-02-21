@@ -1,5 +1,5 @@
 import pytest
-from sociallinks import detect_platform, is_valid, sanitize, list_platforms
+from sociallinks import detect_platform, is_valid, sanitize, extract_id, list_platforms
 from sociallinks.core import SocialLinks
 from sociallinks.exceptions import (
     PlatformNotFoundError,
@@ -288,3 +288,62 @@ class TestModuleLevelListPlatforms:
         module_result = set(list_platforms())
         class_result = set(SocialLinks().list_platforms())
         assert module_result == class_result
+
+
+class TestModuleLevelExtractId:
+    """Test extract_id() module-level function"""
+
+    def test_extract_id_linkedin(self):
+        """Test extracting ID from LinkedIn URL"""
+        assert extract_id("linkedin", "https://www.linkedin.com/in/johndoe/") == "johndoe"
+        assert extract_id("linkedin", "http://linkedin.com/in/jane-smith") == "jane-smith"
+
+    def test_extract_id_github(self):
+        """Test extracting ID from GitHub URL"""
+        assert extract_id("github", "https://github.com/username") == "username"
+        assert extract_id("github", "http://www.github.com/user123") == "user123"
+
+    def test_extract_id_x(self):
+        """Test extracting ID from X (Twitter) URL"""
+        assert extract_id("x", "https://x.com/elonmusk") == "elonmusk"
+        assert extract_id("x", "https://twitter.com/username") == "username"
+
+    def test_extract_id_facebook(self):
+        """Test extracting ID from Facebook URL"""
+        assert extract_id("facebook", "https://www.facebook.com/johndoe/") == "johndoe"
+        assert extract_id("facebook", "http://facebook.com/janedoe") == "janedoe"
+
+    def test_extract_id_platform_not_found(self):
+        """Test PlatformNotFoundError for unknown platform"""
+        with pytest.raises(PlatformNotFoundError, match="Unknown platform"):
+            extract_id("unknown", "https://example.com/user")
+
+    def test_extract_id_url_mismatch(self):
+        """Test URLMismatchError for invalid URL"""
+        with pytest.raises(URLMismatchError, match="does not match platform"):
+            extract_id("linkedin", "https://example.com")
+
+    def test_extract_id_type_error_none_url(self):
+        """Test TypeError for None URL"""
+        with pytest.raises(TypeError, match="url must be str, not NoneType"):
+            extract_id("linkedin", None)
+
+    def test_extract_id_type_error_none_platform(self):
+        """Test TypeError for None platform name"""
+        with pytest.raises(TypeError, match="platform_name must be str, not NoneType"):
+            extract_id(None, "https://linkedin.com/in/johndoe")
+
+    def test_extract_id_empty_string(self):
+        """Test extract_id with empty string URL"""
+        with pytest.raises(URLMismatchError, match="URL cannot be empty"):
+            extract_id("linkedin", "")
+
+    def test_extract_id_whitespace_only(self):
+        """Test extract_id with whitespace only URL"""
+        with pytest.raises(URLMismatchError, match="URL cannot be empty"):
+            extract_id("linkedin", "   ")
+
+    def test_extract_id_unicode_characters(self):
+        """Test extracting ID with Unicode characters"""
+        result = extract_id("linkedin", "https://www.linkedin.com/in/josé-garcía/")
+        assert result == "josé-garcía"

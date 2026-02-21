@@ -8,7 +8,7 @@
 [![Documentation](https://img.shields.io/badge/docs-ysskrishna.github.io%2Fsocial--links-blue.svg)](https://ysskrishna.github.io/social-links/)
 [![Interactive Demo](https://img.shields.io/badge/demo-Try%20it%20now!-green.svg)](https://ysskrishna.github.io/social-links/demo/)
 
-Python library to validate, sanitize, and detect social media URLs. Support for LinkedIn, Instagram, TikTok, X/Twitter, GitHub, Facebook, YouTube, and 50+ platforms. Features automatic URL normalization and zero dependencies. Easy to use, regex-powered, and customizable.
+Python library to validate, sanitize, and detect social media URLs. Support for LinkedIn, Instagram, TikTok, X/Twitter, GitHub, Facebook, YouTube, and 65+ platforms. Features automatic URL normalization and zero dependencies. Easy to use, regex-powered, and customizable.
 
 
 > 🚀 **Try it interactively in your browser!** Test the library with our [Interactive Demo](https://ysskrishna.github.io/social-links/demo/) - no installation required.
@@ -20,7 +20,8 @@ Python library to validate, sanitize, and detect social media URLs. Support for 
 - 🔍 **Auto-detect** social media platforms from URLs
 - ✅ **Validate** URLs against specific platforms
 - 🧹 **Sanitize** URLs to canonical format
-- 🎯 **50+ predefined platforms** (LinkedIn, GitHub, Twitter/X, Facebook, Instagram, YouTube, and more)
+- 🆔 **Extract IDs** (usernames, profile IDs) from URLs
+- 🎯 **65+ predefined platforms** (LinkedIn, GitHub, Twitter/X, Facebook, Instagram, YouTube, and more)
 - 🔧 **Customizable** - Add your own platforms with regex patterns
 - 🚀 **Zero dependencies** - Pure Python, no external libraries
 
@@ -39,7 +40,7 @@ uv pip install social-links
 ## Quick Start
 
 ```python
-from sociallinks import detect_platform, sanitize, is_valid, list_platforms
+from sociallinks import detect_platform, sanitize, extract_id, is_valid, list_platforms
 
 # Detect platform from URL
 platform = detect_platform("https://www.linkedin.com/in/ysskrishna/")
@@ -53,37 +54,46 @@ print(is_valid_url)  # True
 sanitized = sanitize("linkedin", "https://www.linkedin.com/in/ysskrishna/")
 print(sanitized)  # "https://linkedin.com/in/ysskrishna"
 
+# Extract username/ID from URL
+user_id = extract_id("linkedin", "https://www.linkedin.com/in/ysskrishna/")
+print(user_id)  # "ysskrishna"
+
 # List all supported platforms
 platforms = list_platforms()
-print(f"Supported platforms: {len(platforms)}")  # Supported platforms: 50+
+print(f"Supported platforms: {len(platforms)}")  # Supported platforms: 65+
 ```
 
 That's it! For most use cases, you don't need anything more. See [Basic Usage](#basic-usage) for more examples, or [Advanced Usage](#advanced-usage) if you need custom platforms or configurations.
 
 ## Supported Platforms
 
-The library comes with 50+ predefined platforms:
+The library comes with 65+ predefined platforms:
 
 | Predefined Platforms| | |
 |---|---|---|
-| [Apple Music](https://music.apple.com) | [Bandcamp](https://bandcamp.com) | [Behance](https://behance.net) |
-| [Bluesky](https://bsky.app) | [Crunchbase](https://crunchbase.com) | [Dev.to](https://dev.to) |
-| [Discord](https://discord.com) | [Douyin](https://douyin.com) | [Dribbble](https://dribbble.com) |
-| [Etsy](https://etsy.com) | [Exercism](https://exercism.io) | [Facebook](https://facebook.com) |
+| [Apple Music](https://music.apple.com) | [ArtStation](https://artstation.com) | [Bandcamp](https://bandcamp.com) |
+| [Behance](https://behance.net) | [Bluesky](https://bsky.app) | [Chess.com](https://chess.com) |
+| [CodePen](https://codepen.io) | [Crunchbase](https://crunchbase.com) | [Dailymotion](https://dailymotion.com) |
+| [Dev.to](https://dev.to) | [Discord](https://discord.com) | [Docker Hub](https://hub.docker.com) |
+| [Douyin](https://douyin.com) | [Dribbble](https://dribbble.com) | [Etsy](https://etsy.com) |
+| [Exercism](https://exercism.io) | [Facebook](https://facebook.com) | [Fiverr](https://fiverr.com) |
 | [Flickr](https://flickr.com) | [GitHub](https://github.com) | [GitLab](https://gitlab.com) |
-| [Gravatar](https://gravatar.com) | [Gumroad](https://gumroad.com) | [Hacker News](https://news.ycombinator.com) |
-| [Hashnode](https://hashnode.com) | [Instagram](https://instagram.com) | [Keybase](https://keybase.io) |
-| [Kuaishou](https://kuaishou.com) | [Lemmy World](https://lemmy.world) | [LinkedIn](https://linkedin.com) (personal & company) |
-| [Linktree](https://linktr.ee) | [Mastodon](https://mastodon.social) | [Medium](https://medium.com) |
-| [Patreon](https://patreon.com) | [Pinterest](https://pinterest.com) | [Product Hunt](https://producthunt.com) |
-| [Quora](https://quora.com) | [Reddit](https://reddit.com) | [Signal](https://signal.me) |
-| [SlideShare](https://slideshare.net) | [Snapchat](https://snapchat.com) | [SoundCloud](https://soundcloud.com) |
-| [Spotify](https://spotify.com) | [Stack Overflow](https://stackoverflow.com) | [Steam](https://steamcommunity.com) |
-| [Substack](https://substack.com) | [Telegram](https://telegram.org) | [Threads](https://threads.net) |
-| [TikTok](https://tiktok.com) | [Tumblr](https://tumblr.com) | [Twitch](https://twitch.tv) |
+| [Gravatar](https://gravatar.com) | [Gumroad](https://gumroad.com) | [HackerRank](https://hackerrank.com) |
+| [Hacker News](https://news.ycombinator.com) | [Hashnode](https://hashnode.com) | [Instagram](https://instagram.com) |
+| [Kaggle](https://kaggle.com) | [Keybase](https://keybase.io) | [Kuaishou](https://kuaishou.com) |
+| [LeetCode](https://leetcode.com) | [Lemmy World](https://lemmy.world) | [Lichess](https://lichess.org) |
+| [LinkedIn](https://linkedin.com) (personal & company) | [Linktree](https://linktr.ee) | [Mastodon](https://mastodon.social) |
+| [Medium](https://medium.com) | [Patreon](https://patreon.com) | [Pinterest](https://pinterest.com) |
+| [Product Hunt](https://producthunt.com) | [PyPI](https://pypi.org) | [Quora](https://quora.com) |
+| [Reddit](https://reddit.com) | [Replit](https://replit.com) | [Rumble](https://rumble.com) |
+| [Signal](https://signal.me) | [SlideShare](https://slideshare.net) | [Snapchat](https://snapchat.com) |
+| [SoundCloud](https://soundcloud.com) | [Spotify](https://spotify.com) | [Stack Overflow](https://stackoverflow.com) |
+| [Steam](https://steamcommunity.com) | [Substack](https://substack.com) | [Telegram](https://telegram.org) |
+| [Threads](https://threads.net) | [TikTok](https://tiktok.com) | [Trello](https://trello.com) |
+| [Tumblr](https://tumblr.com) | [Twitch](https://twitch.tv) | [Unsplash](https://unsplash.com) |
 | [Vimeo](https://vimeo.com) | [VK](https://vk.com) | [WeChat](https://weixin.qq.com) |
 | [Weibo](https://weibo.com) | [Wellfound (AngelList)](https://wellfound.com) | [WhatsApp](https://whatsapp.com) |
-| [X (Twitter)](https://x.com) | [YouTube](https://youtube.com) | |
+| [WordPress](https://wordpress.com) | [X (Twitter)](https://x.com) | [YouTube](https://youtube.com) |
 
 ## Basic Usage
 
@@ -132,6 +142,20 @@ sanitize("x", "https://twitter.com/ysskrishna")
 # Returns: "https://x.com/ysskrishna"
 ```
 
+### Extract IDs
+
+```python
+from sociallinks import extract_id
+
+# Extract username/profile ID from URL
+extract_id("linkedin", "https://www.linkedin.com/in/ysskrishna/")  # "ysskrishna"
+extract_id("github", "https://github.com/ysskrishna")              # "ysskrishna"
+extract_id("x", "https://twitter.com/ysskrishna")                  # "ysskrishna"
+
+# Works with company/org URLs too
+extract_id("linkedin", "https://linkedin.com/company/acme")  # "acme"
+```
+
 ### List Platforms
 
 ```python
@@ -169,6 +193,7 @@ sl = SocialLinks()
 sl.detect_platform("https://github.com/ysskrishna")  # "github"
 sl.is_valid("linkedin", "https://linkedin.com/in/user")  # True
 sl.sanitize("github", "https://github.com/user")  # "https://github.com/user"
+sl.extract_id("github", "https://github.com/user")  # "user"
 sl.list_platforms()  # ["behance", "dev_to", "dribbble", ...]
 ```
 
@@ -405,6 +430,7 @@ sl.set_platform("mysite", my_platform)
 url = "https://www.mysite.com/u/johndoe"
 platform = sl.detect_platform(url)  # "mysite"
 sanitized = sl.sanitize(platform, url)  # "https://mysite.com/profile/johndoe"
+user_id = sl.extract_id(platform, url)  # "johndoe"
 is_valid = sl.is_valid(platform, url)  # True
 
 # View all platforms
@@ -431,28 +457,12 @@ Contributions are welcome! Please read our [Contributing Guide](https://github.c
 
 ## Support
 
-If you find this library useful, please consider:
+If you find this library helpful:
 
-- ⭐ **Starring** the repository on GitHub to help others discover it.
-
-- 💖 **Sponsoring** to support ongoing maintenance and development.
-
-[Become a Sponsor on GitHub](https://github.com/sponsors/ysskrishna) | [Support on Patreon](https://patreon.com/ysskrishna)
-
-## Links
-
-- **Documentation**: [ysskrishna.github.io/social-links](https://ysskrishna.github.io/social-links/)
-
-- **Interactive Demo**: [ysskrishna.github.io/social-links/demo/](https://ysskrishna.github.io/social-links/demo/)
-
-- **PyPI**: [pypi.org/project/social-links](https://pypi.org/project/social-links/)
-
-- **Homepage**: [github.com/ysskrishna/social-links](https://github.com/ysskrishna/social-links)
-
-- **Repository**: [github.com/ysskrishna/social-links.git](https://github.com/ysskrishna/social-links.git)
-
-- **Issues**: [github.com/ysskrishna/social-links/issues](https://github.com/ysskrishna/social-links/issues)
-
+- ⭐ Star the repository
+- 🐛 Report issues
+- 🔀 Submit pull requests
+- 💝 [Sponsor on GitHub](https://github.com/sponsors/ysskrishna)
 
 ## Credits
 
@@ -460,12 +470,16 @@ This package is inspired by the [social-links](https://www.npmjs.com/package/soc
 
 ## License
 
-MIT License - see [LICENSE](https://github.com/ysskrishna/social-links/blob/main/LICENSE) file for details.
+MIT © [Y. Siva Sai Krishna](https://github.com/ysskrishna) - see [LICENSE](https://github.com/ysskrishna/social-links/blob/main/LICENSE) file for details.
 
-## Author
 
-**Y. Siva Sai Krishna**
+---
 
-- GitHub: [@ysskrishna](https://github.com/ysskrishna)
-
-- LinkedIn: [ysskrishna](https://linkedin.com/in/ysskrishna)
+<p align="left">
+  <a href="https://github.com/ysskrishna">Author's GitHub</a> •
+  <a href="https://linkedin.com/in/ysskrishna">Author's LinkedIn</a> •
+  <a href="https://github.com/ysskrishna/social-links/issues">Report Issues</a> •
+  <a href="https://pypi.org/project/social-links/">Package on PyPI</a> •
+  <a href="https://ysskrishna.github.io/social-links/">Package Documentation</a> •
+  <a href="https://ysskrishna.github.io/social-links/demo/">Interactive Demo</a>
+</p>
