@@ -1,5 +1,4 @@
 """Tests for Keybase platform."""
-import pytest
 
 
 class TestKeybase:

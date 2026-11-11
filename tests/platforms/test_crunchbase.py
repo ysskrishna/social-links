@@ -1,5 +1,4 @@
 """Tests for Crunchbase platform."""
-import pytest
 
 
 class TestCrunchbase:

@@ -1,5 +1,4 @@
 """Tests for Dev.to platform."""
-import pytest
 
 
 class TestDevTo:

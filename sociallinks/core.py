@@ -1,6 +1,15 @@
 import re
-from typing import Dict, List, Optional, Any, Tuple
-from sociallinks.constants import PlatformEntry, PlatformEntries
+import string
+from typing import Dict, List, NamedTuple, Optional, Tuple
+from sociallinks.constants import (
+    PHONE_NUMBER,
+    PROFILE_ID,
+    PROFILE_ID_AT,
+    PROFILE_ID_EXTENDED,
+    PROFILE_ID_UNICODE,
+    PlatformEntry,
+    PlatformEntries,
+)
 from sociallinks.platforms import PREDEFINED_PLATFORMS
 from sociallinks.exceptions import (
     PlatformNotFoundError,
@@ -10,6 +19,55 @@ from sociallinks.exceptions import (
     PlatformIDExtractionError,
     URLMismatchError,
 )
+
+_NUMERIC_ID = r"(?P<id>\d+)"  # bare numeric IDs, e.g. Apple Music artist IDs
+
+_BARE_ID_BODIES = frozenset(
+    {
+        PROFILE_ID,
+        PROFILE_ID_AT,
+        PROFILE_ID_UNICODE,
+        PROFILE_ID_EXTENDED,
+        PHONE_NUMBER,
+        _NUMERIC_ID,
+    }
+)
+
+
+def _is_bare_id_pattern(pattern: str) -> bool:
+    """Return True if a pattern accepts only a bare ID (``^<id>$`` or ``^@?<id>$``).
+
+    Only patterns built from the library's own ID regexes in
+    ``sociallinks.constants`` are recognised. Prefixed shorthands such as
+    ``^u/<id>$`` or ``^spotify:artist:<id>$`` are not bare.
+    """
+    if not (pattern.startswith("^") and pattern.endswith("$")):
+        return False
+    body = pattern[1:-1]
+    if body.startswith("@?"):
+        body = body[2:]
+    return body in _BARE_ID_BODIES
+
+
+# Generic site paths that look like profile IDs. When a URL only matches after
+# its query string or fragment was removed, these IDs are rejected so that
+# links such as youtube.com/watch?v=... or x.com/search?q=... are not mistaken
+# for profiles. The check is not applied to the input exactly as given.
+_RESERVED_IDS = frozenset(
+    {
+        "about", "account", "explore", "feed", "groups", "hashtag", "help",
+        "home", "intent", "live", "login", "logout", "marketplace",
+        "messages", "notifications", "playlist", "pricing", "privacy",
+        "profile.php", "register", "results", "search", "settings", "share",
+        "sharer", "sharer.php", "shorts", "signup", "sign_up", "terms", "watch",
+    }
+)
+
+
+class _CompiledPattern(NamedTuple):
+    pattern: re.Pattern
+    sanitized: str
+    bare: bool
 
 
 class SocialLinks:
@@ -76,7 +134,7 @@ class SocialLinks:
             >>> sl = SocialLinks(regex_flags=re.IGNORECASE | re.MULTILINE)
         """
         self.platforms: PlatformEntries = {}
-        self._compiled: Dict[str, List[Tuple[re.Pattern, str]]] = {}
+        self._compiled: Dict[str, List[_CompiledPattern]] = {}
         self.regex_flags: int = regex_flags
 
         if use_predefined_platforms:
@@ -84,52 +142,97 @@ class SocialLinks:
 
         # Compile all
         for name, data in self.platforms.items():
-            self._compile_platform(name, data)
+            self._compiled[name] = self._compile_platform(name, data)
 
     # ------------------------------------------------------------------
     # Internal Helpers
     # ------------------------------------------------------------------
 
-    def _compile_platform(self, name: str, data: PlatformEntry) -> None:
-        """Compile regex patterns for a platform.
+    @staticmethod
+    def _short(value: str, limit: int = 200) -> str:
+        """Shorten a string for use in an error message."""
+        return value if len(value) <= limit else value[:limit] + "..."
 
-        Internal method that compiles all regex patterns for a platform
-        and stores them with their sanitized templates.
+    def _compile_platform(self, name: str, data: PlatformEntry) -> List[_CompiledPattern]:
+        """Validate and compile the regex patterns of a platform.
+
+        Internal method. It does not modify the instance, so callers can
+        compile first and only then register the platform, which keeps
+        ``platforms`` and the compiled patterns consistent when it raises.
 
         Args:
             name: Platform name.
             data: Platform configuration.
 
+        Returns:
+            The compiled patterns with their sanitized templates.
+
         Raises:
-            InvalidPlatformError: If no valid patterns are found.
+            InvalidPlatformError: If the configuration is not a list of
+                entries, an entry has no patterns, or its ``sanitized``
+                template is missing, is not a string, or does not use
+                ``{id}`` as its only placeholder.
             InvalidPlatformRegexError: If any regex pattern is invalid.
         """
-        compiled_entries: List[Tuple[re.Pattern, str]] = []
+        if not isinstance(data, list) or not data:
+            raise InvalidPlatformError(
+                f"Platform '{name}' has no valid patterns or templates: "
+                "expected a non-empty list of entries."
+            )
 
-        for entry in data:
+        compiled_entries: List[_CompiledPattern] = []
+
+        for index, entry in enumerate(data):
+            where = f"Platform '{name}' entry {index}"
             if not isinstance(entry, dict):
-                continue
+                raise InvalidPlatformError(
+                    f"{where} has no valid patterns or templates: "
+                    f"expected a dict, got {type(entry).__name__}."
+                )
 
             patterns = entry.get("patterns")
             sanitized = entry.get("sanitized")
+            pattern_list = patterns if isinstance(patterns, list) else [patterns]
 
-            if not patterns or not sanitized:
-                continue
+            if (
+                not patterns
+                or not isinstance(sanitized, str)
+                or not sanitized
+                or not all(isinstance(p, str) and p for p in pattern_list)
+            ):
+                raise InvalidPlatformError(
+                    f"{where} has no valid patterns or templates: "
+                    "'patterns' must be a non-empty regex string or list of strings "
+                    "and 'sanitized' a non-empty string."
+                )
 
-            for p in (patterns if isinstance(patterns, list) else [patterns]):
+            try:
+                fields = [f for _, f, _, _ in string.Formatter().parse(sanitized) if f is not None]
+            except ValueError as e:
+                raise InvalidPlatformError(
+                    f"{where} has an invalid 'sanitized' template {sanitized!r}: {e}"
+                ) from e
+            if "id" not in fields or any(f != "id" for f in fields):
+                raise InvalidPlatformError(
+                    f"{where} 'sanitized' template {sanitized!r} must contain "
+                    "{id} and no other placeholders."
+                )
+
+            for p in pattern_list:
                 try:
                     compiled_entries.append(
-                        (re.compile(p, flags=self.regex_flags), sanitized)
+                        _CompiledPattern(
+                            re.compile(p, flags=self.regex_flags),
+                            sanitized,
+                            _is_bare_id_pattern(p),
+                        )
                     )
                 except re.error as e:
                     raise InvalidPlatformRegexError(
                         f"Invalid regex pattern for platform '{name}': {p}"
                     ) from e
 
-        if not compiled_entries:
-            raise InvalidPlatformError(f"Platform '{name}' has no valid patterns or templates.")
-
-        self._compiled[name] = compiled_entries
+        return compiled_entries
 
     @staticmethod
     def _id_from_match(match: re.Match) -> Optional[str]:
@@ -150,6 +253,55 @@ class SocialLinks:
         for g in match.groups():
             if g:
                 return g
+        return None
+
+    @staticmethod
+    def _strip_query_fragment(u: str) -> str:
+        """Return ``u`` without its query string and fragment."""
+        cuts = [i for i in (u.find("?"), u.find("#")) if i != -1]
+        return u[: min(cuts)] if cuts else u
+
+    def _find_match(
+        self,
+        entries: List[_CompiledPattern],
+        u: str,
+        *,
+        for_detection: bool = False,
+    ) -> Optional[Tuple[_CompiledPattern, "re.Match"]]:
+        """Find the first pattern that matches ``u``.
+
+        The input is tried as given first, so platforms whose URLs need a
+        query string or fragment (Hacker News ``?id=``, Signal ``#p/``) keep
+        working. If nothing matches, it is tried again without the query
+        string and fragment, so share links such as ``?utm_source=share``
+        are accepted. Bare-ID patterns are not used on that second pass, and
+        generic site paths (``watch``, ``search``, ``profile.php``, ...) are
+        rejected there, see ``_RESERVED_IDS``.
+
+        Args:
+            entries: Compiled patterns of one platform.
+            u: The stripped input string.
+            for_detection: If True, bare-ID patterns are skipped (used by
+                ``detect_platform``).
+
+        Returns:
+            The matching compiled pattern and its match object, or None.
+        """
+        for compiled in entries:
+            if for_detection and compiled.bare:
+                continue
+            m = compiled.pattern.match(u)
+            if m:
+                return compiled, m
+
+        stripped = self._strip_query_fragment(u)
+        if stripped and stripped != u:
+            for compiled in entries:
+                if compiled.bare:
+                    continue
+                m = compiled.pattern.match(stripped)
+                if m and (self._id_from_match(m) or "").lower() not in _RESERVED_IDS:
+                    return compiled, m
         return None
 
     def _match_url(self, platform_name: str, url: str) -> Tuple[str, str]:
@@ -182,18 +334,22 @@ class SocialLinks:
 
         u = url.strip()
         if not u:
-            raise URLMismatchError("URL cannot be empty")
+            raise URLMismatchError(f"URL cannot be empty (platform '{platform_name}')")
 
-        for pattern, sanitized in entries:
-            m = pattern.search(u)
-            if m:
-                pid = self._id_from_match(m)
-                if not pid:
-                    raise PlatformIDExtractionError("Could not extract platform ID")
-                pid = pid.strip().rstrip("/")
-                return pid, sanitized
+        found = self._find_match(entries, u)
+        if found:
+            compiled, m = found
+            pid = self._id_from_match(m)
+            if not pid:
+                raise PlatformIDExtractionError(
+                    f"Could not extract platform ID for '{platform_name}' from {self._short(u)!r}"
+                )
+            pid = pid.strip().rstrip("/")
+            return pid, compiled.sanitized
 
-        raise URLMismatchError(f"URL does not match platform '{platform_name}'")
+        raise URLMismatchError(
+            f"URL does not match platform '{platform_name}': {self._short(u)!r}"
+        )
 
     # ------------------------------------------------------------------
     # Core API
@@ -204,12 +360,17 @@ class SocialLinks:
 
         Analyzes the provided URL against all registered platform patterns
         and returns the first matching platform name. The URL is automatically
-        stripped of leading/trailing whitespace before matching.
+        stripped of leading/trailing whitespace before matching. Query strings
+        and fragments (for example ``?utm_source=share``) are ignored unless
+        the platform's URL format needs them.
 
         Args:
-            url: The URL or username to analyze. Can be a full URL
-                (e.g., "https://linkedin.com/in/johndoe") or just a username
-                (e.g., "johndoe"). Whitespace is automatically stripped.
+            url: The URL to analyze (e.g., "https://linkedin.com/in/johndoe").
+                Whitespace is automatically stripped. A bare username such as
+                "johndoe" is not enough to identify a platform, so it returns
+                None. Prefixed shorthands such as "u/johndoe" (Reddit) are
+                still detected. Use `is_valid()` or `sanitize()` to check a
+                bare ID against a platform you name.
 
         Returns:
             The platform name (e.g., "linkedin", "github", "x") if detected,
@@ -241,7 +402,7 @@ class SocialLinks:
             return None
         
         for name, entries in self._compiled.items():
-            if any(pattern.search(u) for pattern, _ in entries):
+            if self._find_match(entries, u, for_detection=True):
                 return name
         return None
 
@@ -275,8 +436,8 @@ class SocialLinks:
             True
             >>> sl.is_valid("unknown_platform", "https://example.com")
             False
-            >>> sl.is_valid("linkedin", "johndoe")  # Username only
-            False
+            >>> sl.is_valid("linkedin", "johndoe")  # Bare ID for a named platform
+            True
         """
         if not isinstance(platform_name, str):
             raise TypeError(f"platform_name must be str, not {type(platform_name).__name__}")
@@ -291,7 +452,7 @@ class SocialLinks:
         if not u:
             return False
         
-        return any(pattern.search(u) for pattern, _ in entries)
+        return self._find_match(entries, u) is not None
 
     def sanitize(self, platform_name: str, url: str) -> str:
         """Sanitize a URL to its canonical format for a specific platform.
@@ -390,6 +551,9 @@ class SocialLinks:
                 - "patterns": A regex pattern string or list of patterns
                   that match URLs for this platform. Patterns should use
                   named groups like `(?P<id>...)` to capture identifiers.
+                  Patterns are matched from the start of the input
+                  (`re.match`), so a URL embedded in a longer string does
+                  not match. End a pattern with `$` to reject trailing text.
                 - "sanitized": A template string for the canonical URL format,
                   using `{id}` as a placeholder for the extracted identifier.
             override: If False (default), raises an error if the platform
@@ -399,9 +563,12 @@ class SocialLinks:
         Raises:
             PlatformAlreadyExistsError: If the platform already exists and
                 override is False.
-            InvalidPlatformError: If the platform configuration is invalid
-                (no valid patterns or templates).
+            InvalidPlatformError: If the configuration is invalid: not a
+                non-empty list of dicts, an entry without patterns, or a
+                "sanitized" template that does not use `{id}` as its only
+                placeholder. Nothing is registered when this is raised.
             InvalidPlatformRegexError: If any regex pattern is invalid.
+                The existing platform (if any) is left unchanged.
 
         Examples:
             >>> sl = SocialLinks(use_predefined_platforms=False)
@@ -425,8 +592,9 @@ class SocialLinks:
         if exists and not override:
             raise PlatformAlreadyExistsError(f"Platform '{name}' already exists. Use override=True.")
 
+        compiled = self._compile_platform(name, data)
         self.platforms[name] = data
-        self._compile_platform(name, data)
+        self._compiled[name] = compiled
 
     def delete_platform(self, name: str) -> None:
         """Delete a platform configuration.
@@ -474,6 +642,8 @@ class SocialLinks:
                 override is False.
             InvalidPlatformError: If any platform configuration is invalid.
             InvalidPlatformRegexError: If any regex pattern is invalid.
+                The operation is all-or-nothing: if any entry raises, no
+                platform from this call is registered.
 
         Examples:
             >>> sl = SocialLinks(use_predefined_platforms=False)
@@ -496,8 +666,13 @@ class SocialLinks:
             if conflicts:
                 raise PlatformAlreadyExistsError(f"Platforms already exist: {', '.join(conflicts)}")
 
+        # Compile everything first so a bad entry leaves the instance unchanged.
+        compiled = {
+            name: self._compile_platform(name, data) for name, data in platforms.items()
+        }
         for name, data in platforms.items():
-            self.set_platform(name, data, override=override)
+            self.platforms[name] = data
+            self._compiled[name] = compiled[name]
 
     def delete_platforms(self, names: List[str]) -> None:
         """Delete multiple platform configurations at once.

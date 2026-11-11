@@ -1,5 +1,4 @@
 """Tests for HackerRank platform."""
-import pytest
 
 
 class TestHackerRank:

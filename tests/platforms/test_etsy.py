@@ -1,5 +1,4 @@
 """Tests for Etsy platform."""
-import pytest
 
 
 class TestEtsy:

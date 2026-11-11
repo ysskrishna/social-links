@@ -1,5 +1,4 @@
 """Tests for Hashnode platform."""
-import pytest
 
 
 class TestHashnode:

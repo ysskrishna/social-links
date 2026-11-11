@@ -1,5 +1,4 @@
 """Tests for Bandcamp platform."""
-import pytest
 
 
 class TestBandcamp:

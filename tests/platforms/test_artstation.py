@@ -1,5 +1,4 @@
 """Tests for ArtStation platform."""
-import pytest
 
 
 class TestArtStation:

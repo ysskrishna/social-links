@@ -1,5 +1,4 @@
 """Tests for Weibo platform."""
-import pytest
 
 
 class TestWeibo:

@@ -1,5 +1,4 @@
 """Tests for WeChat platform."""
-import pytest
 
 
 class TestWechat:

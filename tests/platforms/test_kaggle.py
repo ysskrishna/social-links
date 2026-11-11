@@ -1,5 +1,4 @@
 """Tests for Kaggle platform."""
-import pytest
 
 
 class TestKaggle:

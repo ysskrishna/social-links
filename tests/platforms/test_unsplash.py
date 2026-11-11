@@ -1,5 +1,4 @@
 """Tests for Unsplash platform."""
-import pytest
 
 
 class TestUnsplash:

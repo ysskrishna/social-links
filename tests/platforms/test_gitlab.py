@@ -1,5 +1,4 @@
 """Tests for GitLab platform."""
-import pytest
 
 
 class TestGitlab:

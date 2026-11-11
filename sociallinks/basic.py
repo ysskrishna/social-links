@@ -39,9 +39,11 @@ def detect_platform(url: str) -> Optional[str]:
     platforms), use the SocialLinks class directly.
     
     Args:
-        url: The URL or username to analyze. Can be a full URL
-            (e.g., "https://linkedin.com/in/johndoe") or just a username
-            (e.g., "johndoe"). Whitespace is automatically stripped.
+        url: The URL to analyze (e.g., "https://linkedin.com/in/johndoe").
+            Whitespace is automatically stripped. A bare username such as
+            "johndoe" cannot identify a platform, so it returns None. Use
+            `is_valid()` or `sanitize()` to check a bare ID against a
+            platform you name.
     
     Returns:
         The platform name (e.g., "linkedin", "github", "x") if detected,

@@ -1,5 +1,4 @@
 """Tests for GitHub platform."""
-import pytest
 
 
 class TestGithub:

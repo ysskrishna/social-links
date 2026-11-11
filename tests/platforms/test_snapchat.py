@@ -1,5 +1,4 @@
 """Tests for Snapchat platform."""
-import pytest
 
 
 class TestSnapchat:

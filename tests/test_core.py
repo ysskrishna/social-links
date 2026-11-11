@@ -3,7 +3,6 @@ from sociallinks.core import SocialLinks
 from sociallinks.exceptions import (
     PlatformNotFoundError,
     URLMismatchError,
-    PlatformIDExtractionError,
 )
 
 

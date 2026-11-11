@@ -1,5 +1,4 @@
 """Tests for Chess.com platform."""
-import pytest
 
 
 class TestChessCom:

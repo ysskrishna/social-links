@@ -1,5 +1,4 @@
 """Tests for Lichess platform."""
-import pytest
 
 
 class TestLichess:

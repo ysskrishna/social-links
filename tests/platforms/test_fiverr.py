@@ -1,5 +1,4 @@
 """Tests for Fiverr platform."""
-import pytest
 
 
 class TestFiverr:

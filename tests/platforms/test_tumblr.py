@@ -1,5 +1,4 @@
 """Tests for Tumblr platform."""
-import pytest
 
 
 class TestTumblr:

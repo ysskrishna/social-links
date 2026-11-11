@@ -1,5 +1,4 @@
 """Tests for TikTok platform."""
-import pytest
 
 
 class TestTiktok:

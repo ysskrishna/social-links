@@ -1,5 +1,4 @@
 """Tests for Linktree platform."""
-import pytest
 
 
 class TestLinktree:

@@ -1,5 +1,4 @@
 """Tests for YouTube platform."""
-import pytest
 
 
 class TestYoutube:
@@ -17,7 +16,9 @@ class TestYoutube:
         profile_id = "UC1234567890"
         assert sl.detect_platform(f"https://youtube.com/channel/{profile_id}") == "youtube"
         assert sl.is_valid("youtube", f"https://youtube.com/channel/{profile_id}") is True
-        assert sl.sanitize("youtube", f"https://youtube.com/channel/{profile_id}") == f"https://youtube.com/{profile_id}"
+        # Channel IDs only resolve under /channel/ (youtube.com/UC... is a 404)
+        assert sl.sanitize("youtube", f"https://youtube.com/channel/{profile_id}") == f"https://youtube.com/channel/{profile_id}"
+        assert sl.extract_id("youtube", f"https://www.youtube.com/channel/{profile_id}/") == profile_id
 
     def test_youtube_user(self, sl):
         """Test YouTube user URL"""

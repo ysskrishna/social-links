@@ -93,10 +93,10 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
     "exercism": [
         {
             "patterns": [
-                rf"https?://(www\.)?exercism\.io/profiles/{PROFILE_ID}/?$",
+                rf"https?://(www\.)?exercism\.(org|io)/profiles/{PROFILE_ID}/?$",
                 rf"^{PROFILE_ID}$"
             ],
-            "sanitized": "https://exercism.io/profiles/{id}"
+            "sanitized": "https://exercism.org/profiles/{id}"
         }
     ],
     "facebook": [
@@ -107,6 +107,13 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
                 rf"^{PROFILE_ID}$"
             ],
             "sanitized": "https://facebook.com/{id}"
+        },
+        {
+            # Accounts without a vanity name: facebook.com/profile.php?id=<digits>
+            "patterns": [
+                r"https?://(www\.|m\.)?facebook\.com/profile\.php\?id=(?P<id>\d+)(?:[&#].*)?$"
+            ],
+            "sanitized": "https://facebook.com/profile.php?id={id}"
         }
     ],
     "flickr": [
@@ -252,6 +259,8 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
         {
             "patterns": [
                 rf"https?://(www\.)?medium\.com/@{PROFILE_ID}/?$",
+                # Profile subdomain: <name>.medium.com (not Medium's own hosts)
+                r"https?://(?!(?:www|help|blog|policy|api|miro|cdn-images-1)\.)(?P<id>[A-Za-z0-9_-]+)\.medium\.com/?$",
                 rf"^@?{PROFILE_ID}$"
             ],
             "sanitized": "https://medium.com/@{id}"
@@ -309,7 +318,8 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
     "signal": [
         {
             "patterns": [
-                rf"https?://(www\.)?signal\.me/#p/{PROFILE_ID}/?$",
+                # Phone-number links look like signal.me/#p/+15555555555
+                r"https?://(www\.)?signal\.me/#p/(?P<id>\+?[A-Za-z0-9_.-]+)/?$",
                 rf"^{PROFILE_ID}$"
             ],
             "sanitized": "https://signal.me/#p/{id}"
@@ -337,9 +347,9 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
     "apple_music": [
         {
             "patterns": [
-                rf"https?://(?:itunes|music)\.apple\.com/(?:[a-z]{{2}}/)?artist/(?:[A-Za-z0-9_\-\%\.]+/)?(?:id)?(?P<id>\d+)/?$",
-                rf"https?://(?:itunes|music)\.apple\.com/(?:[a-z]{{2}}/)?artist/(?P<id>\d+)/?$",
-                rf"^(?P<id>\d+)$"
+                r"https?://(?:itunes|music)\.apple\.com/(?:[a-z]{2}/)?artist/(?:[A-Za-z0-9_\-\%\.]+/)?(?:id)?(?P<id>\d+)/?$",
+                r"https?://(?:itunes|music)\.apple\.com/(?:[a-z]{2}/)?artist/(?P<id>\d+)/?$",
+                r"^(?P<id>\d+)$"
             ],
             "sanitized": "https://music.apple.com/artist/{id}"
         }
@@ -425,10 +435,10 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
     "threads": [
         {
             "patterns": [
-                rf"https?://(www\.)?threads\.net/@{PROFILE_ID}/?$",
+                rf"https?://(www\.)?threads\.(com|net)/@{PROFILE_ID}/?$",
                 rf"^@?{PROFILE_ID}$"
             ],
-            "sanitized": "https://threads.net/@{id}"
+            "sanitized": "https://threads.com/@{id}"
         }
     ],
     "tiktok": [
@@ -530,13 +540,20 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
         {
             "patterns": [
                 rf"https?://(www\.)?youtube\.com/{PROFILE_ID_AT}/?$",
-                rf"https?://(www\.)?youtube\.com/channel/{PROFILE_ID}/?$",
                 rf"https?://(www\.)?youtube\.com/user/{PROFILE_ID}/?$",
                 rf"https?://(www\.)?youtube\.com/c/{PROFILE_ID}/?$",
                 rf"https?://m\.youtube\.com/c/{PROFILE_ID}/?$",
                 rf"^{PROFILE_ID_AT}$"
             ],
             "sanitized": "https://youtube.com/{id}"
+        },
+        {
+            # Channel IDs (UC...) only resolve under /channel/, unlike handles,
+            # /user/ and /c/ names which resolve at the root.
+            "patterns": [
+                rf"https?://(www\.)?youtube\.com/channel/{PROFILE_ID}/?$"
+            ],
+            "sanitized": "https://youtube.com/channel/{id}"
         }
     ],
     "producthunt": [

@@ -1,5 +1,4 @@
 """Tests for CodePen platform."""
-import pytest
 
 
 class TestCodePen:

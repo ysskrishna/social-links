@@ -1,5 +1,4 @@
 """Tests for Quora platform."""
-import pytest
 
 
 class TestQuora:

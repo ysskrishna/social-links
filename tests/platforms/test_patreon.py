@@ -1,5 +1,4 @@
 """Tests for Patreon platform."""
-import pytest
 
 
 class TestPatreon:

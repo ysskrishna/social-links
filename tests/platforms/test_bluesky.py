@@ -1,5 +1,4 @@
 """Tests for Bluesky platform."""
-import pytest
 
 
 class TestBluesky:

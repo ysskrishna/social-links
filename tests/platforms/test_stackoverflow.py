@@ -1,5 +1,4 @@
 """Tests for Stack Overflow platform."""
-import pytest
 
 
 class TestStackoverflow:

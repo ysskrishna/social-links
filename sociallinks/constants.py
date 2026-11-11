@@ -99,7 +99,7 @@ Example matches:
 """
 
 PROFILE_ID_UNICODE = r"(?P<id>[\w&%'–®\.-]+)"
-"""Profile ID regex pattern supporting Unicode characters.
+r"""Profile ID regex pattern supporting Unicode characters.
 
 Matches Unicode word characters (via ``\w``, which includes Unicode letters
 and digits in Python 3), plus special characters including:

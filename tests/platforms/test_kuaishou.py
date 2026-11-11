@@ -1,5 +1,4 @@
 """Tests for Kuaishou platform."""
-import pytest
 
 
 class TestKuaishou:
