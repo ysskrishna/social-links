@@ -1,4 +1,5 @@
 import re
+import string
 from typing import Dict, List, NamedTuple, Optional, Any, Tuple
 from sociallinks.constants import (
     PHONE_NUMBER,
@@ -141,39 +142,83 @@ class SocialLinks:
 
         # Compile all
         for name, data in self.platforms.items():
-            self._compile_platform(name, data)
+            self._compiled[name] = self._compile_platform(name, data)
 
     # ------------------------------------------------------------------
     # Internal Helpers
     # ------------------------------------------------------------------
 
-    def _compile_platform(self, name: str, data: PlatformEntry) -> None:
-        """Compile regex patterns for a platform.
+    @staticmethod
+    def _short(value: str, limit: int = 200) -> str:
+        """Shorten a string for use in an error message."""
+        return value if len(value) <= limit else value[:limit] + "..."
 
-        Internal method that compiles all regex patterns for a platform
-        and stores them with their sanitized templates.
+    def _compile_platform(self, name: str, data: PlatformEntry) -> List[_CompiledPattern]:
+        """Validate and compile the regex patterns of a platform.
+
+        Internal method. It does not modify the instance, so callers can
+        compile first and only then register the platform, which keeps
+        ``platforms`` and the compiled patterns consistent when it raises.
 
         Args:
             name: Platform name.
             data: Platform configuration.
 
+        Returns:
+            The compiled patterns with their sanitized templates.
+
         Raises:
-            InvalidPlatformError: If no valid patterns are found.
+            InvalidPlatformError: If the configuration is not a list of
+                entries, an entry has no patterns, or its ``sanitized``
+                template is missing, is not a string, or does not use
+                ``{id}`` as its only placeholder.
             InvalidPlatformRegexError: If any regex pattern is invalid.
         """
+        if not isinstance(data, list) or not data:
+            raise InvalidPlatformError(
+                f"Platform '{name}' has no valid patterns or templates: "
+                "expected a non-empty list of entries."
+            )
+
         compiled_entries: List[_CompiledPattern] = []
 
-        for entry in data:
+        for index, entry in enumerate(data):
+            where = f"Platform '{name}' entry {index}"
             if not isinstance(entry, dict):
-                continue
+                raise InvalidPlatformError(
+                    f"{where} has no valid patterns or templates: "
+                    f"expected a dict, got {type(entry).__name__}."
+                )
 
             patterns = entry.get("patterns")
             sanitized = entry.get("sanitized")
+            pattern_list = patterns if isinstance(patterns, list) else [patterns]
 
-            if not patterns or not sanitized:
-                continue
+            if (
+                not patterns
+                or not isinstance(sanitized, str)
+                or not sanitized
+                or not all(isinstance(p, str) and p for p in pattern_list)
+            ):
+                raise InvalidPlatformError(
+                    f"{where} has no valid patterns or templates: "
+                    "'patterns' must be a non-empty regex string or list of strings "
+                    "and 'sanitized' a non-empty string."
+                )
 
-            for p in (patterns if isinstance(patterns, list) else [patterns]):
+            try:
+                fields = [f for _, f, _, _ in string.Formatter().parse(sanitized) if f is not None]
+            except ValueError as e:
+                raise InvalidPlatformError(
+                    f"{where} has an invalid 'sanitized' template {sanitized!r}: {e}"
+                ) from e
+            if "id" not in fields or any(f != "id" for f in fields):
+                raise InvalidPlatformError(
+                    f"{where} 'sanitized' template {sanitized!r} must contain "
+                    "{id} and no other placeholders."
+                )
+
+            for p in pattern_list:
                 try:
                     compiled_entries.append(
                         _CompiledPattern(
@@ -187,10 +232,7 @@ class SocialLinks:
                         f"Invalid regex pattern for platform '{name}': {p}"
                     ) from e
 
-        if not compiled_entries:
-            raise InvalidPlatformError(f"Platform '{name}' has no valid patterns or templates.")
-
-        self._compiled[name] = compiled_entries
+        return compiled_entries
 
     @staticmethod
     def _id_from_match(match: re.Match) -> Optional[str]:
@@ -292,18 +334,22 @@ class SocialLinks:
 
         u = url.strip()
         if not u:
-            raise URLMismatchError("URL cannot be empty")
+            raise URLMismatchError(f"URL cannot be empty (platform '{platform_name}')")
 
         found = self._find_match(entries, u)
         if found:
             compiled, m = found
             pid = self._id_from_match(m)
             if not pid:
-                raise PlatformIDExtractionError("Could not extract platform ID")
+                raise PlatformIDExtractionError(
+                    f"Could not extract platform ID for '{platform_name}' from {self._short(u)!r}"
+                )
             pid = pid.strip().rstrip("/")
             return pid, compiled.sanitized
 
-        raise URLMismatchError(f"URL does not match platform '{platform_name}'")
+        raise URLMismatchError(
+            f"URL does not match platform '{platform_name}': {self._short(u)!r}"
+        )
 
     # ------------------------------------------------------------------
     # Core API
@@ -517,9 +563,12 @@ class SocialLinks:
         Raises:
             PlatformAlreadyExistsError: If the platform already exists and
                 override is False.
-            InvalidPlatformError: If the platform configuration is invalid
-                (no valid patterns or templates).
+            InvalidPlatformError: If the configuration is invalid: not a
+                non-empty list of dicts, an entry without patterns, or a
+                "sanitized" template that does not use `{id}` as its only
+                placeholder. Nothing is registered when this is raised.
             InvalidPlatformRegexError: If any regex pattern is invalid.
+                The existing platform (if any) is left unchanged.
 
         Examples:
             >>> sl = SocialLinks(use_predefined_platforms=False)
@@ -543,8 +592,9 @@ class SocialLinks:
         if exists and not override:
             raise PlatformAlreadyExistsError(f"Platform '{name}' already exists. Use override=True.")
 
+        compiled = self._compile_platform(name, data)
         self.platforms[name] = data
-        self._compile_platform(name, data)
+        self._compiled[name] = compiled
 
     def delete_platform(self, name: str) -> None:
         """Delete a platform configuration.
@@ -592,6 +642,8 @@ class SocialLinks:
                 override is False.
             InvalidPlatformError: If any platform configuration is invalid.
             InvalidPlatformRegexError: If any regex pattern is invalid.
+                The operation is all-or-nothing: if any entry raises, no
+                platform from this call is registered.
 
         Examples:
             >>> sl = SocialLinks(use_predefined_platforms=False)
@@ -614,8 +666,13 @@ class SocialLinks:
             if conflicts:
                 raise PlatformAlreadyExistsError(f"Platforms already exist: {', '.join(conflicts)}")
 
+        # Compile everything first so a bad entry leaves the instance unchanged.
+        compiled = {
+            name: self._compile_platform(name, data) for name, data in platforms.items()
+        }
         for name, data in platforms.items():
-            self.set_platform(name, data, override=override)
+            self.platforms[name] = data
+            self._compiled[name] = compiled[name]
 
     def delete_platforms(self, names: List[str]) -> None:
         """Delete multiple platform configurations at once.
