@@ -530,13 +530,20 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
         {
             "patterns": [
                 rf"https?://(www\.)?youtube\.com/{PROFILE_ID_AT}/?$",
-                rf"https?://(www\.)?youtube\.com/channel/{PROFILE_ID}/?$",
                 rf"https?://(www\.)?youtube\.com/user/{PROFILE_ID}/?$",
                 rf"https?://(www\.)?youtube\.com/c/{PROFILE_ID}/?$",
                 rf"https?://m\.youtube\.com/c/{PROFILE_ID}/?$",
                 rf"^{PROFILE_ID_AT}$"
             ],
             "sanitized": "https://youtube.com/{id}"
+        },
+        {
+            # Channel IDs (UC...) only resolve under /channel/, unlike handles,
+            # /user/ and /c/ names which resolve at the root.
+            "patterns": [
+                rf"https?://(www\.)?youtube\.com/channel/{PROFILE_ID}/?$"
+            ],
+            "sanitized": "https://youtube.com/channel/{id}"
         }
     ],
     "producthunt": [
