@@ -64,6 +64,51 @@ git checkout -b fix/your-bug-fix-name
 
 4. Ensure all tests pass and the code is properly formatted
 
+## Adding a Platform
+
+Adding a platform takes four steps. Check the profile URL on the real site first
+(open a public profile in a browser and note the final URL after redirects).
+
+1. **Define it** in `sociallinks/platforms.py` as a new key of `PREDEFINED_PLATFORMS`:
+
+   ```python
+   "example": [
+       {
+           "patterns": [
+               rf"https?://(www\.)?example\.com/{PROFILE_ID}/?$",   # full URL
+               rf"^{PROFILE_ID}$",                                    # bare username
+           ],
+           "sanitized": "https://example.com/{id}",
+       }
+   ],
+   ```
+
+   - Use the ID regexes from `sociallinks/constants.py` (`PROFILE_ID`, `PROFILE_ID_AT`, ...).
+     They provide the `id` group that `sanitize()` and `extract_id()` read.
+   - The template must contain `{id}` and no other placeholder.
+   - Patterns are matched from the start of the input. End URL patterns with `/?$`.
+   - Query strings and fragments are stripped automatically when nothing matches as given,
+     so do not add them to a pattern unless the platform needs them (for example `?id=`).
+   - Use a separate entry when a URL form needs a different `sanitized` template
+     (see the `youtube` channel or `facebook` `profile.php` variants).
+   - The first entry should be the main profile form. `tests/platforms/test_common_patterns.py`
+     uses it to build www/http/trailing-slash checks automatically.
+
+2. **Test it** in a new file `tests/platforms/test_<key>.py`. Copy `test_github.py` and cover
+   `detect_platform`, `is_valid`, `sanitize`, `extract_id`, the bare ID, and every URL variant.
+
+3. **Register its docs data** in `PLATFORM_META` in `scripts/gen_platform_docs.py`
+   (display name and homepage), then run:
+
+   ```bash
+   uv run python scripts/gen_platform_docs.py
+   ```
+
+   This rewrites the README platform table and the platform counts in the docs. A test
+   (`tests/test_docs_sync.py`) fails if you forget.
+
+4. **Record it** under `## [Unreleased]` in `CHANGELOG.md`.
+
 ## Testing
 
 ### Running Tests
@@ -78,7 +123,9 @@ uv run pytest
 
 ```bash
 uv run pytest tests/test_core.py
-uv run pytest tests/test_platforms.py
+uv run pytest tests/platforms/test_github.py
+uv run pytest tests/platforms          # all per-platform tests
+uv run pytest tests/test_url_matching.py
 uv run pytest tests/test_platform_management.py
 uv run pytest tests/test_edge_cases.py
 ```
