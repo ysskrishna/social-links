@@ -107,6 +107,13 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
                 rf"^{PROFILE_ID}$"
             ],
             "sanitized": "https://facebook.com/{id}"
+        },
+        {
+            # Accounts without a vanity name: facebook.com/profile.php?id=<digits>
+            "patterns": [
+                r"https?://(www\.|m\.)?facebook\.com/profile\.php\?id=(?P<id>\d+)(?:[&#].*)?$"
+            ],
+            "sanitized": "https://facebook.com/profile.php?id={id}"
         }
     ],
     "flickr": [
@@ -252,6 +259,8 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
         {
             "patterns": [
                 rf"https?://(www\.)?medium\.com/@{PROFILE_ID}/?$",
+                # Profile subdomain: <name>.medium.com (not Medium's own hosts)
+                r"https?://(?!(?:www|help|blog|policy|api|miro|cdn-images-1)\.)(?P<id>[A-Za-z0-9_-]+)\.medium\.com/?$",
                 rf"^@?{PROFILE_ID}$"
             ],
             "sanitized": "https://medium.com/@{id}"
@@ -309,7 +318,8 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
     "signal": [
         {
             "patterns": [
-                rf"https?://(www\.)?signal\.me/#p/{PROFILE_ID}/?$",
+                # Phone-number links look like signal.me/#p/+15555555555
+                r"https?://(www\.)?signal\.me/#p/(?P<id>\+?[A-Za-z0-9_.-]+)/?$",
                 rf"^{PROFILE_ID}$"
             ],
             "sanitized": "https://signal.me/#p/{id}"

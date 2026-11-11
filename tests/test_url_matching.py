@@ -133,7 +133,6 @@ class TestQueryAndFragment:
             "https://x.com/search?q=foo",
             "https://github.com/search?q=foo",
             "https://www.facebook.com/sharer.php?u=https://example.com",
-            "https://www.facebook.com/profile.php?id=4",
             "https://www.instagram.com/explore/?x=1",
         ],
     )
