@@ -107,7 +107,7 @@ Adding a platform takes four steps. Check the profile URL on the real site first
    This rewrites the README platform table and the platform counts in the docs. A test
    (`tests/test_docs_sync.py`) fails if you forget.
 
-4. **Record it** under `## [Unreleased]` in `CHANGELOG.md`.
+4. **Record it** in `CHANGELOG.md` under the upcoming version.
 
 ## Testing
 

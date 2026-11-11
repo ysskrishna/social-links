@@ -5,6 +5,33 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.4.0]
+
+### Fixed
+
+- URL patterns are now anchored at the start of the input. Previously a URL embedded at the end of a longer string was accepted, for example `is_valid("github", "https://evil.com/?r=https://github.com/foo")` returned `True`.
+- `detect_platform()` no longer guesses a platform from a bare ID: `detect_platform("johndoe")` returned `"behance"`, now it returns `None`. Prefixed shorthands such as `u/foo`, `r/python` and `spotify:artist:...` are still detected. `is_valid()`, `sanitize()` and `extract_id()` still accept bare IDs for the platform you name.
+- YouTube: `/channel/UC...` URLs now sanitize to `https://youtube.com/channel/UC...`. The previous output, `https://youtube.com/UC...`, is a 404.
+- `set_platform()` no longer leaves `platforms` and the compiled patterns out of sync when compilation fails, and `set_platforms()` is all-or-nothing.
+- Stale docstring examples and the `SyntaxWarning` in `sociallinks/constants.py`.
+
+### Changed
+
+- Share links with tracking parameters or fragments are accepted: `https://www.instagram.com/foo/?igsh=abc`, `https://x.com/foo?s=20`, `https://github.com/foo#readme`. The input is matched as given first (so platforms that need a query string or fragment, such as Hacker News `?id=`, keep working), then again without them. Generic site paths such as `watch`, `search` or `profile.php` are rejected on that second pass, so `youtube.com/watch?v=...` is not read as a profile.
+- Threads and Exercism follow their new domains: `sanitize()` now returns `https://threads.com/@{id}` and `https://exercism.org/profiles/{id}`. The old `threads.net` and `exercism.io` hosts are still accepted as input.
+- `set_platform()` / `set_platforms()` validate their input and raise `InvalidPlatformError` for non-dict entries, entries without patterns, and `sanitized` templates that lack `{id}` or use other placeholders. These were previously skipped or accepted silently.
+- Error messages for mismatches, empty URLs and failed ID extraction now name the platform and (truncated) URL.
+- Patterns passed to `set_platform()` are matched with `re.match` instead of `re.search`. A custom pattern that relied on matching in the middle of a string must now match from the start.
+- README: collapsible sections, "Built and maintained by" section, and URL-handling notes.
+- CI runs on Python 3.8 to 3.13 and lints with ruff.
+
+### Added
+
+- Facebook `profile.php?id=<digits>` URLs, Signal phone links (`https://signal.me/#p/+15555555555`) and Medium `<name>.medium.com` profile URLs.
+- Python 3.13 classifier.
+- `scripts/gen_platform_docs.py` keeps the README platform table and the "N+ platforms" counts in sync with the code; a test fails when they are stale.
+- "Adding a Platform" guide in `CONTRIBUTING.md`.
+
 ## [1.3.1]
 
 ### Added
