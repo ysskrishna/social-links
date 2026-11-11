@@ -1,5 +1,4 @@
 """Tests for Discord platform."""
-import pytest
 
 
 class TestDiscord:

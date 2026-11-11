@@ -1,5 +1,4 @@
 """Tests for Hacker News platform."""
-import pytest
 
 
 class TestHackernews:

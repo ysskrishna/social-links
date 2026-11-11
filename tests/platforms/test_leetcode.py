@@ -1,5 +1,4 @@
 """Tests for LeetCode platform."""
-import pytest
 
 
 class TestLeetCode:

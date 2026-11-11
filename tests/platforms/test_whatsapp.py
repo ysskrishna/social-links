@@ -1,5 +1,4 @@
 """Tests for WhatsApp platform."""
-import pytest
 
 
 class TestWhatsapp:

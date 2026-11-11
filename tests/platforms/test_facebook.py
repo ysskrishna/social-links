@@ -1,5 +1,4 @@
 """Tests for Facebook platform."""
-import pytest
 
 
 class TestFacebook:

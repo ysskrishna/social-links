@@ -1,5 +1,4 @@
 """Tests for WordPress platform."""
-import pytest
 
 
 class TestWordPress:

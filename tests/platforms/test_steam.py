@@ -1,5 +1,4 @@
 """Tests for Steam platform."""
-import pytest
 
 
 class TestSteam:

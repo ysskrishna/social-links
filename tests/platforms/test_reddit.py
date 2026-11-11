@@ -1,5 +1,4 @@
 """Tests for Reddit platform."""
-import pytest
 
 
 class TestReddit:

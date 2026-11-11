@@ -1,5 +1,4 @@
 """Tests for Pinterest platform."""
-import pytest
 
 
 class TestPinterest:

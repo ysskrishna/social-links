@@ -1,5 +1,4 @@
 """Tests for Twitch platform."""
-import pytest
 
 
 class TestTwitch:

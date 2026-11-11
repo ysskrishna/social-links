@@ -1,5 +1,4 @@
 """Tests for Signal platform."""
-import pytest
 
 
 class TestSignal:

@@ -1,5 +1,4 @@
 """Tests for Exercism platform."""
-import pytest
 
 
 class TestExercism:

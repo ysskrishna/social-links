@@ -1,5 +1,4 @@
 """Tests for Dailymotion platform."""
-import pytest
 
 
 class TestDailymotion:

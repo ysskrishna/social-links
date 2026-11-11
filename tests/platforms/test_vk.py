@@ -1,5 +1,4 @@
 """Tests for VK platform."""
-import pytest
 
 
 class TestVk:

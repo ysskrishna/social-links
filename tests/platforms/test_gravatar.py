@@ -1,5 +1,4 @@
 """Tests for Gravatar platform."""
-import pytest
 
 
 class TestGravatar:

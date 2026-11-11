@@ -1,5 +1,4 @@
 """Tests for Wellfound platform."""
-import pytest
 
 
 class TestWellfound:

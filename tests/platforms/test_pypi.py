@@ -1,5 +1,4 @@
 """Tests for PyPI platform."""
-import pytest
 
 
 class TestPyPI:

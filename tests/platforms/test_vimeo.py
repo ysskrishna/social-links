@@ -1,5 +1,4 @@
 """Tests for Vimeo platform."""
-import pytest
 
 
 class TestVimeo:

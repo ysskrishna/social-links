@@ -15,6 +15,7 @@ classifiers = [
   "Programming Language :: Python :: 3.10",
   "Programming Language :: Python :: 3.11",
   "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
   "License :: OSI Approved :: MIT License",
   "Operating System :: OS Independent",
   "Development Status :: 5 - Production/Stable",
@@ -70,6 +71,7 @@ dev = [
     "mkdocs-material>=9.7.1",
     "mkdocstrings>=0.26.1",
     "mkdocstrings-python>=1.11.1",
+    "ruff>=0.8.0",
 ]
 
 
@@ -89,5 +91,12 @@ build-backend = "hatchling.build"
 packages = ["sociallinks"]
 
 [tool.pytest.ini_options]
-addopts = "--maxfail=1"
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py38"
+
+[tool.ruff.lint]
+select = ["E", "F"]
+ignore = ["E501"]  # long lines: regex patterns and URLs
 

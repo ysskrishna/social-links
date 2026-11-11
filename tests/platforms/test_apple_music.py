@@ -1,5 +1,4 @@
 """Tests for Apple Music platform."""
-import pytest
 
 
 class TestAppleMusic:

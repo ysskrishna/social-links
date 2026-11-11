@@ -347,9 +347,9 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
     "apple_music": [
         {
             "patterns": [
-                rf"https?://(?:itunes|music)\.apple\.com/(?:[a-z]{{2}}/)?artist/(?:[A-Za-z0-9_\-\%\.]+/)?(?:id)?(?P<id>\d+)/?$",
-                rf"https?://(?:itunes|music)\.apple\.com/(?:[a-z]{{2}}/)?artist/(?P<id>\d+)/?$",
-                rf"^(?P<id>\d+)$"
+                r"https?://(?:itunes|music)\.apple\.com/(?:[a-z]{2}/)?artist/(?:[A-Za-z0-9_\-\%\.]+/)?(?:id)?(?P<id>\d+)/?$",
+                r"https?://(?:itunes|music)\.apple\.com/(?:[a-z]{2}/)?artist/(?P<id>\d+)/?$",
+                r"^(?P<id>\d+)$"
             ],
             "sanitized": "https://music.apple.com/artist/{id}"
         }

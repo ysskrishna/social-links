@@ -1,5 +1,4 @@
 """Tests for YouTube platform."""
-import pytest
 
 
 class TestYoutube:

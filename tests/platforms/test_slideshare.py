@@ -1,5 +1,4 @@
 """Tests for SlideShare platform."""
-import pytest
 
 
 class TestSlideshare:

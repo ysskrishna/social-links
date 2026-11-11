@@ -1,10 +1,9 @@
 import pytest
-from sociallinks import extract_id as module_extract_id, sanitize
+from sociallinks import extract_id as module_extract_id
 from sociallinks.core import SocialLinks
 from sociallinks.exceptions import (
     PlatformNotFoundError,
     URLMismatchError,
-    PlatformIDExtractionError,
 )
 
 

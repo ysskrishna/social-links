@@ -1,5 +1,4 @@
 """Tests for ProductHunt platform."""
-import pytest
 
 
 class TestProducthunt:

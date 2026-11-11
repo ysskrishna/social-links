@@ -508,7 +508,8 @@ See [CHANGELOG.md](https://github.com/ysskrishna/social-links/blob/main/CHANGELO
 <summary><b>Planned improvements</b></summary>
 
 - [ ] Add method to configure custom sanitization patterns
-- [ ] Integrate development tools (flake8, black, isort) for code quality
+- [x] Lint with ruff in CI
+- [ ] Add a formatter (black or `ruff format`) and isort-style import sorting
 - [ ] Add code coverage reporting with pytest-cov
 - [ ] Refactor platform entries using dataclasses for better structure
 

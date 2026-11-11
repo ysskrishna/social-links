@@ -1,5 +1,4 @@
 """Tests for Flickr platform."""
-import pytest
 
 
 class TestFlickr:

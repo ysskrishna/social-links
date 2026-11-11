@@ -1,5 +1,4 @@
 """Tests for LinkedIn platform."""
-import pytest
 
 
 class TestLinkedin:

@@ -1,5 +1,4 @@
 """Tests for Rumble platform."""
-import pytest
 
 
 class TestRumble:

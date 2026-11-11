@@ -1,5 +1,4 @@
 """Tests for Douyin platform."""
-import pytest
 
 
 class TestDouyin:

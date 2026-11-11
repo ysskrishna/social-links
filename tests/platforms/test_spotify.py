@@ -1,5 +1,4 @@
 """Tests for Spotify platform."""
-import pytest
 
 
 class TestSpotify:

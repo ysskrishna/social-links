@@ -1,5 +1,4 @@
 """Tests for Lemmy World platform."""
-import pytest
 
 
 class TestLemmyWorld:

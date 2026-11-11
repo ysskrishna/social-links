@@ -1,5 +1,4 @@
 """Tests for Gumroad platform."""
-import pytest
 
 
 class TestGumroad:

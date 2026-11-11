@@ -1,5 +1,4 @@
 """Tests for X (formerly Twitter) platform."""
-import pytest
 
 
 class TestX:

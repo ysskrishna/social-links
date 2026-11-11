@@ -1,5 +1,4 @@
 """Tests for Threads platform."""
-import pytest
 
 
 class TestThreads:

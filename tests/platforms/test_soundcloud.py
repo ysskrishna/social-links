@@ -1,5 +1,4 @@
 """Tests for SoundCloud platform."""
-import pytest
 
 
 class TestSoundcloud:

@@ -1,5 +1,4 @@
 """Tests for Docker Hub platform."""
-import pytest
 
 
 class TestDockerHub:

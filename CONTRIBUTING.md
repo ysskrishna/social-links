@@ -62,7 +62,7 @@ git checkout -b fix/your-bug-fix-name
 
 3. Write or update tests for your changes (see [Testing](#testing))
 
-4. Ensure all tests pass and the code is properly formatted
+4. Ensure all tests pass and the linter is clean (`uv run ruff check .`)
 
 ## Adding a Platform
 

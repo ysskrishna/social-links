@@ -1,5 +1,4 @@
 """Tests for Replit platform."""
-import pytest
 
 
 class TestReplit:

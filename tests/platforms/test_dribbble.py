@@ -1,5 +1,4 @@
 """Tests for Dribbble platform."""
-import pytest
 
 
 class TestDribbble:

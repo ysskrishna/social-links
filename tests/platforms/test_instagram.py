@@ -1,5 +1,4 @@
 """Tests for Instagram platform."""
-import pytest
 
 
 class TestInstagram:

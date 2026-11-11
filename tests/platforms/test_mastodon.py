@@ -1,5 +1,4 @@
 """Tests for Mastodon platform."""
-import pytest
 
 
 class TestMastodon:

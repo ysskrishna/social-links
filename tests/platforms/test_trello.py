@@ -1,5 +1,4 @@
 """Tests for Trello platform."""
-import pytest
 
 
 class TestTrello:

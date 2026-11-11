@@ -1,5 +1,4 @@
 """Tests for Behance platform."""
-import pytest
 
 
 class TestBehance:

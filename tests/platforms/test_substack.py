@@ -1,5 +1,4 @@
 """Tests for Substack platform."""
-import pytest
 
 
 class TestSubstack:
