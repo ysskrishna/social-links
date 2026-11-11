@@ -185,7 +185,7 @@ class SocialLinks:
             raise URLMismatchError("URL cannot be empty")
 
         for pattern, sanitized in entries:
-            m = pattern.search(u)
+            m = pattern.match(u)
             if m:
                 pid = self._id_from_match(m)
                 if not pid:
@@ -241,7 +241,7 @@ class SocialLinks:
             return None
         
         for name, entries in self._compiled.items():
-            if any(pattern.search(u) for pattern, _ in entries):
+            if any(pattern.match(u) for pattern, _ in entries):
                 return name
         return None
 
@@ -291,7 +291,7 @@ class SocialLinks:
         if not u:
             return False
         
-        return any(pattern.search(u) for pattern, _ in entries)
+        return any(pattern.match(u) for pattern, _ in entries)
 
     def sanitize(self, platform_name: str, url: str) -> str:
         """Sanitize a URL to its canonical format for a specific platform.
@@ -390,6 +390,9 @@ class SocialLinks:
                 - "patterns": A regex pattern string or list of patterns
                   that match URLs for this platform. Patterns should use
                   named groups like `(?P<id>...)` to capture identifiers.
+                  Patterns are matched from the start of the input
+                  (`re.match`), so a URL embedded in a longer string does
+                  not match. End a pattern with `$` to reject trailing text.
                 - "sanitized": A template string for the canonical URL format,
                   using `{id}` as a placeholder for the extracted identifier.
             override: If False (default), raises an error if the platform
