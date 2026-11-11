@@ -93,10 +93,10 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
     "exercism": [
         {
             "patterns": [
-                rf"https?://(www\.)?exercism\.io/profiles/{PROFILE_ID}/?$",
+                rf"https?://(www\.)?exercism\.(org|io)/profiles/{PROFILE_ID}/?$",
                 rf"^{PROFILE_ID}$"
             ],
-            "sanitized": "https://exercism.io/profiles/{id}"
+            "sanitized": "https://exercism.org/profiles/{id}"
         }
     ],
     "facebook": [
@@ -425,10 +425,10 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
     "threads": [
         {
             "patterns": [
-                rf"https?://(www\.)?threads\.net/@{PROFILE_ID}/?$",
+                rf"https?://(www\.)?threads\.(com|net)/@{PROFILE_ID}/?$",
                 rf"^@?{PROFILE_ID}$"
             ],
-            "sanitized": "https://threads.net/@{id}"
+            "sanitized": "https://threads.com/@{id}"
         }
     ],
     "tiktok": [

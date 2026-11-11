@@ -76,7 +76,7 @@ The library comes with 65+ predefined platforms:
 | [CodePen](https://codepen.io) | [Crunchbase](https://crunchbase.com) | [Dailymotion](https://dailymotion.com) |
 | [Dev.to](https://dev.to) | [Discord](https://discord.com) | [Docker Hub](https://hub.docker.com) |
 | [Douyin](https://douyin.com) | [Dribbble](https://dribbble.com) | [Etsy](https://etsy.com) |
-| [Exercism](https://exercism.io) | [Facebook](https://facebook.com) | [Fiverr](https://fiverr.com) |
+| [Exercism](https://exercism.org) | [Facebook](https://facebook.com) | [Fiverr](https://fiverr.com) |
 | [Flickr](https://flickr.com) | [GitHub](https://github.com) | [GitLab](https://gitlab.com) |
 | [Gravatar](https://gravatar.com) | [Gumroad](https://gumroad.com) | [HackerRank](https://hackerrank.com) |
 | [Hacker News](https://news.ycombinator.com) | [Hashnode](https://hashnode.com) | [Instagram](https://instagram.com) |
@@ -89,7 +89,7 @@ The library comes with 65+ predefined platforms:
 | [Signal](https://signal.me) | [SlideShare](https://slideshare.net) | [Snapchat](https://snapchat.com) |
 | [SoundCloud](https://soundcloud.com) | [Spotify](https://spotify.com) | [Stack Overflow](https://stackoverflow.com) |
 | [Steam](https://steamcommunity.com) | [Substack](https://substack.com) | [Telegram](https://telegram.org) |
-| [Threads](https://threads.net) | [TikTok](https://tiktok.com) | [Trello](https://trello.com) |
+| [Threads](https://threads.com) | [TikTok](https://tiktok.com) | [Trello](https://trello.com) |
 | [Tumblr](https://tumblr.com) | [Twitch](https://twitch.tv) | [Unsplash](https://unsplash.com) |
 | [Vimeo](https://vimeo.com) | [VK](https://vk.com) | [WeChat](https://weixin.qq.com) |
 | [Weibo](https://weibo.com) | [Wellfound (AngelList)](https://wellfound.com) | [WhatsApp](https://whatsapp.com) |
