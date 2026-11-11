@@ -69,7 +69,9 @@ That's it! For most use cases, you don't need anything more. See [Basic Usage](#
 
 The library comes with 65+ predefined platforms:
 
-| Predefined Platforms| | |
+<!-- platforms:start -->
+
+| Predefined Platforms | | |
 |---|---|---|
 | [Apple Music](https://music.apple.com) | [ArtStation](https://artstation.com) | [Bandcamp](https://bandcamp.com) |
 | [Behance](https://behance.net) | [Bluesky](https://bsky.app) | [Chess.com](https://chess.com) |
@@ -78,8 +80,8 @@ The library comes with 65+ predefined platforms:
 | [Douyin](https://douyin.com) | [Dribbble](https://dribbble.com) | [Etsy](https://etsy.com) |
 | [Exercism](https://exercism.org) | [Facebook](https://facebook.com) | [Fiverr](https://fiverr.com) |
 | [Flickr](https://flickr.com) | [GitHub](https://github.com) | [GitLab](https://gitlab.com) |
-| [Gravatar](https://gravatar.com) | [Gumroad](https://gumroad.com) | [HackerRank](https://hackerrank.com) |
-| [Hacker News](https://news.ycombinator.com) | [Hashnode](https://hashnode.com) | [Instagram](https://instagram.com) |
+| [Gravatar](https://gravatar.com) | [Gumroad](https://gumroad.com) | [Hacker News](https://news.ycombinator.com) |
+| [HackerRank](https://hackerrank.com) | [Hashnode](https://hashnode.com) | [Instagram](https://instagram.com) |
 | [Kaggle](https://kaggle.com) | [Keybase](https://keybase.io) | [Kuaishou](https://kuaishou.com) |
 | [LeetCode](https://leetcode.com) | [Lemmy World](https://lemmy.world) | [Lichess](https://lichess.org) |
 | [LinkedIn](https://linkedin.com) (personal & company) | [Linktree](https://linktr.ee) | [Mastodon](https://mastodon.social) |
@@ -95,9 +97,11 @@ The library comes with 65+ predefined platforms:
 | [Weibo](https://weibo.com) | [Wellfound (AngelList)](https://wellfound.com) | [WhatsApp](https://whatsapp.com) |
 | [WordPress](https://wordpress.com) | [X (Twitter)](https://x.com) | [YouTube](https://youtube.com) |
 
+<!-- platforms:end -->
+
 ## Basic Usage
 
-The simplest way to use social-links is with module-level functions. These work out of the box with 50+ predefined platforms - no configuration needed!
+The simplest way to use social-links is with module-level functions. These work out of the box with 65+ predefined platforms - no configuration needed!
 
 ### Detect Platform
 
@@ -164,7 +168,7 @@ from sociallinks import list_platforms
 # Get all available platforms
 platforms = list_platforms()
 # Returns: ["behance", "dev_to", "dribbble", "github", "linkedin", ...]
-print(f"Supported platforms: {len(platforms)}")  # 50+
+print(f"Supported platforms: {len(platforms)}")  # 65+
 ```
 
 ---

@@ -1,7 +1,7 @@
 ---
 title: Home
 
-description: "Python library to validate, sanitize, normalize, and detect social media URLs and links. Supports 50+ platforms including LinkedIn, Instagram, TikTok, Twitter/X, GitHub, Facebook, YouTube. Zero dependencies, regex-powered URL validation."
+description: "Python library to validate, sanitize, normalize, and detect social media URLs and links. Supports 65+ platforms including LinkedIn, Instagram, TikTok, Twitter/X, GitHub, Facebook, YouTube. Zero dependencies, regex-powered URL validation."
 
 keywords:
   - social-links
