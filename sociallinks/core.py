@@ -1,6 +1,6 @@
 import re
 import string
-from typing import Dict, List, NamedTuple, Optional, Any, Tuple
+from typing import Dict, List, NamedTuple, Optional, Tuple
 from sociallinks.constants import (
     PHONE_NUMBER,
     PROFILE_ID,
