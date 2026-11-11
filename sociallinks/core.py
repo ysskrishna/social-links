@@ -1,6 +1,14 @@
 import re
-from typing import Dict, List, Optional, Any, Tuple
-from sociallinks.constants import PlatformEntry, PlatformEntries
+from typing import Dict, List, NamedTuple, Optional, Any, Tuple
+from sociallinks.constants import (
+    PHONE_NUMBER,
+    PROFILE_ID,
+    PROFILE_ID_AT,
+    PROFILE_ID_EXTENDED,
+    PROFILE_ID_UNICODE,
+    PlatformEntry,
+    PlatformEntries,
+)
 from sociallinks.platforms import PREDEFINED_PLATFORMS
 from sociallinks.exceptions import (
     PlatformNotFoundError,
@@ -10,6 +18,40 @@ from sociallinks.exceptions import (
     PlatformIDExtractionError,
     URLMismatchError,
 )
+
+_NUMERIC_ID = r"(?P<id>\d+)"  # bare numeric IDs, e.g. Apple Music artist IDs
+
+_BARE_ID_BODIES = frozenset(
+    {
+        PROFILE_ID,
+        PROFILE_ID_AT,
+        PROFILE_ID_UNICODE,
+        PROFILE_ID_EXTENDED,
+        PHONE_NUMBER,
+        _NUMERIC_ID,
+    }
+)
+
+
+def _is_bare_id_pattern(pattern: str) -> bool:
+    """Return True if a pattern accepts only a bare ID (``^<id>$`` or ``^@?<id>$``).
+
+    Only patterns built from the library's own ID regexes in
+    ``sociallinks.constants`` are recognised. Prefixed shorthands such as
+    ``^u/<id>$`` or ``^spotify:artist:<id>$`` are not bare.
+    """
+    if not (pattern.startswith("^") and pattern.endswith("$")):
+        return False
+    body = pattern[1:-1]
+    if body.startswith("@?"):
+        body = body[2:]
+    return body in _BARE_ID_BODIES
+
+
+class _CompiledPattern(NamedTuple):
+    pattern: re.Pattern
+    sanitized: str
+    bare: bool
 
 
 class SocialLinks:
@@ -76,7 +118,7 @@ class SocialLinks:
             >>> sl = SocialLinks(regex_flags=re.IGNORECASE | re.MULTILINE)
         """
         self.platforms: PlatformEntries = {}
-        self._compiled: Dict[str, List[Tuple[re.Pattern, str]]] = {}
+        self._compiled: Dict[str, List[_CompiledPattern]] = {}
         self.regex_flags: int = regex_flags
 
         if use_predefined_platforms:
@@ -104,7 +146,7 @@ class SocialLinks:
             InvalidPlatformError: If no valid patterns are found.
             InvalidPlatformRegexError: If any regex pattern is invalid.
         """
-        compiled_entries: List[Tuple[re.Pattern, str]] = []
+        compiled_entries: List[_CompiledPattern] = []
 
         for entry in data:
             if not isinstance(entry, dict):
@@ -119,7 +161,11 @@ class SocialLinks:
             for p in (patterns if isinstance(patterns, list) else [patterns]):
                 try:
                     compiled_entries.append(
-                        (re.compile(p, flags=self.regex_flags), sanitized)
+                        _CompiledPattern(
+                            re.compile(p, flags=self.regex_flags),
+                            sanitized,
+                            _is_bare_id_pattern(p),
+                        )
                     )
                 except re.error as e:
                     raise InvalidPlatformRegexError(
@@ -184,8 +230,9 @@ class SocialLinks:
         if not u:
             raise URLMismatchError("URL cannot be empty")
 
-        for pattern, sanitized in entries:
-            m = pattern.match(u)
+        for compiled in entries:
+            sanitized = compiled.sanitized
+            m = compiled.pattern.match(u)
             if m:
                 pid = self._id_from_match(m)
                 if not pid:
@@ -207,9 +254,12 @@ class SocialLinks:
         stripped of leading/trailing whitespace before matching.
 
         Args:
-            url: The URL or username to analyze. Can be a full URL
-                (e.g., "https://linkedin.com/in/johndoe") or just a username
-                (e.g., "johndoe"). Whitespace is automatically stripped.
+            url: The URL to analyze (e.g., "https://linkedin.com/in/johndoe").
+                Whitespace is automatically stripped. A bare username such as
+                "johndoe" is not enough to identify a platform, so it returns
+                None. Prefixed shorthands such as "u/johndoe" (Reddit) are
+                still detected. Use `is_valid()` or `sanitize()` to check a
+                bare ID against a platform you name.
 
         Returns:
             The platform name (e.g., "linkedin", "github", "x") if detected,
@@ -241,7 +291,7 @@ class SocialLinks:
             return None
         
         for name, entries in self._compiled.items():
-            if any(pattern.match(u) for pattern, _ in entries):
+            if any(not c.bare and c.pattern.match(u) for c in entries):
                 return name
         return None
 
@@ -275,8 +325,8 @@ class SocialLinks:
             True
             >>> sl.is_valid("unknown_platform", "https://example.com")
             False
-            >>> sl.is_valid("linkedin", "johndoe")  # Username only
-            False
+            >>> sl.is_valid("linkedin", "johndoe")  # Bare ID for a named platform
+            True
         """
         if not isinstance(platform_name, str):
             raise TypeError(f"platform_name must be str, not {type(platform_name).__name__}")
@@ -291,7 +341,7 @@ class SocialLinks:
         if not u:
             return False
         
-        return any(pattern.match(u) for pattern, _ in entries)
+        return any(c.pattern.match(u) for c in entries)
 
     def sanitize(self, platform_name: str, url: str) -> str:
         """Sanitize a URL to its canonical format for a specific platform.

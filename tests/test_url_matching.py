@@ -43,3 +43,42 @@ class TestLeftAnchor:
         assert sl.is_valid("github", "https://github.com/foo") is True
         assert sl.is_valid("github", "http://www.github.com/foo/") is True
         assert sl.detect_platform("  https://github.com/foo  ") == "github"
+
+
+class TestBareIdDetection:
+    """B. detect_platform must not guess a platform from a bare ID."""
+
+    @pytest.mark.parametrize("value", ["johndoe", "ysskrishna", "abc", "12345", "@foo", "john.doe"])
+    def test_bare_values_are_not_detected(self, sl, value):
+        assert sl.detect_platform(value) is None
+
+    @pytest.mark.parametrize(
+        "value,platform",
+        [
+            ("u/foo", "reddit"),
+            ("r/python", "reddit"),
+            ("spotify:artist:4r7sp4bvfy", "spotify"),
+            ("weixin://dl/chat?foo", "wechat"),
+        ],
+    )
+    def test_prefixed_shorthands_are_still_detected(self, sl, value, platform):
+        assert sl.detect_platform(value) == platform
+
+    def test_explicit_platform_still_accepts_bare_ids(self, sl):
+        assert sl.is_valid("github", "ysskrishna") is True
+        assert sl.sanitize("github", "ysskrishna") == "https://github.com/ysskrishna"
+        assert sl.extract_id("github", "ysskrishna") == "ysskrishna"
+        assert sl.sanitize("x", "@foo") == "https://x.com/foo"
+
+    def test_custom_bare_pattern_built_from_library_constant_is_not_detected(self):
+        sl = SocialLinks(use_predefined_platforms=False)
+        sl.set_platform(
+            "demo",
+            [{
+                "patterns": [rf"https?://demo\.com/{PROFILE_ID}/?$", rf"^{PROFILE_ID}$"],
+                "sanitized": "https://demo.com/{id}",
+            }],
+        )
+        assert sl.detect_platform("https://demo.com/foo") == "demo"
+        assert sl.detect_platform("foo") is None
+        assert sl.sanitize("demo", "foo") == "https://demo.com/foo"
