@@ -124,3 +124,18 @@ class TestQueryAndFragment:
 
     def test_lookalike_host_with_query_is_still_rejected(self, sl):
         assert sl.is_valid("github", "https://evil.com/?r=https://github.com/foo") is False
+
+    @pytest.mark.parametrize(
+        "url",
+        [
+            "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+            "https://www.youtube.com/playlist?list=PL1",
+            "https://x.com/search?q=foo",
+            "https://github.com/search?q=foo",
+            "https://www.facebook.com/sharer.php?u=https://example.com",
+            "https://www.facebook.com/profile.php?id=4",
+            "https://www.instagram.com/explore/?x=1",
+        ],
+    )
+    def test_generic_site_paths_with_a_query_are_not_profiles(self, sl, url):
+        assert sl.detect_platform(url) is None

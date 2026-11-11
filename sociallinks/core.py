@@ -48,6 +48,21 @@ def _is_bare_id_pattern(pattern: str) -> bool:
     return body in _BARE_ID_BODIES
 
 
+# Generic site paths that look like profile IDs. When a URL only matches after
+# its query string or fragment was removed, these IDs are rejected so that
+# links such as youtube.com/watch?v=... or x.com/search?q=... are not mistaken
+# for profiles. The check is not applied to the input exactly as given.
+_RESERVED_IDS = frozenset(
+    {
+        "about", "account", "explore", "feed", "groups", "hashtag", "help",
+        "home", "intent", "live", "login", "logout", "marketplace",
+        "messages", "notifications", "playlist", "pricing", "privacy",
+        "profile.php", "register", "results", "search", "settings", "share",
+        "sharer", "sharer.php", "shorts", "signup", "sign_up", "terms", "watch",
+    }
+)
+
+
 class _CompiledPattern(NamedTuple):
     pattern: re.Pattern
     sanitized: str
@@ -217,7 +232,9 @@ class SocialLinks:
         query string or fragment (Hacker News ``?id=``, Signal ``#p/``) keep
         working. If nothing matches, it is tried again without the query
         string and fragment, so share links such as ``?utm_source=share``
-        are accepted. Bare-ID patterns are not used on that second pass.
+        are accepted. Bare-ID patterns are not used on that second pass, and
+        generic site paths (``watch``, ``search``, ``profile.php``, ...) are
+        rejected there, see ``_RESERVED_IDS``.
 
         Args:
             entries: Compiled patterns of one platform.
@@ -241,7 +258,7 @@ class SocialLinks:
                 if compiled.bare:
                     continue
                 m = compiled.pattern.match(stripped)
-                if m:
+                if m and (self._id_from_match(m) or "").lower() not in _RESERVED_IDS:
                     return compiled, m
         return None
 
