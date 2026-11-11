@@ -198,6 +198,53 @@ class SocialLinks:
                 return g
         return None
 
+    @staticmethod
+    def _strip_query_fragment(u: str) -> str:
+        """Return ``u`` without its query string and fragment."""
+        cuts = [i for i in (u.find("?"), u.find("#")) if i != -1]
+        return u[: min(cuts)] if cuts else u
+
+    def _find_match(
+        self,
+        entries: List[_CompiledPattern],
+        u: str,
+        *,
+        for_detection: bool = False,
+    ) -> Optional[Tuple[_CompiledPattern, "re.Match"]]:
+        """Find the first pattern that matches ``u``.
+
+        The input is tried as given first, so platforms whose URLs need a
+        query string or fragment (Hacker News ``?id=``, Signal ``#p/``) keep
+        working. If nothing matches, it is tried again without the query
+        string and fragment, so share links such as ``?utm_source=share``
+        are accepted. Bare-ID patterns are not used on that second pass.
+
+        Args:
+            entries: Compiled patterns of one platform.
+            u: The stripped input string.
+            for_detection: If True, bare-ID patterns are skipped (used by
+                ``detect_platform``).
+
+        Returns:
+            The matching compiled pattern and its match object, or None.
+        """
+        for compiled in entries:
+            if for_detection and compiled.bare:
+                continue
+            m = compiled.pattern.match(u)
+            if m:
+                return compiled, m
+
+        stripped = self._strip_query_fragment(u)
+        if stripped and stripped != u:
+            for compiled in entries:
+                if compiled.bare:
+                    continue
+                m = compiled.pattern.match(stripped)
+                if m:
+                    return compiled, m
+        return None
+
     def _match_url(self, platform_name: str, url: str) -> Tuple[str, str]:
         """Match a URL against a platform's patterns and extract the ID.
 
@@ -230,15 +277,14 @@ class SocialLinks:
         if not u:
             raise URLMismatchError("URL cannot be empty")
 
-        for compiled in entries:
-            sanitized = compiled.sanitized
-            m = compiled.pattern.match(u)
-            if m:
-                pid = self._id_from_match(m)
-                if not pid:
-                    raise PlatformIDExtractionError("Could not extract platform ID")
-                pid = pid.strip().rstrip("/")
-                return pid, sanitized
+        found = self._find_match(entries, u)
+        if found:
+            compiled, m = found
+            pid = self._id_from_match(m)
+            if not pid:
+                raise PlatformIDExtractionError("Could not extract platform ID")
+            pid = pid.strip().rstrip("/")
+            return pid, compiled.sanitized
 
         raise URLMismatchError(f"URL does not match platform '{platform_name}'")
 
@@ -251,7 +297,9 @@ class SocialLinks:
 
         Analyzes the provided URL against all registered platform patterns
         and returns the first matching platform name. The URL is automatically
-        stripped of leading/trailing whitespace before matching.
+        stripped of leading/trailing whitespace before matching. Query strings
+        and fragments (for example ``?utm_source=share``) are ignored unless
+        the platform's URL format needs them.
 
         Args:
             url: The URL to analyze (e.g., "https://linkedin.com/in/johndoe").
@@ -291,7 +339,7 @@ class SocialLinks:
             return None
         
         for name, entries in self._compiled.items():
-            if any(not c.bare and c.pattern.match(u) for c in entries):
+            if self._find_match(entries, u, for_detection=True):
                 return name
         return None
 
@@ -341,7 +389,7 @@ class SocialLinks:
         if not u:
             return False
         
-        return any(c.pattern.match(u) for c in entries)
+        return self._find_match(entries, u) is not None
 
     def sanitize(self, platform_name: str, url: str) -> str:
         """Sanitize a URL to its canonical format for a specific platform.

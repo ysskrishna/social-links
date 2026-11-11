@@ -221,24 +221,24 @@ class TestMalformedURLs:
         assert sanitized == "https://linkedin.com/in/josé-garcía"
 
     def test_url_with_query_parameters(self):
-        """Test URLs with query parameters - not supported by strict patterns"""
+        """Query parameters (share links) are ignored when matching"""
         sl = SocialLinks()
-        # Patterns use $ anchor, so query parameters cause mismatch
         url = "https://www.linkedin.com/in/johndoe/?utm_source=test"
-        assert sl.detect_platform(url) is None
-        
-        # Clean URL without query params should work
+        assert sl.detect_platform(url) == "linkedin"
+        assert sl.sanitize("linkedin", url) == "https://linkedin.com/in/johndoe"
+
+        # Clean URL without query params still works
         clean_url = "https://www.linkedin.com/in/johndoe/"
         assert sl.detect_platform(clean_url) == "linkedin"
 
     def test_url_with_fragments(self):
-        """Test URLs with fragments - not supported by strict patterns"""
+        """Fragments are ignored when matching"""
         sl = SocialLinks()
-        # Patterns use $ anchor, so fragments cause mismatch
         url = "https://www.linkedin.com/in/johndoe/#section"
-        assert sl.detect_platform(url) is None
-        
-        # Clean URL without fragments should work
+        assert sl.detect_platform(url) == "linkedin"
+        assert sl.sanitize("linkedin", url) == "https://linkedin.com/in/johndoe"
+
+        # Clean URL without fragments still works
         clean_url = "https://www.linkedin.com/in/johndoe/"
         assert sl.detect_platform(clean_url) == "linkedin"
 

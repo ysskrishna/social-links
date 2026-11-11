@@ -82,3 +82,45 @@ class TestBareIdDetection:
         assert sl.detect_platform("https://demo.com/foo") == "demo"
         assert sl.detect_platform("foo") is None
         assert sl.sanitize("demo", "foo") == "https://demo.com/foo"
+
+
+class TestQueryAndFragment:
+    """C. Share links with tracking parameters or fragments."""
+
+    @pytest.mark.parametrize(
+        "platform,url,expected",
+        [
+            ("github", "https://github.com/foo?tab=repositories", "https://github.com/foo"),
+            ("github", "https://github.com/foo#readme", "https://github.com/foo"),
+            ("github", "https://github.com/foo?tab=repositories#readme", "https://github.com/foo"),
+            ("linkedin", "https://www.linkedin.com/in/foo/?utm_source=share", "https://linkedin.com/in/foo"),
+            ("instagram", "https://www.instagram.com/foo/?igsh=abc", "https://instagram.com/foo"),
+            ("x", "https://x.com/foo?s=20", "https://x.com/foo"),
+            ("youtube", "https://www.youtube.com/@foo?si=abc", "https://youtube.com/@foo"),
+            ("tiktok", "https://www.tiktok.com/@foo?lang=en", "https://tiktok.com/@foo"),
+        ],
+    )
+    def test_share_links_are_accepted_and_cleaned(self, sl, platform, url, expected):
+        assert sl.detect_platform(url) == platform
+        assert sl.is_valid(platform, url) is True
+        assert sl.sanitize(platform, url) == expected
+
+    def test_extract_id_from_share_link(self, sl):
+        assert sl.extract_id("github", "https://github.com/foo?tab=repositories") == "foo"
+        assert sl.extract_id("linkedin", "https://www.linkedin.com/in/foo/?utm_source=share") == "foo"
+
+    def test_platforms_that_need_the_query_keep_it(self, sl):
+        url = "https://news.ycombinator.com/user?id=pg"
+        assert sl.detect_platform(url) == "hackernews"
+        assert sl.sanitize("hackernews", url) == "https://news.ycombinator.com/user?id=pg"
+
+    def test_platform_that_needs_the_fragment_keeps_it(self, sl):
+        assert sl.detect_platform("https://signal.me/#p/abc123") == "signal"
+        assert sl.sanitize("signal", "https://signal.me/#p/abc123") == "https://signal.me/#p/abc123"
+
+    def test_query_only_does_not_create_a_match(self, sl):
+        assert sl.is_valid("github", "https://github.com/?tab=repositories") is False
+        assert sl.detect_platform("https://example.com/foo?u=https://github.com/foo") is None
+
+    def test_lookalike_host_with_query_is_still_rejected(self, sl):
+        assert sl.is_valid("github", "https://evil.com/?r=https://github.com/foo") is False
