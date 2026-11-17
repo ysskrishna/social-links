@@ -178,6 +178,7 @@ HAPPY_PATH = [
     ("sharechat", "sharechat", "https://sharechat.com/profile/sharechat", "https://sharechat.com/profile/sharechat"),
     ("signal", "abc123xyz", "https://signal.me/#p/abc123xyz", "https://signal.me/#p/abc123xyz"),
     ("sketchfab", "sketchfab", "https://sketchfab.com/sketchfab", "https://sketchfab.com/sketchfab"),
+    ("slashdot", "CmdrTaco", "https://slashdot.org/~CmdrTaco", "https://slashdot.org/~CmdrTaco"),
     ("slideshare", "michaelyublosky", "https://www.slideshare.net/michaelyublosky", "https://www.slideshare.net/michaelyublosky"),
     ("snapchat", None, "https://snapchat.com/add/ysskrishna", "https://snapchat.com/@ysskrishna"),
     ("solo_to", "ysskrishna", "https://solo.to/ysskrishna", "https://solo.to/ysskrishna"),

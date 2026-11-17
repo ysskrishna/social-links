@@ -135,24 +135,25 @@ The library comes with 220+ predefined platforms:
 | [RubyGems](https://rubygems.org) | [Rumble](https://rumble.com) | [Rutube](https://rutube.ru) |
 | [Scratch](https://scratch.mit.edu) | [Scribd](https://scribd.com) | [Semantic Scholar](https://semanticscholar.org) |
 | [ShareChat](https://sharechat.com) | [Signal](https://signal.me) | [Sketchfab](https://sketchfab.com) |
-| [SlideShare](https://slideshare.net) | [Snapchat](https://snapchat.com) | [solo.to](https://solo.to) |
-| [SOOP (AfreecaTV)](https://sooplive.com) | [SoundCloud](https://soundcloud.com) | [SourceForge](https://sourceforge.net) |
-| [SourceHut](https://sr.ht) | [Speedrun.com](https://speedrun.com) | [Spotify](https://spotify.com) |
-| [Stack Exchange](https://stackexchange.com) | [Stack Overflow](https://stackoverflow.com) | [Stan Store](https://stan.store) |
-| [start.gg](https://start.gg) | [Steam](https://steamcommunity.com) | [Substack](https://substack.com) |
-| [Taplink](https://taplink.cc) | [Telegram](https://telegram.org) | [The StoryGraph](https://thestorygraph.com) |
-| [Thingiverse](https://thingiverse.com) | [Threads](https://threads.com) | [Throne](https://throne.com) (NSFW) |
-| [TikTok](https://tiktok.com) | [Tistory](https://tistory.com) | [Topcoder](https://topcoder.com) |
-| [Topmate](https://topmate.io) | [Toyhouse](https://toyhou.se) | [Trakt](https://trakt.tv) |
-| [Trello](https://trello.com) | [Tripadvisor](https://tripadvisor.com) | [Trustpilot](https://trustpilot.com) |
-| [Truth Social](https://truthsocial.com) | [TryHackMe](https://tryhackme.com) | [Tumblr](https://tumblr.com) |
-| [Twitch](https://twitch.tv) | [Udemy](https://udemy.com) | [Unsplash](https://unsplash.com) |
-| [Untappd](https://untappd.com) | [Velog](https://velog.io) | [Vimeo](https://vimeo.com) |
-| [Vinted](https://vinted.com) | [VK](https://vk.com) | [Wattpad](https://wattpad.com) |
-| [WeChat](https://weixin.qq.com) | [Weibo](https://weibo.com) | [Weights & Biases](https://wandb.ai) |
-| [Wellfound (AngelList)](https://wellfound.com) | [WhatsApp](https://whatsapp.com) | [WordPress](https://wordpress.com) |
-| [X (Twitter)](https://x.com) | [XDA Forums](https://xdaforums.com) | [Xiaohongshu (RedNote)](https://www.xiaohongshu.com) |
-| [XING](https://xing.com) | [YouTube](https://youtube.com) | [Zenn](https://zenn.dev) |
+| [Slashdot](https://slashdot.org) | [SlideShare](https://slideshare.net) | [Snapchat](https://snapchat.com) |
+| [solo.to](https://solo.to) | [SOOP (AfreecaTV)](https://sooplive.com) | [SoundCloud](https://soundcloud.com) |
+| [SourceForge](https://sourceforge.net) | [SourceHut](https://sr.ht) | [Speedrun.com](https://speedrun.com) |
+| [Spotify](https://spotify.com) | [Stack Exchange](https://stackexchange.com) | [Stack Overflow](https://stackoverflow.com) |
+| [Stan Store](https://stan.store) | [start.gg](https://start.gg) | [Steam](https://steamcommunity.com) |
+| [Substack](https://substack.com) | [Taplink](https://taplink.cc) | [Telegram](https://telegram.org) |
+| [The StoryGraph](https://thestorygraph.com) | [Thingiverse](https://thingiverse.com) | [Threads](https://threads.com) |
+| [Throne](https://throne.com) (NSFW) | [TikTok](https://tiktok.com) | [Tistory](https://tistory.com) |
+| [Topcoder](https://topcoder.com) | [Topmate](https://topmate.io) | [Toyhouse](https://toyhou.se) |
+| [Trakt](https://trakt.tv) | [Trello](https://trello.com) | [Tripadvisor](https://tripadvisor.com) |
+| [Trustpilot](https://trustpilot.com) | [Truth Social](https://truthsocial.com) | [TryHackMe](https://tryhackme.com) |
+| [Tumblr](https://tumblr.com) | [Twitch](https://twitch.tv) | [Udemy](https://udemy.com) |
+| [Unsplash](https://unsplash.com) | [Untappd](https://untappd.com) | [Velog](https://velog.io) |
+| [Vimeo](https://vimeo.com) | [Vinted](https://vinted.com) | [VK](https://vk.com) |
+| [Wattpad](https://wattpad.com) | [WeChat](https://weixin.qq.com) | [Weibo](https://weibo.com) |
+| [Weights & Biases](https://wandb.ai) | [Wellfound (AngelList)](https://wellfound.com) | [WhatsApp](https://whatsapp.com) |
+| [WordPress](https://wordpress.com) | [X (Twitter)](https://x.com) | [XDA Forums](https://xdaforums.com) |
+| [Xiaohongshu (RedNote)](https://www.xiaohongshu.com) | [XING](https://xing.com) | [YouTube](https://youtube.com) |
+| [Zenn](https://zenn.dev) |  |  |
 
 <!-- platforms:end -->
 

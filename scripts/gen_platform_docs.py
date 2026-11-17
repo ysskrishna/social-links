@@ -201,6 +201,7 @@ PLATFORM_META: Dict[str, Tuple[str, str, Optional[str]]] = {
     "sharechat": ("ShareChat", "https://sharechat.com", None),
     "signal": ("Signal", "https://signal.me", None),
     "sketchfab": ("Sketchfab", "https://sketchfab.com", None),
+    "slashdot": ("Slashdot", "https://slashdot.org", None),
     "slideshare": ("SlideShare", "https://slideshare.net", None),
     "snapchat": ("Snapchat", "https://snapchat.com", None),
     "solo_to": ("solo.to", "https://solo.to", None),
