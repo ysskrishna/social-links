@@ -11,6 +11,7 @@ import pytest
 # (platform, bare profile id or None, url, sanitized)
 HAPPY_PATH = [
     ("500px", "ysskrishna", "https://500px.com/p/ysskrishna", "https://500px.com/p/ysskrishna"),
+    ("about_me", "tonyconrad", "https://about.me/tonyconrad", "https://about.me/tonyconrad"),
     ("airbnb", "1", "https://www.airbnb.com/users/show/1", "https://www.airbnb.com/users/show/1"),
     ("ameblo", "ameba-official", "https://ameblo.jp/ameba-official/", "https://ameblo.jp/ameba-official"),
     ("anilist", "Josh", "https://anilist.co/user/Josh/", "https://anilist.co/user/Josh"),
