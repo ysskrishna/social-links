@@ -1816,5 +1816,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://sketchfab.com/{id}"
         }
+    ],
+    "thingiverse": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?thingiverse\.com/(?!(?:about|login|settings|explore|search|help|pricing|signup|terms|privacy|sign\-up|register|blog|faq|dashboard|account|home|support|contact|careers|legal|discover|features|apps|download|thing|things|newest|popular|featured|customizable|groups|education|developers|make)/?$){PROFILE_ID}(?:/designs)?/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.thingiverse.com/{id}"
+        }
     ]
 }
