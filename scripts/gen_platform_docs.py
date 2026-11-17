@@ -38,6 +38,7 @@ PLATFORM_META: Dict[str, Tuple[str, str, Optional[str]]] = {
     "atcoder": ("AtCoder", "https://atcoder.jp", None),
     "bandcamp": ("Bandcamp", "https://bandcamp.com", None),
     "behance": ("Behance", "https://behance.net", None),
+    "bilibili": ("Bilibili", "https://bilibili.com", None),
     "bluesky": ("Bluesky", "https://bsky.app", None),
     "chess_com": ("Chess.com", "https://chess.com", None),
     "civitai": ("Civitai", "https://civitai.com", None),
