@@ -2266,5 +2266,15 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://about.me/{id}"
         }
+    ],
+    "geeksforgeeks": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?geeksforgeeks\.org/(?:user|profile)/{PROFILE_ID}(?:/practice)?/?$",
+                rf"https?://auth\.geeksforgeeks\.org/user/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.geeksforgeeks.org/profile/{id}"
+        }
     ]
 }
