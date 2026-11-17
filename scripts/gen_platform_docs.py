@@ -254,6 +254,7 @@ PLATFORM_META: Dict[str, Tuple[str, str, Optional[str]]] = {
     "wellfound": ("Wellfound (AngelList)", "https://wellfound.com", None),
     "whatsapp": ("WhatsApp", "https://whatsapp.com", None),
     "wordpress": ("WordPress", "https://wordpress.com", None),
+    "wordpress_org": ("WordPress.org", "https://profiles.wordpress.org", None),
     "x": ("X (Twitter)", "https://x.com", None),
     "xda": ("XDA Forums", "https://xdaforums.com", None),
     "xiaohongshu": ("Xiaohongshu (RedNote)", "https://www.xiaohongshu.com", None),

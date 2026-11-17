@@ -152,9 +152,9 @@ The library comes with 225+ predefined platforms:
 | [Velog](https://velog.io) | [Vimeo](https://vimeo.com) | [Vinted](https://vinted.com) |
 | [VK](https://vk.com) | [Wattpad](https://wattpad.com) | [WeChat](https://weixin.qq.com) |
 | [Weibo](https://weibo.com) | [Weights & Biases](https://wandb.ai) | [Wellfound (AngelList)](https://wellfound.com) |
-| [WhatsApp](https://whatsapp.com) | [WordPress](https://wordpress.com) | [X (Twitter)](https://x.com) |
-| [XDA Forums](https://xdaforums.com) | [Xiaohongshu (RedNote)](https://www.xiaohongshu.com) | [XING](https://xing.com) |
-| [YouTube](https://youtube.com) | [Zenn](https://zenn.dev) |  |
+| [WhatsApp](https://whatsapp.com) | [WordPress](https://wordpress.com) | [WordPress.org](https://profiles.wordpress.org) |
+| [X (Twitter)](https://x.com) | [XDA Forums](https://xdaforums.com) | [Xiaohongshu (RedNote)](https://www.xiaohongshu.com) |
+| [XING](https://xing.com) | [YouTube](https://youtube.com) | [Zenn](https://zenn.dev) |
 
 <!-- platforms:end -->
 
