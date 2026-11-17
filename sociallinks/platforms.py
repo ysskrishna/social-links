@@ -891,5 +891,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://scholar.google.com/citations?user={id}"
         }
+    ],
+    "kick": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?kick\.com/(?!(?:about|login|settings|explore|search|help|pricing|signup|terms|privacy|categories|browse|following|terms\-of\-service|privacy\-policy|dashboard|video|clips|community\-guidelines|category|subscriptions|dmca\-policy|faq|support|apps|careers|brand\-assets|press)/?$){PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://kick.com/{id}"
+        }
     ]
 }

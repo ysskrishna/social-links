@@ -68,6 +68,7 @@ PLATFORM_META: Dict[str, Tuple[str, str, Optional[str]]] = {
     "instagram": ("Instagram", "https://instagram.com", None),
     "kaggle": ("Kaggle", "https://kaggle.com", None),
     "keybase": ("Keybase", "https://keybase.io", None),
+    "kick": ("Kick", "https://kick.com", None),
     "kuaishou": ("Kuaishou", "https://kuaishou.com", None),
     "leetcode": ("LeetCode", "https://leetcode.com", None),
     "lemmy_world": ("Lemmy World", "https://lemmy.world", None),
