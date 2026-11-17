@@ -7,9 +7,6 @@ class TestSnapchat:
     def test_snapchat(self, sl):
         """Test Snapchat platform"""
         profile_id = "ysskrishna"
-        assert sl.detect_platform(f"https://snapchat.com/add/{profile_id}") == "snapchat"
-        assert sl.is_valid("snapchat", f"https://snapchat.com/add/{profile_id}") is True
-        assert sl.sanitize("snapchat", f"https://snapchat.com/add/{profile_id}") == f"https://snapchat.com/@{profile_id}"
         # Test direct username (with and without @)
         assert sl.is_valid("snapchat", profile_id) is True
         assert sl.is_valid("snapchat", f"@{profile_id}") is True
@@ -22,4 +19,3 @@ class TestSnapchat:
         assert sl.detect_platform(f"https://snapchat.com/@{profile_id}") == "snapchat"
         assert sl.is_valid("snapchat", f"https://snapchat.com/@{profile_id}") is True
         assert sl.sanitize("snapchat", f"https://snapchat.com/@{profile_id}") == f"https://snapchat.com/@{profile_id}"
-

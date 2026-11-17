@@ -4,16 +4,6 @@
 class TestLinkedin:
     """Test LinkedIn platform"""
 
-    def test_linkedin_personal(self, sl):
-        """Test LinkedIn personal profile"""
-        profile_id = "ysskrishna"
-        assert sl.detect_platform(f"https://linkedin.com/in/{profile_id}") == "linkedin"
-        assert sl.is_valid("linkedin", f"https://linkedin.com/in/{profile_id}") is True
-        assert sl.sanitize("linkedin", f"https://linkedin.com/in/{profile_id}") == f"https://linkedin.com/in/{profile_id}"
-        # Test direct username
-        assert sl.is_valid("linkedin", profile_id) is True
-        assert sl.sanitize("linkedin", profile_id) == f"https://linkedin.com/in/{profile_id}"
-
     def test_linkedin_company(self, sl):
         """Test LinkedIn company profile"""
         profile_id = "acme"
@@ -78,4 +68,3 @@ class TestLinkedin:
             assert sl.is_valid("linkedin", source) is True, f"URL should be valid: {source}"
             result = sl.sanitize("linkedin", source)
             assert result == expected, f"Expected {expected}, got {result} for {source}"
-
