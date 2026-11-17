@@ -1085,5 +1085,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://www.discogs.com/user/{id}"
         }
+    ],
+    "myanimelist": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?myanimelist\.net/profile/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://myanimelist.net/profile/{id}"
+        }
     ]
 }
