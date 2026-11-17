@@ -6,6 +6,7 @@ from sociallinks.constants import (
     PHONE_NUMBER,
     NUMERIC_ID,
     NOSTR_NPUB,
+    ORCID_ID,
     PlatformEntries,
 )
 
@@ -1221,6 +1222,15 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
                 rf"^{PROFILE_ID}$"
             ],
             "sanitized": "https://www.last.fm/user/{id}"
+        }
+    ],
+    "orcid": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?orcid\.org/{ORCID_ID}/?$",
+                rf"^{ORCID_ID}$"
+            ],
+            "sanitized": "https://orcid.org/{id}"
         }
     ]
 }
