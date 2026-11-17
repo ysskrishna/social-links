@@ -1304,5 +1304,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://www.wattpad.com/user/{id}"
         }
+    ],
+    "anilist": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?anilist\.co/user/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://anilist.co/user/{id}"
+        }
     ]
 }
