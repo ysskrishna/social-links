@@ -93,6 +93,7 @@ HAPPY_PATH = [
     ("imgur", "sarah", "https://imgur.com/user/sarah", "https://imgur.com/user/sarah"),
     ("inaturalist", "kueda", "https://www.inaturalist.org/people/kueda", "https://www.inaturalist.org/people/kueda"),
     ("instagram", "ysskrishna", "https://instagram.com/ysskrishna", "https://instagram.com/ysskrishna"),
+    ("issuu", "issuu", "https://issuu.com/issuu?ps=10", "https://issuu.com/issuu"),
     ("itch_io", "leafo", "https://itch.io/profile/leafo", "https://itch.io/profile/leafo"),
     ("jamendo", "1", "https://www.jamendo.com/user/1/name", "https://www.jamendo.com/user/1"),
     ("juejin", "1838039172387262", "https://juejin.cn/user/1838039172387262", "https://juejin.cn/user/1838039172387262"),

@@ -1887,5 +1887,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://www.scribd.com/user/{id}"
         }
+    ],
+    "issuu": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?issuu\.com/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://issuu.com/{id}"
+        }
     ]
 }
