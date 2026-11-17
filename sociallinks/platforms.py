@@ -1651,5 +1651,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://chzzk.naver.com/{id}"
         }
+    ],
+    "huya": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?huya\.com/(?!(?:about|login|settings|explore|search|help|pricing|signup|terms|privacy|sign\-up|register|blog|faq|dashboard|account|home|support|contact|careers|legal|discover|features|apps|download|g|l|video|cache|user|game|e|yule|member|m|directory|news|act)/?$){PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.huya.com/{id}"
+        }
     ]
 }
