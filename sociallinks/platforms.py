@@ -1534,5 +1534,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://www.coursera.org/user/{id}"
         }
+    ],
+    "udemy": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?udemy\.com/user/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.udemy.com/user/{id}"
+        }
     ]
 }

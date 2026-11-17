@@ -150,6 +150,7 @@ HAPPY_PATH = [
     ("tryhackme", "tryhackme", "https://tryhackme.com/p/tryhackme", "https://tryhackme.com/p/tryhackme"),
     ("tumblr", "ysskrishna", "https://ysskrishna.tumblr.com", "https://tumblr.com/ysskrishna"),
     ("twitch", "ysskrishna", "https://twitch.tv/ysskrishna", "https://twitch.tv/ysskrishna"),
+    ("udemy", "ysskrishna", "https://www.udemy.com/user/ysskrishna/", "https://www.udemy.com/user/ysskrishna"),
     ("unsplash", "ysskrishna", "https://unsplash.com/@ysskrishna", "https://unsplash.com/@ysskrishna"),
     ("untappd", "CiderBeer", "https://untappd.com/user/CiderBeer", "https://untappd.com/user/CiderBeer"),
     ("vimeo", "ysskrishna", "https://vimeo.com/ysskrishna", "https://vimeo.com/ysskrishna"),

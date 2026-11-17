@@ -174,6 +174,7 @@ PLATFORM_META: Dict[str, Tuple[str, str, Optional[str]]] = {
     "tryhackme": ("TryHackMe", "https://tryhackme.com", None),
     "tumblr": ("Tumblr", "https://tumblr.com", None),
     "twitch": ("Twitch", "https://twitch.tv", None),
+    "udemy": ("Udemy", "https://udemy.com", None),
     "unsplash": ("Unsplash", "https://unsplash.com", None),
     "untappd": ("Untappd", "https://untappd.com", None),
     "vimeo": ("Vimeo", "https://vimeo.com", None),
