@@ -909,5 +909,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://stan.store/{id}"
         }
+    ],
+    "farcaster": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?(?:farcaster\.xyz|warpcast\.com)/{PROFILE_ID}/?$",
+                rf"^@?{PROFILE_ID}$"
+            ],
+            "sanitized": "https://farcaster.xyz/{id}"
+        }
     ]
 }
