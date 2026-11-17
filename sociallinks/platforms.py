@@ -2212,5 +2212,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://www.themoviedb.org/u/{id}"
         }
+    ],
+    "hex_pm": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?hex\.pm/users/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://hex.pm/users/{id}"
+        }
     ]
 }

@@ -94,6 +94,7 @@ HAPPY_PATH = [
     ("hackerrank", "ysskrishna", "https://www.hackerrank.com/profile/ysskrishna", "https://www.hackerrank.com/profile/ysskrishna"),
     ("hashnode", None, "https://hashnode.com/@ysskrishna", "https://hashnode.com/@ysskrishna"),
     ("hatena_blog", "staff", "https://staff.hatenablog.com/", "https://staff.hatenablog.com"),
+    ("hex_pm", "josevalim", "https://hex.pm/users/josevalim", "https://hex.pm/users/josevalim"),
     ("hey_xyz", "stani", "https://hey.xyz/u/stani", "https://hey.xyz/u/stani"),
     ("hoo_be", "ysskrishna", "https://hoo.be/ysskrishna", "https://hoo.be/ysskrishna"),
     ("huggingface", "ysskrishna", "https://huggingface.co/ysskrishna", "https://huggingface.co/ysskrishna"),
