@@ -70,6 +70,7 @@ PLATFORM_META: Dict[str, Tuple[str, str, Optional[str]]] = {
     "lichess": ("Lichess", "https://lichess.org", None),
     "linkedin": ("LinkedIn", "https://linkedin.com", "(personal & company)"),
     "linktree": ("Linktree", "https://linktr.ee", None),
+    "lobsters": ("Lobsters", "https://lobste.rs", None),
     "mastodon": ("Mastodon", "https://mastodon.social", None),
     "medium": ("Medium", "https://medium.com", None),
     "patreon": ("Patreon", "https://patreon.com", None),
