@@ -4,6 +4,7 @@ from sociallinks.constants import (
     PROFILE_ID_UNICODE,
     PROFILE_ID_EXTENDED,
     PHONE_NUMBER,
+    NUMERIC_ID,
     PlatformEntries,
 )
 
@@ -871,6 +872,15 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
                 rf"^{PROFILE_ID}$"
             ],
             "sanitized": "https://sr.ht/~{id}"
+        }
+    ],
+    "stack_exchange": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?stackexchange\.com/users/{NUMERIC_ID}(?:/[^/?#]+)?/?$",
+                rf"^{NUMERIC_ID}$"
+            ],
+            "sanitized": "https://stackexchange.com/users/{id}"
         }
     ]
 }

@@ -2,6 +2,7 @@ import re
 import string
 from typing import Dict, List, NamedTuple, Optional, Tuple
 from sociallinks.constants import (
+    NUMERIC_ID,
     PHONE_NUMBER,
     PROFILE_ID,
     PROFILE_ID_AT,
@@ -20,7 +21,7 @@ from sociallinks.exceptions import (
     URLMismatchError,
 )
 
-_NUMERIC_ID = r"(?P<id>\d+)"  # bare numeric IDs, e.g. Apple Music artist IDs
+_NUMERIC_ID = NUMERIC_ID  # bare numeric IDs, e.g. Apple Music artist IDs
 
 _BARE_ID_BODIES = frozenset(
     {
@@ -75,7 +76,7 @@ class SocialLinks:
 
     Python library to validate, sanitize, and detect social media URLs.
     Support for LinkedIn, Instagram, TikTok, X/Twitter, GitHub, Facebook,
-    YouTube, and 80+ platforms. Features automatic URL normalization and
+    YouTube, and 85+ platforms. Features automatic URL normalization and
     zero dependencies. Easy to use, regex-powered, and customizable.
 
     The class uses regex patterns to match URLs against platform-specific
@@ -111,7 +112,7 @@ class SocialLinks:
         """Initialize the SocialLinks instance.
 
         Args:
-            use_predefined_platforms: If True, loads 80+ predefined social
+            use_predefined_platforms: If True, loads 85+ predefined social
                 media platforms (LinkedIn, GitHub, Twitter/X, etc.). If False,
                 starts with an empty platform list. Defaults to True.
             regex_flags: Regex flags to use for pattern compilation. Defaults

@@ -95,6 +95,7 @@ PLATFORM_META: Dict[str, Tuple[str, str, Optional[str]]] = {
     "sourceforge": ("SourceForge", "https://sourceforge.net", None),
     "sourcehut": ("SourceHut", "https://sr.ht", None),
     "spotify": ("Spotify", "https://spotify.com", None),
+    "stack_exchange": ("Stack Exchange", "https://stackexchange.com", None),
     "stackoverflow": ("Stack Overflow", "https://stackoverflow.com", None),
     "steam": ("Steam", "https://steamcommunity.com", None),
     "substack": ("Substack", "https://substack.com", None),

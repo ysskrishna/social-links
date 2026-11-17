@@ -150,3 +150,13 @@ Example matches:
     - ``+441234567890``
 """
 
+NUMERIC_ID = r"(?P<id>\d+)"
+"""Numeric profile ID regex pattern.
+
+Matches one or more digits. Used for platforms whose profile URLs carry a
+numeric account id (Goodreads, Pixiv, Roblox, Airbnb, ...).
+
+Example matches:
+    - ``1``
+    - ``1741101``
+"""
