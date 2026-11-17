@@ -1030,5 +1030,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://pixelfed.social/{id}"
         }
+    ],
+    "misskey": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?misskey\.io/@{PROFILE_ID}/?$",
+                rf"^@?{PROFILE_ID}$"
+            ],
+            "sanitized": "https://misskey.io/@{id}"
+        }
     ]
 }
