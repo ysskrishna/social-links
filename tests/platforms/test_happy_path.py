@@ -13,6 +13,7 @@ HAPPY_PATH = [
     ("about_me", "tonyconrad", "https://about.me/tonyconrad", "https://about.me/tonyconrad"),
     ("airbnb", "1", "https://www.airbnb.com/users/show/1", "https://www.airbnb.com/users/show/1"),
     ("ameblo", "ameba-official", "https://ameblo.jp/ameba-official/", "https://ameblo.jp/ameba-official"),
+    ("anaconda", "conda-forge", "https://anaconda.org/conda-forge", "https://anaconda.org/conda-forge"),
     ("anilist", "Josh", "https://anilist.co/user/Josh/", "https://anilist.co/user/Josh"),
     ("apple_music", "136975", "https://music.apple.com/artist/136975", "https://music.apple.com/artist/136975"),
     ("are_na", "are-na-team", "https://www.are.na/are-na-team", "https://www.are.na/are-na-team"),
