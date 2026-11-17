@@ -2221,5 +2221,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://hex.pm/users/{id}"
         }
+    ],
+    "metacpan": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?metacpan\.org/author/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://metacpan.org/author/{id}"
+        }
     ]
 }
