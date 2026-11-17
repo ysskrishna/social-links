@@ -24,6 +24,7 @@ HAPPY_PATH = [
     ("bio_link", "ysskrishna", "https://bio.link/ysskrishna", "https://bio.link/ysskrishna"),
     ("blogger", "05229574233543423344", "https://www.blogger.com/profile/05229574233543423344", "https://www.blogger.com/profile/05229574233543423344"),
     ("bluesky", "ysskrishna.bsky.social", "https://bsky.app/profile/ysskrishna.bsky.social", "https://bsky.app/profile/ysskrishna.bsky.social"),
+    ("brunch", "brunch", "https://brunch.co.kr/@brunch", "https://brunch.co.kr/@brunch"),
     ("buttondown", "ysskrishna", "https://buttondown.com/ysskrishna", "https://buttondown.com/ysskrishna"),
     ("buymeacoffee", "ysskrishna", "https://www.buymeacoffee.com/ysskrishna", "https://buymeacoffee.com/ysskrishna"),
     ("campsite_bio", "ysskrishna", "https://campsite.bio/ysskrishna", "https://campsite.bio/ysskrishna"),

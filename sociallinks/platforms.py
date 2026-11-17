@@ -1905,5 +1905,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://velog.io/@{id}"
         }
+    ],
+    "brunch": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?brunch\.co\.kr/@{PROFILE_ID_UNICODE}/?$",
+                rf"^@?{PROFILE_ID_UNICODE}$"
+            ],
+            "sanitized": "https://brunch.co.kr/@{id}"
+        }
     ]
 }

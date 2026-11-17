@@ -84,67 +84,67 @@ The library comes with 195+ predefined platforms:
 | [AtCoder](https://atcoder.jp) | [Audioboom](https://audioboom.com) | [Bandcamp](https://bandcamp.com) |
 | [Beacons](https://beacons.ai) | [Behance](https://behance.net) | [Bilibili](https://bilibili.com) |
 | [Bio.link](https://bio.link) | [Blogger](https://blogger.com) | [Bluesky](https://bsky.app) |
-| [Buttondown](https://buttondown.com) | [Buy Me a Coffee](https://buymeacoffee.com) | [Campsite.bio](https://campsite.bio) |
-| [Cara](https://cara.app) | [Carrd](https://carrd.co) | [Character.AI](https://character.ai) |
-| [Chess.com](https://chess.com) | [Chub.ai](https://chub.ai) (NSFW) | [CHZZK](https://chzzk.naver.com) |
-| [Civitai](https://civitai.com) | [ClawHub](https://clawhub.ai) | [Codeberg](https://codeberg.org) |
-| [Codecademy](https://codecademy.com) | [CodeChef](https://codechef.com) | [Codeforces](https://codeforces.com) |
-| [CodePen](https://codepen.io) | [CodeSandbox](https://codesandbox.io) | [Codewars](https://codewars.com) |
-| [Coursera](https://coursera.org) | [crates.io](https://crates.io) | [Crunchbase](https://crunchbase.com) |
-| [CSDN](https://csdn.net) | [CurseForge](https://curseforge.com) | [Dailymotion](https://dailymotion.com) |
-| [Depop](https://depop.com) | [Dev.to](https://dev.to) | [DeviantArt](https://deviantart.com) |
-| [Discogs](https://discogs.com) | [Discord](https://discord.com) | [Docker Hub](https://hub.docker.com) |
-| [Douban](https://douban.com) | [Douyin](https://douyin.com) | [Douyu](https://douyu.com) |
-| [Dribbble](https://dribbble.com) | [eBay](https://ebay.com) | [Etsy](https://etsy.com) |
-| [Exercism](https://exercism.org) | [Facebook](https://facebook.com) | [FACEIT](https://faceit.com) |
-| [Fanfix](https://fanfix.io) (NSFW) | [Farcaster](https://farcaster.xyz) | [Figma](https://figma.com) |
-| [Fiverr](https://fiverr.com) | [Flickr](https://flickr.com) | [Flipboard](https://flipboard.com) |
-| [freeCodeCamp](https://freecodecamp.org) | [Freelancer.com](https://freelancer.com) | [Fur Affinity](https://furaffinity.net) (NSFW) |
-| [Game Jolt](https://gamejolt.com) | [Genius](https://genius.com) | [Gitee](https://gitee.com) |
-| [GitHub](https://github.com) | [GitLab](https://gitlab.com) | [GOG](https://gog.com) |
-| [Goodreads](https://goodreads.com) | [Google Scholar](https://scholar.google.com) | [Gravatar](https://gravatar.com) |
-| [Gumroad](https://gumroad.com) | [Habr](https://habr.com) | [Hacker News](https://news.ycombinator.com) |
-| [HackerRank](https://hackerrank.com) | [Hashnode](https://hashnode.com) | [Hey.xyz](https://hey.xyz) |
-| [Hoo.be](https://hoo.be) | [Hugging Face](https://huggingface.co) | [Huya](https://huya.com) |
-| [Imgur](https://imgur.com) | [iNaturalist](https://inaturalist.org) | [Instagram](https://instagram.com) |
-| [Issuu](https://issuu.com) | [itch.io](https://itch.io) | [Jamendo](https://jamendo.com) |
-| [Juejin](https://juejin.cn) | [Kaggle](https://kaggle.com) | [Keybase](https://keybase.io) |
-| [Khan Academy](https://khanacademy.org) | [Kick](https://kick.com) | [Ko-fi](https://ko-fi.com) |
-| [Kuaishou](https://kuaishou.com) | [Last.fm](https://last.fm) | [Launchpad](https://launchpad.net) |
-| [LeetCode](https://leetcode.com) | [Lemmy World](https://lemmy.world) | [Lemon8](https://lemon8-app.com) |
-| [Letterboxd](https://letterboxd.com) | [Lichess](https://lichess.org) | [LinkedIn](https://linkedin.com) (personal & company) |
-| [Linktree](https://linktr.ee) | [Lobsters](https://lobste.rs) | [Mastodon](https://mastodon.social) |
-| [Medium](https://medium.com) | [Misskey](https://misskey.io) | [Modrinth](https://modrinth.com) |
-| [MyAnimeList](https://myanimelist.net) | [Niconico](https://nicovideo.jp) | [Nimo TV](https://nimo.tv) |
-| [npm](https://npmjs.com) | [NuGet](https://nuget.org) | [Odysee](https://odysee.com) |
-| [Ollama](https://ollama.com) | [OpenSea](https://opensea.io) | [OpenStreetMap](https://openstreetmap.org) |
-| [ORCID](https://orcid.org) | [OSF](https://osf.io) | [osu!](https://osu.ppy.sh) |
-| [Paragraph](https://paragraph.com) | [Patreon](https://patreon.com) | [Pexels](https://pexels.com) |
-| [Pinterest](https://pinterest.com) | [Pixelfed](https://pixelfed.social) | [Pixiv](https://pixiv.net) |
-| [Poshmark](https://poshmark.com) | [Primal](https://primal.net) | [Product Hunt](https://producthunt.com) |
-| [PyPI](https://pypi.org) | [Qiita](https://qiita.com) | [Quora](https://quora.com) |
-| [RateYourMusic](https://rateyourmusic.com) | [Redbubble](https://redbubble.com) | [Reddit](https://reddit.com) |
-| [Replicate](https://replicate.com) | [Replit](https://replit.com) | [Roblox](https://roblox.com) |
-| [Royal Road](https://royalroad.com) | [RubyGems](https://rubygems.org) | [Rumble](https://rumble.com) |
-| [Rutube](https://rutube.ru) | [Scratch](https://scratch.mit.edu) | [Scribd](https://scribd.com) |
-| [Semantic Scholar](https://semanticscholar.org) | [Signal](https://signal.me) | [Sketchfab](https://sketchfab.com) |
-| [SlideShare](https://slideshare.net) | [Snapchat](https://snapchat.com) | [solo.to](https://solo.to) |
-| [SOOP (AfreecaTV)](https://sooplive.com) | [SoundCloud](https://soundcloud.com) | [SourceForge](https://sourceforge.net) |
-| [SourceHut](https://sr.ht) | [Speedrun.com](https://speedrun.com) | [Spotify](https://spotify.com) |
-| [Stack Exchange](https://stackexchange.com) | [Stack Overflow](https://stackoverflow.com) | [Stan Store](https://stan.store) |
-| [start.gg](https://start.gg) | [Steam](https://steamcommunity.com) | [Substack](https://substack.com) |
-| [Taplink](https://taplink.cc) | [Telegram](https://telegram.org) | [The StoryGraph](https://thestorygraph.com) |
-| [Thingiverse](https://thingiverse.com) | [Threads](https://threads.com) | [Throne](https://throne.com) (NSFW) |
-| [TikTok](https://tiktok.com) | [Tistory](https://tistory.com) | [Topcoder](https://topcoder.com) |
-| [Topmate](https://topmate.io) | [Toyhouse](https://toyhou.se) | [Trello](https://trello.com) |
-| [Trustpilot](https://trustpilot.com) | [Truth Social](https://truthsocial.com) | [TryHackMe](https://tryhackme.com) |
-| [Tumblr](https://tumblr.com) | [Twitch](https://twitch.tv) | [Udemy](https://udemy.com) |
-| [Unsplash](https://unsplash.com) | [Untappd](https://untappd.com) | [Velog](https://velog.io) |
-| [Vimeo](https://vimeo.com) | [VK](https://vk.com) | [Wattpad](https://wattpad.com) |
-| [WeChat](https://weixin.qq.com) | [Weibo](https://weibo.com) | [Weights & Biases](https://wandb.ai) |
-| [Wellfound (AngelList)](https://wellfound.com) | [WhatsApp](https://whatsapp.com) | [WordPress](https://wordpress.com) |
-| [X (Twitter)](https://x.com) | [XDA Forums](https://xdaforums.com) | [Xiaohongshu (RedNote)](https://www.xiaohongshu.com) |
-| [YouTube](https://youtube.com) | [Zenn](https://zenn.dev) |  |
+| [Brunch](https://brunch.co.kr) | [Buttondown](https://buttondown.com) | [Buy Me a Coffee](https://buymeacoffee.com) |
+| [Campsite.bio](https://campsite.bio) | [Cara](https://cara.app) | [Carrd](https://carrd.co) |
+| [Character.AI](https://character.ai) | [Chess.com](https://chess.com) | [Chub.ai](https://chub.ai) (NSFW) |
+| [CHZZK](https://chzzk.naver.com) | [Civitai](https://civitai.com) | [ClawHub](https://clawhub.ai) |
+| [Codeberg](https://codeberg.org) | [Codecademy](https://codecademy.com) | [CodeChef](https://codechef.com) |
+| [Codeforces](https://codeforces.com) | [CodePen](https://codepen.io) | [CodeSandbox](https://codesandbox.io) |
+| [Codewars](https://codewars.com) | [Coursera](https://coursera.org) | [crates.io](https://crates.io) |
+| [Crunchbase](https://crunchbase.com) | [CSDN](https://csdn.net) | [CurseForge](https://curseforge.com) |
+| [Dailymotion](https://dailymotion.com) | [Depop](https://depop.com) | [Dev.to](https://dev.to) |
+| [DeviantArt](https://deviantart.com) | [Discogs](https://discogs.com) | [Discord](https://discord.com) |
+| [Docker Hub](https://hub.docker.com) | [Douban](https://douban.com) | [Douyin](https://douyin.com) |
+| [Douyu](https://douyu.com) | [Dribbble](https://dribbble.com) | [eBay](https://ebay.com) |
+| [Etsy](https://etsy.com) | [Exercism](https://exercism.org) | [Facebook](https://facebook.com) |
+| [FACEIT](https://faceit.com) | [Fanfix](https://fanfix.io) (NSFW) | [Farcaster](https://farcaster.xyz) |
+| [Figma](https://figma.com) | [Fiverr](https://fiverr.com) | [Flickr](https://flickr.com) |
+| [Flipboard](https://flipboard.com) | [freeCodeCamp](https://freecodecamp.org) | [Freelancer.com](https://freelancer.com) |
+| [Fur Affinity](https://furaffinity.net) (NSFW) | [Game Jolt](https://gamejolt.com) | [Genius](https://genius.com) |
+| [Gitee](https://gitee.com) | [GitHub](https://github.com) | [GitLab](https://gitlab.com) |
+| [GOG](https://gog.com) | [Goodreads](https://goodreads.com) | [Google Scholar](https://scholar.google.com) |
+| [Gravatar](https://gravatar.com) | [Gumroad](https://gumroad.com) | [Habr](https://habr.com) |
+| [Hacker News](https://news.ycombinator.com) | [HackerRank](https://hackerrank.com) | [Hashnode](https://hashnode.com) |
+| [Hey.xyz](https://hey.xyz) | [Hoo.be](https://hoo.be) | [Hugging Face](https://huggingface.co) |
+| [Huya](https://huya.com) | [Imgur](https://imgur.com) | [iNaturalist](https://inaturalist.org) |
+| [Instagram](https://instagram.com) | [Issuu](https://issuu.com) | [itch.io](https://itch.io) |
+| [Jamendo](https://jamendo.com) | [Juejin](https://juejin.cn) | [Kaggle](https://kaggle.com) |
+| [Keybase](https://keybase.io) | [Khan Academy](https://khanacademy.org) | [Kick](https://kick.com) |
+| [Ko-fi](https://ko-fi.com) | [Kuaishou](https://kuaishou.com) | [Last.fm](https://last.fm) |
+| [Launchpad](https://launchpad.net) | [LeetCode](https://leetcode.com) | [Lemmy World](https://lemmy.world) |
+| [Lemon8](https://lemon8-app.com) | [Letterboxd](https://letterboxd.com) | [Lichess](https://lichess.org) |
+| [LinkedIn](https://linkedin.com) (personal & company) | [Linktree](https://linktr.ee) | [Lobsters](https://lobste.rs) |
+| [Mastodon](https://mastodon.social) | [Medium](https://medium.com) | [Misskey](https://misskey.io) |
+| [Modrinth](https://modrinth.com) | [MyAnimeList](https://myanimelist.net) | [Niconico](https://nicovideo.jp) |
+| [Nimo TV](https://nimo.tv) | [npm](https://npmjs.com) | [NuGet](https://nuget.org) |
+| [Odysee](https://odysee.com) | [Ollama](https://ollama.com) | [OpenSea](https://opensea.io) |
+| [OpenStreetMap](https://openstreetmap.org) | [ORCID](https://orcid.org) | [OSF](https://osf.io) |
+| [osu!](https://osu.ppy.sh) | [Paragraph](https://paragraph.com) | [Patreon](https://patreon.com) |
+| [Pexels](https://pexels.com) | [Pinterest](https://pinterest.com) | [Pixelfed](https://pixelfed.social) |
+| [Pixiv](https://pixiv.net) | [Poshmark](https://poshmark.com) | [Primal](https://primal.net) |
+| [Product Hunt](https://producthunt.com) | [PyPI](https://pypi.org) | [Qiita](https://qiita.com) |
+| [Quora](https://quora.com) | [RateYourMusic](https://rateyourmusic.com) | [Redbubble](https://redbubble.com) |
+| [Reddit](https://reddit.com) | [Replicate](https://replicate.com) | [Replit](https://replit.com) |
+| [Roblox](https://roblox.com) | [Royal Road](https://royalroad.com) | [RubyGems](https://rubygems.org) |
+| [Rumble](https://rumble.com) | [Rutube](https://rutube.ru) | [Scratch](https://scratch.mit.edu) |
+| [Scribd](https://scribd.com) | [Semantic Scholar](https://semanticscholar.org) | [Signal](https://signal.me) |
+| [Sketchfab](https://sketchfab.com) | [SlideShare](https://slideshare.net) | [Snapchat](https://snapchat.com) |
+| [solo.to](https://solo.to) | [SOOP (AfreecaTV)](https://sooplive.com) | [SoundCloud](https://soundcloud.com) |
+| [SourceForge](https://sourceforge.net) | [SourceHut](https://sr.ht) | [Speedrun.com](https://speedrun.com) |
+| [Spotify](https://spotify.com) | [Stack Exchange](https://stackexchange.com) | [Stack Overflow](https://stackoverflow.com) |
+| [Stan Store](https://stan.store) | [start.gg](https://start.gg) | [Steam](https://steamcommunity.com) |
+| [Substack](https://substack.com) | [Taplink](https://taplink.cc) | [Telegram](https://telegram.org) |
+| [The StoryGraph](https://thestorygraph.com) | [Thingiverse](https://thingiverse.com) | [Threads](https://threads.com) |
+| [Throne](https://throne.com) (NSFW) | [TikTok](https://tiktok.com) | [Tistory](https://tistory.com) |
+| [Topcoder](https://topcoder.com) | [Topmate](https://topmate.io) | [Toyhouse](https://toyhou.se) |
+| [Trello](https://trello.com) | [Trustpilot](https://trustpilot.com) | [Truth Social](https://truthsocial.com) |
+| [TryHackMe](https://tryhackme.com) | [Tumblr](https://tumblr.com) | [Twitch](https://twitch.tv) |
+| [Udemy](https://udemy.com) | [Unsplash](https://unsplash.com) | [Untappd](https://untappd.com) |
+| [Velog](https://velog.io) | [Vimeo](https://vimeo.com) | [VK](https://vk.com) |
+| [Wattpad](https://wattpad.com) | [WeChat](https://weixin.qq.com) | [Weibo](https://weibo.com) |
+| [Weights & Biases](https://wandb.ai) | [Wellfound (AngelList)](https://wellfound.com) | [WhatsApp](https://whatsapp.com) |
+| [WordPress](https://wordpress.com) | [X (Twitter)](https://x.com) | [XDA Forums](https://xdaforums.com) |
+| [Xiaohongshu (RedNote)](https://www.xiaohongshu.com) | [YouTube](https://youtube.com) | [Zenn](https://zenn.dev) |
 
 <!-- platforms:end -->
 
