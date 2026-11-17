@@ -1204,5 +1204,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://buymeacoffee.com/{id}"
         }
+    ],
+    "ko_fi": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?ko-fi\.com/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://ko-fi.com/{id}"
+        }
     ]
 }

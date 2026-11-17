@@ -59,6 +59,7 @@ HAPPY_PATH = [
     ("kaggle", "ysskrishna", "https://www.kaggle.com/ysskrishna", "https://www.kaggle.com/ysskrishna"),
     ("keybase", "ysskrishna", "https://keybase.io/ysskrishna", "https://keybase.io/ysskrishna"),
     ("kick", "xqc", "https://kick.com/xqc", "https://kick.com/xqc"),
+    ("ko_fi", "ysskrishna", "https://ko-fi.com/ysskrishna", "https://ko-fi.com/ysskrishna"),
     ("kuaishou", "3xxdnfw963m6abu", "https://www.kuaishou.com/profile/3xxdnfw963m6abu", "https://www.kuaishou.com/profile/3xxdnfw963m6abu"),
     ("leetcode", "ysskrishna", "https://leetcode.com/ysskrishna", "https://leetcode.com/ysskrishna"),
     ("lemmy_world", "ysskrishna", "https://lemmy.world/u/ysskrishna", "https://lemmy.world/u/ysskrishna"),
