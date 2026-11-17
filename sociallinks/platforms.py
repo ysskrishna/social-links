@@ -1570,5 +1570,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://forum.freecodecamp.org/u/{id}"
         }
+    ],
+    "semantic_scholar": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?semanticscholar\.org/author/(?:[^/?#]+/)?{NUMERIC_ID}/?$",
+                rf"^{NUMERIC_ID}$"
+            ],
+            "sanitized": "https://www.semanticscholar.org/author/{id}"
+        }
     ]
 }
