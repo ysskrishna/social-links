@@ -1753,5 +1753,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://hoo.be/{id}"
         }
+    ],
+    "throne": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?throne\.com/(?!(?:about|login|settings|explore|search|help|pricing|signup|terms|privacy|sign\-up|register|blog|faq|dashboard|account|home|support|contact|careers|legal|discover|features|apps|download|creators|brands|wishlist|gift|gifts|u|r)/?$){PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://throne.com/{id}"
+        }
     ]
 }

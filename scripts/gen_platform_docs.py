@@ -186,6 +186,7 @@ PLATFORM_META: Dict[str, Tuple[str, str, Optional[str]]] = {
     "taplink": ("Taplink", "https://taplink.cc", None),
     "telegram": ("Telegram", "https://telegram.org", None),
     "threads": ("Threads", "https://threads.com", None),
+    "throne": ("Throne", "https://throne.com", "(NSFW)"),
     "tiktok": ("TikTok", "https://tiktok.com", None),
     "tistory": ("Tistory", "https://tistory.com", None),
     "topcoder": ("Topcoder", "https://topcoder.com", None),
