@@ -75,6 +75,7 @@ HAPPY_PATH = [
     ("spotify", "3WrFJ7ztbogyGnTHbHJFl2", "https://open.spotify.com/artist/3WrFJ7ztbogyGnTHbHJFl2", "https://open.spotify.com/artist/3WrFJ7ztbogyGnTHbHJFl2"),
     ("stack_exchange", "1", "https://stackexchange.com/users/1/jeff-atwood", "https://stackexchange.com/users/1"),
     ("stackoverflow", "12345", "https://stackoverflow.com/users/12345", "https://stackoverflow.com/users/12345"),
+    ("stan_store", "vanessalau", "https://stan.store/vanessalau", "https://stan.store/vanessalau"),
     ("steam", "pepepro76561198317693716", "https://steamcommunity.com/id/pepepro76561198317693716", "https://steamcommunity.com/id/pepepro76561198317693716"),
     ("substack", "ysskrishna", "https://ysskrishna.substack.com", "https://substack.com/@ysskrishna"),
     ("telegram", "telegram", "https://t.me/telegram", "https://t.me/telegram"),

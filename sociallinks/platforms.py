@@ -900,5 +900,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://kick.com/{id}"
         }
+    ],
+    "stan_store": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?stan\.store/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://stan.store/{id}"
+        }
     ]
 }
