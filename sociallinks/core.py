@@ -2,6 +2,7 @@ import re
 import string
 from typing import Dict, List, NamedTuple, Optional, Tuple
 from sociallinks.constants import (
+    HEX32_ID,
     ORCID_ID,
     NOSTR_NPUB,
     NUMERIC_ID,
@@ -35,6 +36,7 @@ _BARE_ID_BODIES = frozenset(
         _NUMERIC_ID,
         NOSTR_NPUB,
         ORCID_ID,
+        HEX32_ID,
     }
 )
 

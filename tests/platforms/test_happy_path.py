@@ -34,6 +34,7 @@ HAPPY_PATH = [
     ("codepen", "ysskrishna", "https://codepen.io/ysskrishna", "https://codepen.io/ysskrishna"),
     ("codesandbox", "CompuIves", "https://codesandbox.io/u/CompuIves", "https://codesandbox.io/u/CompuIves"),
     ("codewars", "jhoffner", "https://www.codewars.com/users/jhoffner", "https://www.codewars.com/users/jhoffner"),
+    ("coursera", "85dca6cc1c1ccacdb8d6cbc3853c8eff", "https://www.coursera.org/user/85dca6cc1c1ccacdb8d6cbc3853c8eff", "https://www.coursera.org/user/85dca6cc1c1ccacdb8d6cbc3853c8eff"),
     ("crates_io", "dtolnay", "https://crates.io/users/dtolnay", "https://crates.io/users/dtolnay"),
     ("crunchbase", None, "https://www.crunchbase.com/organization/slack", "https://www.crunchbase.com/organization/slack"),
     ("csdn", "csdnnews", "https://blog.csdn.net/csdnnews", "https://blog.csdn.net/csdnnews"),

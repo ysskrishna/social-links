@@ -7,6 +7,7 @@ from sociallinks.constants import (
     NUMERIC_ID,
     NOSTR_NPUB,
     ORCID_ID,
+    HEX32_ID,
     PlatformEntries,
 )
 
@@ -1522,6 +1523,16 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
                 rf"^{PROFILE_ID}$"
             ],
             "sanitized": "https://chub.ai/users/{id}"
+        }
+    ],
+    "coursera": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?coursera\.org/user/{HEX32_ID}/?$",
+                rf"https?://(www\.)?coursera\.org/user/i/{HEX32_ID}/?$",
+                rf"^{HEX32_ID}$"
+            ],
+            "sanitized": "https://www.coursera.org/user/{id}"
         }
     ]
 }

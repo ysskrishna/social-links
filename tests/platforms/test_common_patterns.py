@@ -73,6 +73,7 @@ def _get_test_profile_id(platform_name: str) -> str:
         "carrd": "ysskrishna",
         "blogger": "05229574233543423344",
         "juejin": "1838039172387262",
+        "coursera": "85dca6cc1c1ccacdb8d6cbc3853c8eff",
     }
     
     return special_ids.get(platform_name, "ysskrishna")

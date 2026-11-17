@@ -181,3 +181,12 @@ Example matches:
     - ``0000-0002-1825-0097``
     - ``0000-0002-1694-233X``
 """
+
+HEX32_ID = r"(?P<id>[0-9a-fA-F]{32})"
+"""32-character hexadecimal ID regex pattern.
+
+Used for platforms with hashed account ids (Coursera profiles, CHZZK channels).
+
+Example matches:
+    - ``85dca6cc1c1ccacdb8d6cbc3853c8eff``
+"""
