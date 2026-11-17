@@ -69,6 +69,7 @@ HAPPY_PATH = [
     ("mastodon", None, "https://mastodon.social/@ysskrishna", "https://mastodon.social/@ysskrishna"),
     ("medium", None, "https://medium.com/@ysskrishna", "https://medium.com/@ysskrishna"),
     ("misskey", "syuilo", "https://misskey.io/@syuilo", "https://misskey.io/@syuilo"),
+    ("modrinth", "jellysquid3", "https://modrinth.com/user/jellysquid3", "https://modrinth.com/user/jellysquid3"),
     ("myanimelist", "Xinil", "https://myanimelist.net/profile/Xinil", "https://myanimelist.net/profile/Xinil"),
     ("nuget", "Microsoft", "https://www.nuget.org/profiles/Microsoft", "https://www.nuget.org/profiles/Microsoft"),
     ("odysee", "Odysee", "https://odysee.com/@Odysee:8", "https://odysee.com/@Odysee"),
