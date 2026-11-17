@@ -1651,5 +1651,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://chzzk.naver.com/{id}"
         }
+    ],
+    "huya": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?huya\.com/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.huya.com/{id}"
+        }
     ]
 }
