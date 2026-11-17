@@ -2039,5 +2039,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://www.mixcloud.com/{id}"
         }
+    ],
+    "audiomack": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?audiomack\.com/(?!(?:about|login|settings|explore|search|help|pricing|signup|terms|privacy|sign\-up|register|blog|faq|dashboard|account|home|support|contact|careers|legal|discover|features|apps|download|song|album|playlist|playlists|trending\-now|top\-songs|top\-albums|world|creators|premium|upload|notifications|browse|embed|artists)/?$){PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://audiomack.com/{id}"
+        }
     ]
 }
