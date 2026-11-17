@@ -2019,5 +2019,15 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://note.com/{id}"
         }
+    ],
+    "naver_blog": [
+        {
+            "patterns": [
+                rf"https?://(?:m\.)?blog\.naver\.com/{PROFILE_ID}/?$",
+                rf"https?://(?:m\.)?blog\.naver\.com/(?:PostList\.naver|prologue/PrologueList\.naver)\?(?:[^#]*&)?blogId={PROFILE_ID}(?:[&#].*)?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://blog.naver.com/{id}"
+        }
     ]
 }
