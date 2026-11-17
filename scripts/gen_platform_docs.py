@@ -117,6 +117,7 @@ PLATFORM_META: Dict[str, Tuple[str, str, Optional[str]]] = {
     "npm": ("npm", "https://npmjs.com", None),
     "nuget": ("NuGet", "https://nuget.org", None),
     "odysee": ("Odysee", "https://odysee.com", None),
+    "ollama": ("Ollama", "https://ollama.com", None),
     "opensea": ("OpenSea", "https://opensea.io", None),
     "openstreetmap": ("OpenStreetMap", "https://openstreetmap.org", None),
     "orcid": ("ORCID", "https://orcid.org", None),
