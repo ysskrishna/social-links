@@ -1286,5 +1286,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://crates.io/users/{id}"
         }
+    ],
+    "gitee": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?gitee\.com/(?!(?:about|login|settings|explore|search|help|pricing|signup|terms|privacy|sign\-up|register|blog|faq|dashboard|account|home|support|contact|careers|legal|discover|features|apps|download|enterprises|education|gvp|organizations|oauth|api|projects|gists|topics|language)/?$){PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://gitee.com/{id}"
+        }
     ]
 }
