@@ -35,6 +35,7 @@ COLUMNS = 3
 PLATFORM_META: Dict[str, Tuple[str, str, Optional[str]]] = {
     "500px": ("500px", "https://500px.com", None),
     "airbnb": ("Airbnb", "https://airbnb.com", None),
+    "ameblo": ("Ameba Blog", "https://ameblo.jp", None),
     "anilist": ("AniList", "https://anilist.co", None),
     "apple_music": ("Apple Music", "https://music.apple.com", None),
     "are_na": ("Are.na", "https://are.na", None),
