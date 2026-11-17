@@ -799,5 +799,15 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://profiles.topcoder.com/{id}"
         }
+    ],
+    "tryhackme": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?tryhackme\.com/p/{PROFILE_ID_UNICODE}/?$",
+                rf"https?://(www\.)?tryhackme\.com/r/p/{PROFILE_ID_UNICODE}/?$",
+                rf"^{PROFILE_ID_UNICODE}$"
+            ],
+            "sanitized": "https://tryhackme.com/p/{id}"
+        }
     ]
 }

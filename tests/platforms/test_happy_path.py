@@ -73,6 +73,7 @@ HAPPY_PATH = [
     ("tiktok", None, "https://tiktok.com/@ysskrishna", "https://tiktok.com/@ysskrishna"),
     ("topcoder", "tourist", "https://profiles.topcoder.com/tourist", "https://profiles.topcoder.com/tourist"),
     ("trello", "ysskrishna", "https://trello.com/ysskrishna", "https://trello.com/ysskrishna"),
+    ("tryhackme", "tryhackme", "https://tryhackme.com/p/tryhackme", "https://tryhackme.com/p/tryhackme"),
     ("tumblr", "ysskrishna", "https://ysskrishna.tumblr.com", "https://tumblr.com/ysskrishna"),
     ("twitch", "ysskrishna", "https://twitch.tv/ysskrishna", "https://twitch.tv/ysskrishna"),
     ("unsplash", "ysskrishna", "https://unsplash.com/@ysskrishna", "https://unsplash.com/@ysskrishna"),
