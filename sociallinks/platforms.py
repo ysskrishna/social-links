@@ -2113,5 +2113,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://app.trakt.tv/profile/{id}"
         }
+    ],
+    "minds": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?minds\.com/(?!(?:about|login|settings|explore|search|help|pricing|signup|terms|privacy|sign\-up|register|blog|faq|dashboard|account|home|support|contact|careers|legal|discover|features|apps|download|newsfeed|discovery|groups|channels|wallet|boost|plus|pro|token|analytics|notifications|newsletter|content\-policy|p|m|supermind|chat|network|canary|api)/?$){PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.minds.com/{id}"
+        }
     ]
 }
