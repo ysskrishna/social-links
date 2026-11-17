@@ -127,6 +127,7 @@ HAPPY_PATH = [
     ("myanimelist", "Xinil", "https://myanimelist.net/profile/Xinil", "https://myanimelist.net/profile/Xinil"),
     ("niconico", "1", "https://www.nicovideo.jp/user/1", "https://www.nicovideo.jp/user/1"),
     ("nimo_tv", "ysskrishna", "https://www.nimo.tv/ysskrishna", "https://www.nimo.tv/ysskrishna"),
+    ("note_com", "info", "https://note.com/info", "https://note.com/info"),
     ("npm", "sindresorhus", "https://www.npmjs.com/~sindresorhus", "https://www.npmjs.com/~sindresorhus"),
     ("nuget", "Microsoft", "https://www.nuget.org/profiles/Microsoft", "https://www.nuget.org/profiles/Microsoft"),
     ("odysee", "Odysee", "https://odysee.com/@Odysee:8", "https://odysee.com/@Odysee"),

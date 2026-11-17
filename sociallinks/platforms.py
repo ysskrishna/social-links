@@ -2010,5 +2010,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://www.komoot.com/user/{id}"
         }
+    ],
+    "note_com": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?note\.com/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://note.com/{id}"
+        }
     ]
 }

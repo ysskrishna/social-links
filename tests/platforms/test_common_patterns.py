@@ -86,6 +86,7 @@ def _get_test_profile_id(platform_name: str) -> str:
         "ok_ru": "561611456451",
         "mercari": "123456789",
         "vinted": "1",
+        "note_com": "ysskrishna",
     }
     
     return special_ids.get(platform_name, "ysskrishna")
