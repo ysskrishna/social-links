@@ -90,6 +90,7 @@ PLATFORM_META: Dict[str, Tuple[str, str, Optional[str]]] = {
     "openstreetmap": ("OpenStreetMap", "https://openstreetmap.org", None),
     "patreon": ("Patreon", "https://patreon.com", None),
     "pinterest": ("Pinterest", "https://pinterest.com", None),
+    "pixelfed": ("Pixelfed", "https://pixelfed.social", None),
     "poshmark": ("Poshmark", "https://poshmark.com", None),
     "primal": ("Primal", "https://primal.net", None),
     "producthunt": ("Product Hunt", "https://producthunt.com", None),
