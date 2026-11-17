@@ -64,6 +64,7 @@ PLATFORM_META: Dict[str, Tuple[str, str, Optional[str]]] = {
     "freelancer": ("Freelancer.com", "https://freelancer.com", None),
     "github": ("GitHub", "https://github.com", None),
     "gitlab": ("GitLab", "https://gitlab.com", None),
+    "goodreads": ("Goodreads", "https://goodreads.com", None),
     "google_scholar": ("Google Scholar", "https://scholar.google.com", None),
     "gravatar": ("Gravatar", "https://gravatar.com", None),
     "gumroad": ("Gumroad", "https://gumroad.com", None),

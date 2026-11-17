@@ -1058,5 +1058,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://letterboxd.com/{id}"
         }
+    ],
+    "goodreads": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?goodreads\.com/user/show/{NUMERIC_ID}(?:-[^/?#]*)?/?$",
+                rf"^{NUMERIC_ID}$"
+            ],
+            "sanitized": "https://www.goodreads.com/user/show/{id}"
+        }
     ]
 }
