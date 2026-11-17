@@ -2039,5 +2039,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://www.mixcloud.com/{id}"
         }
+    ],
+    "audiomack": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?audiomack\.com/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://audiomack.com/{id}"
+        }
     ]
 }
