@@ -2276,5 +2276,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://www.geeksforgeeks.org/profile/{id}"
         }
+    ],
+    "hackerone": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?hackerone\.com/(?!(?:about|login|settings|explore|search|help|pricing|signup|terms|privacy|sign\-up|register|blog|faq|dashboard|account|home|support|contact|careers|legal|discover|features|apps|download|reports|hacktivity|directory|leaderboard|users|opportunities|bug\-bounty\-programs|product|solutions|resources|company|events|policies|disclosure\-guidelines|security|hackers|companies|partners|platform|sign_up|bugs)/?$){PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://hackerone.com/{id}"
+        }
     ]
 }
