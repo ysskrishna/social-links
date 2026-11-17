@@ -827,5 +827,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://habr.com/users/{id}"
         }
+    ],
+    "zenn": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?zenn\.dev/(?!(?:about|login|settings|explore|search|help|pricing|signup|terms|privacy|articles|books|topics|scraps|enterprise|faq|dashboard|events|publications|mypage|notifications|tech\-or\-idea|enter|guideline|zenn|trending|p|changelog|media\-kit)/?$){PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://zenn.dev/{id}"
+        }
     ]
 }

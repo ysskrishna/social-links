@@ -89,6 +89,7 @@ HAPPY_PATH = [
     ("wordpress", "ysskrishna", "https://wordpress.com/people/ysskrishna", "https://wordpress.com/people/ysskrishna"),
     ("x", None, "https://x.com/ysskrishna", "https://x.com/ysskrishna"),
     ("youtube", None, "https://youtube.com/@ysskrishna", "https://youtube.com/@ysskrishna"),
+    ("zenn", "catnose", "https://zenn.dev/catnose", "https://zenn.dev/catnose"),
 ]
 
 
