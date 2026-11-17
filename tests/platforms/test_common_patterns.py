@@ -80,6 +80,7 @@ def _get_test_profile_id(platform_name: str) -> str:
         "rutube": "23704195",
         "audioboom": "4256218",
         "jamendo": "1",
+        "royal_road": "1",
     }
     
     return special_ids.get(platform_name, "ysskrishna")

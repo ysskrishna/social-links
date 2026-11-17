@@ -147,6 +147,7 @@ HAPPY_PATH = [
     ("replicate", "ysskrishna", "https://replicate.com/ysskrishna", "https://replicate.com/ysskrishna"),
     ("replit", "ysskrishna", "https://replit.com/@ysskrishna", "https://replit.com/@ysskrishna"),
     ("roblox", "1", "https://www.roblox.com/users/1/profile", "https://www.roblox.com/users/1/profile"),
+    ("royal_road", "1", "https://www.royalroad.com/profile/1", "https://www.royalroad.com/profile/1"),
     ("rubygems", "dhh", "https://rubygems.org/profiles/dhh", "https://rubygems.org/profiles/dhh"),
     ("rumble", "ysskrishna", "https://rumble.com/user/ysskrishna", "https://rumble.com/user/ysskrishna"),
     ("rutube", "23704195", "https://rutube.ru/channel/23704195/", "https://rutube.ru/channel/23704195"),
