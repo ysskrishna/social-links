@@ -1495,5 +1495,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://juejin.cn/user/{id}"
         }
+    ],
+    "csdn": [
+        {
+            "patterns": [
+                rf"https?://blog\.csdn\.net/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://blog.csdn.net/{id}"
+        }
     ]
 }

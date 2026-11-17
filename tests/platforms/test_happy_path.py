@@ -34,6 +34,7 @@ HAPPY_PATH = [
     ("codewars", "jhoffner", "https://www.codewars.com/users/jhoffner", "https://www.codewars.com/users/jhoffner"),
     ("crates_io", "dtolnay", "https://crates.io/users/dtolnay", "https://crates.io/users/dtolnay"),
     ("crunchbase", None, "https://www.crunchbase.com/organization/slack", "https://www.crunchbase.com/organization/slack"),
+    ("csdn", "csdnnews", "https://blog.csdn.net/csdnnews", "https://blog.csdn.net/csdnnews"),
     ("dailymotion", "ysskrishna", "https://www.dailymotion.com/ysskrishna", "https://www.dailymotion.com/ysskrishna"),
     ("depop", "ysskrishna", "https://www.depop.com/ysskrishna/", "https://www.depop.com/ysskrishna"),
     ("dev_to", "ysskrishna", "https://dev.to/ysskrishna", "https://dev.to/ysskrishna"),
