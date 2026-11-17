@@ -91,6 +91,7 @@ HAPPY_PATH = [
     ("gravatar", "ysskrishna", "https://gravatar.com/ysskrishna", "https://gravatar.com/ysskrishna"),
     ("gumroad", "ysskrishna", "https://ysskrishna.gumroad.com", "https://gumroad.com/ysskrishna"),
     ("habr", "boomburum", "https://habr.com/ru/users/boomburum/", "https://habr.com/users/boomburum"),
+    ("hackerearth", "sachin", "https://www.hackerearth.com/@sachin/", "https://www.hackerearth.com/@sachin"),
     ("hackernews", "pg", "https://news.ycombinator.com/user?id=pg", "https://news.ycombinator.com/user?id=pg"),
     ("hackerrank", "ysskrishna", "https://www.hackerrank.com/profile/ysskrishna", "https://www.hackerrank.com/profile/ysskrishna"),
     ("hashnode", None, "https://hashnode.com/@ysskrishna", "https://hashnode.com/@ysskrishna"),

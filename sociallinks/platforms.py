@@ -2239,5 +2239,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://www.indiehackers.com/{id}"
         }
+    ],
+    "hackerearth": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?hackerearth\.com/@{PROFILE_ID}/?$",
+                rf"^@?{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.hackerearth.com/@{id}"
+        }
     ]
 }
