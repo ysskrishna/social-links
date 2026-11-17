@@ -1186,5 +1186,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://www.roblox.com/users/{id}/profile"
         }
+    ],
+    "truth_social": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?truthsocial\.com/@{PROFILE_ID}/?$",
+                rf"^@?{PROFILE_ID}$"
+            ],
+            "sanitized": "https://truthsocial.com/@{id}"
+        }
     ]
 }
