@@ -35,6 +35,7 @@ HAPPY_PATH = [
     ("gitlab", "ysskrishna", "https://gitlab.com/ysskrishna", "https://gitlab.com/ysskrishna"),
     ("gravatar", "ysskrishna", "https://gravatar.com/ysskrishna", "https://gravatar.com/ysskrishna"),
     ("gumroad", "ysskrishna", "https://ysskrishna.gumroad.com", "https://gumroad.com/ysskrishna"),
+    ("habr", "boomburum", "https://habr.com/ru/users/boomburum/", "https://habr.com/users/boomburum"),
     ("hackernews", "pg", "https://news.ycombinator.com/user?id=pg", "https://news.ycombinator.com/user?id=pg"),
     ("hackerrank", "ysskrishna", "https://www.hackerrank.com/profile/ysskrishna", "https://www.hackerrank.com/profile/ysskrishna"),
     ("hashnode", None, "https://hashnode.com/@ysskrishna", "https://hashnode.com/@ysskrishna"),

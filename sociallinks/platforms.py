@@ -818,5 +818,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://qiita.com/{id}"
         }
+    ],
+    "habr": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?habr\.com/(?:(?:en|ru)/)?users/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://habr.com/users/{id}"
+        }
     ]
 }
