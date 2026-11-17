@@ -62,6 +62,7 @@ HAPPY_PATH = [
     ("nuget", "Microsoft", "https://www.nuget.org/profiles/Microsoft", "https://www.nuget.org/profiles/Microsoft"),
     ("patreon", "ysskrishna", "https://patreon.com/ysskrishna", "https://patreon.com/ysskrishna"),
     ("pinterest", "ysskrishna", "https://pinterest.com/ysskrishna", "https://pinterest.com/ysskrishna"),
+    ("poshmark", "ysskrishna", "https://poshmark.com/closet/ysskrishna", "https://poshmark.com/closet/ysskrishna"),
     ("producthunt", None, "https://www.producthunt.com/@ysskrishna", "https://www.producthunt.com/@ysskrishna"),
     ("pypi", "ysskrishna", "https://pypi.org/user/ysskrishna", "https://pypi.org/user/ysskrishna"),
     ("qiita", "jnchito", "https://qiita.com/jnchito", "https://qiita.com/jnchito"),

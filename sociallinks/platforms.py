@@ -964,5 +964,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://www.ebay.com/usr/{id}"
         }
+    ],
+    "poshmark": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?poshmark\.(?:com|ca)/closet/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://poshmark.com/closet/{id}"
+        }
     ]
 }
