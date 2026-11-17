@@ -1450,5 +1450,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://character.ai/profile/{id}"
         }
+    ],
+    "ollama": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?ollama\.com/(?!(?:about|login|settings|explore|search|help|pricing|signup|terms|privacy|sign\-up|register|blog|faq|dashboard|account|home|support|contact|careers|legal|discover|features|apps|download|library|models|public|turbo|cloud|signin|docs|new|connect)/?$){PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://ollama.com/{id}"
+        }
     ]
 }
