@@ -81,6 +81,7 @@ def _get_test_profile_id(platform_name: str) -> str:
         "audioboom": "4256218",
         "jamendo": "1",
         "royal_road": "1",
+        "scribd": "1/ysskrishna",
     }
     
     return special_ids.get(platform_name, "ysskrishna")

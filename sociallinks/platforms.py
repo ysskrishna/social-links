@@ -1879,5 +1879,13 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://www.royalroad.com/profile/{id}"
         }
+    ],
+    "scribd": [
+        {
+            "patterns": [
+                r"https?://(www\.)?scribd\.com/user/(?P<id>[0-9]+/[A-Za-z0-9_.-]+)/?$"
+            ],
+            "sanitized": "https://www.scribd.com/user/{id}"
+        }
     ]
 }
