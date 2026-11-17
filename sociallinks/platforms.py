@@ -2276,5 +2276,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://www.geeksforgeeks.org/profile/{id}"
         }
+    ],
+    "hackerone": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?hackerone\.com/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://hackerone.com/{id}"
+        }
     ]
 }
