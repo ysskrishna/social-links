@@ -1717,5 +1717,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://www.jamendo.com/user/{id}"
         }
+    ],
+    "bio_link": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?bio\.link/(?!(?:about|login|settings|explore|search|help|pricing|signup|terms|privacy|sign\-up|register|blog|faq|dashboard|account|home|support|contact|careers|legal|discover|features|apps|download|templates|creators|api|integrations)/?$){PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://bio.link/{id}"
+        }
     ]
 }
