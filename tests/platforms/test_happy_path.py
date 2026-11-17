@@ -78,6 +78,7 @@ HAPPY_PATH = [
     ("juejin", "1838039172387262", "https://juejin.cn/user/1838039172387262", "https://juejin.cn/user/1838039172387262"),
     ("kaggle", "ysskrishna", "https://www.kaggle.com/ysskrishna", "https://www.kaggle.com/ysskrishna"),
     ("keybase", "ysskrishna", "https://keybase.io/ysskrishna", "https://keybase.io/ysskrishna"),
+    ("khan_academy", "ysskrishna", "https://www.khanacademy.org/profile/ysskrishna", "https://www.khanacademy.org/profile/ysskrishna"),
     ("kick", "xqc", "https://kick.com/xqc", "https://kick.com/xqc"),
     ("ko_fi", "ysskrishna", "https://ko-fi.com/ysskrishna", "https://ko-fi.com/ysskrishna"),
     ("kuaishou", "3xxdnfw963m6abu", "https://www.kuaishou.com/profile/3xxdnfw963m6abu", "https://www.kuaishou.com/profile/3xxdnfw963m6abu"),
