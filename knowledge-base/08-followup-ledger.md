@@ -104,3 +104,14 @@ Things tried during release 1.5.0 that need a second look, or a decision worth r
 | start.gg | https://www.start.gg/user/Save | Archive captures include UI words (`Save`, `Share`) scraped as ids. | Replaced with real 8-hex slugs that returned 200. | no |
 | KakaoTalk Channel | https://pf.kakao.com/_{Korean} | Archived Korean-text ids; unclear if real channel ids. | Not widened. | yes |
 
+## Part 3
+
+| Platform | URL tried | What happened | Chosen | Recheck |
+|---|---|---|---|---|
+| OnlyFans | https://onlyfans.com/qxzv7k2w9m3t | An unknown id also returns 200 (single-page app or soft 404), so a 200 does not prove the account exists. | Shipped. Real handles are sourced from public pages, not from the status code. | no |
+| Liberapay | https://liberapay.com/m.2 | Every plain GET returned [403] (bot wall, rate limit or login gate). Not solved, per the no-bot-check rule. | Shipped. Handles come from Wayback 200 captures / Wikidata; URL shape confirmed by plan.md evidence. | yes: re-run the live check from a browser session |
+| MetaCPAN | https://metacpan.org/author/AAA | Every plain GET returned [402] (bot wall, rate limit or login gate). Not solved, per the no-bot-check rule. | Shipped. Handles come from Wayback 200 captures / Wikidata; URL shape confirmed by plan.md evidence. | yes: re-run the live check from a browser session |
+| GeeksforGeeks | https://www.geeksforgeeks.org/profile/qxzv7k2w9m3t | An unknown id also returns 200 (single-page app or soft 404), so a 200 does not prove the account exists. | Shipped. Real handles are sourced from public pages, not from the status code. | no |
+| Bugcrowd | https://bugcrowd.com/h/qxzv7k2w9m3t | An unknown id also returns 200 (single-page app or soft 404), so a 200 does not prove the account exists. | Shipped. Real handles are sourced from public pages, not from the status code. | no |
+| Anaconda.org | https://anaconda.org/qxzv7k2w9m3t | An unknown id also returns 200 (single-page app or soft 404), so a 200 does not prove the account exists. | Shipped. Real handles are sourced from public pages, not from the status code. | no |
+

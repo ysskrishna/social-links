@@ -1976,6 +1976,209 @@ REAL_HANDLES = [
     ('researchgate', 'https://www.researchgate.net/profile/Waed-Dada', 'https://www.researchgate.net/profile/Waed-Dada', 'Waed-Dada'),  # wikidata:P2038 (Waed Dada); live check blocked (403)
     ('researchgate', 'https://www.researchgate.net/profile/Rama_Cont', 'https://www.researchgate.net/profile/Rama_Cont', 'Rama_Cont'),  # wikidata:P2038 (Rama Cont); live check blocked (403)
     ('researchgate', 'https://www.researchgate.net/profile/Peter-Lina', 'https://www.researchgate.net/profile/Peter-Lina', 'Peter-Lina'),  # wikidata:P2038 (Peter Lina); live check blocked (403)
+    # ---- part 3 ----
+    # OnlyFans
+    ('onlyfans', 'https://onlyfans.com/m', 'https://onlyfans.com/m', 'm'),  # wayback-200; live 200
+    ('onlyfans', 'https://onlyfans.com/m-i-s-s-j-a-c-q-u-e-s-xx', 'https://onlyfans.com/m-i-s-s-j-a-c-q-u-e-s-xx', 'm-i-s-s-j-a-c-q-u-e-s-xx'),  # wayback-200; live 200
+    ('onlyfans', 'https://onlyfans.com/m.02of', 'https://onlyfans.com/m.02of', 'm.02of'),  # wayback-200; live 200
+    ('onlyfans', 'http://onlyfans.com/m-', 'https://onlyfans.com/m-', 'm-'),  # wayback-200; live 200
+    ('onlyfans', 'https://onlyfans.com/m.27_cannagirl', 'https://onlyfans.com/m.27_cannagirl', 'm.27_cannagirl'),  # wayback-200; live 200
+    ('onlyfans', 'https://onlyfans.com/m-pkW9YE8cvMrnYJ', 'https://onlyfans.com/m-pkW9YE8cvMrnYJ', 'm-pkW9YE8cvMrnYJ'),  # wayback-200; live 200
+    ('onlyfans', 'https://onlyfans.com/alus', 'https://onlyfans.com/alus', 'alus'),  # wikidata:P8604 (Alus); live 200
+    ('onlyfans', 'https://onlyfans.com/emmag', 'https://onlyfans.com/emmag', 'emmag'),  # wikidata:P8604 (Emma Glover); live 200
+    ('onlyfans', 'https://onlyfans.com/angela', 'https://onlyfans.com/angela', 'angela'),  # wikidata:P8604 (Angela White); live 200
+    ('onlyfans', 'https://onlyfans.com/jizlee', 'https://onlyfans.com/jizlee', 'jizlee'),  # wikidata:P8604 (Jiz Lee); live 200
+    ('onlyfans', 'https://onlyfans.com/daphne', 'https://onlyfans.com/daphne', 'daphne'),  # wikidata:P8604 (Daphne Summers); live 200
+    ('onlyfans', 'https://onlyfans.com/Janine', 'https://onlyfans.com/Janine', 'Janine'),  # wikidata:P8604 (Janine Lindemulder); live 200
+    # Open Collective
+    ('opencollective', 'https://opencollective.com/m', 'https://opencollective.com/m', 'm'),  # wayback-200; live 200 (unknown ids 404)
+    ('opencollective', 'https://opencollective.com/m-angeline-markham', 'https://opencollective.com/m-angeline-markham', 'm-angeline-markham'),  # wayback-200; live 200 (unknown ids 404)
+    ('opencollective', 'https://opencollective.com/m-allanson', 'https://opencollective.com/m-allanson', 'm-allanson'),  # wayback-200; live 200 (unknown ids 404)
+    ('opencollective', 'https://opencollective.com/m1st3r_t4c0', 'https://opencollective.com/m1st3r_t4c0', 'm1st3r_t4c0'),  # wayback-200; live 200 (unknown ids 404)
+    ('opencollective', 'https://opencollective.com/mybb', 'https://opencollective.com/mybb', 'mybb'),  # wikidata:P14655 (MyBB); live 200 (unknown ids 404)
+    ('opencollective', 'https://opencollective.com/xfce', 'https://opencollective.com/xfce', 'xfce'),  # wikidata:P14655 (Q170821); live 200 (unknown ids 404)
+    ('opencollective', 'https://opencollective.com/tmux', 'https://opencollective.com/tmux', 'tmux'),  # wikidata:P14655 (tmux); live 200 (unknown ids 404)
+    ('opencollective', 'https://opencollective.com/htop', 'https://opencollective.com/htop', 'htop'),  # wikidata:P14655 (htop); live 200 (unknown ids 404)
+    ('opencollective', 'https://opencollective.com/umap', 'https://opencollective.com/umap', 'umap'),  # wikidata:P14655 (uMap); live 200 (unknown ids 404)
+    ('opencollective', 'https://opencollective.com/ooni', 'https://opencollective.com/ooni', 'ooni'),  # wikidata:P14655 (Open Observatory of Network Interference); live 200 (unknown ids 404)
+    # Liberapay
+    ('liberapay', 'https://liberapay.com/m.2', 'https://liberapay.com/m.2', 'm.2'),  # wayback-200; live check blocked (403)
+    ('liberapay', 'https://liberapay.com/m.dacruzbizzell/', 'https://liberapay.com/m.dacruzbizzell', 'm.dacruzbizzell'),  # wayback-200; live check blocked (403)
+    ('liberapay', 'https://liberapay.com/m.ash', 'https://liberapay.com/m.ash', 'm.ash'),  # wayback-200; live check blocked (403)
+    ('liberapay', 'https://liberapay.com/m-p-3/', 'https://liberapay.com/m-p-3', 'm-p-3'),  # wayback-200; live check blocked (403)
+    ('liberapay', 'https://liberapay.com/m_raitisoja/', 'https://liberapay.com/m_raitisoja', 'm_raitisoja'),  # wayback-200; live check blocked (403)
+    ('liberapay', 'https://liberapay.com/M0N7Y5/', 'https://liberapay.com/M0N7Y5', 'M0N7Y5'),  # wayback-200; live check blocked (403)
+    ('liberapay', 'https://liberapay.com/K_/', 'https://liberapay.com/K_', 'K_'),  # wayback-200; live check blocked (403)
+    ('liberapay', 'https://liberapay.com/S1m/', 'https://liberapay.com/S1m', 'S1m'),  # wayback-200; live check blocked (403)
+    ('liberapay', 'https://liberapay.com/K0d/', 'https://liberapay.com/K0d', 'K0d'),  # wayback-200; live check blocked (403)
+    ('liberapay', 'https://liberapay.com/SAID', 'https://liberapay.com/SAID', 'SAID'),  # wayback-200; live check blocked (403)
+    ('liberapay', 'https://liberapay.com/k8ie', 'https://liberapay.com/k8ie', 'k8ie'),  # wayback-200; live check blocked (403)
+    ('liberapay', 'https://liberapay.com/Kang/', 'https://liberapay.com/Kang', 'Kang'),  # wayback-200; live check blocked (403)
+    # WordPress.org
+    ('wordpress_org', 'https://profiles.wordpress.org/m/', 'https://profiles.wordpress.org/m', 'm'),  # wayback-200; live 200 (unknown ids 404)
+    ('wordpress_org', 'http://profiles.wordpress.org/k-productions-inc/', 'https://profiles.wordpress.org/k-productions-inc', 'k-productions-inc'),  # wayback-200; live 200 (unknown ids 404)
+    ('wordpress_org', 'http://profiles.wordpress.org/m-ali/', 'https://profiles.wordpress.org/m-ali', 'm-ali'),  # wayback-200; live 200 (unknown ids 404)
+    ('wordpress_org', 'https://profiles.wordpress.org/K', 'https://profiles.wordpress.org/K', 'K'),  # wayback-200; live 200 (unknown ids 404)
+    ('wordpress_org', 'https://profiles.wordpress.org/k-2/', 'https://profiles.wordpress.org/k-2', 'k-2'),  # wayback-200; live 200 (unknown ids 404)
+    ('wordpress_org', 'https://profiles.wordpress.org/m-alo/', 'https://profiles.wordpress.org/m-alo', 'm-alo'),  # wayback-200; live 200 (unknown ids 404)
+    ('wordpress_org', 'https://profiles.wordpress.org/m-azure/', 'https://profiles.wordpress.org/m-azure', 'm-azure'),  # wayback-200; live 200 (unknown ids 404)
+    ('wordpress_org', 'http://profiles.wordpress.org/m-b-c-4/', 'https://profiles.wordpress.org/m-b-c-4', 'm-b-c-4'),  # wayback-200; live 200 (unknown ids 404)
+    ('wordpress_org', 'https://profiles.wordpress.org/m-e-h', 'https://profiles.wordpress.org/m-e-h', 'm-e-h'),  # wayback-200; live 200 (unknown ids 404)
+    ('wordpress_org', 'http://profiles.wordpress.org/s-234/', 'https://profiles.wordpress.org/s-234', 's-234'),  # wayback-200; live 200 (unknown ids 404)
+    ('wordpress_org', 'https://profiles.wordpress.org/s-a-n/', 'https://profiles.wordpress.org/s-a-n', 's-a-n'),  # wayback-200; live 200 (unknown ids 404)
+    ('wordpress_org', 'http://profiles.wordpress.org/s-andy/', 'https://profiles.wordpress.org/s-andy', 's-andy'),  # wayback-200; live 200 (unknown ids 404)
+    # Instructables
+    ('instructables', 'http://www.instructables.com/member/m/', 'https://www.instructables.com/member/m', 'm'),  # wayback-200; live 200 (unknown ids 404)
+    ('instructables', 'https://www.instructables.com/member/s-bchandramouli/', 'https://www.instructables.com/member/s-bchandramouli', 's-bchandramouli'),  # wayback-200; live 200 (unknown ids 404)
+    ('instructables', 'http://www.instructables.com/member/S-239/', 'https://www.instructables.com/member/S-239', 'S-239'),  # wayback-200; live 200 (unknown ids 404)
+    ('instructables', 'http://www.instructables.com/member/S-Anderson/', 'https://www.instructables.com/member/S-Anderson', 'S-Anderson'),  # wayback-200; live 200 (unknown ids 404)
+    ('instructables', 'http://www.instructables.com/member/s/', 'https://www.instructables.com/member/s', 's'),  # wayback-200; live 200 (unknown ids 404)
+    ('instructables', 'http://www.instructables.com/member/S-Bro/', 'https://www.instructables.com/member/S-Bro', 'S-Bro'),  # wayback-200; live 200 (unknown ids 404)
+    ('instructables', 'http://www.instructables.com/member/K-10K/', 'https://www.instructables.com/member/K-10K', 'K-10K'),  # wayback-200; live 200 (unknown ids 404)
+    ('instructables', 'http://www.instructables.com/member/k-673/', 'https://www.instructables.com/member/k-673', 'k-673'),  # wayback-200; live 200 (unknown ids 404)
+    ('instructables', 'http://www.instructables.com/member/K-all/', 'https://www.instructables.com/member/K-all', 'K-all'),  # wayback-200; live 200 (unknown ids 404)
+    ('instructables', 'http://www.instructables.com/member/K-car/', 'https://www.instructables.com/member/K-car', 'K-car'),  # wayback-200; live 200 (unknown ids 404)
+    ('instructables', 'http://www.instructables.com/member/K-Dub/', 'https://www.instructables.com/member/K-Dub', 'K-Dub'),  # wayback-200; live 200 (unknown ids 404)
+    ('instructables', 'http://www.instructables.com/member/k-esd/', 'https://www.instructables.com/member/k-esd', 'k-esd'),  # wayback-200; live 200 (unknown ids 404)
+    # TMDB
+    ('tmdb', 'https://www.themoviedb.org/u/s-c-h-a-t-t-e-n', 'https://www.themoviedb.org/u/s-c-h-a-t-t-e-n', 's-c-h-a-t-t-e-n'),  # wayback-200; live 200 (unknown ids 404)
+    ('tmdb', 'https://www.themoviedb.org/u/m.dam', 'https://www.themoviedb.org/u/m.dam', 'm.dam'),  # wayback-200; live 200 (unknown ids 404)
+    ('tmdb', 'https://www.themoviedb.org/u/M-Rots', 'https://www.themoviedb.org/u/M-Rots', 'M-Rots'),  # wayback-200; live 200 (unknown ids 404)
+    ('tmdb', 'https://www.themoviedb.org/u/s0lan_in', 'https://www.themoviedb.org/u/s0lan_in', 's0lan_in'),  # wayback-200; live 200 (unknown ids 404)
+    ('tmdb', 'https://www.themoviedb.org/u/M.LeMarchand', 'https://www.themoviedb.org/u/M.LeMarchand', 'M.LeMarchand'),  # wayback-200; live 200 (unknown ids 404)
+    ('tmdb', 'https://www.themoviedb.org/u/S231', 'https://www.themoviedb.org/u/S231', 'S231'),  # wayback-200; live 200 (unknown ids 404)
+    ('tmdb', 'https://www.themoviedb.org/u/s5ka', 'https://www.themoviedb.org/u/s5ka', 's5ka'),  # wayback-200; live 200 (unknown ids 404)
+    ('tmdb', 'https://www.themoviedb.org/u/s6kx', 'https://www.themoviedb.org/u/s6kx', 's6kx'),  # wayback-200; live 200 (unknown ids 404)
+    ('tmdb', 'https://www.themoviedb.org/u/k02t', 'https://www.themoviedb.org/u/k02t', 'k02t'),  # wayback-200; live 200 (unknown ids 404)
+    ('tmdb', 'https://www.themoviedb.org/u/m.m.j', 'https://www.themoviedb.org/u/m.m.j', 'm.m.j'),  # wayback-200; live 200 (unknown ids 404)
+    ('tmdb', 'https://www.themoviedb.org/u/s0nar', 'https://www.themoviedb.org/u/s0nar', 's0nar'),  # wayback-200; live 200 (unknown ids 404)
+    ('tmdb', 'https://www.themoviedb.org/u/s1339', 'https://www.themoviedb.org/u/s1339', 's1339'),  # wayback-200; live 200 (unknown ids 404)
+    # Hex
+    ('hex_pm', 'https://hex.pm/users/0m3', 'https://hex.pm/users/0m3', '0m3'),  # wayback-200; live 200 (unknown ids 404)
+    ('hex_pm', 'https://hex.pm/users/adamniedzielski', 'https://hex.pm/users/adamniedzielski', 'adamniedzielski'),  # wayback-200; live 200 (unknown ids 404)
+    ('hex_pm', 'https://hex.pm/users/a.portnov', 'https://hex.pm/users/a.portnov', 'a.portnov'),  # wayback-200; live 200 (unknown ids 404)
+    ('hex_pm', 'https://hex.pm/users/1-bit-wonder', 'https://hex.pm/users/1-bit-wonder', '1-bit-wonder'),  # wayback-200; live 200 (unknown ids 404)
+    ('hex_pm', 'https://hex.pm/users/__red__', 'https://hex.pm/users/__red__', '__red__'),  # wayback-200; live 200 (unknown ids 404)
+    ('hex_pm', 'https://hex.pm/users/0010', 'https://hex.pm/users/0010', '0010'),  # wayback-200; live 200 (unknown ids 404)
+    ('hex_pm', 'https://hex.pm/users/0918nobita', 'https://hex.pm/users/0918nobita', '0918nobita'),  # wayback-200; live 200 (unknown ids 404)
+    ('hex_pm', 'https://hex.pm/users/1ma', 'https://hex.pm/users/1ma', '1ma'),  # wayback-200; live 200 (unknown ids 404)
+    ('hex_pm', 'https://hex.pm/users/23k', 'https://hex.pm/users/23k', '23k'),  # wayback-200; live 200 (unknown ids 404)
+    ('hex_pm', 'https://hex.pm/users/5ht', 'https://hex.pm/users/5ht', '5ht'),  # wayback-200; live 200 (unknown ids 404)
+    ('hex_pm', 'https://hex.pm/users/_df', 'https://hex.pm/users/_df', '_df'),  # wayback-200; live 200 (unknown ids 404)
+    ('hex_pm', 'https://hex.pm/users/abs', 'https://hex.pm/users/abs', 'abs'),  # wayback-200; live 200 (unknown ids 404)
+    # MetaCPAN
+    ('metacpan', 'https://metacpan.org/author/AAA', 'https://metacpan.org/author/AAA', 'AAA'),  # wayback-200; live check blocked (402)
+    ('metacpan', 'https://metacpan.org/author/AADLER', 'https://metacpan.org/author/AADLER', 'AADLER'),  # wayback-200; live check blocked (402)
+    ('metacpan', 'https://metacpan.org/author/SDS', 'https://metacpan.org/author/SDS', 'SDS'),  # wikidata:P8124 (Sergio de Sousa); live check blocked (402)
+    ('metacpan', 'https://metacpan.org/author/EDF', 'https://metacpan.org/author/EDF', 'EDF'),  # wikidata:P8124 (Q127329136); live check blocked (402)
+    ('metacpan', 'https://metacpan.org/author/DHA', 'https://metacpan.org/author/DHA', 'DHA'),  # wikidata:P8124 (David H. Adler); live check blocked (402)
+    ('metacpan', 'https://metacpan.org/author/LDS', 'https://metacpan.org/author/LDS', 'LDS'),  # wikidata:P8124 (Lincoln Stein); live check blocked (402)
+    ('metacpan', 'https://metacpan.org/author/SKIM', 'https://metacpan.org/author/SKIM', 'SKIM'),  # wikidata:P8124 (Q27954834); live check blocked (402)
+    ('metacpan', 'https://metacpan.org/author/LWALL', 'https://metacpan.org/author/LWALL', 'LWALL'),  # wikidata:P8124 (Larry Wall); live check blocked (402)
+    ('metacpan', 'https://metacpan.org/author/JESSE', 'https://metacpan.org/author/JESSE', 'JESSE'),  # wikidata:P8124 (Jesse Vincent); live check blocked (402)
+    ('metacpan', 'https://metacpan.org/author/ROCKY', 'https://metacpan.org/author/ROCKY', 'ROCKY'),  # wikidata:P8124 (R. Bernstein); live check blocked (402)
+    ('metacpan', 'https://metacpan.org/author/DYFET', 'https://metacpan.org/author/DYFET', 'DYFET'),  # wikidata:P8124 (David Sugar); live check blocked (402)
+    ('metacpan', 'https://metacpan.org/author/SAPER', 'https://metacpan.org/author/SAPER', 'SAPER'),  # wikidata:P8124 (Sébastien Aperghis-Tramoni); live check blocked (402)
+    # Indie Hackers
+    ('indiehackers', 'https://www.indiehackers.com/maciejmyslinski?id=JpeOFNgezFhhmwHGhWQqFBtfwyy1', 'https://www.indiehackers.com/maciejmyslinski', 'maciejmyslinski'),  # wayback-200; live 200 (unknown ids 404)
+    ('indiehackers', 'https://www.indiehackers.com/m-design?id=Jj950TPg8xRe4HjObYJldRzoXYT2', 'https://www.indiehackers.com/m-design', 'm-design'),  # wayback-200; live 200 (unknown ids 404)
+    ('indiehackers', 'https://www.indiehackers.com/M_CHICHI?id=5YQt0melFOZsvJ7lBtuCw0sWpZE2', 'https://www.indiehackers.com/M_CHICHI', 'M_CHICHI'),  # wayback-200; live 200 (unknown ids 404)
+    ('indiehackers', 'https://www.indiehackers.com/M165437?id=BaKRVKO4jYTaxjlKs1dVi1iTyku1', 'https://www.indiehackers.com/M165437', 'M165437'),  # wayback-200; live 200 (unknown ids 404)
+    ('indiehackers', 'https://www.indiehackers.com/mac?id=ZvTzQygh92WedD2ZJgA3Ndwlaqn1', 'https://www.indiehackers.com/mac', 'mac'),  # wayback-200; live 200 (unknown ids 404)
+    ('indiehackers', 'https://www.indiehackers.com/s_m?id=PCF7cxVfqOMqA76gluwlNb3T6tt2', 'https://www.indiehackers.com/s_m', 's_m'),  # wayback-200; live 200 (unknown ids 404)
+    ('indiehackers', 'https://www.indiehackers.com/kan?id=kPNH7qA43UObMAXpWjgiumIahbN2', 'https://www.indiehackers.com/kan', 'kan'),  # wayback-200; live 200 (unknown ids 404)
+    ('indiehackers', 'https://www.indiehackers.com/m121', 'https://www.indiehackers.com/m121', 'm121'),  # wayback-200; live 200 (unknown ids 404)
+    ('indiehackers', 'https://www.indiehackers.com/m15o', 'https://www.indiehackers.com/m15o', 'm15o'),  # wayback-200; live 200 (unknown ids 404)
+    ('indiehackers', 'https://www.indiehackers.com/m1aw?id=wzquQMqX2cfsUX2kJQ2diXNUuaU2', 'https://www.indiehackers.com/m1aw', 'm1aw'),  # wayback-200; live 200 (unknown ids 404)
+    ('indiehackers', 'https://www.indiehackers.com/m_ke', 'https://www.indiehackers.com/m_ke', 'm_ke'),  # wayback-200; live 200 (unknown ids 404)
+    # HackerEarth
+    ('hackerearth', 'https://www.hackerearth.com/@--/', 'https://www.hackerearth.com/@--', '--'),  # wayback-200; live 200 (unknown ids 404)
+    ('hackerearth', 'https://www.hackerearth.com/@006kirti.sharma', 'https://www.hackerearth.com/@006kirti.sharma', '006kirti.sharma'),  # wayback-200; live 200 (unknown ids 404)
+    ('hackerearth', 'https://www.hackerearth.com/@----/', 'https://www.hackerearth.com/@----', '----'),  # wayback-200; live 200 (unknown ids 404)
+    ('hackerearth', 'https://www.hackerearth.com/@0.5_seconds', 'https://www.hackerearth.com/@0.5_seconds', '0.5_seconds'),  # wayback-200; live 200 (unknown ids 404)
+    ('hackerearth', 'https://www.hackerearth.com/@00174/', 'https://www.hackerearth.com/@00174', '00174'),  # wayback-200; live 200 (unknown ids 404)
+    ('hackerearth', 'https://www.hackerearth.com/@0.vikaspandey', 'https://www.hackerearth.com/@0.vikaspandey', '0.vikaspandey'),  # wayback-200; live 200 (unknown ids 404)
+    ('hackerearth', 'https://www.hackerearth.com/@-Green/', 'https://www.hackerearth.com/@-Green', '-Green'),  # wayback-200; live 200 (unknown ids 404)
+    ('hackerearth', 'https://www.hackerearth.com/@-3/', 'https://www.hackerearth.com/@-3', '-3'),  # wayback-200; live 200 (unknown ids 404)
+    ('hackerearth', 'https://www.hackerearth.com/@m1/', 'https://www.hackerearth.com/@m1', 'm1'),  # wayback-200; live 200 (unknown ids 404)
+    ('hackerearth', 'https://www.hackerearth.com/@-17/', 'https://www.hackerearth.com/@-17', '-17'),  # wayback-200; live 200 (unknown ids 404)
+    ('hackerearth', 'https://www.hackerearth.com/@.86', 'https://www.hackerearth.com/@.86', '.86'),  # wayback-200; live 200 (unknown ids 404)
+    # Myspace
+    ('myspace', 'https://myspace.com/m-inamo.com', 'https://myspace.com/m-inamo.com', 'm-inamo.com'),  # wayback-200; live 200 (unknown ids 404)
+    ('myspace', 'http://www.myspace.com/m-0-7', 'https://myspace.com/m-0-7', 'm-0-7'),  # wayback-200; live 200 (unknown ids 404)
+    ('myspace', 'http://www.myspace.com/s.a.h_z.s.f09', 'https://myspace.com/s.a.h_z.s.f09', 's.a.h_z.s.f09'),  # wayback-200; live 200 (unknown ids 404)
+    ('myspace', 'https://myspace.com/2pac', 'https://myspace.com/2pac', '2pac'),  # wikidata:P3265 (Tupac Shakur); live 200 (unknown ids 404)
+    ('myspace', 'https://myspace.com/u2', 'https://myspace.com/u2', 'u2'),  # wikidata:P3265 (U2); live 200 (unknown ids 404)
+    ('myspace', 'https://myspace.com/ab', 'https://myspace.com/ab', 'ab'),  # wikidata:P3265 (Ab-Soul); live 200 (unknown ids 404)
+    ('myspace', 'https://myspace.com/fr', 'https://myspace.com/fr', 'fr'),  # wikidata:P3265 (Sabin Todorov); live 200 (unknown ids 404)
+    ('myspace', 'http://www.myspace.com/m-30', 'https://myspace.com/m-30', 'm-30'),  # wayback-200; live 200 (unknown ids 404)
+    ('myspace', 'https://myspace.com/m-exemplar', 'https://myspace.com/m-exemplar', 'm-exemplar'),  # wayback-200; live 200 (unknown ids 404)
+    ('myspace', 'https://myspace.com/m-j.moses', 'https://myspace.com/m-j.moses', 'm-j.moses'),  # wayback-200; live 200 (unknown ids 404)
+    ('myspace', 'https://myspace.com/m-mathieu.chedid', 'https://myspace.com/m-mathieu.chedid', 'm-mathieu.chedid'),  # wayback-200; live 200 (unknown ids 404)
+    ('myspace', 'http://www.myspace.com/s-5', 'https://myspace.com/s-5', 's-5'),  # wayback-200; live 200 (unknown ids 404)
+    # About.me
+    ('about_me', 'https://about.me/m.alcazar.celdran', 'https://about.me/m.alcazar.celdran', 'm.alcazar.celdran'),  # wayback-200; live 200 (unknown ids 404)
+    ('about_me', 'https://about.me/m.662.x', 'https://about.me/m.662.x', 'm.662.x'),  # wayback-200; live 200 (unknown ids 404)
+    ('about_me', 'https://about.me/m.a_kaisar', 'https://about.me/m.a_kaisar', 'm.a_kaisar'),  # wayback-200; live 200 (unknown ids 404)
+    ('about_me', 'http://about.me/M.A.Y.A', 'https://about.me/M.A.Y.A', 'M.A.Y.A'),  # wayback-200; live 200 (unknown ids 404)
+    ('about_me', 'https://about.me/m-m', 'https://about.me/m-m', 'm-m'),  # wayback-200; live 200 (unknown ids 404)
+    ('about_me', 'https://about.me/k.c', 'https://about.me/k.c', 'k.c'),  # wayback-200; live 200 (unknown ids 404)
+    ('about_me', 'https://about.me/k.t', 'https://about.me/k.t', 'k.t'),  # wayback-200; live 200 (unknown ids 404)
+    ('about_me', 'https://about.me/m.88', 'https://about.me/m.88', 'm.88'),  # wayback-200; live 200 (unknown ids 404)
+    ('about_me', 'https://about.me/m-alo', 'https://about.me/m-alo', 'm-alo'),  # wayback-200; live 200 (unknown ids 404)
+    ('about_me', 'https://about.me/m-jantz', 'https://about.me/m-jantz', 'm-jantz'),  # wayback-200; live 200 (unknown ids 404)
+    ('about_me', 'https://about.me/m-shoaib', 'https://about.me/m-shoaib', 'm-shoaib'),  # wayback-200; live 200 (unknown ids 404)
+    ('about_me', 'http://about.me/m.a.banitamim', 'https://about.me/m.a.banitamim', 'm.a.banitamim'),  # wayback-200; live 200 (unknown ids 404)
+    # GeeksforGeeks
+    ('geeksforgeeks', 'https://www.geeksforgeeks.org/profile/123kapilpoonia123', 'https://www.geeksforgeeks.org/profile/123kapilpoonia123', '123kapilpoonia123'),  # wayback-200; live 200
+    ('geeksforgeeks', 'https://www.geeksforgeeks.org/profile/aishwarya.27', 'https://www.geeksforgeeks.org/profile/aishwarya.27', 'aishwarya.27'),  # wayback-200; live 200
+    ('geeksforgeeks', 'https://www.geeksforgeeks.org/profile/manuj-sankrit', 'https://www.geeksforgeeks.org/profile/manuj-sankrit', 'manuj-sankrit'),  # wayback-200; live 200
+    ('geeksforgeeks', 'https://www.geeksforgeeks.org/profile/__mahakaal__', 'https://www.geeksforgeeks.org/profile/__mahakaal__', '__mahakaal__'),  # wayback-200; live 200
+    ('geeksforgeeks', 'https://www.geeksforgeeks.org/profile/184025', 'https://www.geeksforgeeks.org/profile/184025', '184025'),  # wayback-200; live 200
+    ('geeksforgeeks', 'https://www.geeksforgeeks.org/profile/02DCE', 'https://www.geeksforgeeks.org/profile/02DCE', '02DCE'),  # wayback-200; live 200
+    ('geeksforgeeks', 'https://www.geeksforgeeks.org/profile/_Krish', 'https://www.geeksforgeeks.org/profile/_Krish', '_Krish'),  # wayback-200; live 200
+    ('geeksforgeeks', 'https://www.geeksforgeeks.org/profile/aark', 'https://www.geeksforgeeks.org/profile/aark', 'aark'),  # wayback-200; live 200
+    ('geeksforgeeks', 'https://www.geeksforgeeks.org/profile/adam', 'https://www.geeksforgeeks.org/profile/adam', 'adam'),  # wayback-200; live 200
+    ('geeksforgeeks', 'https://www.geeksforgeeks.org/profile/bkm3', 'https://www.geeksforgeeks.org/profile/bkm3', 'bkm3'),  # wayback-200; live 200
+    ('geeksforgeeks', 'https://www.geeksforgeeks.org/profile/Mr.L', 'https://www.geeksforgeeks.org/profile/Mr.L', 'Mr.L'),  # wayback-200; live 200
+    ('geeksforgeeks', 'https://www.geeksforgeeks.org/profile/KJoy', 'https://www.geeksforgeeks.org/profile/KJoy', 'KJoy'),  # wayback-200; live 200
+    # HackerOne
+    ('hackerone', 'https://hackerone.com/m-a-v-e-r-i-c-k', 'https://hackerone.com/m-a-v-e-r-i-c-k', 'm-a-v-e-r-i-c-k'),  # wayback-200; live 200 (unknown ids 404)
+    ('hackerone', 'https://hackerone.com/m--j', 'https://hackerone.com/m--j', 'm--j'),  # wayback-200; live 200 (unknown ids 404)
+    ('hackerone', 'https://hackerone.com/m-m', 'https://hackerone.com/m-m', 'm-m'),  # wayback-200; live 200 (unknown ids 404)
+    ('hackerone', 'https://hackerone.com/m-s', 'https://hackerone.com/m-s', 'm-s'),  # wayback-200; live 200 (unknown ids 404)
+    ('hackerone', 'https://hackerone.com/m01', 'https://hackerone.com/m01', 'm01'),  # wayback-200; live 200 (unknown ids 404)
+    ('hackerone', 'https://hackerone.com/k-1', 'https://hackerone.com/k-1', 'k-1'),  # wayback-200; live 200 (unknown ids 404)
+    ('hackerone', 'https://hackerone.com/k00', 'https://hackerone.com/k00', 'k00'),  # wayback-200; live 200 (unknown ids 404)
+    ('hackerone', 'https://hackerone.com/k0_', 'https://hackerone.com/k0_', 'k0_'),  # wayback-200; live 200 (unknown ids 404)
+    ('hackerone', 'https://hackerone.com/m-02', 'https://hackerone.com/m-02', 'm-02'),  # wayback-200; live 200 (unknown ids 404)
+    ('hackerone', 'https://hackerone.com/m-75', 'https://hackerone.com/m-75', 'm-75'),  # wayback-200; live 200 (unknown ids 404)
+    # Bugcrowd
+    ('bugcrowd', 'https://bugcrowd.com/h/-', 'https://bugcrowd.com/h/-', '-'),  # wayback-200; live 200
+    ('bugcrowd', 'https://bugcrowd.com/h/_shankyagarwal_', 'https://bugcrowd.com/h/_shankyagarwal_', '_shankyagarwal_'),  # wayback-200; live 200
+    ('bugcrowd', 'https://bugcrowd.com/h/ads.txt', 'https://bugcrowd.com/h/ads.txt', 'ads.txt'),  # wayback-200; live 200
+    ('bugcrowd', 'https://bugcrowd.com/h/-Z', 'https://bugcrowd.com/h/-Z', '-Z'),  # wayback-200; live 200
+    ('bugcrowd', 'https://bugcrowd.com/h/0_czar', 'https://bugcrowd.com/h/0_czar', '0_czar'),  # wayback-200; live 200
+    ('bugcrowd', 'https://bugcrowd.com/h/328', 'https://bugcrowd.com/h/328', '328'),  # wayback-200; live 200
+    ('bugcrowd', 'https://bugcrowd.com/h/000jitender00', 'https://bugcrowd.com/h/000jitender00', '000jitender00'),  # wayback-200; live 200
+    ('bugcrowd', 'https://bugcrowd.com/h/0Dr3f', 'https://bugcrowd.com/h/0Dr3f', '0Dr3f'),  # wayback-200; live 200
+    ('bugcrowd', 'https://bugcrowd.com/h/9', 'https://bugcrowd.com/h/9', '9'),  # wayback-200; live 200
+    ('bugcrowd', 'https://bugcrowd.com/h/2n', 'https://bugcrowd.com/h/2n', '2n'),  # wayback-200; live 200
+    ('bugcrowd', 'https://bugcrowd.com/h/5rx', 'https://bugcrowd.com/h/5rx', '5rx'),  # wayback-200; live 200
+    ('bugcrowd', 'https://bugcrowd.com/h/911', 'https://bugcrowd.com/h/911', '911'),  # wayback-200; live 200
+    # Anaconda.org
+    ('anaconda', 'https://anaconda.org/18', 'https://anaconda.org/18', '18'),  # wayback-200; live 200
+    ('anaconda', 'https://anaconda.org/m-labs', 'https://anaconda.org/m-labs', 'm-labs'),  # wayback-200; live 200
+    ('anaconda', 'http://anaconda.org/s_tbe', 'https://anaconda.org/s_tbe', 's_tbe'),  # wayback-200; live 200
+    ('anaconda', 'https://anaconda.org/63', 'https://anaconda.org/63', '63'),  # wayback-200; live 200
+    ('anaconda', 'https://anaconda.org/0x1997', 'https://anaconda.org/0x1997', '0x1997'),  # wayback-200; live 200
+    ('anaconda', 'https://anaconda.org/s390x', 'https://anaconda.org/s390x', 's390x'),  # wayback-200; live 200
+    ('anaconda', 'https://anaconda.org/kaija', 'https://anaconda.org/kaija', 'kaija'),  # wayback-200; live 200
+    ('anaconda', 'https://anaconda.org/3dhubs', 'https://anaconda.org/3dhubs', '3dhubs'),  # wayback-200; live 200
+    ('anaconda', 'https://anaconda.org/maddin', 'https://anaconda.org/maddin', 'maddin'),  # wayback-200; live 200
+    ('anaconda', 'https://anaconda.org/maceo57', 'https://anaconda.org/maceo57', 'maceo57'),  # wayback-200; live 200
+    ('anaconda', 'https://anaconda.org/s-ameli', 'https://anaconda.org/s-ameli', 's-ameli'),  # wayback-200; live 200
+    ('anaconda', 'https://anaconda.org/saedrna', 'https://anaconda.org/saedrna', 'saedrna'),  # wayback-200; live 200
 ]
 
 
