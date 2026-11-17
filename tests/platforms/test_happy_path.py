@@ -76,6 +76,7 @@ HAPPY_PATH = [
     ("modrinth", "jellysquid3", "https://modrinth.com/user/jellysquid3", "https://modrinth.com/user/jellysquid3"),
     ("myanimelist", "Xinil", "https://myanimelist.net/profile/Xinil", "https://myanimelist.net/profile/Xinil"),
     ("niconico", "1", "https://www.nicovideo.jp/user/1", "https://www.nicovideo.jp/user/1"),
+    ("npm", "sindresorhus", "https://www.npmjs.com/~sindresorhus", "https://www.npmjs.com/~sindresorhus"),
     ("nuget", "Microsoft", "https://www.nuget.org/profiles/Microsoft", "https://www.nuget.org/profiles/Microsoft"),
     ("odysee", "Odysee", "https://odysee.com/@Odysee:8", "https://odysee.com/@Odysee"),
     ("opensea", "0x1234567890abcdef1234567890abcdef12345678", "https://opensea.io/0x1234567890abcdef1234567890abcdef12345678", "https://opensea.io/0x1234567890abcdef1234567890abcdef12345678"),
