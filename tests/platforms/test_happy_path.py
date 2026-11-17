@@ -73,6 +73,7 @@ HAPPY_PATH = [
     ("lastfm", "RJ", "https://www.last.fm/user/RJ", "https://www.last.fm/user/RJ"),
     ("leetcode", "ysskrishna", "https://leetcode.com/ysskrishna", "https://leetcode.com/ysskrishna"),
     ("lemmy_world", "ysskrishna", "https://lemmy.world/u/ysskrishna", "https://lemmy.world/u/ysskrishna"),
+    ("lemon8", "lemon8us", "https://www.lemon8-app.com/@lemon8us", "https://www.lemon8-app.com/@lemon8us"),
     ("letterboxd", "davidehrlich", "https://letterboxd.com/davidehrlich/", "https://letterboxd.com/davidehrlich"),
     ("lichess", "ysskrishna", "https://lichess.org/@/ysskrishna", "https://lichess.org/@/ysskrishna"),
     ("linkedin", "ysskrishna", "https://linkedin.com/in/ysskrishna", "https://linkedin.com/in/ysskrishna"),
