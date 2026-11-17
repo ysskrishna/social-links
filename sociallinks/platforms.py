@@ -1932,5 +1932,20 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://{id}.hatenablog.com"
         }
+    ],
+    "dzen": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?(?:dzen\.ru|zen\.yandex\.ru)/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://dzen.ru/{id}"
+        },
+        {
+            "patterns": [
+                rf"https?://(www\.)?(?:dzen\.ru|zen\.yandex\.ru)/id/{PROFILE_ID}/?$"
+            ],
+            "sanitized": "https://dzen.ru/id/{id}"
+        }
     ]
 }
