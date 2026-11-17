@@ -2048,5 +2048,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://audiomack.com/{id}"
         }
+    ],
+    "bitchute": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?bitchute\.com/channel/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.bitchute.com/channel/{id}"
+        }
     ]
 }
