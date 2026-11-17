@@ -160,3 +160,13 @@ Example matches:
     - ``1``
     - ``1741101``
 """
+
+NOSTR_NPUB = r"(?P<id>npub1[a-z0-9]{58})"
+"""Nostr public key (NIP-19 ``npub``) regex pattern.
+
+Matches ``npub1`` followed by 58 bech32 characters (63 characters in total).
+Used for Primal profile URLs.
+
+Example matches:
+    - ``npub180cvv07tjdrrgpa0j7j7tmnyl2yr6yr7l8j4s3evf6u64th6gkwsyjh6w6``
+"""
