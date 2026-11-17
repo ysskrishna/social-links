@@ -123,17 +123,18 @@ The library comes with 165+ predefined platforms:
 | [Signal](https://signal.me) | [SlideShare](https://slideshare.net) | [Snapchat](https://snapchat.com) |
 | [SoundCloud](https://soundcloud.com) | [SourceForge](https://sourceforge.net) | [SourceHut](https://sr.ht) |
 | [Speedrun.com](https://speedrun.com) | [Spotify](https://spotify.com) | [Stack Exchange](https://stackexchange.com) |
-| [Stack Overflow](https://stackoverflow.com) | [Stan Store](https://stan.store) | [Steam](https://steamcommunity.com) |
-| [Substack](https://substack.com) | [Telegram](https://telegram.org) | [The StoryGraph](https://thestorygraph.com) |
-| [Threads](https://threads.com) | [TikTok](https://tiktok.com) | [Tistory](https://tistory.com) |
-| [Topcoder](https://topcoder.com) | [Topmate](https://topmate.io) | [Trello](https://trello.com) |
-| [Trustpilot](https://trustpilot.com) | [Truth Social](https://truthsocial.com) | [TryHackMe](https://tryhackme.com) |
-| [Tumblr](https://tumblr.com) | [Twitch](https://twitch.tv) | [Udemy](https://udemy.com) |
-| [Unsplash](https://unsplash.com) | [Untappd](https://untappd.com) | [Vimeo](https://vimeo.com) |
-| [VK](https://vk.com) | [Wattpad](https://wattpad.com) | [WeChat](https://weixin.qq.com) |
-| [Weibo](https://weibo.com) | [Weights & Biases](https://wandb.ai) | [Wellfound (AngelList)](https://wellfound.com) |
-| [WhatsApp](https://whatsapp.com) | [WordPress](https://wordpress.com) | [X (Twitter)](https://x.com) |
-| [Xiaohongshu (RedNote)](https://www.xiaohongshu.com) | [YouTube](https://youtube.com) | [Zenn](https://zenn.dev) |
+| [Stack Overflow](https://stackoverflow.com) | [Stan Store](https://stan.store) | [start.gg](https://start.gg) |
+| [Steam](https://steamcommunity.com) | [Substack](https://substack.com) | [Telegram](https://telegram.org) |
+| [The StoryGraph](https://thestorygraph.com) | [Threads](https://threads.com) | [TikTok](https://tiktok.com) |
+| [Tistory](https://tistory.com) | [Topcoder](https://topcoder.com) | [Topmate](https://topmate.io) |
+| [Trello](https://trello.com) | [Trustpilot](https://trustpilot.com) | [Truth Social](https://truthsocial.com) |
+| [TryHackMe](https://tryhackme.com) | [Tumblr](https://tumblr.com) | [Twitch](https://twitch.tv) |
+| [Udemy](https://udemy.com) | [Unsplash](https://unsplash.com) | [Untappd](https://untappd.com) |
+| [Vimeo](https://vimeo.com) | [VK](https://vk.com) | [Wattpad](https://wattpad.com) |
+| [WeChat](https://weixin.qq.com) | [Weibo](https://weibo.com) | [Weights & Biases](https://wandb.ai) |
+| [Wellfound (AngelList)](https://wellfound.com) | [WhatsApp](https://whatsapp.com) | [WordPress](https://wordpress.com) |
+| [X (Twitter)](https://x.com) | [Xiaohongshu (RedNote)](https://www.xiaohongshu.com) | [YouTube](https://youtube.com) |
+| [Zenn](https://zenn.dev) |  |  |
 
 <!-- platforms:end -->
 

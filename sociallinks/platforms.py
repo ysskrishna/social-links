@@ -1615,5 +1615,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://gamejolt.com/@{id}"
         }
+    ],
+    "start_gg": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?(?:start|smash)\.gg/user/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.start.gg/user/{id}"
+        }
     ]
 }
