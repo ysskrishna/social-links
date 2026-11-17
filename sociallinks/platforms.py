@@ -1268,5 +1268,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://www.codewars.com/users/{id}"
         }
+    ],
+    "codeberg": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?codeberg\.org/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://codeberg.org/{id}"
+        }
     ]
 }
