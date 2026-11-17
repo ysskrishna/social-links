@@ -124,6 +124,7 @@ HAPPY_PATH = [
     ("medium", None, "https://medium.com/@ysskrishna", "https://medium.com/@ysskrishna"),
     ("mercari", "123456789", "https://jp.mercari.com/user/profile/123456789", "https://jp.mercari.com/user/profile/123456789"),
     ("misskey", "syuilo", "https://misskey.io/@syuilo", "https://misskey.io/@syuilo"),
+    ("mixcloud", "NTSRadio", "https://www.mixcloud.com/NTSRadio/", "https://www.mixcloud.com/NTSRadio"),
     ("modrinth", "jellysquid3", "https://modrinth.com/user/jellysquid3", "https://modrinth.com/user/jellysquid3"),
     ("myanimelist", "Xinil", "https://myanimelist.net/profile/Xinil", "https://myanimelist.net/profile/Xinil"),
     ("naver_blog", "naver_diary", "https://blog.naver.com/naver_diary", "https://blog.naver.com/naver_diary"),

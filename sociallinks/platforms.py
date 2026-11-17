@@ -2029,5 +2029,15 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://blog.naver.com/{id}"
         }
+    ],
+    "mixcloud": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?mixcloud\.com/(?!(?:about|login|settings|explore|search|help|pricing|signup|terms|privacy|sign\-up|register|blog|faq|dashboard|account|home|support|contact|careers|legal|discover|features|apps|download|upload|live|select|genres|categories|tag|pro|creators|notifications|favorites|reposts)/?$){PROFILE_ID_UNICODE}/?$",
+                rf"https?://m\.mixcloud\.com/{PROFILE_ID_UNICODE}/?$",
+                rf"^{PROFILE_ID_UNICODE}$"
+            ],
+            "sanitized": "https://www.mixcloud.com/{id}"
+        }
     ]
 }
