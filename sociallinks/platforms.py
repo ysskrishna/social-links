@@ -809,5 +809,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://tryhackme.com/p/{id}"
         }
+    ],
+    "qiita": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?qiita\.com/(?!(?:about|login|settings|explore|search|help|pricing|signup|terms|privacy|organizations|tags|trend|items|advent\-calendar|question\-feed|official\-events|official\-columns|opportunities|timeline|release\-notes|api|drafts|stock|discussions|users|badges|ranking|engineer\-festa|official\-campaigns|features|notifications|qiita\-award|community)/?$){PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://qiita.com/{id}"
+        }
     ]
 }
