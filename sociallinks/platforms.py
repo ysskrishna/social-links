@@ -1771,5 +1771,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://app.fanfix.io/@{id}"
         }
+    ],
+    "campsite_bio": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?campsite\.bio/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://campsite.bio/{id}"
+        }
     ]
 }
