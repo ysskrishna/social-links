@@ -145,6 +145,7 @@ HAPPY_PATH = [
     ("signal", "abc123xyz", "https://signal.me/#p/abc123xyz", "https://signal.me/#p/abc123xyz"),
     ("slideshare", "michaelyublosky", "https://www.slideshare.net/michaelyublosky", "https://www.slideshare.net/michaelyublosky"),
     ("snapchat", None, "https://snapchat.com/add/ysskrishna", "https://snapchat.com/@ysskrishna"),
+    ("solo_to", "ysskrishna", "https://solo.to/ysskrishna", "https://solo.to/ysskrishna"),
     ("soop", "phonics1", "https://www.sooplive.com/station/phonics1", "https://www.sooplive.com/station/phonics1"),
     ("soundcloud", "ysskrishna", "https://soundcloud.com/ysskrishna", "https://soundcloud.com/ysskrishna"),
     ("sourceforge", "rspeed", "https://sourceforge.net/u/rspeed/profile", "https://sourceforge.net/u/rspeed/profile"),

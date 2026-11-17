@@ -168,6 +168,7 @@ PLATFORM_META: Dict[str, Tuple[str, str, Optional[str]]] = {
     "signal": ("Signal", "https://signal.me", None),
     "slideshare": ("SlideShare", "https://slideshare.net", None),
     "snapchat": ("Snapchat", "https://snapchat.com", None),
+    "solo_to": ("solo.to", "https://solo.to", None),
     "soop": ("SOOP (AfreecaTV)", "https://sooplive.com", None),
     "soundcloud": ("SoundCloud", "https://soundcloud.com", None),
     "sourceforge": ("SourceForge", "https://sourceforge.net", None),
