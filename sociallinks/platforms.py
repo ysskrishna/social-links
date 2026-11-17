@@ -1177,5 +1177,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://www.nicovideo.jp/user/{id}"
         }
+    ],
+    "roblox": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?(?:web\.)?roblox\.com/(?:[a-z][a-z]/)?users/{NUMERIC_ID}(?:/profile)?/?$",
+                rf"^{NUMERIC_ID}$"
+            ],
+            "sanitized": "https://www.roblox.com/users/{id}/profile"
+        }
     ]
 }
