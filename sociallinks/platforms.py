@@ -2029,5 +2029,15 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://blog.naver.com/{id}"
         }
+    ],
+    "mixcloud": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?mixcloud\.com/{PROFILE_ID_UNICODE}/?$",
+                rf"https?://m\.mixcloud\.com/{PROFILE_ID_UNICODE}/?$",
+                rf"^{PROFILE_ID_UNICODE}$"
+            ],
+            "sanitized": "https://www.mixcloud.com/{id}"
+        }
     ]
 }
