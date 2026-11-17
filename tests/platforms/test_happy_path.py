@@ -34,6 +34,7 @@ HAPPY_PATH = [
     ("figma", "figma", "https://www.figma.com/@figma", "https://www.figma.com/@figma"),
     ("fiverr", "ysskrishna", "https://www.fiverr.com/ysskrishna", "https://www.fiverr.com/ysskrishna"),
     ("flickr", "dv-hans", "https://www.flickr.com/people/dv-hans", "https://www.flickr.com/people/dv-hans"),
+    ("freelancer", "ysskrishna", "https://www.freelancer.com/u/ysskrishna", "https://www.freelancer.com/u/ysskrishna"),
     ("github", "ysskrishna", "https://github.com/ysskrishna", "https://github.com/ysskrishna"),
     ("gitlab", "ysskrishna", "https://gitlab.com/ysskrishna", "https://gitlab.com/ysskrishna"),
     ("google_scholar", "JicYPdAAAAAJ", "https://scholar.google.com/citations?user=JicYPdAAAAAJ&hl=en", "https://scholar.google.com/citations?user=JicYPdAAAAAJ"),

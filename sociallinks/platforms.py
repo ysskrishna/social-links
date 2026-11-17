@@ -946,5 +946,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://topmate.io/{id}"
         }
+    ],
+    "freelancer": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?freelancer\.(?:com|in|ca|de|es|fr|ie|ph|pk|sg|hk|my|mx|cl|co\.uk|com\.au|co\.nz|co\.za|co\.id|com\.bd|com\.jm|com\.ar|com\.pe)/u/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.freelancer.com/u/{id}"
+        }
     ]
 }
