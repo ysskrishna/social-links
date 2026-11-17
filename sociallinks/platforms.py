@@ -1286,5 +1286,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://crates.io/users/{id}"
         }
+    ],
+    "gitee": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?gitee\.com/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://gitee.com/{id}"
+        }
     ]
 }
