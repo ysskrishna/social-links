@@ -24,6 +24,7 @@ HAPPY_PATH = [
     ("blogger", "05229574233543423344", "https://www.blogger.com/profile/05229574233543423344", "https://www.blogger.com/profile/05229574233543423344"),
     ("bluesky", "ysskrishna.bsky.social", "https://bsky.app/profile/ysskrishna.bsky.social", "https://bsky.app/profile/ysskrishna.bsky.social"),
     ("buymeacoffee", "ysskrishna", "https://www.buymeacoffee.com/ysskrishna", "https://buymeacoffee.com/ysskrishna"),
+    ("campsite_bio", "ysskrishna", "https://campsite.bio/ysskrishna", "https://campsite.bio/ysskrishna"),
     ("carrd", "ysskrishna", "https://ysskrishna.carrd.co", "https://ysskrishna.carrd.co"),
     ("character_ai", "ysskrishna", "https://character.ai/profile/ysskrishna", "https://character.ai/profile/ysskrishna"),
     ("chess_com", "ysskrishna", "https://www.chess.com/member/ysskrishna", "https://www.chess.com/member/ysskrishna"),
