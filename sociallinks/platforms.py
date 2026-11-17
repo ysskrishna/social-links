@@ -918,5 +918,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://farcaster.xyz/{id}"
         }
+    ],
+    "figma": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?figma\.com/@{PROFILE_ID}/?$",
+                rf"^@?{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.figma.com/@{id}"
+        }
     ]
 }

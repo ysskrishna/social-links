@@ -31,6 +31,7 @@ HAPPY_PATH = [
     ("exercism", "ysskrishna", "https://exercism.org/profiles/ysskrishna", "https://exercism.org/profiles/ysskrishna"),
     ("facebook", "ysskrishna", "https://facebook.com/ysskrishna", "https://facebook.com/ysskrishna"),
     ("farcaster", "dwr.eth", "https://farcaster.xyz/dwr.eth", "https://farcaster.xyz/dwr.eth"),
+    ("figma", "figma", "https://www.figma.com/@figma", "https://www.figma.com/@figma"),
     ("fiverr", "ysskrishna", "https://www.fiverr.com/ysskrishna", "https://www.fiverr.com/ysskrishna"),
     ("flickr", "dv-hans", "https://www.flickr.com/people/dv-hans", "https://www.flickr.com/people/dv-hans"),
     ("github", "ysskrishna", "https://github.com/ysskrishna", "https://github.com/ysskrishna"),
