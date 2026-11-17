@@ -34,6 +34,7 @@ COLUMNS = 3
 # key -> (display name, homepage, optional note)
 PLATFORM_META: Dict[str, Tuple[str, str, Optional[str]]] = {
     "500px": ("500px", "https://500px.com", None),
+    "about_me": ("About.me", "https://about.me", None),
     "airbnb": ("Airbnb", "https://airbnb.com", None),
     "ameblo": ("Ameba Blog", "https://ameblo.jp", None),
     "anilist": ("AniList", "https://anilist.co", None),

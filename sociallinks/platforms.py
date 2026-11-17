@@ -2257,5 +2257,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://myspace.com/{id}"
         }
+    ],
+    "about_me": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?about\.me/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://about.me/{id}"
+        }
     ]
 }
