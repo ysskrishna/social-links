@@ -5,6 +5,7 @@ from sociallinks.constants import (
     PROFILE_ID_EXTENDED,
     PHONE_NUMBER,
     NUMERIC_ID,
+    NOSTR_NPUB,
     PlatformEntries,
 )
 
@@ -999,6 +1000,16 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
                 rf"^@?{PROFILE_ID}$"
             ],
             "sanitized": "https://hey.xyz/u/{id}"
+        }
+    ],
+    "primal": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?primal\.net/p/{NOSTR_NPUB}/?$",
+                r"https?://(www\.)?primal\.net/p/(?P<id>[0-9a-fA-F]{64})/?$",
+                rf"^{NOSTR_NPUB}$"
+            ],
+            "sanitized": "https://primal.net/p/{id}"
         }
     ]
 }
