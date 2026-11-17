@@ -1350,5 +1350,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://genius.com/{id}"
         }
+    ],
+    "lemon8": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?lemon8-app\.com/(?:[a-z][a-z](?:-[a-z][a-z])?/)?@{PROFILE_ID}/?$",
+                rf"^@?{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.lemon8-app.com/@{id}"
+        }
     ]
 }
