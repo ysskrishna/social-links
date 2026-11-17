@@ -1168,5 +1168,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://modrinth.com/user/{id}"
         }
+    ],
+    "niconico": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?nicovideo\.jp/user/{NUMERIC_ID}/?$",
+                rf"^{NUMERIC_ID}$"
+            ],
+            "sanitized": "https://www.nicovideo.jp/user/{id}"
+        }
     ]
 }

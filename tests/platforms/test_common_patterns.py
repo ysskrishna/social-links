@@ -66,6 +66,7 @@ def _get_test_profile_id(platform_name: str) -> str:
         "bilibili": "2",
         "goodreads": "1",
         "pixiv": "11",
+        "niconico": "1",
     }
     
     return special_ids.get(platform_name, "ysskrishna")
