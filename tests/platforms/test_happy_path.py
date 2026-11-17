@@ -14,6 +14,7 @@ HAPPY_PATH = [
     ("apple_music", "136975", "https://music.apple.com/artist/136975", "https://music.apple.com/artist/136975"),
     ("artstation", "ysskrishna", "https://www.artstation.com/ysskrishna", "https://www.artstation.com/ysskrishna"),
     ("atcoder", "tourist", "https://atcoder.jp/users/tourist", "https://atcoder.jp/users/tourist"),
+    ("audioboom", "4256218", "https://audioboom.com/channels/4256218-no-such-thing-as-a-fish", "https://audioboom.com/channels/4256218"),
     ("bandcamp", "ysskrishna", "https://ysskrishna.bandcamp.com", "https://ysskrishna.bandcamp.com"),
     ("beacons", "ysskrishna", "https://beacons.ai/ysskrishna", "https://beacons.ai/ysskrishna"),
     ("behance", "ysskrishna", "https://behance.net/ysskrishna", "https://behance.net/ysskrishna"),
