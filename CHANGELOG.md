@@ -5,6 +5,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.5.0]
+
+### Added
+
+- 171 new platforms (171 new keys in `PREDEFINED_PLATFORMS`):
+  - AtCoder, Bilibili, Civitai, ClawHub, CodeChef, Discogs, Douban, eBay, Farcaster, Figma, Freelancer.com, GOG, Goodreads, Google Scholar, Habr, Hey.xyz, Hugging Face, Imgur, itch.io, Kick, Letterboxd, Lobsters, Misskey, Modrinth, MyAnimeList, Niconico, NuGet, Odysee, OpenSea, OpenStreetMap, osu!, Pixelfed, Pixiv, Poshmark, Primal, Qiita, Replicate, RubyGems, Scratch, SourceForge, SourceHut, Speedrun.com, Stack Exchange, Stan Store, Topcoder, Topmate, TryHackMe, Zenn.
+  - 500px, Airbnb, Ameba Blog, AniList, Are.na, Audioboom, Audiomack, Beacons, Bio.link, BitChute, Blogger, Brunch, Buttondown, Buy Me a Coffee, Campsite.bio, Cara, Carrd, Character.AI, Chub.ai, CHZZK, Codeberg, Codecademy, Codeforces, Codementor, CodeSandbox, Codewars, Contra, Coursera, crates.io, CSDN, CurseForge, Depop, DeviantArt, Douyu, Dzen, FACEIT, Fanfix, Flipboard, freeCodeCamp, Fur Affinity, Game Jolt, Genius, Gitee, Hatena Blog, Hoo.be, Huya, iNaturalist, Issuu, Jamendo, Juejin, KakaoTalk Channel, Khan Academy, Kickstarter, Ko-fi, Komoot, Last.fm, Launchpad, Lemon8, LINE, Malt, Mercari, Minds, Mixcloud, Naver Blog, Nimo TV, note, npm, OK.ru, Ollama, ORCID, OSF, Packagist, Paragraph, Pexels, RateYourMusic, Redbubble, ResearchGate, Roblox, Royal Road, Rutube, Scribd, Semantic Scholar, ShareChat, Sketchfab, Slashdot, solo.to, SOOP (AfreecaTV), start.gg, Taplink, The StoryGraph, Thingiverse, Throne, Tistory, Toyhouse, Trakt, Tripadvisor, Trustpilot, Truth Social, Udemy, Untappd, Velog, Vinted, Wattpad, Weights & Biases, XDA Forums, Xiaohongshu (RedNote), XING.
+  - About.me, Anaconda.org, Bugcrowd, GeeksforGeeks, HackerEarth, HackerOne, Hex, Indie Hackers, Instructables, Liberapay, MetaCPAN, Myspace, OnlyFans, Open Collective, TMDB, WordPress.org.
+- Public constants `NUMERIC_ID`, `HEX32_ID`, `ORCID_ID` and `NOSTR_NPUB` in `sociallinks.constants`. They are registered as bare-id patterns, so `detect_platform()` still returns `None` for a bare id.
+
+### Changed
+
+- Tests: the happy path of every platform lives in one parametrized table, `tests/platforms/test_happy_path.py`. `tests/platforms/test_real_handles.py` checks real public handles for each new platform.
+
 ## [1.4.0]
 
 ### Fixed
@@ -211,6 +225,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Automatic @ symbol handling
 - URL normalization and sanitization
 
+[1.5.0]: https://github.com/ysskrishna/social-links/compare/v1.4.0...v1.5.0
+[1.4.0]: https://github.com/ysskrishna/social-links/compare/v1.3.1...v1.4.0
 [1.3.1]: https://github.com/ysskrishna/social-links/compare/v1.3.0...v1.3.1
 [1.3.0]: https://github.com/ysskrishna/social-links/compare/v1.2.1...v1.3.0
 [1.2.1]: https://github.com/ysskrishna/social-links/compare/v1.2.0...v1.2.1
