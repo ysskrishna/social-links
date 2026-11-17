@@ -2167,5 +2167,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://onlyfans.com/{id}"
         }
+    ],
+    "opencollective": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?opencollective\.com/(?!(?:about|login|settings|explore|search|help|pricing|signup|terms|privacy|sign\-up|register|blog|faq|dashboard|account|home|support|contact|careers|legal|discover|features|apps|download|create|signin|how\-it\-works|become\-a\-host|opensource|e2c|fiscal\-hosting|collectives|organizations|expenses|solutions|embed|static|api)/?$){PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://opencollective.com/{id}"
+        }
     ]
 }
