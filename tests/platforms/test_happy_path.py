@@ -144,6 +144,7 @@ HAPPY_PATH = [
     ("stack_exchange", "1", "https://stackexchange.com/users/1/jeff-atwood", "https://stackexchange.com/users/1"),
     ("stackoverflow", "12345", "https://stackoverflow.com/users/12345", "https://stackoverflow.com/users/12345"),
     ("stan_store", "vanessalau", "https://stan.store/vanessalau", "https://stan.store/vanessalau"),
+    ("start_gg", "0e1e3b6c", "https://www.start.gg/user/0e1e3b6c", "https://www.start.gg/user/0e1e3b6c"),
     ("steam", "pepepro76561198317693716", "https://steamcommunity.com/id/pepepro76561198317693716", "https://steamcommunity.com/id/pepepro76561198317693716"),
     ("storygraph", "ysskrishna", "https://app.thestorygraph.com/profile/ysskrishna", "https://app.thestorygraph.com/profile/ysskrishna"),
     ("substack", "ysskrishna", "https://ysskrishna.substack.com", "https://substack.com/@ysskrishna"),

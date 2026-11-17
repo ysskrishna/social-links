@@ -167,6 +167,7 @@ PLATFORM_META: Dict[str, Tuple[str, str, Optional[str]]] = {
     "stack_exchange": ("Stack Exchange", "https://stackexchange.com", None),
     "stackoverflow": ("Stack Overflow", "https://stackoverflow.com", None),
     "stan_store": ("Stan Store", "https://stan.store", None),
+    "start_gg": ("start.gg", "https://start.gg", None),
     "steam": ("Steam", "https://steamcommunity.com", None),
     "storygraph": ("The StoryGraph", "https://thestorygraph.com", None),
     "substack": ("Substack", "https://substack.com", None),
