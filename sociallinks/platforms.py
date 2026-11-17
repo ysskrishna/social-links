@@ -1606,5 +1606,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://www.faceit.com/en/players/{id}"
         }
+    ],
+    "gamejolt": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?gamejolt\.com/@{PROFILE_ID}/?$",
+                rf"^@?{PROFILE_ID}$"
+            ],
+            "sanitized": "https://gamejolt.com/@{id}"
+        }
     ]
 }
