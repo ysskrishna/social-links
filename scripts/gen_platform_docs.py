@@ -94,6 +94,7 @@ PLATFORM_META: Dict[str, Tuple[str, str, Optional[str]]] = {
     "nuget": ("NuGet", "https://nuget.org", None),
     "opensea": ("OpenSea", "https://opensea.io", None),
     "openstreetmap": ("OpenStreetMap", "https://openstreetmap.org", None),
+    "osu": ("osu!", "https://osu.ppy.sh", None),
     "patreon": ("Patreon", "https://patreon.com", None),
     "pinterest": ("Pinterest", "https://pinterest.com", None),
     "pixelfed": ("Pixelfed", "https://pixelfed.social", None),

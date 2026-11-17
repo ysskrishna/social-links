@@ -1094,5 +1094,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://myanimelist.net/profile/{id}"
         }
+    ],
+    "osu": [
+        {
+            "patterns": [
+                rf"https?://osu\.ppy\.sh/(?:users|u)/{PROFILE_ID_UNICODE}(?:/(?:osu|taiko|fruits|mania))?/?$",
+                rf"^{PROFILE_ID_UNICODE}$"
+            ],
+            "sanitized": "https://osu.ppy.sh/users/{id}"
+        }
     ]
 }
