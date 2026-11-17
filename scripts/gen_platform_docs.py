@@ -236,6 +236,7 @@ PLATFORM_META: Dict[str, Tuple[str, str, Optional[str]]] = {
     "x": ("X (Twitter)", "https://x.com", None),
     "xda": ("XDA Forums", "https://xdaforums.com", None),
     "xiaohongshu": ("Xiaohongshu (RedNote)", "https://www.xiaohongshu.com", None),
+    "xing": ("XING", "https://xing.com", None),
     "youtube": ("YouTube", "https://youtube.com", None),
     "zenn": ("Zenn", "https://zenn.dev", None),
 }

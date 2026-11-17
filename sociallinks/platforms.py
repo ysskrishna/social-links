@@ -1983,5 +1983,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://www.vinted.com/member/{id}"
         }
+    ],
+    "xing": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?xing\.com/profile/{PROFILE_ID_UNICODE}(?:/cv)?/?$",
+                rf"^{PROFILE_ID_UNICODE}$"
+            ],
+            "sanitized": "https://www.xing.com/profile/{id}"
+        }
     ]
 }

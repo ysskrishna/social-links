@@ -213,6 +213,7 @@ HAPPY_PATH = [
     ("x", None, "https://x.com/ysskrishna", "https://x.com/ysskrishna"),
     ("xda", "ysskrishna.123456", "https://xdaforums.com/m/ysskrishna.123456/", "https://xdaforums.com/m/ysskrishna.123456"),
     ("xiaohongshu", "5ff0e6410000000001008400", "https://www.xiaohongshu.com/user/profile/5ff0e6410000000001008400", "https://www.rednote.com/user/profile/5ff0e6410000000001008400"),
+    ("xing", "Thomas_Vollmoeller", "https://www.xing.com/profile/Thomas_Vollmoeller", "https://www.xing.com/profile/Thomas_Vollmoeller"),
     ("youtube", None, "https://youtube.com/@ysskrishna", "https://youtube.com/@ysskrishna"),
     ("zenn", "catnose", "https://zenn.dev/catnose", "https://zenn.dev/catnose"),
 ]
