@@ -1,0 +1,34 @@
+{
+  "$schema": "https://context7.com/schema/context7.json",
+  "projectTitle": "social-links",
+  "description": "Zero-dependency Python library to detect, validate, sanitize and extract usernames from social media profile URLs for 65+ platforms (LinkedIn, GitHub, X/Twitter, Instagram, YouTube and more), with support for custom regex-based platforms.",
+  "excludeFolders": [
+    "archive",
+    "archived",
+    "old",
+    "deprecated",
+    "legacy",
+    "tests",
+    ".github",
+    "docs",
+    "scripts",
+    "media"
+  ],
+  "excludeFiles": [
+    "CHANGELOG.md",
+    "changelog.md",
+    "LICENSE.md",
+    "license.md",
+    "CODE_OF_CONDUCT.md",
+    "NEWS.md",
+    "CONTRIBUTING.md",
+    "SECURITY.md",
+    "AGENTS.md"
+  ],
+  "rules": [
+    "Install with pip install social-links but import from sociallinks (for example: from sociallinks import detect_platform, sanitize).",
+    "detect_platform() returns None for a bare username; pass the platform name to is_valid() or sanitize() to check a bare ID.",
+    "sanitize() and extract_id() raise URLMismatchError when the URL does not match the named platform.",
+    "Use the SocialLinks class for custom platforms; set_platform() raises PlatformAlreadyExistsError unless override=True."
+  ]
+}

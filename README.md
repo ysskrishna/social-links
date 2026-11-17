@@ -223,6 +223,8 @@ sl.list_platforms()  # ["behance", "dev_to", "dribbble", ...]
 #### Configuration Options
 
 ```python
+from sociallinks import SocialLinks
+
 import re
 
 # Start with empty platform list (useful for custom platforms only)
@@ -341,7 +343,7 @@ linkedin_style_platform = [
     {
         "patterns": [
             r"https?://(www\.)?example\.com/profile/(?P<id>[A-Za-z0-9_-]+)/?$",
-            r"https?://example\.com/user/(?P<id>[A-Za-z0-9_-]+)/?$"
+            r"https?://(www\.)?example\.com/user/(?P<id>[A-Za-z0-9_-]+)/?$"
         ],
         "sanitized": "https://example.com/profile/{id}"  # Personal profiles
     },
@@ -391,6 +393,10 @@ platforms = sl.list_platforms()
 #### Adding Platforms
 
 ```python
+from sociallinks import SocialLinks
+
+sl = SocialLinks()
+
 # Add a new platform (raises error if platform already exists)
 custom_platform = [{
     "patterns": [r"https?://example.com/(?P<id>[A-Za-z0-9_]+)"],
@@ -405,6 +411,10 @@ sl.set_platform("github", custom_platform, override=True)
 #### Adding Multiple Platforms
 
 ```python
+from sociallinks import SocialLinks
+
+sl = SocialLinks()
+
 # Add multiple platforms at once
 new_platforms = {
     "platform1": [{
@@ -424,6 +434,10 @@ sl.set_platforms(new_platforms, override=True)   # Overrides existing platforms
 #### Modifying Existing Platforms
 
 ```python
+from sociallinks import SocialLinks
+
+sl = SocialLinks()
+
 # Get existing configuration
 github_config = sl.get_platform("github")
 
@@ -438,6 +452,10 @@ sl.set_platform("github", custom_github, override=True)
 #### Removing Platforms
 
 ```python
+from sociallinks import SocialLinks
+
+sl = SocialLinks()
+
 # Delete a single platform
 sl.delete_platform("custom_platform")
 
@@ -461,6 +479,8 @@ Registration is all-or-nothing: if a configuration is invalid, `set_platform()` 
 Here's a complete example showing how to build a custom platform manager:
 
 ```python
+from sociallinks import is_valid
+
 from sociallinks import SocialLinks
 
 # Start with predefined platforms
@@ -470,7 +490,7 @@ sl = SocialLinks()
 my_platform = [{
     "patterns": [
         r"https?://(www\.)?mysite\.com/profile/(?P<id>[A-Za-z0-9_]+)/?$",
-        r"https?://mysite\.com/u/(?P<id>[A-Za-z0-9_]+)/?$"
+        r"https?://(www\.)?mysite\.com/u/(?P<id>[A-Za-z0-9_]+)/?$"
     ],
     "sanitized": "https://mysite.com/profile/{id}"
 }]
@@ -489,6 +509,10 @@ print(f"Total platforms: {len(all_platforms)}")
 ```
 
 </details>
+
+## API Reference
+
+Every public function, `SocialLinks` method and exception, with parameters, return values and examples, is listed in [API.md](API.md).
 
 ## Built and maintained by
 
