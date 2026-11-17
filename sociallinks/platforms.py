@@ -1514,5 +1514,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://forge.coreweave.com/profile/{id}"
         }
+    ],
+    "chub_ai": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?chub\.ai/users/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://chub.ai/users/{id}"
+        }
     ]
 }

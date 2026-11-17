@@ -48,6 +48,7 @@ PLATFORM_META: Dict[str, Tuple[str, str, Optional[str]]] = {
     "carrd": ("Carrd", "https://carrd.co", None),
     "character_ai": ("Character.AI", "https://character.ai", None),
     "chess_com": ("Chess.com", "https://chess.com", None),
+    "chub_ai": ("Chub.ai", "https://chub.ai", "(NSFW)"),
     "civitai": ("Civitai", "https://civitai.com", None),
     "clawhub": ("ClawHub", "https://clawhub.ai", None),
     "codeberg": ("Codeberg", "https://codeberg.org", None),
