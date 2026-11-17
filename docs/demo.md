@@ -220,7 +220,7 @@ Try the `social-links` library directly in your browser! This page uses [Pyodide
         <!-- List Platforms Section -->
         <div class="op-section" data-op="platforms">
           <h3 class="op-title">Supported Platforms</h3>
-          <p class="op-description">View all 185+ supported social media platforms with built-in validation rules.</p>
+          <p class="op-description">View all 190+ supported social media platforms with built-in validation rules.</p>
 
           <button id="platforms-btn" class="execute-btn">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>

@@ -1834,5 +1834,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://www.furaffinity.net/user/{id}"
         }
+    ],
+    "toyhouse": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?toyhou\.se/(?![0-9]+\.){PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://toyhou.se/{id}"
+        }
     ]
 }

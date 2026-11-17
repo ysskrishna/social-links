@@ -199,6 +199,7 @@ PLATFORM_META: Dict[str, Tuple[str, str, Optional[str]]] = {
     "tistory": ("Tistory", "https://tistory.com", None),
     "topcoder": ("Topcoder", "https://topcoder.com", None),
     "topmate": ("Topmate", "https://topmate.io", None),
+    "toyhouse": ("Toyhouse", "https://toyhou.se", None),
     "trello": ("Trello", "https://trello.com", None),
     "trustpilot": ("Trustpilot", "https://trustpilot.com", None),
     "truth_social": ("Truth Social", "https://truthsocial.com", None),
