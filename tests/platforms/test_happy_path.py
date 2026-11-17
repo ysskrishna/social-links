@@ -17,6 +17,7 @@ HAPPY_PATH = [
     ("behance", "ysskrishna", "https://behance.net/ysskrishna", "https://behance.net/ysskrishna"),
     ("bluesky", "ysskrishna.bsky.social", "https://bsky.app/profile/ysskrishna.bsky.social", "https://bsky.app/profile/ysskrishna.bsky.social"),
     ("chess_com", "ysskrishna", "https://www.chess.com/member/ysskrishna", "https://www.chess.com/member/ysskrishna"),
+    ("civitai", "ysskrishna", "https://civitai.com/user/ysskrishna", "https://civitai.com/user/ysskrishna"),
     ("clawhub", "steipete", "https://clawhub.ai/steipete", "https://clawhub.ai/steipete"),
     ("codechef", "gennady.korotkevich", "https://www.codechef.com/users/gennady.korotkevich", "https://www.codechef.com/users/gennady.korotkevich"),
     ("codepen", "ysskrishna", "https://codepen.io/ysskrishna", "https://codepen.io/ysskrishna"),

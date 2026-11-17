@@ -973,5 +973,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://poshmark.com/closet/{id}"
         }
+    ],
+    "civitai": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?civitai\.com/user/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://civitai.com/user/{id}"
+        }
     ]
 }
