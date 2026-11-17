@@ -1250,5 +1250,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://beacons.ai/{id}"
         }
+    ],
+    "codeforces": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?(?:m[0-9]\.)?codeforces\.com/profile/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://codeforces.com/profile/{id}"
+        }
     ]
 }
