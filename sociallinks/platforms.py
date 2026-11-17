@@ -2149,5 +2149,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://slashdot.org/~{id}"
         }
+    ],
+    "researchgate": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?researchgate\.net/profile/{PROFILE_ID_UNICODE}(?:/research)?/?$",
+                rf"^{PROFILE_ID_UNICODE}$"
+            ],
+            "sanitized": "https://www.researchgate.net/profile/{id}"
+        }
     ]
 }

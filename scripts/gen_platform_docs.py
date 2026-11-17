@@ -190,6 +190,7 @@ PLATFORM_META: Dict[str, Tuple[str, str, Optional[str]]] = {
     "reddit": ("Reddit", "https://reddit.com", None),
     "replicate": ("Replicate", "https://replicate.com", None),
     "replit": ("Replit", "https://replit.com", None),
+    "researchgate": ("ResearchGate", "https://researchgate.net", None),
     "roblox": ("Roblox", "https://roblox.com", None),
     "royal_road": ("Royal Road", "https://royalroad.com", None),
     "rubygems": ("RubyGems", "https://rubygems.org", None),
