@@ -50,6 +50,7 @@ HAPPY_PATH = [
     ("figma", "figma", "https://www.figma.com/@figma", "https://www.figma.com/@figma"),
     ("fiverr", "ysskrishna", "https://www.fiverr.com/ysskrishna", "https://www.fiverr.com/ysskrishna"),
     ("flickr", "dv-hans", "https://www.flickr.com/people/dv-hans", "https://www.flickr.com/people/dv-hans"),
+    ("flipboard", "flipboard", "https://flipboard.com/@flipboard", "https://flipboard.com/@flipboard"),
     ("freelancer", "ysskrishna", "https://www.freelancer.com/u/ysskrishna", "https://www.freelancer.com/u/ysskrishna"),
     ("genius", "Ferrari_Fairy", "https://genius.com/Ferrari_Fairy", "https://genius.com/Ferrari_Fairy"),
     ("gitee", "openharmony", "https://gitee.com/openharmony", "https://gitee.com/openharmony"),
