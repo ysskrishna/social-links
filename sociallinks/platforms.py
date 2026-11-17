@@ -2103,5 +2103,15 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://www.codementor.io/@{id}"
         }
+    ],
+    "trakt": [
+        {
+            "patterns": [
+                rf"https?://app\.trakt\.tv/profile/{PROFILE_ID}/?$",
+                rf"https?://(www\.)?trakt\.tv/users/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://app.trakt.tv/profile/{id}"
+        }
     ]
 }

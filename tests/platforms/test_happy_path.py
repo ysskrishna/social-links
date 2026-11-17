@@ -200,6 +200,7 @@ HAPPY_PATH = [
     ("topcoder", "tourist", "https://profiles.topcoder.com/tourist", "https://profiles.topcoder.com/tourist"),
     ("topmate", "ysskrishna", "https://topmate.io/ysskrishna", "https://topmate.io/ysskrishna"),
     ("toyhouse", "Toyhouse", "https://toyhou.se/Toyhouse", "https://toyhou.se/Toyhouse"),
+    ("trakt", "justin", "https://app.trakt.tv/profile/justin", "https://app.trakt.tv/profile/justin"),
     ("trello", "ysskrishna", "https://trello.com/ysskrishna", "https://trello.com/ysskrishna"),
     ("tripadvisor", "ysskrishna", "https://www.tripadvisor.com/Profile/ysskrishna", "https://www.tripadvisor.com/Profile/ysskrishna"),
     ("trustpilot", "5b4f2f0c4de5666d343f7c48", "https://www.trustpilot.com/users/5b4f2f0c4de5666d343f7c48", "https://www.trustpilot.com/users/5b4f2f0c4de5666d343f7c48"),
