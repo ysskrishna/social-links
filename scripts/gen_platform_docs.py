@@ -141,6 +141,7 @@ PLATFORM_META: Dict[str, Tuple[str, str, Optional[str]]] = {
     "linkedin": ("LinkedIn", "https://linkedin.com", "(personal & company)"),
     "linktree": ("Linktree", "https://linktr.ee", None),
     "lobsters": ("Lobsters", "https://lobste.rs", None),
+    "malt": ("Malt", "https://malt.com", None),
     "mastodon": ("Mastodon", "https://mastodon.social", None),
     "medium": ("Medium", "https://medium.com", None),
     "mercari": ("Mercari", "https://jp.mercari.com", None),
