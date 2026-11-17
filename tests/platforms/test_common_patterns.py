@@ -74,6 +74,7 @@ def _get_test_profile_id(platform_name: str) -> str:
         "blogger": "05229574233543423344",
         "juejin": "1838039172387262",
         "coursera": "85dca6cc1c1ccacdb8d6cbc3853c8eff",
+        "semantic_scholar": "1741101",
     }
     
     return special_ids.get(platform_name, "ysskrishna")
