@@ -1965,5 +1965,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://sharechat.com/profile/{id}"
         }
+    ],
+    "mercari": [
+        {
+            "patterns": [
+                rf"https?://jp\.mercari\.com/user/profile/{NUMERIC_ID}/?$",
+                rf"^{NUMERIC_ID}$"
+            ],
+            "sanitized": "https://jp.mercari.com/user/profile/{id}"
+        }
     ]
 }
