@@ -1313,5 +1313,15 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://anilist.co/user/{id}"
         }
+    ],
+    "deviantart": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?deviantart\.com/{PROFILE_ID}/?$",
+                r"https?://(?!www\.)(?P<id>[A-Za-z0-9-]+)\.deviantart\.com/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.deviantart.com/{id}"
+        }
     ]
 }
