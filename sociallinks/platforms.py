@@ -836,5 +836,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://zenn.dev/{id}"
         }
+    ],
+    "rubygems": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?rubygems\.org/profiles/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://rubygems.org/profiles/{id}"
+        }
     ]
 }
