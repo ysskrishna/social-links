@@ -1232,5 +1232,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://orcid.org/{id}"
         }
+    ],
+    "npm": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?npmjs\.com/~{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.npmjs.com/~{id}"
+        }
     ]
 }
