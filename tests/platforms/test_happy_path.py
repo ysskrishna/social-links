@@ -90,6 +90,7 @@ HAPPY_PATH = [
     ("reddit", "ysskrishna", "https://reddit.com/user/ysskrishna", "https://reddit.com/user/ysskrishna"),
     ("replicate", "ysskrishna", "https://replicate.com/ysskrishna", "https://replicate.com/ysskrishna"),
     ("replit", "ysskrishna", "https://replit.com/@ysskrishna", "https://replit.com/@ysskrishna"),
+    ("roblox", "1", "https://www.roblox.com/users/1/profile", "https://www.roblox.com/users/1/profile"),
     ("rubygems", "dhh", "https://rubygems.org/profiles/dhh", "https://rubygems.org/profiles/dhh"),
     ("rumble", "ysskrishna", "https://rumble.com/user/ysskrishna", "https://rumble.com/user/ysskrishna"),
     ("scratch", "griffpatch", "https://scratch.mit.edu/users/griffpatch/", "https://scratch.mit.edu/users/griffpatch"),
