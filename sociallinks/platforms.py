@@ -1259,5 +1259,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://codeforces.com/profile/{id}"
         }
+    ],
+    "codewars": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?codewars\.com/users/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.codewars.com/users/{id}"
+        }
     ]
 }

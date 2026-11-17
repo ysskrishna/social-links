@@ -25,6 +25,7 @@ HAPPY_PATH = [
     ("codechef", "gennady.korotkevich", "https://www.codechef.com/users/gennady.korotkevich", "https://www.codechef.com/users/gennady.korotkevich"),
     ("codeforces", "tourist", "https://codeforces.com/profile/tourist", "https://codeforces.com/profile/tourist"),
     ("codepen", "ysskrishna", "https://codepen.io/ysskrishna", "https://codepen.io/ysskrishna"),
+    ("codewars", "jhoffner", "https://www.codewars.com/users/jhoffner", "https://www.codewars.com/users/jhoffner"),
     ("crunchbase", None, "https://www.crunchbase.com/organization/slack", "https://www.crunchbase.com/organization/slack"),
     ("dailymotion", "ysskrishna", "https://www.dailymotion.com/ysskrishna", "https://www.dailymotion.com/ysskrishna"),
     ("dev_to", "ysskrishna", "https://dev.to/ysskrishna", "https://dev.to/ysskrishna"),
