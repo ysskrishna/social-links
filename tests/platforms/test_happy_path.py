@@ -85,6 +85,7 @@ HAPPY_PATH = [
     ("inaturalist", "kueda", "https://www.inaturalist.org/people/kueda", "https://www.inaturalist.org/people/kueda"),
     ("instagram", "ysskrishna", "https://instagram.com/ysskrishna", "https://instagram.com/ysskrishna"),
     ("itch_io", "leafo", "https://itch.io/profile/leafo", "https://itch.io/profile/leafo"),
+    ("jamendo", "1", "https://www.jamendo.com/user/1/name", "https://www.jamendo.com/user/1"),
     ("juejin", "1838039172387262", "https://juejin.cn/user/1838039172387262", "https://juejin.cn/user/1838039172387262"),
     ("kaggle", "ysskrishna", "https://www.kaggle.com/ysskrishna", "https://www.kaggle.com/ysskrishna"),
     ("keybase", "ysskrishna", "https://keybase.io/ysskrishna", "https://keybase.io/ysskrishna"),

@@ -1707,5 +1707,15 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://audioboom.com/channels/{id}"
         }
+    ],
+    "jamendo": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?jamendo\.com/user/{NUMERIC_ID}(?:/[^/?#]+)?/?$",
+                rf"https?://(www\.)?jamendo\.com/user/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.jamendo.com/user/{id}"
+        }
     ]
 }
