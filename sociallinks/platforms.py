@@ -2057,5 +2057,15 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://www.bitchute.com/channel/{id}"
         }
+    ],
+    "line": [
+        {
+            "patterns": [
+                rf"https?://page\.line\.me/{PROFILE_ID}/?$",
+                rf"https?://line\.me/R/ti/p/(?:@|%40){PROFILE_ID}/?$",
+                rf"^@?{PROFILE_ID}$"
+            ],
+            "sanitized": "https://page.line.me/{id}"
+        }
     ]
 }
