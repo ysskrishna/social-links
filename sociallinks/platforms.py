@@ -1378,5 +1378,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://www.trustpilot.com/users/{id}"
         }
+    ],
+    "carrd": [
+        {
+            "patterns": [
+                r"https?://(?!www\.)(?P<id>[A-Za-z0-9-]+)\.carrd\.co/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://{id}.carrd.co"
+        }
     ]
 }

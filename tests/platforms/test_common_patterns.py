@@ -70,6 +70,7 @@ def _get_test_profile_id(platform_name: str) -> str:
         "roblox": "1",
         "orcid": "0000-0002-1825-0097",
         "airbnb": "1",
+        "carrd": "ysskrishna",
     }
     
     return special_ids.get(platform_name, "ysskrishna")
