@@ -151,6 +151,7 @@ HAPPY_PATH = [
     ("rumble", "ysskrishna", "https://rumble.com/user/ysskrishna", "https://rumble.com/user/ysskrishna"),
     ("rutube", "23704195", "https://rutube.ru/channel/23704195/", "https://rutube.ru/channel/23704195"),
     ("scratch", "griffpatch", "https://scratch.mit.edu/users/griffpatch/", "https://scratch.mit.edu/users/griffpatch"),
+    ("scribd", None, "https://www.scribd.com/user/1/trip", "https://www.scribd.com/user/1/trip"),
     ("semantic_scholar", "1741101", "https://www.semanticscholar.org/author/Oren-Etzioni/1741101", "https://www.semanticscholar.org/author/1741101"),
     ("signal", "abc123xyz", "https://signal.me/#p/abc123xyz", "https://signal.me/#p/abc123xyz"),
     ("sketchfab", "sketchfab", "https://sketchfab.com/sketchfab", "https://sketchfab.com/sketchfab"),
