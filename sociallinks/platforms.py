@@ -982,5 +982,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://civitai.com/user/{id}"
         }
+    ],
+    "opensea": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?opensea\.io/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://opensea.io/{id}"
+        }
     ]
 }
