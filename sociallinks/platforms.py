@@ -1552,5 +1552,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://www.khanacademy.org/profile/{id}"
         }
+    ],
+    "codecademy": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?codecademy\.com/profiles/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.codecademy.com/profiles/{id}"
+        }
     ]
 }
