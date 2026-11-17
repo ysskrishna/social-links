@@ -163,6 +163,7 @@ PLATFORM_META: Dict[str, Tuple[str, str, Optional[str]]] = {
     "tumblr": ("Tumblr", "https://tumblr.com", None),
     "twitch": ("Twitch", "https://twitch.tv", None),
     "unsplash": ("Unsplash", "https://unsplash.com", None),
+    "untappd": ("Untappd", "https://untappd.com", None),
     "vimeo": ("Vimeo", "https://vimeo.com", None),
     "vk": ("VK", "https://vk.com", None),
     "wattpad": ("Wattpad", "https://wattpad.com", None),

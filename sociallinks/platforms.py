@@ -1405,5 +1405,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://{id}.tistory.com"
         }
+    ],
+    "untappd": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?untappd\.com/user/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://untappd.com/user/{id}"
+        }
     ]
 }

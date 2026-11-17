@@ -139,6 +139,7 @@ HAPPY_PATH = [
     ("tumblr", "ysskrishna", "https://ysskrishna.tumblr.com", "https://tumblr.com/ysskrishna"),
     ("twitch", "ysskrishna", "https://twitch.tv/ysskrishna", "https://twitch.tv/ysskrishna"),
     ("unsplash", "ysskrishna", "https://unsplash.com/@ysskrishna", "https://unsplash.com/@ysskrishna"),
+    ("untappd", "CiderBeer", "https://untappd.com/user/CiderBeer", "https://untappd.com/user/CiderBeer"),
     ("vimeo", "ysskrishna", "https://vimeo.com/ysskrishna", "https://vimeo.com/ysskrishna"),
     ("vk", None, "https://vk.com/ysskrishna", "https://vk.com/ysskrishna"),
     ("wattpad", "Wattpad", "https://www.wattpad.com/user/Wattpad", "https://www.wattpad.com/user/Wattpad"),
