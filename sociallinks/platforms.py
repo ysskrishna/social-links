@@ -789,5 +789,15 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://www.codechef.com/users/{id}"
         }
+    ],
+    "topcoder": [
+        {
+            "patterns": [
+                rf"https?://profiles\.topcoder\.com/(?!(?:about|login|settings|explore|search|help|pricing|signup|terms|privacy)/?$){PROFILE_ID}/?$",
+                rf"https?://(www\.)?topcoder\.com/members/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://profiles.topcoder.com/{id}"
+        }
     ]
 }
