@@ -1798,5 +1798,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://www.redbubble.com/people/{id}"
         }
+    ],
+    "cara": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?cara\.app/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://cara.app/{id}"
+        }
     ]
 }
