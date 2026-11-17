@@ -2294,5 +2294,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://bugcrowd.com/h/{id}"
         }
+    ],
+    "anaconda": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?anaconda\.org/(?!(?:about|login|settings|explore|search|help|pricing|signup|terms|privacy|sign\-up|register|blog|faq|dashboard|account|home|support|contact|careers|legal|discover|features|apps|download|user|organizations|channels|packages|static|api)/?$){PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://anaconda.org/{id}"
+        }
     ]
 }
