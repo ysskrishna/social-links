@@ -61,6 +61,7 @@ HAPPY_PATH = [
     ("lobsters", "jcs", "https://lobste.rs/~jcs", "https://lobste.rs/~jcs"),
     ("mastodon", None, "https://mastodon.social/@ysskrishna", "https://mastodon.social/@ysskrishna"),
     ("medium", None, "https://medium.com/@ysskrishna", "https://medium.com/@ysskrishna"),
+    ("misskey", "syuilo", "https://misskey.io/@syuilo", "https://misskey.io/@syuilo"),
     ("nuget", "Microsoft", "https://www.nuget.org/profiles/Microsoft", "https://www.nuget.org/profiles/Microsoft"),
     ("opensea", "0x1234567890abcdef1234567890abcdef12345678", "https://opensea.io/0x1234567890abcdef1234567890abcdef12345678", "https://opensea.io/0x1234567890abcdef1234567890abcdef12345678"),
     ("openstreetmap", "Steve%20Coast", "https://www.openstreetmap.org/user/Steve%20Coast", "https://www.openstreetmap.org/user/Steve%20Coast"),
