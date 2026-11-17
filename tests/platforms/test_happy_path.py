@@ -144,6 +144,7 @@ HAPPY_PATH = [
     ("odysee", "Odysee", "https://odysee.com/@Odysee:8", "https://odysee.com/@Odysee"),
     ("ok_ru", "561611456451", "https://ok.ru/profile/561611456451", "https://ok.ru/profile/561611456451"),
     ("ollama", "jmorganca", "https://ollama.com/jmorganca", "https://ollama.com/jmorganca"),
+    ("onlyfans", "onlyfans", "https://onlyfans.com/onlyfans", "https://onlyfans.com/onlyfans"),
     ("opensea", "0x1234567890abcdef1234567890abcdef12345678", "https://opensea.io/0x1234567890abcdef1234567890abcdef12345678", "https://opensea.io/0x1234567890abcdef1234567890abcdef12345678"),
     ("openstreetmap", "Steve%20Coast", "https://www.openstreetmap.org/user/Steve%20Coast", "https://www.openstreetmap.org/user/Steve%20Coast"),
     ("orcid", "0000-0002-1825-0097", "https://orcid.org/0000-0002-1825-0097", "https://orcid.org/0000-0002-1825-0097"),

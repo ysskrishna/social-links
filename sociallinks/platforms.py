@@ -2158,5 +2158,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://www.researchgate.net/profile/{id}"
         }
+    ],
+    "onlyfans": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?onlyfans\.com/(?!(?:about|login|settings|explore|search|help|pricing|signup|terms|privacy|sign\-up|register|blog|faq|dashboard|account|home|support|contact|careers|legal|discover|features|apps|download|my|action|posts|notifications|chats|lists|collections|bookmarks|tos|how|transparency\-center|complaints|brand|onlyfans\-official|e|email|api2|files)/?$){PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://onlyfans.com/{id}"
+        }
     ]
 }
