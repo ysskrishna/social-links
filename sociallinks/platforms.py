@@ -1387,5 +1387,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://{id}.carrd.co"
         }
+    ],
+    "blogger": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?blogger\.com/profile/{NUMERIC_ID}/?$",
+                rf"^{NUMERIC_ID}$"
+            ],
+            "sanitized": "https://www.blogger.com/profile/{id}"
+        }
     ]
 }
