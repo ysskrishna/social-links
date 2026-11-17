@@ -52,6 +52,7 @@ HAPPY_PATH = [
     ("hashnode", None, "https://hashnode.com/@ysskrishna", "https://hashnode.com/@ysskrishna"),
     ("hey_xyz", "stani", "https://hey.xyz/u/stani", "https://hey.xyz/u/stani"),
     ("huggingface", "ysskrishna", "https://huggingface.co/ysskrishna", "https://huggingface.co/ysskrishna"),
+    ("imgur", "sarah", "https://imgur.com/user/sarah", "https://imgur.com/user/sarah"),
     ("instagram", "ysskrishna", "https://instagram.com/ysskrishna", "https://instagram.com/ysskrishna"),
     ("itch_io", "leafo", "https://itch.io/profile/leafo", "https://itch.io/profile/leafo"),
     ("kaggle", "ysskrishna", "https://www.kaggle.com/ysskrishna", "https://www.kaggle.com/ysskrishna"),

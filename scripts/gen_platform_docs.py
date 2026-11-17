@@ -75,6 +75,7 @@ PLATFORM_META: Dict[str, Tuple[str, str, Optional[str]]] = {
     "hashnode": ("Hashnode", "https://hashnode.com", None),
     "hey_xyz": ("Hey.xyz", "https://hey.xyz", None),
     "huggingface": ("Hugging Face", "https://huggingface.co", None),
+    "imgur": ("Imgur", "https://imgur.com", None),
     "instagram": ("Instagram", "https://instagram.com", None),
     "itch_io": ("itch.io", "https://itch.io", None),
     "kaggle": ("Kaggle", "https://kaggle.com", None),
