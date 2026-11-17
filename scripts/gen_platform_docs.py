@@ -85,6 +85,7 @@ PLATFORM_META: Dict[str, Tuple[str, str, Optional[str]]] = {
     "kick": ("Kick", "https://kick.com", None),
     "ko_fi": ("Ko-fi", "https://ko-fi.com", None),
     "kuaishou": ("Kuaishou", "https://kuaishou.com", None),
+    "lastfm": ("Last.fm", "https://last.fm", None),
     "leetcode": ("LeetCode", "https://leetcode.com", None),
     "lemmy_world": ("Lemmy World", "https://lemmy.world", None),
     "letterboxd": ("Letterboxd", "https://letterboxd.com", None),

@@ -62,6 +62,7 @@ HAPPY_PATH = [
     ("kick", "xqc", "https://kick.com/xqc", "https://kick.com/xqc"),
     ("ko_fi", "ysskrishna", "https://ko-fi.com/ysskrishna", "https://ko-fi.com/ysskrishna"),
     ("kuaishou", "3xxdnfw963m6abu", "https://www.kuaishou.com/profile/3xxdnfw963m6abu", "https://www.kuaishou.com/profile/3xxdnfw963m6abu"),
+    ("lastfm", "RJ", "https://www.last.fm/user/RJ", "https://www.last.fm/user/RJ"),
     ("leetcode", "ysskrishna", "https://leetcode.com/ysskrishna", "https://leetcode.com/ysskrishna"),
     ("lemmy_world", "ysskrishna", "https://lemmy.world/u/ysskrishna", "https://lemmy.world/u/ysskrishna"),
     ("letterboxd", "davidehrlich", "https://letterboxd.com/davidehrlich/", "https://letterboxd.com/davidehrlich"),

@@ -1213,5 +1213,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://ko-fi.com/{id}"
         }
+    ],
+    "lastfm": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?last\.fm/(?:[a-z][a-z]/)?user/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.last.fm/user/{id}"
+        }
     ]
 }
