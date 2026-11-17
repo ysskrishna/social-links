@@ -771,5 +771,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://lobste.rs/~{id}"
         }
+    ],
+    "atcoder": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?atcoder\.jp/users/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://atcoder.jp/users/{id}"
+        }
     ]
 }
