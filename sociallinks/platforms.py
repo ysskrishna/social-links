@@ -1744,5 +1744,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://solo.to/{id}"
         }
+    ],
+    "hoo_be": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?hoo\.be/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://hoo.be/{id}"
+        }
     ]
 }
