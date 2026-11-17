@@ -1932,5 +1932,20 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://{id}.hatenablog.com"
         }
+    ],
+    "dzen": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?(?:dzen\.ru|zen\.yandex\.ru)/(?!(?:about|login|settings|explore|search|help|pricing|signup|terms|privacy|sign\-up|register|blog|faq|dashboard|account|home|support|contact|careers|legal|discover|features|apps|download|news|articles|video|a|b|media|id|suite|shorts|topic|profile|embed|subscriptions|top)/?$){PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://dzen.ru/{id}"
+        },
+        {
+            "patterns": [
+                rf"https?://(www\.)?(?:dzen\.ru|zen\.yandex\.ru)/id/{PROFILE_ID}/?$"
+            ],
+            "sanitized": "https://dzen.ru/id/{id}"
+        }
     ]
 }

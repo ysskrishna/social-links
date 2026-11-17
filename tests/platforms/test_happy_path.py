@@ -61,6 +61,7 @@ HAPPY_PATH = [
     ("douyin", "MS4wLjABAAAA9yeV8IIJxpee3_u9zb_Al3_mOA8IffgD3_ueMCQUly4", "https://www.douyin.com/user/MS4wLjABAAAA9yeV8IIJxpee3_u9zb_Al3_mOA8IffgD3_ueMCQUly4", "https://www.douyin.com/user/MS4wLjABAAAA9yeV8IIJxpee3_u9zb_Al3_mOA8IffgD3_ueMCQUly4"),
     ("douyu", "22222", "https://www.douyu.com/22222?dyshid=abc", "https://www.douyu.com/22222"),
     ("dribbble", "ysskrishna", "https://dribbble.com/ysskrishna", "https://dribbble.com/ysskrishna"),
+    ("dzen", "dzen", "https://dzen.ru/dzen", "https://dzen.ru/dzen"),
     ("ebay", "ysskrishna", "https://www.ebay.com/usr/ysskrishna", "https://www.ebay.com/usr/ysskrishna"),
     ("etsy", "MyShopName", "https://etsy.com/shop/MyShopName", "https://etsy.com/shop/MyShopName"),
     ("exercism", "ysskrishna", "https://exercism.org/profiles/ysskrishna", "https://exercism.org/profiles/ysskrishna"),
