@@ -50,6 +50,7 @@ PLATFORM_META: Dict[str, Tuple[str, str, Optional[str]]] = {
     "codeforces": ("Codeforces", "https://codeforces.com", None),
     "codepen": ("CodePen", "https://codepen.io", None),
     "codewars": ("Codewars", "https://codewars.com", None),
+    "crates_io": ("crates.io", "https://crates.io", None),
     "crunchbase": ("Crunchbase", "https://crunchbase.com", None),
     "dailymotion": ("Dailymotion", "https://dailymotion.com", None),
     "dev_to": ("Dev.to", "https://dev.to", None),
