@@ -82,6 +82,7 @@ PLATFORM_META: Dict[str, Tuple[str, str, Optional[str]]] = {
     "exercism": ("Exercism", "https://exercism.org", None),
     "facebook": ("Facebook", "https://facebook.com", None),
     "faceit": ("FACEIT", "https://faceit.com", None),
+    "fanfix": ("Fanfix", "https://fanfix.io", "(NSFW)"),
     "farcaster": ("Farcaster", "https://farcaster.xyz", None),
     "figma": ("Figma", "https://figma.com", None),
     "fiverr": ("Fiverr", "https://fiverr.com", None),
