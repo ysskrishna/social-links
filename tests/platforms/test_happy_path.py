@@ -46,6 +46,7 @@ HAPPY_PATH = [
     ("lichess", "ysskrishna", "https://lichess.org/@/ysskrishna", "https://lichess.org/@/ysskrishna"),
     ("linkedin", "ysskrishna", "https://linkedin.com/in/ysskrishna", "https://linkedin.com/in/ysskrishna"),
     ("linktree", "ysskrishna", "https://linktr.ee/ysskrishna", "https://linktr.ee/ysskrishna"),
+    ("lobsters", "jcs", "https://lobste.rs/~jcs", "https://lobste.rs/~jcs"),
     ("mastodon", None, "https://mastodon.social/@ysskrishna", "https://mastodon.social/@ysskrishna"),
     ("medium", None, "https://medium.com/@ysskrishna", "https://medium.com/@ysskrishna"),
     ("patreon", "ysskrishna", "https://patreon.com/ysskrishna", "https://patreon.com/ysskrishna"),

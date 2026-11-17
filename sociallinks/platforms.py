@@ -761,5 +761,15 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://clawhub.ai/{id}"
         }
+    ],
+    "lobsters": [
+        {
+            "patterns": [
+                rf"https?://lobste\.rs/~{PROFILE_ID}/?$",
+                rf"https?://lobste\.rs/u/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://lobste.rs/~{id}"
+        }
     ]
 }
