@@ -1735,5 +1735,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://taplink.cc/{id}"
         }
+    ],
+    "solo_to": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?solo\.to/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://solo.to/{id}"
+        }
     ]
 }
