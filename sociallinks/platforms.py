@@ -1825,5 +1825,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://www.thingiverse.com/{id}"
         }
+    ],
+    "furaffinity": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?furaffinity\.net/user/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.furaffinity.net/user/{id}"
+        }
     ]
 }
