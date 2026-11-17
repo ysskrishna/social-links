@@ -734,5 +734,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://trello.com/{id}"
         }
+    ],
+    "huggingface": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?huggingface\.co/(?!(?:about|login|settings|explore|search|help|pricing|signup|terms|privacy|models|datasets|spaces|docs|join|blog|papers|collections|organizations|enterprise|learn|tasks|chat|posts|new|api|welcome|inference\-endpoints|huggingchat|terms\-of\-service|changelog)/?$){PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://huggingface.co/{id}"
+        }
     ]
 }
