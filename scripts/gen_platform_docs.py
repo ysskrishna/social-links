@@ -35,6 +35,7 @@ COLUMNS = 3
 PLATFORM_META: Dict[str, Tuple[str, str, Optional[str]]] = {
     "apple_music": ("Apple Music", "https://music.apple.com", None),
     "artstation": ("ArtStation", "https://artstation.com", None),
+    "atcoder": ("AtCoder", "https://atcoder.jp", None),
     "bandcamp": ("Bandcamp", "https://bandcamp.com", None),
     "behance": ("Behance", "https://behance.net", None),
     "bluesky": ("Bluesky", "https://bsky.app", None),
