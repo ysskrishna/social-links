@@ -192,6 +192,7 @@ HAPPY_PATH = [
     ("udemy", "ysskrishna", "https://www.udemy.com/user/ysskrishna/", "https://www.udemy.com/user/ysskrishna"),
     ("unsplash", "ysskrishna", "https://unsplash.com/@ysskrishna", "https://unsplash.com/@ysskrishna"),
     ("untappd", "CiderBeer", "https://untappd.com/user/CiderBeer", "https://untappd.com/user/CiderBeer"),
+    ("velog", "velopert", "https://velog.io/@velopert/posts", "https://velog.io/@velopert"),
     ("vimeo", "ysskrishna", "https://vimeo.com/ysskrishna", "https://vimeo.com/ysskrishna"),
     ("vk", None, "https://vk.com/ysskrishna", "https://vk.com/ysskrishna"),
     ("wandb", "ysskrishna", "https://forge.coreweave.com/profile/ysskrishna", "https://forge.coreweave.com/profile/ysskrishna"),
