@@ -1843,5 +1843,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://toyhou.se/{id}"
         }
+    ],
+    "are_na": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?are\.na/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.are.na/{id}"
+        }
     ]
 }

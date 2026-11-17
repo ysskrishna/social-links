@@ -13,6 +13,7 @@ HAPPY_PATH = [
     ("airbnb", "1", "https://www.airbnb.com/users/show/1", "https://www.airbnb.com/users/show/1"),
     ("anilist", "Josh", "https://anilist.co/user/Josh/", "https://anilist.co/user/Josh"),
     ("apple_music", "136975", "https://music.apple.com/artist/136975", "https://music.apple.com/artist/136975"),
+    ("are_na", "are-na-team", "https://www.are.na/are-na-team", "https://www.are.na/are-na-team"),
     ("artstation", "ysskrishna", "https://www.artstation.com/ysskrishna", "https://www.artstation.com/ysskrishna"),
     ("atcoder", "tourist", "https://atcoder.jp/users/tourist", "https://atcoder.jp/users/tourist"),
     ("audioboom", "4256218", "https://audioboom.com/channels/4256218-no-such-thing-as-a-fish", "https://audioboom.com/channels/4256218"),

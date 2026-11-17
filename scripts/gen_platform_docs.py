@@ -37,6 +37,7 @@ PLATFORM_META: Dict[str, Tuple[str, str, Optional[str]]] = {
     "airbnb": ("Airbnb", "https://airbnb.com", None),
     "anilist": ("AniList", "https://anilist.co", None),
     "apple_music": ("Apple Music", "https://music.apple.com", None),
+    "are_na": ("Are.na", "https://are.na", None),
     "artstation": ("ArtStation", "https://artstation.com", None),
     "atcoder": ("AtCoder", "https://atcoder.jp", None),
     "audioboom": ("Audioboom", "https://audioboom.com", None),
