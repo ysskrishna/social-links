@@ -153,6 +153,7 @@ HAPPY_PATH = [
     ("untappd", "CiderBeer", "https://untappd.com/user/CiderBeer", "https://untappd.com/user/CiderBeer"),
     ("vimeo", "ysskrishna", "https://vimeo.com/ysskrishna", "https://vimeo.com/ysskrishna"),
     ("vk", None, "https://vk.com/ysskrishna", "https://vk.com/ysskrishna"),
+    ("wandb", "ysskrishna", "https://forge.coreweave.com/profile/ysskrishna", "https://forge.coreweave.com/profile/ysskrishna"),
     ("wattpad", "Wattpad", "https://www.wattpad.com/user/Wattpad", "https://www.wattpad.com/user/Wattpad"),
     ("wechat", "DutchEmbassy_BJ", "https://open.weixin.qq.com/qr/code?username=DutchEmbassy_BJ", "https://open.weixin.qq.com/qr/code?username=DutchEmbassy_BJ"),
     ("weibo", "guanzhilin", "https://weibo.com/guanzhilin", "https://weibo.com/guanzhilin"),

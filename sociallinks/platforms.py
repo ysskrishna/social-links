@@ -1504,5 +1504,15 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://blog.csdn.net/{id}"
         }
+    ],
+    "wandb": [
+        {
+            "patterns": [
+                rf"https?://forge\.coreweave\.com/profile/{PROFILE_ID}/?$",
+                rf"https?://(www\.)?wandb\.ai/(?!(?:about|login|settings|explore|search|help|pricing|signup|terms|privacy|sign\-up|register|blog|faq|dashboard|account|home|support|contact|careers|legal|discover|features|apps|download|site|authorize|fully\-connected|gallery|reports|subscriptions|registry|artifacts|launch|sweeps|weave|models|fc)/?$){PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://forge.coreweave.com/profile/{id}"
+        }
     ]
 }
