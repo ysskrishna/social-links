@@ -2131,5 +2131,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://www.kickstarter.com/profile/{id}"
         }
+    ],
+    "packagist": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?packagist\.org/users/{PROFILE_ID_UNICODE}/?$",
+                rf"^{PROFILE_ID_UNICODE}$"
+            ],
+            "sanitized": "https://packagist.org/users/{id}"
+        }
     ]
 }
