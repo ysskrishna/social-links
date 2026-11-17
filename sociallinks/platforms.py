@@ -2113,5 +2113,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://app.trakt.tv/profile/{id}"
         }
+    ],
+    "minds": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?minds\.com/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.minds.com/{id}"
+        }
     ]
 }

@@ -128,6 +128,7 @@ HAPPY_PATH = [
     ("mastodon", None, "https://mastodon.social/@ysskrishna", "https://mastodon.social/@ysskrishna"),
     ("medium", None, "https://medium.com/@ysskrishna", "https://medium.com/@ysskrishna"),
     ("mercari", "123456789", "https://jp.mercari.com/user/profile/123456789", "https://jp.mercari.com/user/profile/123456789"),
+    ("minds", "minds", "https://www.minds.com/minds", "https://www.minds.com/minds"),
     ("misskey", "syuilo", "https://misskey.io/@syuilo", "https://misskey.io/@syuilo"),
     ("mixcloud", "NTSRadio", "https://www.mixcloud.com/NTSRadio/", "https://www.mixcloud.com/NTSRadio"),
     ("modrinth", "jellysquid3", "https://modrinth.com/user/jellysquid3", "https://modrinth.com/user/jellysquid3"),

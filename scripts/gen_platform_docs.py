@@ -152,6 +152,7 @@ PLATFORM_META: Dict[str, Tuple[str, str, Optional[str]]] = {
     "mastodon": ("Mastodon", "https://mastodon.social", None),
     "medium": ("Medium", "https://medium.com", None),
     "mercari": ("Mercari", "https://jp.mercari.com", None),
+    "minds": ("Minds", "https://minds.com", None),
     "misskey": ("Misskey", "https://misskey.io", None),
     "mixcloud": ("Mixcloud", "https://mixcloud.com", None),
     "modrinth": ("Modrinth", "https://modrinth.com", None),
