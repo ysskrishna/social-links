@@ -125,6 +125,7 @@ HAPPY_PATH = [
     ("stackoverflow", "12345", "https://stackoverflow.com/users/12345", "https://stackoverflow.com/users/12345"),
     ("stan_store", "vanessalau", "https://stan.store/vanessalau", "https://stan.store/vanessalau"),
     ("steam", "pepepro76561198317693716", "https://steamcommunity.com/id/pepepro76561198317693716", "https://steamcommunity.com/id/pepepro76561198317693716"),
+    ("storygraph", "ysskrishna", "https://app.thestorygraph.com/profile/ysskrishna", "https://app.thestorygraph.com/profile/ysskrishna"),
     ("substack", "ysskrishna", "https://ysskrishna.substack.com", "https://substack.com/@ysskrishna"),
     ("telegram", "telegram", "https://t.me/telegram", "https://t.me/telegram"),
     ("threads", "ysskrishna", "https://threads.com/@ysskrishna", "https://threads.com/@ysskrishna"),

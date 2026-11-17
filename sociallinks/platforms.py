@@ -1414,5 +1414,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://untappd.com/user/{id}"
         }
+    ],
+    "storygraph": [
+        {
+            "patterns": [
+                rf"https?://(?:app\.)?thestorygraph\.com/profile/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://app.thestorygraph.com/profile/{id}"
+        }
     ]
 }
