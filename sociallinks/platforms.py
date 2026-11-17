@@ -1295,5 +1295,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://gitee.com/{id}"
         }
+    ],
+    "wattpad": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?wattpad\.com/user/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.wattpad.com/user/{id}"
+        }
     ]
 }
