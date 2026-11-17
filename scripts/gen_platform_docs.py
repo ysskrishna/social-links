@@ -99,6 +99,7 @@ PLATFORM_META: Dict[str, Tuple[str, str, Optional[str]]] = {
     "hey_xyz": ("Hey.xyz", "https://hey.xyz", None),
     "huggingface": ("Hugging Face", "https://huggingface.co", None),
     "imgur": ("Imgur", "https://imgur.com", None),
+    "inaturalist": ("iNaturalist", "https://inaturalist.org", None),
     "instagram": ("Instagram", "https://instagram.com", None),
     "itch_io": ("itch.io", "https://itch.io", None),
     "juejin": ("Juejin", "https://juejin.cn", None),
