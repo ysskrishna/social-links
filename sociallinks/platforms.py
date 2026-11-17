@@ -752,5 +752,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://replicate.com/{id}"
         }
+    ],
+    "clawhub": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?clawhub\.ai/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://clawhub.ai/{id}"
+        }
     ]
 }
