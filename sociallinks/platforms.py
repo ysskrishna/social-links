@@ -1150,5 +1150,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://odysee.com/@{id}"
         }
+    ],
+    "gog": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?gog\.com/(?:[a-z][a-z]/)?u/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.gog.com/u/{id}"
+        }
     ]
 }
