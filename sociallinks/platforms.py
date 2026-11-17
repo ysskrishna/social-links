@@ -1049,5 +1049,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://space.bilibili.com/{id}"
         }
+    ],
+    "letterboxd": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?letterboxd\.com/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://letterboxd.com/{id}"
+        }
     ]
 }
