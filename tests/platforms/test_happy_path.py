@@ -68,6 +68,7 @@ HAPPY_PATH = [
     ("slideshare", "michaelyublosky", "https://www.slideshare.net/michaelyublosky", "https://www.slideshare.net/michaelyublosky"),
     ("snapchat", None, "https://snapchat.com/add/ysskrishna", "https://snapchat.com/@ysskrishna"),
     ("soundcloud", "ysskrishna", "https://soundcloud.com/ysskrishna", "https://soundcloud.com/ysskrishna"),
+    ("sourceforge", "rspeed", "https://sourceforge.net/u/rspeed/profile", "https://sourceforge.net/u/rspeed/profile"),
     ("spotify", "3WrFJ7ztbogyGnTHbHJFl2", "https://open.spotify.com/artist/3WrFJ7ztbogyGnTHbHJFl2", "https://open.spotify.com/artist/3WrFJ7ztbogyGnTHbHJFl2"),
     ("stackoverflow", "12345", "https://stackoverflow.com/users/12345", "https://stackoverflow.com/users/12345"),
     ("steam", "pepepro76561198317693716", "https://steamcommunity.com/id/pepepro76561198317693716", "https://steamcommunity.com/id/pepepro76561198317693716"),
