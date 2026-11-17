@@ -1896,5 +1896,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://issuu.com/{id}"
         }
+    ],
+    "velog": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?velog\.io/@{PROFILE_ID_UNICODE}(?:/posts)?/?$",
+                rf"^@?{PROFILE_ID_UNICODE}$"
+            ],
+            "sanitized": "https://velog.io/@{id}"
+        }
     ]
 }
