@@ -201,6 +201,7 @@ HAPPY_PATH = [
     ("untappd", "CiderBeer", "https://untappd.com/user/CiderBeer", "https://untappd.com/user/CiderBeer"),
     ("velog", "velopert", "https://velog.io/@velopert/posts", "https://velog.io/@velopert"),
     ("vimeo", "ysskrishna", "https://vimeo.com/ysskrishna", "https://vimeo.com/ysskrishna"),
+    ("vinted", "1", "https://www.vinted.fr/member/1-name", "https://www.vinted.com/member/1"),
     ("vk", None, "https://vk.com/ysskrishna", "https://vk.com/ysskrishna"),
     ("wandb", "ysskrishna", "https://forge.coreweave.com/profile/ysskrishna", "https://forge.coreweave.com/profile/ysskrishna"),
     ("wattpad", "Wattpad", "https://www.wattpad.com/user/Wattpad", "https://www.wattpad.com/user/Wattpad"),
