@@ -2194,5 +2194,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://profiles.wordpress.org/{id}"
         }
+    ],
+    "instructables": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?instructables\.com/member/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.instructables.com/member/{id}"
+        }
     ]
 }
