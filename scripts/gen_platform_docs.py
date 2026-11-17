@@ -168,6 +168,7 @@ PLATFORM_META: Dict[str, Tuple[str, str, Optional[str]]] = {
     "ok_ru": ("OK.ru", "https://ok.ru", None),
     "ollama": ("Ollama", "https://ollama.com", None),
     "onlyfans": ("OnlyFans", "https://onlyfans.com", "(NSFW)"),
+    "opencollective": ("Open Collective", "https://opencollective.com", None),
     "opensea": ("OpenSea", "https://opensea.io", None),
     "openstreetmap": ("OpenStreetMap", "https://openstreetmap.org", None),
     "orcid": ("ORCID", "https://orcid.org", None),

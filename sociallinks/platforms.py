@@ -2167,5 +2167,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://onlyfans.com/{id}"
         }
+    ],
+    "opencollective": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?opencollective\.com/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://opencollective.com/{id}"
+        }
     ]
 }
