@@ -1762,5 +1762,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://throne.com/{id}"
         }
+    ],
+    "fanfix": [
+        {
+            "patterns": [
+                rf"https?://app\.fanfix\.io/@{PROFILE_ID}/?$",
+                rf"^@?{PROFILE_ID}$"
+            ],
+            "sanitized": "https://app.fanfix.io/@{id}"
+        }
     ]
 }
