@@ -1914,5 +1914,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://brunch.co.kr/@{id}"
         }
+    ],
+    "ameblo": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?ameblo\.jp/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://ameblo.jp/{id}"
+        }
     ]
 }
