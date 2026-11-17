@@ -2122,5 +2122,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://www.minds.com/{id}"
         }
+    ],
+    "kickstarter": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?kickstarter\.com/profile/{PROFILE_ID}(?:/about|/created)?/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.kickstarter.com/profile/{id}"
+        }
     ]
 }

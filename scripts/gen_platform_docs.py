@@ -134,6 +134,7 @@ PLATFORM_META: Dict[str, Tuple[str, str, Optional[str]]] = {
     "keybase": ("Keybase", "https://keybase.io", None),
     "khan_academy": ("Khan Academy", "https://khanacademy.org", None),
     "kick": ("Kick", "https://kick.com", None),
+    "kickstarter": ("Kickstarter", "https://kickstarter.com", None),
     "ko_fi": ("Ko-fi", "https://ko-fi.com", None),
     "komoot": ("Komoot", "https://komoot.com", None),
     "kuaishou": ("Kuaishou", "https://kuaishou.com", None),
