@@ -170,6 +170,7 @@ PLATFORM_META: Dict[str, Tuple[str, str, Optional[str]]] = {
     "replicate": ("Replicate", "https://replicate.com", None),
     "replit": ("Replit", "https://replit.com", None),
     "roblox": ("Roblox", "https://roblox.com", None),
+    "royal_road": ("Royal Road", "https://royalroad.com", None),
     "rubygems": ("RubyGems", "https://rubygems.org", None),
     "rumble": ("Rumble", "https://rumble.com", None),
     "rutube": ("Rutube", "https://rutube.ru", None),

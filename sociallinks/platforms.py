@@ -1870,5 +1870,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://paragraph.com/@{id}"
         }
+    ],
+    "royal_road": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?royalroad\.com/profile/{NUMERIC_ID}/?$",
+                rf"^{NUMERIC_ID}$"
+            ],
+            "sanitized": "https://www.royalroad.com/profile/{id}"
+        }
     ]
 }
