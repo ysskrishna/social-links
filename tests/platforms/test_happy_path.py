@@ -34,6 +34,7 @@ HAPPY_PATH = [
     ("flickr", "dv-hans", "https://www.flickr.com/people/dv-hans", "https://www.flickr.com/people/dv-hans"),
     ("github", "ysskrishna", "https://github.com/ysskrishna", "https://github.com/ysskrishna"),
     ("gitlab", "ysskrishna", "https://gitlab.com/ysskrishna", "https://gitlab.com/ysskrishna"),
+    ("google_scholar", "JicYPdAAAAAJ", "https://scholar.google.com/citations?user=JicYPdAAAAAJ&hl=en", "https://scholar.google.com/citations?user=JicYPdAAAAAJ"),
     ("gravatar", "ysskrishna", "https://gravatar.com/ysskrishna", "https://gravatar.com/ysskrishna"),
     ("gumroad", "ysskrishna", "https://ysskrishna.gumroad.com", "https://gumroad.com/ysskrishna"),
     ("habr", "boomburum", "https://habr.com/ru/users/boomburum/", "https://habr.com/users/boomburum"),
