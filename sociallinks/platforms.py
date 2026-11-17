@@ -1504,5 +1504,15 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://blog.csdn.net/{id}"
         }
+    ],
+    "wandb": [
+        {
+            "patterns": [
+                rf"https?://forge\.coreweave\.com/profile/{PROFILE_ID}/?$",
+                rf"https?://(www\.)?wandb\.ai/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://forge.coreweave.com/profile/{id}"
+        }
     ]
 }
