@@ -1561,5 +1561,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://www.codecademy.com/profiles/{id}"
         }
+    ],
+    "freecodecamp": [
+        {
+            "patterns": [
+                rf"https?://forum\.freecodecamp\.org/u/{PROFILE_ID}(?:/summary)?/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://forum.freecodecamp.org/u/{id}"
+        }
     ]
 }
