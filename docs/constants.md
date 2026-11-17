@@ -37,5 +37,6 @@ This page documents all constants and type aliases available in the `social-link
         - NUMERIC_ID
         - NOSTR_NPUB
         - ORCID_ID
+        - HEX32_ID
       members_order: source
 
