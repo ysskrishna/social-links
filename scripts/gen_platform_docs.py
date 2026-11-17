@@ -172,6 +172,7 @@ PLATFORM_META: Dict[str, Tuple[str, str, Optional[str]]] = {
     "scratch": ("Scratch", "https://scratch.mit.edu", None),
     "semantic_scholar": ("Semantic Scholar", "https://semanticscholar.org", None),
     "signal": ("Signal", "https://signal.me", None),
+    "sketchfab": ("Sketchfab", "https://sketchfab.com", None),
     "slideshare": ("SlideShare", "https://slideshare.net", None),
     "snapchat": ("Snapchat", "https://snapchat.com", None),
     "solo_to": ("solo.to", "https://solo.to", None),

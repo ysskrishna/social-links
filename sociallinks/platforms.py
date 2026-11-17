@@ -1807,5 +1807,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://cara.app/{id}"
         }
+    ],
+    "sketchfab": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?sketchfab\.com/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://sketchfab.com/{id}"
+        }
     ]
 }
