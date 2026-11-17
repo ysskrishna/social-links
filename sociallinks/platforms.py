@@ -1992,5 +1992,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://www.xing.com/profile/{id}"
         }
+    ],
+    "malt": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?malt\.(?:fr|com|de|es|be|nl|ch|uk|it)/profile/{PROFILE_ID_UNICODE}/?$",
+                rf"^{PROFILE_ID_UNICODE}$"
+            ],
+            "sanitized": "https://www.malt.fr/profile/{id}"
+        }
     ]
 }

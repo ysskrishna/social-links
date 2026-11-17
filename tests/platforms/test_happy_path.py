@@ -118,6 +118,7 @@ HAPPY_PATH = [
     ("linkedin", "ysskrishna", "https://linkedin.com/in/ysskrishna", "https://linkedin.com/in/ysskrishna"),
     ("linktree", "ysskrishna", "https://linktr.ee/ysskrishna", "https://linktr.ee/ysskrishna"),
     ("lobsters", "jcs", "https://lobste.rs/~jcs", "https://lobste.rs/~jcs"),
+    ("malt", "ysskrishna", "https://www.malt.fr/profile/ysskrishna", "https://www.malt.fr/profile/ysskrishna"),
     ("mastodon", None, "https://mastodon.social/@ysskrishna", "https://mastodon.social/@ysskrishna"),
     ("medium", None, "https://medium.com/@ysskrishna", "https://medium.com/@ysskrishna"),
     ("mercari", "123456789", "https://jp.mercari.com/user/profile/123456789", "https://jp.mercari.com/user/profile/123456789"),
