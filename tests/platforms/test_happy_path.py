@@ -105,6 +105,7 @@ HAPPY_PATH = [
     ("jamendo", "1", "https://www.jamendo.com/user/1/name", "https://www.jamendo.com/user/1"),
     ("juejin", "1838039172387262", "https://juejin.cn/user/1838039172387262", "https://juejin.cn/user/1838039172387262"),
     ("kaggle", "ysskrishna", "https://www.kaggle.com/ysskrishna", "https://www.kaggle.com/ysskrishna"),
+    ("kakaotalk_channel", "xfxhcWs", "https://pf.kakao.com/_xfxhcWs", "https://pf.kakao.com/_xfxhcWs"),
     ("keybase", "ysskrishna", "https://keybase.io/ysskrishna", "https://keybase.io/ysskrishna"),
     ("khan_academy", "ysskrishna", "https://www.khanacademy.org/profile/ysskrishna", "https://www.khanacademy.org/profile/ysskrishna"),
     ("kick", "xqc", "https://kick.com/xqc", "https://kick.com/xqc"),
