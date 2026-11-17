@@ -1103,5 +1103,15 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://osu.ppy.sh/users/{id}"
         }
+    ],
+    "itch_io": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?itch\.io/profile/{PROFILE_ID}/?$",
+                r"https?://(?!www\.)(?P<id>[A-Za-z0-9-]+)\.itch\.io/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://itch.io/profile/{id}"
+        }
     ]
 }
