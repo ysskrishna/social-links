@@ -1852,5 +1852,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://www.are.na/{id}"
         }
+    ],
+    "buttondown": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?buttondown\.(?:com|email)/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://buttondown.com/{id}"
+        }
     ]
 }
