@@ -2001,5 +2001,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://www.malt.fr/profile/{id}"
         }
+    ],
+    "komoot": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?komoot\.(?:com|de)/(?:[a-z][a-z](?:-[a-z][a-z])?/)?user/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.komoot.com/user/{id}"
+        }
     ]
 }
