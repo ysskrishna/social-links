@@ -106,6 +106,7 @@ HAPPY_PATH = [
     ("khan_academy", "ysskrishna", "https://www.khanacademy.org/profile/ysskrishna", "https://www.khanacademy.org/profile/ysskrishna"),
     ("kick", "xqc", "https://kick.com/xqc", "https://kick.com/xqc"),
     ("ko_fi", "ysskrishna", "https://ko-fi.com/ysskrishna", "https://ko-fi.com/ysskrishna"),
+    ("komoot", "ysskrishna", "https://www.komoot.com/user/ysskrishna", "https://www.komoot.com/user/ysskrishna"),
     ("kuaishou", "3xxdnfw963m6abu", "https://www.kuaishou.com/profile/3xxdnfw963m6abu", "https://www.kuaishou.com/profile/3xxdnfw963m6abu"),
     ("lastfm", "RJ", "https://www.last.fm/user/RJ", "https://www.last.fm/user/RJ"),
     ("launchpad", "sabdfl", "https://launchpad.net/~sabdfl", "https://launchpad.net/~sabdfl"),
