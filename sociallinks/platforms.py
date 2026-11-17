@@ -982,5 +982,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://civitai.com/user/{id}"
         }
+    ],
+    "opensea": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?opensea\.io/(?!(?:about|login|settings|explore|search|help|pricing|signup|terms|privacy|collection|collections|assets|rankings|account|activity|stats|drops|learn|blog|studio|token|tokens|item|rewards|swap|profile|category|solana|ethereum|careers|tos|partners|events)/?$){PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://opensea.io/{id}"
+        }
     ]
 }

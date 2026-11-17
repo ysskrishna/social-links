@@ -85,6 +85,7 @@ PLATFORM_META: Dict[str, Tuple[str, str, Optional[str]]] = {
     "mastodon": ("Mastodon", "https://mastodon.social", None),
     "medium": ("Medium", "https://medium.com", None),
     "nuget": ("NuGet", "https://nuget.org", None),
+    "opensea": ("OpenSea", "https://opensea.io", None),
     "patreon": ("Patreon", "https://patreon.com", None),
     "pinterest": ("Pinterest", "https://pinterest.com", None),
     "poshmark": ("Poshmark", "https://poshmark.com", None),
