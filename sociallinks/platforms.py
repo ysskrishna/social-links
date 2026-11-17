@@ -863,5 +863,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://sourceforge.net/u/{id}/profile"
         }
+    ],
+    "sourcehut": [
+        {
+            "patterns": [
+                rf"https?://((git|hg|todo|lists|man|builds|paste|meta)\.)?sr\.ht/~{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://sr.ht/~{id}"
+        }
     ]
 }
