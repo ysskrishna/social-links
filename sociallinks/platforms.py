@@ -1159,5 +1159,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://www.gog.com/u/{id}"
         }
+    ],
+    "modrinth": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?modrinth\.com/user/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://modrinth.com/user/{id}"
+        }
     ]
 }
