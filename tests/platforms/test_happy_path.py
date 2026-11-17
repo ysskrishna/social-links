@@ -167,6 +167,7 @@ HAPPY_PATH = [
     ("substack", "ysskrishna", "https://ysskrishna.substack.com", "https://substack.com/@ysskrishna"),
     ("taplink", "ysskrishna", "https://taplink.cc/ysskrishna", "https://taplink.cc/ysskrishna"),
     ("telegram", "telegram", "https://t.me/telegram", "https://t.me/telegram"),
+    ("thingiverse", "MakerBot", "https://www.thingiverse.com/MakerBot/designs", "https://www.thingiverse.com/MakerBot"),
     ("threads", "ysskrishna", "https://threads.com/@ysskrishna", "https://threads.com/@ysskrishna"),
     ("throne", "ysskrishna", "https://throne.com/ysskrishna", "https://throne.com/ysskrishna"),
     ("tiktok", None, "https://tiktok.com/@ysskrishna", "https://tiktok.com/@ysskrishna"),

@@ -191,6 +191,7 @@ PLATFORM_META: Dict[str, Tuple[str, str, Optional[str]]] = {
     "substack": ("Substack", "https://substack.com", None),
     "taplink": ("Taplink", "https://taplink.cc", None),
     "telegram": ("Telegram", "https://telegram.org", None),
+    "thingiverse": ("Thingiverse", "https://thingiverse.com", None),
     "threads": ("Threads", "https://threads.com", None),
     "throne": ("Throne", "https://throne.com", "(NSFW)"),
     "tiktok": ("TikTok", "https://tiktok.com", None),

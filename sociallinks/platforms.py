@@ -1816,5 +1816,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://sketchfab.com/{id}"
         }
+    ],
+    "thingiverse": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?thingiverse\.com/{PROFILE_ID}(?:/designs)?/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.thingiverse.com/{id}"
+        }
     ]
 }
