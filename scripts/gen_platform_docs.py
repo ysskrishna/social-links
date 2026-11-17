@@ -230,6 +230,7 @@ PLATFORM_META: Dict[str, Tuple[str, str, Optional[str]]] = {
     "throne": ("Throne", "https://throne.com", "(NSFW)"),
     "tiktok": ("TikTok", "https://tiktok.com", None),
     "tistory": ("Tistory", "https://tistory.com", None),
+    "tmdb": ("TMDB", "https://themoviedb.org", None),
     "topcoder": ("Topcoder", "https://topcoder.com", None),
     "topmate": ("Topmate", "https://topmate.io", None),
     "toyhouse": ("Toyhouse", "https://toyhou.se", None),

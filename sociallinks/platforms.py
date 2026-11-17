@@ -2203,5 +2203,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://www.instructables.com/member/{id}"
         }
+    ],
+    "tmdb": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?themoviedb\.org/u/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.themoviedb.org/u/{id}"
+        }
     ]
 }
