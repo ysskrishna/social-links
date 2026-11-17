@@ -1633,5 +1633,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://www.curseforge.com/members/{id}"
         }
+    ],
+    "xda": [
+        {
+            "patterns": [
+                r"https?://(?:xdaforums\.com|forum\.xda-developers\.com)/m/(?P<id>[A-Za-z0-9_.-]+\.[0-9]+)/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://xdaforums.com/m/{id}"
+        }
     ]
 }

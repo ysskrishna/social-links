@@ -174,6 +174,7 @@ HAPPY_PATH = [
     ("whatsapp", "1234567890", "https://wa.me/1234567890", "https://wa.me/1234567890"),
     ("wordpress", "ysskrishna", "https://wordpress.com/people/ysskrishna", "https://wordpress.com/people/ysskrishna"),
     ("x", None, "https://x.com/ysskrishna", "https://x.com/ysskrishna"),
+    ("xda", "ysskrishna.123456", "https://xdaforums.com/m/ysskrishna.123456/", "https://xdaforums.com/m/ysskrishna.123456"),
     ("xiaohongshu", "5ff0e6410000000001008400", "https://www.xiaohongshu.com/user/profile/5ff0e6410000000001008400", "https://www.rednote.com/user/profile/5ff0e6410000000001008400"),
     ("youtube", None, "https://youtube.com/@ysskrishna", "https://youtube.com/@ysskrishna"),
     ("zenn", "catnose", "https://zenn.dev/catnose", "https://zenn.dev/catnose"),
