@@ -1323,5 +1323,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://www.deviantart.com/{id}"
         }
+    ],
+    "pexels": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?pexels\.com/(?:[a-z][a-z](?:-[a-z][a-z])?/)?@{PROFILE_ID}/?$",
+                rf"^@?{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.pexels.com/@{id}"
+        }
     ]
 }

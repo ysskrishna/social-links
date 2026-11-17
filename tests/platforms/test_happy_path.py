@@ -92,6 +92,7 @@ HAPPY_PATH = [
     ("orcid", "0000-0002-1825-0097", "https://orcid.org/0000-0002-1825-0097", "https://orcid.org/0000-0002-1825-0097"),
     ("osu", "2", "https://osu.ppy.sh/users/2", "https://osu.ppy.sh/users/2"),
     ("patreon", "ysskrishna", "https://patreon.com/ysskrishna", "https://patreon.com/ysskrishna"),
+    ("pexels", "pexels", "https://www.pexels.com/@pexels/", "https://www.pexels.com/@pexels"),
     ("pinterest", "ysskrishna", "https://pinterest.com/ysskrishna", "https://pinterest.com/ysskrishna"),
     ("pixelfed", "dansup", "https://pixelfed.social/dansup", "https://pixelfed.social/dansup"),
     ("pixiv", "11", "https://www.pixiv.net/en/users/11", "https://www.pixiv.net/users/11"),
