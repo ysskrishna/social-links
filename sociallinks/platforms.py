@@ -1122,5 +1122,15 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://www.speedrun.com/users/{id}"
         }
+    ],
+    "pixiv": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?pixiv\.net/(?:[a-z][a-z]/)?users/{NUMERIC_ID}/?$",
+                rf"https?://(www\.)?pixiv\.net/member\.php\?id={NUMERIC_ID}(?:[&#].*)?$",
+                rf"^{NUMERIC_ID}$"
+            ],
+            "sanitized": "https://www.pixiv.net/users/{id}"
+        }
     ]
 }

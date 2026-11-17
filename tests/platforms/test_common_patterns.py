@@ -65,6 +65,7 @@ def _get_test_profile_id(platform_name: str) -> str:
         "openstreetmap": "SteveC",
         "bilibili": "2",
         "goodreads": "1",
+        "pixiv": "11",
     }
     
     return special_ids.get(platform_name, "ysskrishna")
