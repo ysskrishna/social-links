@@ -1,0 +1,34 @@
+# Follow-up ledger
+
+Things tried during release 1.5.0 that need a second look, or a decision worth recording. One row each: platform, URL tried, what happened, what was chosen, recheck.
+
+## Part 1
+
+| Platform | URL tried | What happened | Chosen | Recheck |
+|---|---|---|---|---|
+| CodeChef | https://www.codechef.com/users/qxzv7k2w9m3t | An unknown id also returns 200 (single-page app or soft 404), so a 200 does not prove the account exists. | Shipped. Real handles are sourced from public pages, not from the status code. | no |
+| Topcoder | https://profiles.topcoder.com/qxzv7k2w9m3t | An unknown id also returns 200 (single-page app or soft 404), so a 200 does not prove the account exists. | Shipped. Real handles are sourced from public pages, not from the status code. | no |
+| TryHackMe | https://tryhackme.com/p/%D0%90%D0%BA%D1%83%D0%BB%D0%B0%D0%B5%D0%B2%D0%B0%20%D0%95%D0%BA%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D0%BD%D0%B0%20%D0%90%D0%BD%D0%B4%D1%80%D0%B5%D0%B5%D0%B2%D0%BD%D0%B0 | Every plain GET returned [429] (bot wall, rate limit or login gate). Not solved, per the no-bot-check rule. | Shipped. Handles come from Wayback 200 captures / Wikidata; URL shape confirmed by plan.md evidence. | yes: re-run the live check from a browser session |
+| SourceForge | https://sourceforge.net/u/a0c/profile | Every plain GET returned [403] (bot wall, rate limit or login gate). Not solved, per the no-bot-check rule. | Shipped. Handles come from Wayback 200 captures / Wikidata; URL shape confirmed by plan.md evidence. | yes: re-run the live check from a browser session |
+| Stack Exchange | https://stackexchange.com/users/0 | Every plain GET returned [403] (bot wall, rate limit or login gate). Not solved, per the no-bot-check rule. | Shipped. Handles come from Wayback 200 captures / Wikidata; URL shape confirmed by plan.md evidence. | yes: re-run the live check from a browser session |
+| Google Scholar | https://scholar.google.com/citations?user=-CVsmqYAAAAJ | Every plain GET returned [403] (bot wall, rate limit or login gate). Not solved, per the no-bot-check rule. | Shipped. Handles come from Wayback 200 captures / Wikidata; URL shape confirmed by plan.md evidence. | yes: re-run the live check from a browser session |
+| Farcaster | https://farcaster.xyz/qxzv7k2w9m3t | An unknown id also returns 200 (single-page app or soft 404), so a 200 does not prove the account exists. | Shipped. Real handles are sourced from public pages, not from the status code. | no |
+| eBay | https://www.ebay.com/usr/m | Every plain GET returned [403] (bot wall, rate limit or login gate). Not solved, per the no-bot-check rule. | Shipped. Handles come from Wayback 200 captures / Wikidata; URL shape confirmed by plan.md evidence. | yes: re-run the live check from a browser session |
+| Civitai | https://civitai.com/user/qxzv7k2w9m3t | An unknown id also returns 200 (single-page app or soft 404), so a 200 does not prove the account exists. | Shipped. Real handles are sourced from public pages, not from the status code. | no |
+| OpenSea | https://opensea.io/qxzv7k2w9m3t | An unknown id also returns 200 (single-page app or soft 404), so a 200 does not prove the account exists. | Shipped. Real handles are sourced from public pages, not from the status code. | no |
+| Misskey | https://misskey.io/@qxzv7k2w9m3t | An unknown id also returns 200 (single-page app or soft 404), so a 200 does not prove the account exists. | Shipped. Real handles are sourced from public pages, not from the status code. | no |
+| Bilibili | https://space.bilibili.com/3494351363640156 | Every plain GET returned [412] (bot wall, rate limit or login gate). Not solved, per the no-bot-check rule. | Shipped. Handles come from Wayback 200 captures / Wikidata; URL shape confirmed by plan.md evidence. | yes: re-run the live check from a browser session |
+| Letterboxd | https://letterboxd.com/k0 | Every plain GET returned [403] (bot wall, rate limit or login gate). Not solved, per the no-bot-check rule. | Shipped. Handles come from Wayback 200 captures / Wikidata; URL shape confirmed by plan.md evidence. | yes: re-run the live check from a browser session |
+| Discogs | https://www.discogs.com/user/M-S | Every plain GET returned [403] (bot wall, rate limit or login gate). Not solved, per the no-bot-check rule. | Shipped. Handles come from Wayback 200 captures / Wikidata; URL shape confirmed by plan.md evidence. | yes: re-run the live check from a browser session |
+| Speedrun.com | https://www.speedrun.com/users/- | Every plain GET returned [403] (bot wall, rate limit or login gate). Not solved, per the no-bot-check rule. | Shipped. Handles come from Wayback 200 captures / Wikidata; URL shape confirmed by plan.md evidence. | yes: re-run the live check from a browser session |
+| Pixiv | https://www.pixiv.net/users/53823 | Every plain GET returned [403] (bot wall, rate limit or login gate). Not solved, per the no-bot-check rule. | Shipped. Handles come from Wayback 200 captures / Wikidata; URL shape confirmed by plan.md evidence. | yes: re-run the live check from a browser session |
+| Imgur | https://imgur.com/user/qxzv7k2w9m3t | An unknown id also returns 200 (single-page app or soft 404), so a 200 does not prove the account exists. | Shipped. Real handles are sourced from public pages, not from the status code. | no |
+| Odysee | https://odysee.com/@qxzv7k2w9m3t | An unknown id also returns 200 (single-page app or soft 404), so a 200 does not prove the account exists. | Shipped. Real handles are sourced from public pages, not from the status code. | no |
+| Modrinth | https://modrinth.com/user/qxzv7k2w9m3t | An unknown id also returns 200 (single-page app or soft 404), so a 200 does not prove the account exists. | Shipped. Real handles are sourced from public pages, not from the status code. | no |
+| eBay | https://www.ebay.com/usr/m! | Wayback has 200 captures of ids with `!`, `$`, `*`; eBay does not publish its user-ID charset. | Not widened (shape unconfirmed). `PROFILE_ID` kept. | yes: widen if eBay help confirms these characters |
+| OpenStreetMap | https://www.openstreetmap.org/user/!Eddie! | Display names with `!` exist in archived captures. | Not widened; `PROFILE_ID_UNICODE` has no `!`. | yes |
+| Topcoder | https://profiles.topcoder.com/[BIT]silence | Legacy handles with `[`/`]` appear in archives. | Not widened (rare, shape unconfirmed). | yes |
+| Misskey | https://misskey.io/@user@remote.host | misskey.io shows remote fediverse accounts at `/@user@host`. | Not matched on purpose: the account lives on another instance. | no |
+| Primal | https://primal.net/p/{64-hex} | Primal also serves `/p/{hex pubkey}`. | Pattern widened to accept it; bare 64-hex is not accepted as a Primal id (ambiguous). | no |
+| osu! / TryHackMe / Odysee | https://osu.ppy.sh/users/-%20Mia | Real ids with spaces and non-ASCII letters were rejected by `PROFILE_ID`. | Widened to `PROFILE_ID_UNICODE` in each platform commit. | no |
+
