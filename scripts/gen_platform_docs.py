@@ -51,6 +51,7 @@ PLATFORM_META: Dict[str, Tuple[str, str, Optional[str]]] = {
     "douban": ("Douban", "https://douban.com", None),
     "douyin": ("Douyin", "https://douyin.com", None),
     "dribbble": ("Dribbble", "https://dribbble.com", None),
+    "ebay": ("eBay", "https://ebay.com", None),
     "etsy": ("Etsy", "https://etsy.com", None),
     "exercism": ("Exercism", "https://exercism.org", None),
     "facebook": ("Facebook", "https://facebook.com", None),
