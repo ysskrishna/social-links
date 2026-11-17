@@ -1132,5 +1132,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://www.pixiv.net/users/{id}"
         }
+    ],
+    "imgur": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?imgur\.com/user/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://imgur.com/user/{id}"
+        }
     ]
 }
