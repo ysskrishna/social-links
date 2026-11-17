@@ -176,6 +176,7 @@ HAPPY_PATH = [
     ("tistory", "notice", "https://notice.tistory.com/", "https://notice.tistory.com"),
     ("topcoder", "tourist", "https://profiles.topcoder.com/tourist", "https://profiles.topcoder.com/tourist"),
     ("topmate", "ysskrishna", "https://topmate.io/ysskrishna", "https://topmate.io/ysskrishna"),
+    ("toyhouse", "Toyhouse", "https://toyhou.se/Toyhouse", "https://toyhou.se/Toyhouse"),
     ("trello", "ysskrishna", "https://trello.com/ysskrishna", "https://trello.com/ysskrishna"),
     ("trustpilot", "5b4f2f0c4de5666d343f7c48", "https://www.trustpilot.com/users/5b4f2f0c4de5666d343f7c48", "https://www.trustpilot.com/users/5b4f2f0c4de5666d343f7c48"),
     ("truth_social", "realDonaldTrump", "https://truthsocial.com/@realDonaldTrump", "https://truthsocial.com/@realDonaldTrump"),

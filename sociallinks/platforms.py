@@ -1834,5 +1834,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://www.furaffinity.net/user/{id}"
         }
+    ],
+    "toyhouse": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?toyhou\.se/(?!(?:about|login|settings|explore|search|help|pricing|signup|terms|privacy|sign\-up|register|blog|faq|dashboard|account|home|support|contact|careers|legal|discover|features|apps|download|~|browse|user|forums|character|characters|world|worlds)/?$)(?![0-9]+\.){PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://toyhou.se/{id}"
+        }
     ]
 }
