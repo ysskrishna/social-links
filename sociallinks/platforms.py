@@ -955,5 +955,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://www.freelancer.com/u/{id}"
         }
+    ],
+    "ebay": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?(?:m\.)?ebay\.(?:com|ca|de|fr|it|es|ie|at|ch|nl|be|pl|ph|co\.uk|com\.au|com\.sg|com\.my|com\.hk)/usr/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.ebay.com/usr/{id}"
+        }
     ]
 }
