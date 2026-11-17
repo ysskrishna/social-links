@@ -1698,5 +1698,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://www.nimo.tv/{id}"
         }
+    ],
+    "audioboom": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?audioboom\.com/channels/{NUMERIC_ID}(?:-[^/?#]*)?/?$",
+                rf"^{NUMERIC_ID}$"
+            ],
+            "sanitized": "https://audioboom.com/channels/{id}"
+        }
     ]
 }

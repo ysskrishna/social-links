@@ -38,6 +38,7 @@ PLATFORM_META: Dict[str, Tuple[str, str, Optional[str]]] = {
     "apple_music": ("Apple Music", "https://music.apple.com", None),
     "artstation": ("ArtStation", "https://artstation.com", None),
     "atcoder": ("AtCoder", "https://atcoder.jp", None),
+    "audioboom": ("Audioboom", "https://audioboom.com", None),
     "bandcamp": ("Bandcamp", "https://bandcamp.com", None),
     "beacons": ("Beacons", "https://beacons.ai", None),
     "behance": ("Behance", "https://behance.net", None),
