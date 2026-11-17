@@ -73,6 +73,7 @@ PLATFORM_META: Dict[str, Tuple[str, str, Optional[str]]] = {
     "dockerhub": ("Docker Hub", "https://hub.docker.com", None),
     "douban": ("Douban", "https://douban.com", None),
     "douyin": ("Douyin", "https://douyin.com", None),
+    "douyu": ("Douyu", "https://douyu.com", None),
     "dribbble": ("Dribbble", "https://dribbble.com", None),
     "ebay": ("eBay", "https://ebay.com", None),
     "etsy": ("Etsy", "https://etsy.com", None),

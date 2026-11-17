@@ -1660,5 +1660,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://www.huya.com/{id}"
         }
+    ],
+    "douyu": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?douyu\.com/(?!(?:about|login|settings|explore|search|help|pricing|signup|terms|privacy|sign\-up|register|blog|faq|dashboard|account|home|support|contact|careers|legal|discover|features|apps|download|directory|g_|topic|member|cms|client|video|room|gapi|japi|lapi|wgapi)/?$){PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.douyu.com/{id}"
+        }
     ]
 }
