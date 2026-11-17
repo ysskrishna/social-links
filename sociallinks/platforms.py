@@ -854,5 +854,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://www.nuget.org/profiles/{id}"
         }
+    ],
+    "sourceforge": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?sourceforge\.net/u/{PROFILE_ID}(?:/profile)?/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://sourceforge.net/u/{id}/profile"
+        }
     ]
 }
