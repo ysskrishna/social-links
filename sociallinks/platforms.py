@@ -1843,5 +1843,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://toyhou.se/{id}"
         }
+    ],
+    "are_na": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?are\.na/(?!(?:about|login|settings|explore|search|help|pricing|signup|terms|privacy|sign\-up|register|blog|faq|dashboard|account|home|support|contact|careers|legal|discover|features|apps|download|block|channel|channels|feed|editorial|share|tools|sign_up|log_in)/?$){PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.are.na/{id}"
+        }
     ]
 }
