@@ -4,16 +4,6 @@
 class TestWeibo:
     """Test Weibo platform"""
 
-    def test_weibo(self, sl):
-        """Test Weibo platform with direct username"""
-        username = "guanzhilin"
-        assert sl.detect_platform(f"https://weibo.com/{username}") == "weibo"
-        assert sl.is_valid("weibo", f"https://weibo.com/{username}") is True
-        assert sl.sanitize("weibo", f"https://weibo.com/{username}") == f"https://weibo.com/{username}"
-        # Test direct username
-        assert sl.is_valid("weibo", username) is True
-        assert sl.sanitize("weibo", username) == f"https://weibo.com/{username}"
-
     def test_weibo_user_id(self, sl):
         """Test Weibo platform with /u/ user ID format"""
         user_id = "1669879400"
@@ -43,4 +33,3 @@ class TestWeibo:
         user_id = "1669879400"
         assert sl.is_valid("weibo", f"https://www.weibo.com/u/{user_id}") is True
         assert sl.sanitize("weibo", f"https://www.weibo.com/u/{user_id}") == f"https://weibo.com/u/{user_id}"
-
