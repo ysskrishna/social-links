@@ -1726,5 +1726,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://bio.link/{id}"
         }
+    ],
+    "taplink": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?taplink\.(?:cc|at|ws|me)/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://taplink.cc/{id}"
+        }
     ]
 }
