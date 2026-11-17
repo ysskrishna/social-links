@@ -1468,5 +1468,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://www.depop.com/{id}"
         }
+    ],
+    "launchpad": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?launchpad\.net/~{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://launchpad.net/~{id}"
+        }
     ]
 }
