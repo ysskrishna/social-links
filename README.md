@@ -11,7 +11,7 @@
 [![Context7](https://img.shields.io/badge/Context7-docs-18181B)](https://context7.com/ysskrishna/social-links)
 [![Ask DeepWiki](https://img.shields.io/badge/DeepWiki-ask-18181B)](https://deepwiki.com/ysskrishna/social-links)
 
-Python library to validate, sanitize, and detect social media URLs. Support for LinkedIn, Instagram, TikTok, X/Twitter, GitHub, Facebook, YouTube, and 225+ platforms. Features automatic URL normalization and zero dependencies. Easy to use, regex-powered, and customizable.
+Python library to validate, sanitize, and detect social media URLs. Support for LinkedIn, Instagram, TikTok, X/Twitter, GitHub, Facebook, YouTube, and 230+ platforms. Features automatic URL normalization and zero dependencies. Easy to use, regex-powered, and customizable.
 
 
 > 🚀 **Try it interactively in your browser!** Test the library with our [Interactive Demo](https://ysskrishna.github.io/social-links/demo/) - no installation required.
@@ -24,7 +24,7 @@ Python library to validate, sanitize, and detect social media URLs. Support for 
 - ✅ **Validate** URLs against specific platforms
 - 🧹 **Sanitize** URLs to canonical format
 - 🆔 **Extract IDs** (usernames, profile IDs) from URLs
-- 🎯 **225+ predefined platforms** (LinkedIn, GitHub, Twitter/X, Facebook, Instagram, YouTube, and more)
+- 🎯 **230+ predefined platforms** (LinkedIn, GitHub, Twitter/X, Facebook, Instagram, YouTube, and more)
 - 🔧 **Customizable** - Add your own platforms with regex patterns
 - 🚀 **Zero dependencies** - Pure Python, no external libraries
 
@@ -63,14 +63,14 @@ print(user_id)  # "ysskrishna"
 
 # List all supported platforms
 platforms = list_platforms()
-print(f"Supported platforms: {len(platforms)}")  # Supported platforms: 225+
+print(f"Supported platforms: {len(platforms)}")  # Supported platforms: 230+
 ```
 
 That's it! For most use cases, you don't need anything more. See [Basic Usage](#basic-usage) for more examples, or [Advanced Usage](#advanced-usage) if you need custom platforms or configurations.
 
 ## Supported Platforms
 
-The library comes with 225+ predefined platforms:
+The library comes with 230+ predefined platforms:
 
 <details>
 <summary><b>Show all supported platforms</b></summary>
@@ -144,18 +144,18 @@ The library comes with 225+ predefined platforms:
 | [start.gg](https://start.gg) | [Steam](https://steamcommunity.com) | [Substack](https://substack.com) |
 | [Taplink](https://taplink.cc) | [Telegram](https://telegram.org) | [The StoryGraph](https://thestorygraph.com) |
 | [Thingiverse](https://thingiverse.com) | [Threads](https://threads.com) | [Throne](https://throne.com) (NSFW) |
-| [TikTok](https://tiktok.com) | [Tistory](https://tistory.com) | [Topcoder](https://topcoder.com) |
-| [Topmate](https://topmate.io) | [Toyhouse](https://toyhou.se) | [Trakt](https://trakt.tv) |
-| [Trello](https://trello.com) | [Tripadvisor](https://tripadvisor.com) | [Trustpilot](https://trustpilot.com) |
-| [Truth Social](https://truthsocial.com) | [TryHackMe](https://tryhackme.com) | [Tumblr](https://tumblr.com) |
-| [Twitch](https://twitch.tv) | [Udemy](https://udemy.com) | [Unsplash](https://unsplash.com) |
-| [Untappd](https://untappd.com) | [Velog](https://velog.io) | [Vimeo](https://vimeo.com) |
-| [Vinted](https://vinted.com) | [VK](https://vk.com) | [Wattpad](https://wattpad.com) |
-| [WeChat](https://weixin.qq.com) | [Weibo](https://weibo.com) | [Weights & Biases](https://wandb.ai) |
-| [Wellfound (AngelList)](https://wellfound.com) | [WhatsApp](https://whatsapp.com) | [WordPress](https://wordpress.com) |
-| [WordPress.org](https://profiles.wordpress.org) | [X (Twitter)](https://x.com) | [XDA Forums](https://xdaforums.com) |
-| [Xiaohongshu (RedNote)](https://www.xiaohongshu.com) | [XING](https://xing.com) | [YouTube](https://youtube.com) |
-| [Zenn](https://zenn.dev) |  |  |
+| [TikTok](https://tiktok.com) | [Tistory](https://tistory.com) | [TMDB](https://themoviedb.org) |
+| [Topcoder](https://topcoder.com) | [Topmate](https://topmate.io) | [Toyhouse](https://toyhou.se) |
+| [Trakt](https://trakt.tv) | [Trello](https://trello.com) | [Tripadvisor](https://tripadvisor.com) |
+| [Trustpilot](https://trustpilot.com) | [Truth Social](https://truthsocial.com) | [TryHackMe](https://tryhackme.com) |
+| [Tumblr](https://tumblr.com) | [Twitch](https://twitch.tv) | [Udemy](https://udemy.com) |
+| [Unsplash](https://unsplash.com) | [Untappd](https://untappd.com) | [Velog](https://velog.io) |
+| [Vimeo](https://vimeo.com) | [Vinted](https://vinted.com) | [VK](https://vk.com) |
+| [Wattpad](https://wattpad.com) | [WeChat](https://weixin.qq.com) | [Weibo](https://weibo.com) |
+| [Weights & Biases](https://wandb.ai) | [Wellfound (AngelList)](https://wellfound.com) | [WhatsApp](https://whatsapp.com) |
+| [WordPress](https://wordpress.com) | [WordPress.org](https://profiles.wordpress.org) | [X (Twitter)](https://x.com) |
+| [XDA Forums](https://xdaforums.com) | [Xiaohongshu (RedNote)](https://www.xiaohongshu.com) | [XING](https://xing.com) |
+| [YouTube](https://youtube.com) | [Zenn](https://zenn.dev) |  |
 
 <!-- platforms:end -->
 
@@ -163,7 +163,7 @@ The library comes with 225+ predefined platforms:
 
 ## Basic Usage
 
-The simplest way to use social-links is with module-level functions. These work out of the box with 225+ predefined platforms - no configuration needed!
+The simplest way to use social-links is with module-level functions. These work out of the box with 230+ predefined platforms - no configuration needed!
 
 ### Detect Platform
 
@@ -243,7 +243,7 @@ from sociallinks import list_platforms
 # Get all available platforms
 platforms = list_platforms()
 # Returns: ["behance", "dev_to", "dribbble", "github", "linkedin", ...]
-print(f"Supported platforms: {len(platforms)}")  # 225+
+print(f"Supported platforms: {len(platforms)}")  # 230+
 ```
 
 ---

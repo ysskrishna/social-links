@@ -206,6 +206,7 @@ HAPPY_PATH = [
     ("throne", "ysskrishna", "https://throne.com/ysskrishna", "https://throne.com/ysskrishna"),
     ("tiktok", None, "https://tiktok.com/@ysskrishna", "https://tiktok.com/@ysskrishna"),
     ("tistory", "notice", "https://notice.tistory.com/", "https://notice.tistory.com"),
+    ("tmdb", "travisbell", "https://www.themoviedb.org/u/travisbell", "https://www.themoviedb.org/u/travisbell"),
     ("topcoder", "tourist", "https://profiles.topcoder.com/tourist", "https://profiles.topcoder.com/tourist"),
     ("topmate", "ysskrishna", "https://topmate.io/ysskrishna", "https://topmate.io/ysskrishna"),
     ("toyhouse", "Toyhouse", "https://toyhou.se/Toyhouse", "https://toyhou.se/Toyhouse"),
