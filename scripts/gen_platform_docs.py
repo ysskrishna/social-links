@@ -48,6 +48,7 @@ PLATFORM_META: Dict[str, Tuple[str, str, Optional[str]]] = {
     "behance": ("Behance", "https://behance.net", None),
     "bilibili": ("Bilibili", "https://bilibili.com", None),
     "bio_link": ("Bio.link", "https://bio.link", None),
+    "bitchute": ("BitChute", "https://bitchute.com", None),
     "blogger": ("Blogger", "https://blogger.com", None),
     "bluesky": ("Bluesky", "https://bsky.app", None),
     "brunch": ("Brunch", "https://brunch.co.kr", None),

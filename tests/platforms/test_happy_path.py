@@ -25,6 +25,7 @@ HAPPY_PATH = [
     ("behance", "ysskrishna", "https://behance.net/ysskrishna", "https://behance.net/ysskrishna"),
     ("bilibili", "2", "https://space.bilibili.com/2", "https://space.bilibili.com/2"),
     ("bio_link", "ysskrishna", "https://bio.link/ysskrishna", "https://bio.link/ysskrishna"),
+    ("bitchute", "bitchute", "https://www.bitchute.com/channel/bitchute/", "https://www.bitchute.com/channel/bitchute"),
     ("blogger", "05229574233543423344", "https://www.blogger.com/profile/05229574233543423344", "https://www.blogger.com/profile/05229574233543423344"),
     ("bluesky", "ysskrishna.bsky.social", "https://bsky.app/profile/ysskrishna.bsky.social", "https://bsky.app/profile/ysskrishna.bsky.social"),
     ("brunch", "brunch", "https://brunch.co.kr/@brunch", "https://brunch.co.kr/@brunch"),
