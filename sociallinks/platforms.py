@@ -1459,5 +1459,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://ollama.com/{id}"
         }
+    ],
+    "depop": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?depop\.com/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.depop.com/{id}"
+        }
     ]
 }
