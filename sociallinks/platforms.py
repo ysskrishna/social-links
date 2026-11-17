@@ -1020,5 +1020,15 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://www.openstreetmap.org/user/{id}"
         }
+    ],
+    "pixelfed": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?pixelfed\.social/@{PROFILE_ID}/?$",
+                rf"https?://(www\.)?pixelfed\.social/{PROFILE_ID}/?$",
+                rf"^@?{PROFILE_ID}$"
+            ],
+            "sanitized": "https://pixelfed.social/{id}"
+        }
     ]
 }

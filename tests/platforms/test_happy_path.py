@@ -66,6 +66,7 @@ HAPPY_PATH = [
     ("openstreetmap", "Steve%20Coast", "https://www.openstreetmap.org/user/Steve%20Coast", "https://www.openstreetmap.org/user/Steve%20Coast"),
     ("patreon", "ysskrishna", "https://patreon.com/ysskrishna", "https://patreon.com/ysskrishna"),
     ("pinterest", "ysskrishna", "https://pinterest.com/ysskrishna", "https://pinterest.com/ysskrishna"),
+    ("pixelfed", "dansup", "https://pixelfed.social/dansup", "https://pixelfed.social/dansup"),
     ("poshmark", "ysskrishna", "https://poshmark.com/closet/ysskrishna", "https://poshmark.com/closet/ysskrishna"),
     ("primal", "npub180cvv07tjdrrgpa0j7j7tmnyl2yr6yr7l8j4s3evf6u64th6gkwsyjh6w6", "https://primal.net/p/npub180cvv07tjdrrgpa0j7j7tmnyl2yr6yr7l8j4s3evf6u64th6gkwsyjh6w6", "https://primal.net/p/npub180cvv07tjdrrgpa0j7j7tmnyl2yr6yr7l8j4s3evf6u64th6gkwsyjh6w6"),
     ("producthunt", None, "https://www.producthunt.com/@ysskrishna", "https://www.producthunt.com/@ysskrishna"),
