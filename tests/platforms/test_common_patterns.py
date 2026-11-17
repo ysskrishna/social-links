@@ -79,6 +79,7 @@ def _get_test_profile_id(platform_name: str) -> str:
         "chzzk": "458f6ec20b034f49e0fc6d03921646d2",
         "rutube": "23704195",
         "audioboom": "4256218",
+        "jamendo": "1",
     }
     
     return special_ids.get(platform_name, "ysskrishna")
