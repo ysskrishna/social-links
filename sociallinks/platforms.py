@@ -1689,5 +1689,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://www.sooplive.com/station/{id}"
         }
+    ],
+    "nimo_tv": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?nimo\.tv/(?!(?:about|login|settings|explore|search|help|pricing|signup|terms|privacy|sign\-up|register|blog|faq|dashboard|account|home|support|contact|careers|legal|discover|features|apps|download|lives|game|fans|user|live|clip|video|i|events|creator)/?$){PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.nimo.tv/{id}"
+        }
     ]
 }
