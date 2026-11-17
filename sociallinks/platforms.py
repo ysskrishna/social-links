@@ -1579,5 +1579,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://www.semanticscholar.org/author/{id}"
         }
+    ],
+    "osf": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?osf\.io/user/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://osf.io/user/{id}"
+        }
     ]
 }

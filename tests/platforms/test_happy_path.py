@@ -107,6 +107,7 @@ HAPPY_PATH = [
     ("opensea", "0x1234567890abcdef1234567890abcdef12345678", "https://opensea.io/0x1234567890abcdef1234567890abcdef12345678", "https://opensea.io/0x1234567890abcdef1234567890abcdef12345678"),
     ("openstreetmap", "Steve%20Coast", "https://www.openstreetmap.org/user/Steve%20Coast", "https://www.openstreetmap.org/user/Steve%20Coast"),
     ("orcid", "0000-0002-1825-0097", "https://orcid.org/0000-0002-1825-0097", "https://orcid.org/0000-0002-1825-0097"),
+    ("osf", "cdi38", "https://osf.io/user/cdi38", "https://osf.io/user/cdi38"),
     ("osu", "2", "https://osu.ppy.sh/users/2", "https://osu.ppy.sh/users/2"),
     ("patreon", "ysskrishna", "https://patreon.com/ysskrishna", "https://patreon.com/ysskrishna"),
     ("pexels", "pexels", "https://www.pexels.com/@pexels/", "https://www.pexels.com/@pexels"),
