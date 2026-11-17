@@ -2285,5 +2285,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://hackerone.com/{id}"
         }
+    ],
+    "bugcrowd": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?bugcrowd\.com/h/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://bugcrowd.com/h/{id}"
+        }
     ]
 }
