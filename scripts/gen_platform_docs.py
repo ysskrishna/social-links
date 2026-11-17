@@ -112,6 +112,7 @@ PLATFORM_META: Dict[str, Tuple[str, str, Optional[str]]] = {
     "wordpress": ("WordPress", "https://wordpress.com", None),
     "x": ("X (Twitter)", "https://x.com", None),
     "youtube": ("YouTube", "https://youtube.com", None),
+    "zenn": ("Zenn", "https://zenn.dev", None),
 }
 
 # Files that contain hand-written "N+ platforms" counts.
