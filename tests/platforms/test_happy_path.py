@@ -40,6 +40,7 @@ HAPPY_PATH = [
     ("freelancer", "ysskrishna", "https://www.freelancer.com/u/ysskrishna", "https://www.freelancer.com/u/ysskrishna"),
     ("github", "ysskrishna", "https://github.com/ysskrishna", "https://github.com/ysskrishna"),
     ("gitlab", "ysskrishna", "https://gitlab.com/ysskrishna", "https://gitlab.com/ysskrishna"),
+    ("goodreads", "1", "https://www.goodreads.com/user/show/1-otis-chandler", "https://www.goodreads.com/user/show/1"),
     ("google_scholar", "JicYPdAAAAAJ", "https://scholar.google.com/citations?user=JicYPdAAAAAJ&hl=en", "https://scholar.google.com/citations?user=JicYPdAAAAAJ"),
     ("gravatar", "ysskrishna", "https://gravatar.com/ysskrishna", "https://gravatar.com/ysskrishna"),
     ("gumroad", "ysskrishna", "https://ysskrishna.gumroad.com", "https://gumroad.com/ysskrishna"),

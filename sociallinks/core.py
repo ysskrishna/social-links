@@ -78,7 +78,7 @@ class SocialLinks:
 
     Python library to validate, sanitize, and detect social media URLs.
     Support for LinkedIn, Instagram, TikTok, X/Twitter, GitHub, Facebook,
-    YouTube, and 100+ platforms. Features automatic URL normalization and
+    YouTube, and 105+ platforms. Features automatic URL normalization and
     zero dependencies. Easy to use, regex-powered, and customizable.
 
     The class uses regex patterns to match URLs against platform-specific
@@ -114,7 +114,7 @@ class SocialLinks:
         """Initialize the SocialLinks instance.
 
         Args:
-            use_predefined_platforms: If True, loads 100+ predefined social
+            use_predefined_platforms: If True, loads 105+ predefined social
                 media platforms (LinkedIn, GitHub, Twitter/X, etc.). If False,
                 starts with an empty platform list. Defaults to True.
             regex_flags: Regex flags to use for pattern compilation. Defaults
