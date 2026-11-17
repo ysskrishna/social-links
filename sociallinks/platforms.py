@@ -1039,5 +1039,15 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://misskey.io/@{id}"
         }
+    ],
+    "bilibili": [
+        {
+            "patterns": [
+                rf"https?://space\.bilibili\.com/(?:en/)?{NUMERIC_ID}/?$",
+                rf"https?://m\.bilibili\.com/space/{NUMERIC_ID}/?$",
+                rf"^{NUMERIC_ID}$"
+            ],
+            "sanitized": "https://space.bilibili.com/{id}"
+        }
     ]
 }
