@@ -1477,5 +1477,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://launchpad.net/~{id}"
         }
+    ],
+    "codesandbox": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?codesandbox\.io/u/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://codesandbox.io/u/{id}"
+        }
     ]
 }
