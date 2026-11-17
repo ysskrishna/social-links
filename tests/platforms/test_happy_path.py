@@ -140,6 +140,7 @@ HAPPY_PATH = [
     ("mixcloud", "NTSRadio", "https://www.mixcloud.com/NTSRadio/", "https://www.mixcloud.com/NTSRadio"),
     ("modrinth", "jellysquid3", "https://modrinth.com/user/jellysquid3", "https://modrinth.com/user/jellysquid3"),
     ("myanimelist", "Xinil", "https://myanimelist.net/profile/Xinil", "https://myanimelist.net/profile/Xinil"),
+    ("myspace", "tom", "https://myspace.com/tom", "https://myspace.com/tom"),
     ("naver_blog", "naver_diary", "https://blog.naver.com/naver_diary", "https://blog.naver.com/naver_diary"),
     ("niconico", "1", "https://www.nicovideo.jp/user/1", "https://www.nicovideo.jp/user/1"),
     ("nimo_tv", "ysskrishna", "https://www.nimo.tv/ysskrishna", "https://www.nimo.tv/ysskrishna"),

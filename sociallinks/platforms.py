@@ -2248,5 +2248,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://www.hackerearth.com/@{id}"
         }
+    ],
+    "myspace": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?myspace\.com/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://myspace.com/{id}"
+        }
     ]
 }
