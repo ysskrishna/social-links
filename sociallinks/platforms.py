@@ -2067,5 +2067,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://page.line.me/{id}"
         }
+    ],
+    "kakaotalk_channel": [
+        {
+            "patterns": [
+                rf"https?://pf\.kakao\.com/_{PROFILE_ID}(?:/(?:posts|chat))?/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://pf.kakao.com/_{id}"
+        }
     ]
 }

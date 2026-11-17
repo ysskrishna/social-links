@@ -128,6 +128,7 @@ PLATFORM_META: Dict[str, Tuple[str, str, Optional[str]]] = {
     "jamendo": ("Jamendo", "https://jamendo.com", None),
     "juejin": ("Juejin", "https://juejin.cn", None),
     "kaggle": ("Kaggle", "https://kaggle.com", None),
+    "kakaotalk_channel": ("KakaoTalk Channel", "https://pf.kakao.com", None),
     "keybase": ("Keybase", "https://keybase.io", None),
     "khan_academy": ("Khan Academy", "https://khanacademy.org", None),
     "kick": ("Kick", "https://kick.com", None),
