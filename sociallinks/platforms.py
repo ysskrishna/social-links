@@ -1588,5 +1588,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://osf.io/user/{id}"
         }
+    ],
+    "inaturalist": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?inaturalist\.org/people/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.inaturalist.org/people/{id}"
+        }
     ]
 }
