@@ -927,5 +927,15 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://www.figma.com/@{id}"
         }
+    ],
+    "douban": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?douban\.com/people/{PROFILE_ID}/?$",
+                rf"https?://m\.douban\.com/people/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.douban.com/people/{id}"
+        }
     ]
 }

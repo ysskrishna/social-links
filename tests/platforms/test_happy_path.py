@@ -25,6 +25,7 @@ HAPPY_PATH = [
     ("dev_to", "ysskrishna", "https://dev.to/ysskrishna", "https://dev.to/ysskrishna"),
     ("discord", "ysskrishna", "https://discord.gg/ysskrishna", "https://discord.gg/ysskrishna"),
     ("dockerhub", "ysskrishna", "https://hub.docker.com/u/ysskrishna", "https://hub.docker.com/u/ysskrishna"),
+    ("douban", "ahbei", "https://www.douban.com/people/ahbei/", "https://www.douban.com/people/ahbei"),
     ("douyin", "MS4wLjABAAAA9yeV8IIJxpee3_u9zb_Al3_mOA8IffgD3_ueMCQUly4", "https://www.douyin.com/user/MS4wLjABAAAA9yeV8IIJxpee3_u9zb_Al3_mOA8IffgD3_ueMCQUly4", "https://www.douyin.com/user/MS4wLjABAAAA9yeV8IIJxpee3_u9zb_Al3_mOA8IffgD3_ueMCQUly4"),
     ("dribbble", "ysskrishna", "https://dribbble.com/ysskrishna", "https://dribbble.com/ysskrishna"),
     ("etsy", "MyShopName", "https://etsy.com/shop/MyShopName", "https://etsy.com/shop/MyShopName"),
