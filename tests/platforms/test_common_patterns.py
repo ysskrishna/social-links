@@ -68,6 +68,7 @@ def _get_test_profile_id(platform_name: str) -> str:
         "pixiv": "11",
         "niconico": "1",
         "roblox": "1",
+        "orcid": "0000-0002-1825-0097",
     }
     
     return special_ids.get(platform_name, "ysskrishna")

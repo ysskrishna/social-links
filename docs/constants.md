@@ -36,5 +36,6 @@ This page documents all constants and type aliases available in the `social-link
         - PHONE_NUMBER
         - NUMERIC_ID
         - NOSTR_NPUB
+        - ORCID_ID
       members_order: source
 

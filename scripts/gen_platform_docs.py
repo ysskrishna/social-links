@@ -103,6 +103,7 @@ PLATFORM_META: Dict[str, Tuple[str, str, Optional[str]]] = {
     "odysee": ("Odysee", "https://odysee.com", None),
     "opensea": ("OpenSea", "https://opensea.io", None),
     "openstreetmap": ("OpenStreetMap", "https://openstreetmap.org", None),
+    "orcid": ("ORCID", "https://orcid.org", None),
     "osu": ("osu!", "https://osu.ppy.sh", None),
     "patreon": ("Patreon", "https://patreon.com", None),
     "pinterest": ("Pinterest", "https://pinterest.com", None),
