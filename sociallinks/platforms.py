@@ -1195,5 +1195,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://truthsocial.com/@{id}"
         }
+    ],
+    "buymeacoffee": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?buymeacoffee\.com/(?!(?:about|login|settings|explore|search|help|pricing|signup|terms|privacy|sign\-up|register|blog|faq|dashboard|account|home|support|contact|careers|legal|discover|features|apps|download|explore\-creators|brand|wall\-of\-love|about\-us|privacy\-policy|widgets|calculator)/?$){PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://buymeacoffee.com/{id}"
+        }
     ]
 }
