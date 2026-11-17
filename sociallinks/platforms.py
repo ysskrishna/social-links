@@ -882,5 +882,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://stackexchange.com/users/{id}"
         }
+    ],
+    "google_scholar": [
+        {
+            "patterns": [
+                rf"https?://scholar\.google\.(?:com|[a-z][a-z]|co\.[a-z][a-z]|com\.[a-z][a-z])/citations\?(?:[^#]*&)?user={PROFILE_ID}(?:[&#].*)?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://scholar.google.com/citations?user={id}"
+        }
     ]
 }

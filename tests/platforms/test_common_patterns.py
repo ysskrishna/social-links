@@ -60,6 +60,7 @@ def _get_test_profile_id(platform_name: str) -> str:
         "stackoverflow": "12345",
         "signal": "1234567890",
         "stack_exchange": "1",
+        "google_scholar": "JicYPdAAAAAJ",
     }
     
     return special_ids.get(platform_name, "ysskrishna")
