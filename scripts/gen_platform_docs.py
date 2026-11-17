@@ -77,6 +77,7 @@ PLATFORM_META: Dict[str, Tuple[str, str, Optional[str]]] = {
     "pypi": ("PyPI", "https://pypi.org", None),
     "quora": ("Quora", "https://quora.com", None),
     "reddit": ("Reddit", "https://reddit.com", None),
+    "replicate": ("Replicate", "https://replicate.com", None),
     "replit": ("Replit", "https://replit.com", None),
     "rumble": ("Rumble", "https://rumble.com", None),
     "signal": ("Signal", "https://signal.me", None),
