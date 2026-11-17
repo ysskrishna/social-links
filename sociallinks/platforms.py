@@ -2019,5 +2019,15 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://note.com/{id}"
         }
+    ],
+    "naver_blog": [
+        {
+            "patterns": [
+                rf"https?://(?:m\.)?blog\.naver\.com/(?!(?:about|login|settings|explore|search|help|pricing|signup|terms|privacy|PostList\.naver|PostView\.naver|prologue|BlogHome\.naver|SympathyHistoryList\.naver|section|Recommendation)/?$){PROFILE_ID}/?$",
+                rf"https?://(?:m\.)?blog\.naver\.com/(?:PostList\.naver|prologue/PrologueList\.naver)\?(?:[^#]*&)?blogId={PROFILE_ID}(?:[&#].*)?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://blog.naver.com/{id}"
+        }
     ]
 }
