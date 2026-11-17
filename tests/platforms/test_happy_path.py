@@ -101,6 +101,7 @@ HAPPY_PATH = [
     ("huya", "uzi", "https://www.huya.com/uzi", "https://www.huya.com/uzi"),
     ("imgur", "sarah", "https://imgur.com/user/sarah", "https://imgur.com/user/sarah"),
     ("inaturalist", "kueda", "https://www.inaturalist.org/people/kueda", "https://www.inaturalist.org/people/kueda"),
+    ("indiehackers", "csallen", "https://www.indiehackers.com/csallen", "https://www.indiehackers.com/csallen"),
     ("instagram", "ysskrishna", "https://instagram.com/ysskrishna", "https://instagram.com/ysskrishna"),
     ("instructables", "randofo", "https://www.instructables.com/member/randofo/", "https://www.instructables.com/member/randofo"),
     ("issuu", "issuu", "https://issuu.com/issuu?ps=10", "https://issuu.com/issuu"),

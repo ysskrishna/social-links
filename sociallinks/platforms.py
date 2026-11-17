@@ -2230,5 +2230,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://metacpan.org/author/{id}"
         }
+    ],
+    "indiehackers": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?indiehackers\.com/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.indiehackers.com/{id}"
+        }
     ]
 }
