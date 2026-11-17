@@ -24,6 +24,7 @@ HAPPY_PATH = [
     ("carrd", "ysskrishna", "https://ysskrishna.carrd.co", "https://ysskrishna.carrd.co"),
     ("character_ai", "ysskrishna", "https://character.ai/profile/ysskrishna", "https://character.ai/profile/ysskrishna"),
     ("chess_com", "ysskrishna", "https://www.chess.com/member/ysskrishna", "https://www.chess.com/member/ysskrishna"),
+    ("chub_ai", "ysskrishna", "https://chub.ai/users/ysskrishna", "https://chub.ai/users/ysskrishna"),
     ("civitai", "ysskrishna", "https://civitai.com/user/ysskrishna", "https://civitai.com/user/ysskrishna"),
     ("clawhub", "steipete", "https://clawhub.ai/steipete", "https://clawhub.ai/steipete"),
     ("codeberg", "forgejo", "https://codeberg.org/forgejo", "https://codeberg.org/forgejo"),
