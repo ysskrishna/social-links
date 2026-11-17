@@ -71,6 +71,7 @@ HAPPY_PATH = [
     ("telegram", "telegram", "https://t.me/telegram", "https://t.me/telegram"),
     ("threads", "ysskrishna", "https://threads.com/@ysskrishna", "https://threads.com/@ysskrishna"),
     ("tiktok", None, "https://tiktok.com/@ysskrishna", "https://tiktok.com/@ysskrishna"),
+    ("topcoder", "tourist", "https://profiles.topcoder.com/tourist", "https://profiles.topcoder.com/tourist"),
     ("trello", "ysskrishna", "https://trello.com/ysskrishna", "https://trello.com/ysskrishna"),
     ("tumblr", "ysskrishna", "https://ysskrishna.tumblr.com", "https://tumblr.com/ysskrishna"),
     ("twitch", "ysskrishna", "https://twitch.tv/ysskrishna", "https://twitch.tv/ysskrishna"),

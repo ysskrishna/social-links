@@ -95,6 +95,7 @@ PLATFORM_META: Dict[str, Tuple[str, str, Optional[str]]] = {
     "telegram": ("Telegram", "https://telegram.org", None),
     "threads": ("Threads", "https://threads.com", None),
     "tiktok": ("TikTok", "https://tiktok.com", None),
+    "topcoder": ("Topcoder", "https://topcoder.com", None),
     "trello": ("Trello", "https://trello.com", None),
     "tumblr": ("Tumblr", "https://tumblr.com", None),
     "twitch": ("Twitch", "https://twitch.tv", None),
