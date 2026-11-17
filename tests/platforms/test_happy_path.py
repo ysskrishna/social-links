@@ -110,6 +110,7 @@ HAPPY_PATH = [
     ("keybase", "ysskrishna", "https://keybase.io/ysskrishna", "https://keybase.io/ysskrishna"),
     ("khan_academy", "ysskrishna", "https://www.khanacademy.org/profile/ysskrishna", "https://www.khanacademy.org/profile/ysskrishna"),
     ("kick", "xqc", "https://kick.com/xqc", "https://kick.com/xqc"),
+    ("kickstarter", "kickstarter", "https://www.kickstarter.com/profile/kickstarter", "https://www.kickstarter.com/profile/kickstarter"),
     ("ko_fi", "ysskrishna", "https://ko-fi.com/ysskrishna", "https://ko-fi.com/ysskrishna"),
     ("komoot", "ysskrishna", "https://www.komoot.com/user/ysskrishna", "https://www.komoot.com/user/ysskrishna"),
     ("kuaishou", "3xxdnfw963m6abu", "https://www.kuaishou.com/profile/3xxdnfw963m6abu", "https://www.kuaishou.com/profile/3xxdnfw963m6abu"),
