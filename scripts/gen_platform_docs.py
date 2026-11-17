@@ -144,6 +144,7 @@ PLATFORM_META: Dict[str, Tuple[str, str, Optional[str]]] = {
     "lemmy_world": ("Lemmy World", "https://lemmy.world", None),
     "lemon8": ("Lemon8", "https://lemon8-app.com", None),
     "letterboxd": ("Letterboxd", "https://letterboxd.com", None),
+    "liberapay": ("Liberapay", "https://liberapay.com", None),
     "lichess": ("Lichess", "https://lichess.org", None),
     "line": ("LINE", "https://line.me", None),
     "linkedin": ("LinkedIn", "https://linkedin.com", "(personal & company)"),

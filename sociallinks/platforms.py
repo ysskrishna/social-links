@@ -2176,5 +2176,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://opencollective.com/{id}"
         }
+    ],
+    "liberapay": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?liberapay\.com/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://liberapay.com/{id}"
+        }
     ]
 }

@@ -120,6 +120,7 @@ HAPPY_PATH = [
     ("lemmy_world", "ysskrishna", "https://lemmy.world/u/ysskrishna", "https://lemmy.world/u/ysskrishna"),
     ("lemon8", "lemon8us", "https://www.lemon8-app.com/@lemon8us", "https://www.lemon8-app.com/@lemon8us"),
     ("letterboxd", "davidehrlich", "https://letterboxd.com/davidehrlich/", "https://letterboxd.com/davidehrlich"),
+    ("liberapay", "Liberapay", "https://liberapay.com/Liberapay/", "https://liberapay.com/Liberapay"),
     ("lichess", "ysskrishna", "https://lichess.org/@/ysskrishna", "https://lichess.org/@/ysskrishna"),
     ("line", "linejapan", "https://page.line.me/linejapan", "https://page.line.me/linejapan"),
     ("linkedin", "ysskrishna", "https://linkedin.com/in/ysskrishna", "https://linkedin.com/in/ysskrishna"),
