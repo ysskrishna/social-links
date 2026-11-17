@@ -1852,5 +1852,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://www.are.na/{id}"
         }
+    ],
+    "buttondown": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?buttondown\.(?:com|email)/(?!(?:about|login|settings|explore|search|help|pricing|signup|terms|privacy|sign\-up|register|blog|faq|dashboard|account|home|support|contact|careers|legal|discover|features|apps|download|docs|changelog|customers|resources|emails|subscribers|api|stories|alternatives|integrations|use\-cases)/?$){PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://buttondown.com/{id}"
+        }
     ]
 }
