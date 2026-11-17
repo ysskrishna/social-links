@@ -53,6 +53,7 @@ HAPPY_PATH = [
     ("lobsters", "jcs", "https://lobste.rs/~jcs", "https://lobste.rs/~jcs"),
     ("mastodon", None, "https://mastodon.social/@ysskrishna", "https://mastodon.social/@ysskrishna"),
     ("medium", None, "https://medium.com/@ysskrishna", "https://medium.com/@ysskrishna"),
+    ("nuget", "Microsoft", "https://www.nuget.org/profiles/Microsoft", "https://www.nuget.org/profiles/Microsoft"),
     ("patreon", "ysskrishna", "https://patreon.com/ysskrishna", "https://patreon.com/ysskrishna"),
     ("pinterest", "ysskrishna", "https://pinterest.com/ysskrishna", "https://pinterest.com/ysskrishna"),
     ("producthunt", None, "https://www.producthunt.com/@ysskrishna", "https://www.producthunt.com/@ysskrishna"),
