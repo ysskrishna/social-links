@@ -1861,5 +1861,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://buttondown.com/{id}"
         }
+    ],
+    "paragraph": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?paragraph\.(?:com|xyz)/@{PROFILE_ID_UNICODE}/?$",
+                rf"^@?{PROFILE_ID_UNICODE}$"
+            ],
+            "sanitized": "https://paragraph.com/@{id}"
+        }
     ]
 }
