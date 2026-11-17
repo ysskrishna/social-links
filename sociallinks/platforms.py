@@ -1011,5 +1011,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://primal.net/p/{id}"
         }
+    ],
+    "openstreetmap": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?openstreetmap\.org/user/{PROFILE_ID_UNICODE}/?$",
+                rf"^{PROFILE_ID_UNICODE}$"
+            ],
+            "sanitized": "https://www.openstreetmap.org/user/{id}"
+        }
     ]
 }
