@@ -33,6 +33,7 @@ COLUMNS = 3
 
 # key -> (display name, homepage, optional note)
 PLATFORM_META: Dict[str, Tuple[str, str, Optional[str]]] = {
+    "anilist": ("AniList", "https://anilist.co", None),
     "apple_music": ("Apple Music", "https://music.apple.com", None),
     "artstation": ("ArtStation", "https://artstation.com", None),
     "atcoder": ("AtCoder", "https://atcoder.jp", None),
