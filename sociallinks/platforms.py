@@ -1396,5 +1396,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://www.blogger.com/profile/{id}"
         }
+    ],
+    "tistory": [
+        {
+            "patterns": [
+                r"https?://(?!www\.)(?P<id>[A-Za-z0-9-]+)\.tistory\.com/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://{id}.tistory.com"
+        }
     ]
 }

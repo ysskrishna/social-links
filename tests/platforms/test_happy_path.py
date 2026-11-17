@@ -130,6 +130,7 @@ HAPPY_PATH = [
     ("telegram", "telegram", "https://t.me/telegram", "https://t.me/telegram"),
     ("threads", "ysskrishna", "https://threads.com/@ysskrishna", "https://threads.com/@ysskrishna"),
     ("tiktok", None, "https://tiktok.com/@ysskrishna", "https://tiktok.com/@ysskrishna"),
+    ("tistory", "notice", "https://notice.tistory.com/", "https://notice.tistory.com"),
     ("topcoder", "tourist", "https://profiles.topcoder.com/tourist", "https://profiles.topcoder.com/tourist"),
     ("topmate", "ysskrishna", "https://topmate.io/ysskrishna", "https://topmate.io/ysskrishna"),
     ("trello", "ysskrishna", "https://trello.com/ysskrishna", "https://trello.com/ysskrishna"),
