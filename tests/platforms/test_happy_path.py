@@ -61,6 +61,7 @@ HAPPY_PATH = [
     ("flipboard", "flipboard", "https://flipboard.com/@flipboard", "https://flipboard.com/@flipboard"),
     ("freecodecamp", "QuincyLarson", "https://forum.freecodecamp.org/u/QuincyLarson", "https://forum.freecodecamp.org/u/QuincyLarson"),
     ("freelancer", "ysskrishna", "https://www.freelancer.com/u/ysskrishna", "https://www.freelancer.com/u/ysskrishna"),
+    ("gamejolt", "CROS", "https://gamejolt.com/@CROS", "https://gamejolt.com/@CROS"),
     ("genius", "Ferrari_Fairy", "https://genius.com/Ferrari_Fairy", "https://genius.com/Ferrari_Fairy"),
     ("gitee", "openharmony", "https://gitee.com/openharmony", "https://gitee.com/openharmony"),
     ("github", "ysskrishna", "https://github.com/ysskrishna", "https://github.com/ysskrishna"),

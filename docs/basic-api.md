@@ -1,7 +1,7 @@
 ---
 title: Basic API
 
-description: "Simple Python API functions for social media URL validation. Detect platform from URL, validate social media links, sanitize URLs to canonical format. Zero configuration, works with 160+ predefined platforms."
+description: "Simple Python API functions for social media URL validation. Detect platform from URL, validate social media links, sanitize URLs to canonical format. Zero configuration, works with 165+ predefined platforms."
 
 keywords:
   - basic API
