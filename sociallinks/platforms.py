@@ -1597,5 +1597,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://www.inaturalist.org/people/{id}"
         }
+    ],
+    "faceit": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?faceit\.com/(?:[a-z][a-z](?:-[a-z][a-z])?/)?players/{PROFILE_ID}(?:/stats(?:/[a-z0-9]+)?)?/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.faceit.com/en/players/{id}"
+        }
     ]
 }
