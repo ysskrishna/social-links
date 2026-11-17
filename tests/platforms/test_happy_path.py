@@ -114,6 +114,7 @@ HAPPY_PATH = [
     ("topcoder", "tourist", "https://profiles.topcoder.com/tourist", "https://profiles.topcoder.com/tourist"),
     ("topmate", "ysskrishna", "https://topmate.io/ysskrishna", "https://topmate.io/ysskrishna"),
     ("trello", "ysskrishna", "https://trello.com/ysskrishna", "https://trello.com/ysskrishna"),
+    ("truth_social", "realDonaldTrump", "https://truthsocial.com/@realDonaldTrump", "https://truthsocial.com/@realDonaldTrump"),
     ("tryhackme", "tryhackme", "https://tryhackme.com/p/tryhackme", "https://tryhackme.com/p/tryhackme"),
     ("tumblr", "ysskrishna", "https://ysskrishna.tumblr.com", "https://tumblr.com/ysskrishna"),
     ("twitch", "ysskrishna", "https://twitch.tv/ysskrishna", "https://twitch.tv/ysskrishna"),
