@@ -780,5 +780,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://atcoder.jp/users/{id}"
         }
+    ],
+    "codechef": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?codechef\.com/users/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.codechef.com/users/{id}"
+        }
     ]
 }
