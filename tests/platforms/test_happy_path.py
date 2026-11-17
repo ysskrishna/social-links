@@ -83,6 +83,7 @@ HAPPY_PATH = [
     ("replit", "ysskrishna", "https://replit.com/@ysskrishna", "https://replit.com/@ysskrishna"),
     ("rubygems", "dhh", "https://rubygems.org/profiles/dhh", "https://rubygems.org/profiles/dhh"),
     ("rumble", "ysskrishna", "https://rumble.com/user/ysskrishna", "https://rumble.com/user/ysskrishna"),
+    ("scratch", "griffpatch", "https://scratch.mit.edu/users/griffpatch/", "https://scratch.mit.edu/users/griffpatch"),
     ("signal", "abc123xyz", "https://signal.me/#p/abc123xyz", "https://signal.me/#p/abc123xyz"),
     ("slideshare", "michaelyublosky", "https://www.slideshare.net/michaelyublosky", "https://www.slideshare.net/michaelyublosky"),
     ("snapchat", None, "https://snapchat.com/add/ysskrishna", "https://snapchat.com/@ysskrishna"),

@@ -106,6 +106,7 @@ PLATFORM_META: Dict[str, Tuple[str, str, Optional[str]]] = {
     "replit": ("Replit", "https://replit.com", None),
     "rubygems": ("RubyGems", "https://rubygems.org", None),
     "rumble": ("Rumble", "https://rumble.com", None),
+    "scratch": ("Scratch", "https://scratch.mit.edu", None),
     "signal": ("Signal", "https://signal.me", None),
     "slideshare": ("SlideShare", "https://slideshare.net", None),
     "snapchat": ("Snapchat", "https://snapchat.com", None),

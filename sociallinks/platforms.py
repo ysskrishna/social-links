@@ -1067,5 +1067,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://www.goodreads.com/user/show/{id}"
         }
+    ],
+    "scratch": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?scratch\.mit\.edu/users/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://scratch.mit.edu/users/{id}"
+        }
     ]
 }
