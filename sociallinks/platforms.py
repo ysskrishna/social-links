@@ -2140,5 +2140,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://packagist.org/users/{id}"
         }
+    ],
+    "slashdot": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?slashdot\.org/~{PROFILE_ID_UNICODE}/?$",
+                rf"^{PROFILE_ID_UNICODE}$"
+            ],
+            "sanitized": "https://slashdot.org/~{id}"
+        }
     ]
 }
