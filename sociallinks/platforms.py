@@ -1195,5 +1195,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://truthsocial.com/@{id}"
         }
+    ],
+    "buymeacoffee": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?buymeacoffee\.com/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://buymeacoffee.com/{id}"
+        }
     ]
 }
