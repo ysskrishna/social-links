@@ -46,6 +46,7 @@ HAPPY_PATH = [
     ("hackernews", "pg", "https://news.ycombinator.com/user?id=pg", "https://news.ycombinator.com/user?id=pg"),
     ("hackerrank", "ysskrishna", "https://www.hackerrank.com/profile/ysskrishna", "https://www.hackerrank.com/profile/ysskrishna"),
     ("hashnode", None, "https://hashnode.com/@ysskrishna", "https://hashnode.com/@ysskrishna"),
+    ("hey_xyz", "stani", "https://hey.xyz/u/stani", "https://hey.xyz/u/stani"),
     ("huggingface", "ysskrishna", "https://huggingface.co/ysskrishna", "https://huggingface.co/ysskrishna"),
     ("instagram", "ysskrishna", "https://instagram.com/ysskrishna", "https://instagram.com/ysskrishna"),
     ("kaggle", "ysskrishna", "https://www.kaggle.com/ysskrishna", "https://www.kaggle.com/ysskrishna"),

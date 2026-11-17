@@ -991,5 +991,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://opensea.io/{id}"
         }
+    ],
+    "hey_xyz": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?hey\.xyz/u/{PROFILE_ID}/?$",
+                rf"^@?{PROFILE_ID}$"
+            ],
+            "sanitized": "https://hey.xyz/u/{id}"
+        }
     ]
 }
