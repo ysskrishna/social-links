@@ -14,6 +14,7 @@ HAPPY_PATH = [
     ("artstation", "ysskrishna", "https://www.artstation.com/ysskrishna", "https://www.artstation.com/ysskrishna"),
     ("atcoder", "tourist", "https://atcoder.jp/users/tourist", "https://atcoder.jp/users/tourist"),
     ("bandcamp", "ysskrishna", "https://ysskrishna.bandcamp.com", "https://ysskrishna.bandcamp.com"),
+    ("beacons", "ysskrishna", "https://beacons.ai/ysskrishna", "https://beacons.ai/ysskrishna"),
     ("behance", "ysskrishna", "https://behance.net/ysskrishna", "https://behance.net/ysskrishna"),
     ("bilibili", "2", "https://space.bilibili.com/2", "https://space.bilibili.com/2"),
     ("bluesky", "ysskrishna.bsky.social", "https://bsky.app/profile/ysskrishna.bsky.social", "https://bsky.app/profile/ysskrishna.bsky.social"),

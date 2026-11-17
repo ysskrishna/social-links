@@ -1241,5 +1241,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://www.npmjs.com/~{id}"
         }
+    ],
+    "beacons": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?beacons\.ai/(?!(?:about|login|settings|explore|search|help|pricing|signup|terms|privacy|sign\-up|register|blog|faq|dashboard|account|home|support|contact|careers|legal|discover|features|apps|download|i|creators|brands|media\-kit|ai|link\-in\-bio|templates)/?$){PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://beacons.ai/{id}"
+        }
     ]
 }
