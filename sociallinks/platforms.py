@@ -2085,5 +2085,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://www.tripadvisor.com/Profile/{id}"
         }
+    ],
+    "contra": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?contra\.com/(?!(?:about|login|settings|explore|search|help|pricing|signup|terms|privacy|sign\-up|register|blog|faq|dashboard|account|home|support|contact|careers|legal|discover|features|apps|download|p|s|jobs|projects|hire|freelancers|community|opportunities|tools|independent|pro|for\-clients|for\-independents|payments|invoice|sign\-in)/?$){PROFILE_ID}(?:/work)?/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://contra.com/{id}"
+        }
     ]
 }
