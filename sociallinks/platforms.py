@@ -891,5 +891,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://scholar.google.com/citations?user={id}"
         }
+    ],
+    "kick": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?kick\.com/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://kick.com/{id}"
+        }
     ]
 }
