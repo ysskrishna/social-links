@@ -55,6 +55,7 @@ HAPPY_PATH = [
     ("pinterest", "ysskrishna", "https://pinterest.com/ysskrishna", "https://pinterest.com/ysskrishna"),
     ("producthunt", None, "https://www.producthunt.com/@ysskrishna", "https://www.producthunt.com/@ysskrishna"),
     ("pypi", "ysskrishna", "https://pypi.org/user/ysskrishna", "https://pypi.org/user/ysskrishna"),
+    ("qiita", "jnchito", "https://qiita.com/jnchito", "https://qiita.com/jnchito"),
     ("quora", "Jay-Hoque", "https://www.quora.com/profile/Jay-Hoque", "https://quora.com/profile/Jay-Hoque"),
     ("reddit", "ysskrishna", "https://reddit.com/user/ysskrishna", "https://reddit.com/user/ysskrishna"),
     ("replicate", "ysskrishna", "https://replicate.com/ysskrishna", "https://replicate.com/ysskrishna"),

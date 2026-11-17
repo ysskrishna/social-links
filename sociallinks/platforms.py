@@ -809,5 +809,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://tryhackme.com/p/{id}"
         }
+    ],
+    "qiita": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?qiita\.com/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://qiita.com/{id}"
+        }
     ]
 }

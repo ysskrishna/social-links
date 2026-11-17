@@ -79,6 +79,7 @@ PLATFORM_META: Dict[str, Tuple[str, str, Optional[str]]] = {
     "pinterest": ("Pinterest", "https://pinterest.com", None),
     "producthunt": ("Product Hunt", "https://producthunt.com", None),
     "pypi": ("PyPI", "https://pypi.org", None),
+    "qiita": ("Qiita", "https://qiita.com", None),
     "quora": ("Quora", "https://quora.com", None),
     "reddit": ("Reddit", "https://reddit.com", None),
     "replicate": ("Replicate", "https://replicate.com", None),
