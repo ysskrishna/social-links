@@ -1277,5 +1277,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://codeberg.org/{id}"
         }
+    ],
+    "crates_io": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?crates\.io/users/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://crates.io/users/{id}"
+        }
     ]
 }
