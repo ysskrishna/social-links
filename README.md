@@ -1,7 +1,7 @@
 # Social Links
 
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
-![Tests](https://github.com/ysskrishna/social-links/actions/workflows/test.yml/badge.svg)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/ysskrishna/social-links/blob/main/LICENSE)
+[![Tests](https://github.com/ysskrishna/social-links/actions/workflows/test.yml/badge.svg)](https://github.com/ysskrishna/social-links/actions/workflows/test.yml)
 ![Python](https://img.shields.io/badge/python-3.8%2B-blue.svg)
 [![PyPI](https://img.shields.io/pypi/v/social-links)](https://pypi.org/project/social-links/)
 [![PyPI Downloads](https://static.pepy.tech/personalized-badge/social-links?period=total&units=INTERNATIONAL_SYSTEM&left_color=GREY&right_color=BLUE&left_text=downloads)](https://pepy.tech/projects/social-links)
@@ -197,7 +197,10 @@ print(f"Supported platforms: {len(platforms)}")  # 65+
 
 For custom configurations, custom platforms, or programmatic platform management, use the `SocialLinks` class directly instead of the module-level functions.
 
-### When to Use Advanced Features
+<a id="when-to-use-advanced-features"></a>
+
+<details>
+<summary><b>When to Use Advanced Features</b></summary>
 
 Use the class API when you need to:
 - Add support for platforms not in the predefined list
@@ -205,7 +208,12 @@ Use the class API when you need to:
 - Manage platforms programmatically (add, remove, modify)
 - Configure regex flags or start with an empty platform list
 
-### Using the Class API
+</details>
+
+<a id="using-the-class-api"></a>
+
+<details>
+<summary><b>Using the Class API</b></summary>
 
 The `SocialLinks` class provides the same methods as module-level functions, but with additional configuration options:
 
@@ -236,7 +244,12 @@ sl = SocialLinks(use_predefined_platforms=False)
 sl = SocialLinks(regex_flags=re.IGNORECASE | re.MULTILINE)
 ```
 
-### Understanding Platform Configuration
+</details>
+
+<a id="understanding-platform-configuration"></a>
+
+<details>
+<summary><b>Understanding Platform Configuration</b></summary>
 
 <details>
 <summary><b>Platform configuration structure and key concepts</b></summary>
@@ -299,6 +312,8 @@ platform_config = [
 - Patterns are matched from the start of the input, so end URL patterns with `/?$`
 - If nothing matches, the input is tried again without its query string and fragment, so share links work
 - Patterns that are only a bare ID (such as `^{PROFILE_ID}$`, built from `sociallinks.constants`) are skipped by `detect_platform()` but still accepted by `is_valid()`, `sanitize()` and `extract_id()`
+
+</details>
 
 </details>
 
@@ -371,7 +386,10 @@ sl.sanitize("example", "https://www.example.com/org/acme-corp")
 
 </details>
 
-### Managing Platforms
+<a id="managing-platforms"></a>
+
+<details>
+<summary><b>Managing Platforms</b></summary>
 
 <details>
 <summary><b>View, add, modify and remove platforms</b></summary>
@@ -473,7 +491,12 @@ Registration is all-or-nothing: if a configuration is invalid, `set_platform()` 
 
 </details>
 
-### Complete Example
+</details>
+
+<a id="complete-example"></a>
+
+<details>
+<summary><b>Complete Example</b></summary>
 
 <details>
 <summary><b>Build a custom platform manager</b></summary>
@@ -512,21 +535,11 @@ print(f"Total platforms: {len(all_platforms)}")
 
 </details>
 
+</details>
+
 ## API Reference
 
 Every public function, `SocialLinks` method and exception, with parameters, return values and examples, is listed in [API.md](API.md).
-
-## Built and maintained by
-
-Social Links is built and maintained by:
-
-| | Name | GitHub | Role |
-|---|------|--------|------|
-| <img src="https://github.com/ysskrishna.png?size=120" width="60" height="60" alt="Y. Siva Sai Krishna"> | **Y. Siva Sai Krishna** | [@ysskrishna](https://github.com/ysskrishna) | Creator |
-
-## Changelog
-
-See [CHANGELOG.md](https://github.com/ysskrishna/social-links/blob/main/CHANGELOG.md) for a detailed list of changes and version history.
 
 ## Roadmap
 
@@ -545,23 +558,34 @@ See [CHANGELOG.md](https://github.com/ysskrishna/social-links/blob/main/CHANGELO
 
 Contributions are welcome! Please read our [Contributing Guide](https://github.com/ysskrishna/social-links/blob/main/CONTRIBUTING.md) for details on our code of conduct, development setup, and the process for submitting pull requests.
 
+## Credits
+
+This package is inspired by the [social-links](https://www.npmjs.com/package/social-links) npm package by [gkucmierz](https://github.com/gkucmierz/social-links).
+
+## Built and maintained by
+
+Social Links is built and maintained by:
+
+| | Name | GitHub | Role |
+|---|------|--------|------|
+| <img src="https://github.com/ysskrishna.png?size=120" width="60" height="60" alt="Y. Siva Sai Krishna"> | **Y. Siva Sai Krishna** | [@ysskrishna](https://github.com/ysskrishna) | Creator |
+
+## Changelog
+
+See [CHANGELOG](CHANGELOG.md) for release history.
+
 ## Support
 
 If you find this library helpful:
 
 - ⭐ Star the repository
-- 🐛 Report issues
+- 🐛 [Report issues](https://github.com/ysskrishna/social-links/issues)
 - 🔀 Submit pull requests
 - 💝 [Sponsor on GitHub](https://github.com/sponsors/ysskrishna)
 
-## Credits
-
-This package is inspired by the [social-links](https://www.npmjs.com/package/social-links) npm package by [gkucmierz](https://github.com/gkucmierz/social-links).
-
 ## License
 
-MIT © [Y. Siva Sai Krishna](https://github.com/ysskrishna) - see [LICENSE](https://github.com/ysskrishna/social-links/blob/main/LICENSE) file for details.
-
+MIT © [Y. Siva Sai Krishna](https://github.com/ysskrishna) — see [LICENSE](LICENSE) for details.
 
 ---
 
@@ -569,9 +593,9 @@ MIT © [Y. Siva Sai Krishna](https://github.com/ysskrishna) - see [LICENSE](http
   <a href="https://github.com/ysskrishna">Author's GitHub</a> •
   <a href="https://linkedin.com/in/ysskrishna">Author's LinkedIn</a> •
   <a href="https://ysskrishna.space">Author's site</a> •
-  <a href="https://clawhub.ai/ysskrishna">ClawHub</a> •
-  <a href="https://github.com/ysskrishna/social-links/issues">Report Issues</a> •
   <a href="https://pypi.org/project/social-links/">Package on PyPI</a> •
+  <a href="https://clawhub.ai/ysskrishna">ClawHub</a> •
   <a href="https://ysskrishna.github.io/social-links/">Package Documentation</a> •
-  <a href="https://ysskrishna.github.io/social-links/demo/">Interactive Demo</a>
+  <a href="https://ysskrishna.github.io/social-links/demo/">Interactive Demo</a> •
+  <a href="https://github.com/ysskrishna/social-links/issues">Report Issues</a>
 </p>
