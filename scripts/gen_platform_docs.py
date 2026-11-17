@@ -105,6 +105,7 @@ PLATFORM_META: Dict[str, Tuple[str, str, Optional[str]]] = {
     "freelancer": ("Freelancer.com", "https://freelancer.com", None),
     "furaffinity": ("Fur Affinity", "https://furaffinity.net", "(NSFW)"),
     "gamejolt": ("Game Jolt", "https://gamejolt.com", None),
+    "geeksforgeeks": ("GeeksforGeeks", "https://geeksforgeeks.org", None),
     "genius": ("Genius", "https://genius.com", None),
     "gitee": ("Gitee", "https://gitee.com", None),
     "github": ("GitHub", "https://github.com", None),

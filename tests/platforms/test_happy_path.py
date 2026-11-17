@@ -81,6 +81,7 @@ HAPPY_PATH = [
     ("freelancer", "ysskrishna", "https://www.freelancer.com/u/ysskrishna", "https://www.freelancer.com/u/ysskrishna"),
     ("furaffinity", "dragoneer", "https://www.furaffinity.net/user/dragoneer/", "https://www.furaffinity.net/user/dragoneer"),
     ("gamejolt", "CROS", "https://gamejolt.com/@CROS", "https://gamejolt.com/@CROS"),
+    ("geeksforgeeks", "sandeepjainlinkedin", "https://www.geeksforgeeks.org/user/sandeepjainlinkedin/", "https://www.geeksforgeeks.org/profile/sandeepjainlinkedin"),
     ("genius", "Ferrari_Fairy", "https://genius.com/Ferrari_Fairy", "https://genius.com/Ferrari_Fairy"),
     ("gitee", "openharmony", "https://gitee.com/openharmony", "https://gitee.com/openharmony"),
     ("github", "ysskrishna", "https://github.com/ysskrishna", "https://github.com/ysskrishna"),
