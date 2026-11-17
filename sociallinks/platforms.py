@@ -1974,5 +1974,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://jp.mercari.com/user/profile/{id}"
         }
+    ],
+    "vinted": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?vinted\.(?:com|fr|de|es|it|nl|be|pl|lt|cz|at|pt|sk|lu|hu|ro|se|fi|dk|gr|hr|ie|co\.uk)/member/{NUMERIC_ID}(?:-[^/?#]*)?/?$",
+                rf"^{NUMERIC_ID}$"
+            ],
+            "sanitized": "https://www.vinted.com/member/{id}"
+        }
     ]
 }

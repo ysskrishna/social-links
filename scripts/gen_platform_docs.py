@@ -224,6 +224,7 @@ PLATFORM_META: Dict[str, Tuple[str, str, Optional[str]]] = {
     "untappd": ("Untappd", "https://untappd.com", None),
     "velog": ("Velog", "https://velog.io", None),
     "vimeo": ("Vimeo", "https://vimeo.com", None),
+    "vinted": ("Vinted", "https://vinted.com", None),
     "vk": ("VK", "https://vk.com", None),
     "wandb": ("Weights & Biases", "https://wandb.ai", None),
     "wattpad": ("Wattpad", "https://wattpad.com", None),
