@@ -19,6 +19,7 @@ HAPPY_PATH = [
     ("beacons", "ysskrishna", "https://beacons.ai/ysskrishna", "https://beacons.ai/ysskrishna"),
     ("behance", "ysskrishna", "https://behance.net/ysskrishna", "https://behance.net/ysskrishna"),
     ("bilibili", "2", "https://space.bilibili.com/2", "https://space.bilibili.com/2"),
+    ("blogger", "05229574233543423344", "https://www.blogger.com/profile/05229574233543423344", "https://www.blogger.com/profile/05229574233543423344"),
     ("bluesky", "ysskrishna.bsky.social", "https://bsky.app/profile/ysskrishna.bsky.social", "https://bsky.app/profile/ysskrishna.bsky.social"),
     ("buymeacoffee", "ysskrishna", "https://www.buymeacoffee.com/ysskrishna", "https://buymeacoffee.com/ysskrishna"),
     ("carrd", "ysskrishna", "https://ysskrishna.carrd.co", "https://ysskrishna.carrd.co"),
