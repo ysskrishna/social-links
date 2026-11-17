@@ -106,6 +106,7 @@ HAPPY_PATH = [
     ("pypi", "ysskrishna", "https://pypi.org/user/ysskrishna", "https://pypi.org/user/ysskrishna"),
     ("qiita", "jnchito", "https://qiita.com/jnchito", "https://qiita.com/jnchito"),
     ("quora", "Jay-Hoque", "https://www.quora.com/profile/Jay-Hoque", "https://quora.com/profile/Jay-Hoque"),
+    ("rateyourmusic", "Jarevo", "https://rateyourmusic.com/~Jarevo", "https://rateyourmusic.com/~Jarevo"),
     ("reddit", "ysskrishna", "https://reddit.com/user/ysskrishna", "https://reddit.com/user/ysskrishna"),
     ("replicate", "ysskrishna", "https://replicate.com/ysskrishna", "https://replicate.com/ysskrishna"),
     ("replit", "ysskrishna", "https://replit.com/@ysskrishna", "https://replit.com/@ysskrishna"),

@@ -1423,5 +1423,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://app.thestorygraph.com/profile/{id}"
         }
+    ],
+    "rateyourmusic": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?rateyourmusic\.com/~{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://rateyourmusic.com/~{id}"
+        }
     ]
 }
