@@ -76,6 +76,7 @@ HAPPY_PATH = [
     ("patreon", "ysskrishna", "https://patreon.com/ysskrishna", "https://patreon.com/ysskrishna"),
     ("pinterest", "ysskrishna", "https://pinterest.com/ysskrishna", "https://pinterest.com/ysskrishna"),
     ("pixelfed", "dansup", "https://pixelfed.social/dansup", "https://pixelfed.social/dansup"),
+    ("pixiv", "11", "https://www.pixiv.net/en/users/11", "https://www.pixiv.net/users/11"),
     ("poshmark", "ysskrishna", "https://poshmark.com/closet/ysskrishna", "https://poshmark.com/closet/ysskrishna"),
     ("primal", "npub180cvv07tjdrrgpa0j7j7tmnyl2yr6yr7l8j4s3evf6u64th6gkwsyjh6w6", "https://primal.net/p/npub180cvv07tjdrrgpa0j7j7tmnyl2yr6yr7l8j4s3evf6u64th6gkwsyjh6w6", "https://primal.net/p/npub180cvv07tjdrrgpa0j7j7tmnyl2yr6yr7l8j4s3evf6u64th6gkwsyjh6w6"),
     ("producthunt", None, "https://www.producthunt.com/@ysskrishna", "https://www.producthunt.com/@ysskrishna"),
