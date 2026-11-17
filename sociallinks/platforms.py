@@ -1432,5 +1432,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://rateyourmusic.com/~{id}"
         }
+    ],
+    "flipboard": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?flipboard\.com/@{PROFILE_ID}/?$",
+                rf"^@?{PROFILE_ID}$"
+            ],
+            "sanitized": "https://flipboard.com/@{id}"
+        }
     ]
 }
