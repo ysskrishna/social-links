@@ -1369,5 +1369,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://www.airbnb.com/users/show/{id}"
         }
+    ],
+    "trustpilot": [
+        {
+            "patterns": [
+                rf"https?://(?:(?:www|[a-z][a-z])\.)?trustpilot\.com/users/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.trustpilot.com/users/{id}"
+        }
     ]
 }
