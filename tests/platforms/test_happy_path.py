@@ -38,6 +38,7 @@ HAPPY_PATH = [
     ("crates_io", "dtolnay", "https://crates.io/users/dtolnay", "https://crates.io/users/dtolnay"),
     ("crunchbase", None, "https://www.crunchbase.com/organization/slack", "https://www.crunchbase.com/organization/slack"),
     ("csdn", "csdnnews", "https://blog.csdn.net/csdnnews", "https://blog.csdn.net/csdnnews"),
+    ("curseforge", "ysskrishna", "https://www.curseforge.com/members/ysskrishna/projects", "https://www.curseforge.com/members/ysskrishna"),
     ("dailymotion", "ysskrishna", "https://www.dailymotion.com/ysskrishna", "https://www.dailymotion.com/ysskrishna"),
     ("depop", "ysskrishna", "https://www.depop.com/ysskrishna/", "https://www.depop.com/ysskrishna"),
     ("dev_to", "ysskrishna", "https://dev.to/ysskrishna", "https://dev.to/ysskrishna"),

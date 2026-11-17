@@ -1624,5 +1624,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://www.start.gg/user/{id}"
         }
+    ],
+    "curseforge": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?curseforge\.com/members/{PROFILE_ID}(?:/projects)?/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.curseforge.com/members/{id}"
+        }
     ]
 }
