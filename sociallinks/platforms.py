@@ -1441,5 +1441,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://flipboard.com/@{id}"
         }
+    ],
+    "character_ai": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?character\.ai/profile/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://character.ai/profile/{id}"
+        }
     ]
 }

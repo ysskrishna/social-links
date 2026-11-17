@@ -22,6 +22,7 @@ HAPPY_PATH = [
     ("bluesky", "ysskrishna.bsky.social", "https://bsky.app/profile/ysskrishna.bsky.social", "https://bsky.app/profile/ysskrishna.bsky.social"),
     ("buymeacoffee", "ysskrishna", "https://www.buymeacoffee.com/ysskrishna", "https://buymeacoffee.com/ysskrishna"),
     ("carrd", "ysskrishna", "https://ysskrishna.carrd.co", "https://ysskrishna.carrd.co"),
+    ("character_ai", "ysskrishna", "https://character.ai/profile/ysskrishna", "https://character.ai/profile/ysskrishna"),
     ("chess_com", "ysskrishna", "https://www.chess.com/member/ysskrishna", "https://www.chess.com/member/ysskrishna"),
     ("civitai", "ysskrishna", "https://civitai.com/user/ysskrishna", "https://civitai.com/user/ysskrishna"),
     ("clawhub", "steipete", "https://clawhub.ai/steipete", "https://clawhub.ai/steipete"),
