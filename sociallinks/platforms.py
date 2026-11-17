@@ -2085,5 +2085,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://www.tripadvisor.com/Profile/{id}"
         }
+    ],
+    "contra": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?contra\.com/{PROFILE_ID}(?:/work)?/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://contra.com/{id}"
+        }
     ]
 }
