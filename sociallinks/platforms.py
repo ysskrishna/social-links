@@ -845,5 +845,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://rubygems.org/profiles/{id}"
         }
+    ],
+    "nuget": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?nuget\.org/profiles/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.nuget.org/profiles/{id}"
+        }
     ]
 }
