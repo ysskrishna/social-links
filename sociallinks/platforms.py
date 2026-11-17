@@ -1141,5 +1141,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://imgur.com/user/{id}"
         }
+    ],
+    "odysee": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?odysee\.com/@{PROFILE_ID_UNICODE}(?::[0-9A-Fa-f]+)?/?$",
+                rf"^@?{PROFILE_ID_UNICODE}$"
+            ],
+            "sanitized": "https://odysee.com/@{id}"
+        }
     ]
 }

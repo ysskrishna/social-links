@@ -71,6 +71,7 @@ HAPPY_PATH = [
     ("misskey", "syuilo", "https://misskey.io/@syuilo", "https://misskey.io/@syuilo"),
     ("myanimelist", "Xinil", "https://myanimelist.net/profile/Xinil", "https://myanimelist.net/profile/Xinil"),
     ("nuget", "Microsoft", "https://www.nuget.org/profiles/Microsoft", "https://www.nuget.org/profiles/Microsoft"),
+    ("odysee", "Odysee", "https://odysee.com/@Odysee:8", "https://odysee.com/@Odysee"),
     ("opensea", "0x1234567890abcdef1234567890abcdef12345678", "https://opensea.io/0x1234567890abcdef1234567890abcdef12345678", "https://opensea.io/0x1234567890abcdef1234567890abcdef12345678"),
     ("openstreetmap", "Steve%20Coast", "https://www.openstreetmap.org/user/Steve%20Coast", "https://www.openstreetmap.org/user/Steve%20Coast"),
     ("osu", "2", "https://osu.ppy.sh/users/2", "https://osu.ppy.sh/users/2"),
