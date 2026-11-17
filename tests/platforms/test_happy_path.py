@@ -53,6 +53,7 @@ HAPPY_PATH = [
     ("etsy", "MyShopName", "https://etsy.com/shop/MyShopName", "https://etsy.com/shop/MyShopName"),
     ("exercism", "ysskrishna", "https://exercism.org/profiles/ysskrishna", "https://exercism.org/profiles/ysskrishna"),
     ("facebook", "ysskrishna", "https://facebook.com/ysskrishna", "https://facebook.com/ysskrishna"),
+    ("faceit", "s1mple", "https://www.faceit.com/en/players/s1mple", "https://www.faceit.com/en/players/s1mple"),
     ("farcaster", "dwr.eth", "https://farcaster.xyz/dwr.eth", "https://farcaster.xyz/dwr.eth"),
     ("figma", "figma", "https://www.figma.com/@figma", "https://www.figma.com/@figma"),
     ("fiverr", "ysskrishna", "https://www.fiverr.com/ysskrishna", "https://www.fiverr.com/ysskrishna"),
