@@ -1332,5 +1332,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://www.pexels.com/@{id}"
         }
+    ],
+    "xiaohongshu": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?(?:xiaohongshu|rednote)\.com/user/profile/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.rednote.com/user/profile/{id}"
+        }
     ]
 }
