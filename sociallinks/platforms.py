@@ -1459,5 +1459,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://ollama.com/{id}"
         }
+    ],
+    "depop": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?depop\.com/(?!(?:about|login|settings|explore|search|help|pricing|signup|terms|privacy|sign\-up|register|blog|faq|dashboard|account|home|support|contact|careers|legal|discover|features|apps|download|products|category|sell|sellers|likes|messages|sell\-on\-depop|brands|women|men|kids|safety|ccpa)/?$){PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.depop.com/{id}"
+        }
     ]
 }

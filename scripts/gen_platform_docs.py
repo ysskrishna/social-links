@@ -58,6 +58,7 @@ PLATFORM_META: Dict[str, Tuple[str, str, Optional[str]]] = {
     "crates_io": ("crates.io", "https://crates.io", None),
     "crunchbase": ("Crunchbase", "https://crunchbase.com", None),
     "dailymotion": ("Dailymotion", "https://dailymotion.com", None),
+    "depop": ("Depop", "https://depop.com", None),
     "dev_to": ("Dev.to", "https://dev.to", None),
     "deviantart": ("DeviantArt", "https://deviantart.com", None),
     "discogs": ("Discogs", "https://discogs.com", None),
