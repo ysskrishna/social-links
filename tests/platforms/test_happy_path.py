@@ -93,6 +93,7 @@ HAPPY_PATH = [
     ("soundcloud", "ysskrishna", "https://soundcloud.com/ysskrishna", "https://soundcloud.com/ysskrishna"),
     ("sourceforge", "rspeed", "https://sourceforge.net/u/rspeed/profile", "https://sourceforge.net/u/rspeed/profile"),
     ("sourcehut", "sircmpwn", "https://sr.ht/~sircmpwn", "https://sr.ht/~sircmpwn"),
+    ("speedrun", "cheese", "https://www.speedrun.com/users/cheese", "https://www.speedrun.com/users/cheese"),
     ("spotify", "3WrFJ7ztbogyGnTHbHJFl2", "https://open.spotify.com/artist/3WrFJ7ztbogyGnTHbHJFl2", "https://open.spotify.com/artist/3WrFJ7ztbogyGnTHbHJFl2"),
     ("stack_exchange", "1", "https://stackexchange.com/users/1/jeff-atwood", "https://stackexchange.com/users/1"),
     ("stackoverflow", "12345", "https://stackoverflow.com/users/12345", "https://stackoverflow.com/users/12345"),
