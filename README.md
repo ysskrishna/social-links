@@ -126,11 +126,12 @@ The library comes with 155+ predefined platforms:
 | [Tistory](https://tistory.com) | [Topcoder](https://topcoder.com) | [Topmate](https://topmate.io) |
 | [Trello](https://trello.com) | [Trustpilot](https://trustpilot.com) | [Truth Social](https://truthsocial.com) |
 | [TryHackMe](https://tryhackme.com) | [Tumblr](https://tumblr.com) | [Twitch](https://twitch.tv) |
-| [Unsplash](https://unsplash.com) | [Untappd](https://untappd.com) | [Vimeo](https://vimeo.com) |
-| [VK](https://vk.com) | [Wattpad](https://wattpad.com) | [WeChat](https://weixin.qq.com) |
-| [Weibo](https://weibo.com) | [Weights & Biases](https://wandb.ai) | [Wellfound (AngelList)](https://wellfound.com) |
-| [WhatsApp](https://whatsapp.com) | [WordPress](https://wordpress.com) | [X (Twitter)](https://x.com) |
-| [Xiaohongshu (RedNote)](https://www.xiaohongshu.com) | [YouTube](https://youtube.com) | [Zenn](https://zenn.dev) |
+| [Udemy](https://udemy.com) | [Unsplash](https://unsplash.com) | [Untappd](https://untappd.com) |
+| [Vimeo](https://vimeo.com) | [VK](https://vk.com) | [Wattpad](https://wattpad.com) |
+| [WeChat](https://weixin.qq.com) | [Weibo](https://weibo.com) | [Weights & Biases](https://wandb.ai) |
+| [Wellfound (AngelList)](https://wellfound.com) | [WhatsApp](https://whatsapp.com) | [WordPress](https://wordpress.com) |
+| [X (Twitter)](https://x.com) | [Xiaohongshu (RedNote)](https://www.xiaohongshu.com) | [YouTube](https://youtube.com) |
+| [Zenn](https://zenn.dev) |  |  |
 
 <!-- platforms:end -->
 
