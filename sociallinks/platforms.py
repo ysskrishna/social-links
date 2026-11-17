@@ -734,5 +734,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://trello.com/{id}"
         }
+    ],
+    "huggingface": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?huggingface\.co/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://huggingface.co/{id}"
+        }
     ]
 }

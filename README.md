@@ -11,7 +11,7 @@
 [![Context7](https://img.shields.io/badge/Context7-docs-18181B)](https://context7.com/ysskrishna/social-links)
 [![Ask DeepWiki](https://img.shields.io/badge/DeepWiki-ask-18181B)](https://deepwiki.com/ysskrishna/social-links)
 
-Python library to validate, sanitize, and detect social media URLs. Support for LinkedIn, Instagram, TikTok, X/Twitter, GitHub, Facebook, YouTube, and 65+ platforms. Features automatic URL normalization and zero dependencies. Easy to use, regex-powered, and customizable.
+Python library to validate, sanitize, and detect social media URLs. Support for LinkedIn, Instagram, TikTok, X/Twitter, GitHub, Facebook, YouTube, and 70+ platforms. Features automatic URL normalization and zero dependencies. Easy to use, regex-powered, and customizable.
 
 
 > 🚀 **Try it interactively in your browser!** Test the library with our [Interactive Demo](https://ysskrishna.github.io/social-links/demo/) - no installation required.
@@ -24,7 +24,7 @@ Python library to validate, sanitize, and detect social media URLs. Support for 
 - ✅ **Validate** URLs against specific platforms
 - 🧹 **Sanitize** URLs to canonical format
 - 🆔 **Extract IDs** (usernames, profile IDs) from URLs
-- 🎯 **65+ predefined platforms** (LinkedIn, GitHub, Twitter/X, Facebook, Instagram, YouTube, and more)
+- 🎯 **70+ predefined platforms** (LinkedIn, GitHub, Twitter/X, Facebook, Instagram, YouTube, and more)
 - 🔧 **Customizable** - Add your own platforms with regex patterns
 - 🚀 **Zero dependencies** - Pure Python, no external libraries
 
@@ -63,14 +63,14 @@ print(user_id)  # "ysskrishna"
 
 # List all supported platforms
 platforms = list_platforms()
-print(f"Supported platforms: {len(platforms)}")  # Supported platforms: 65+
+print(f"Supported platforms: {len(platforms)}")  # Supported platforms: 70+
 ```
 
 That's it! For most use cases, you don't need anything more. See [Basic Usage](#basic-usage) for more examples, or [Advanced Usage](#advanced-usage) if you need custom platforms or configurations.
 
 ## Supported Platforms
 
-The library comes with 65+ predefined platforms:
+The library comes with 70+ predefined platforms:
 
 <details>
 <summary><b>Show all supported platforms</b></summary>
@@ -87,21 +87,22 @@ The library comes with 65+ predefined platforms:
 | [Exercism](https://exercism.org) | [Facebook](https://facebook.com) | [Fiverr](https://fiverr.com) |
 | [Flickr](https://flickr.com) | [GitHub](https://github.com) | [GitLab](https://gitlab.com) |
 | [Gravatar](https://gravatar.com) | [Gumroad](https://gumroad.com) | [Hacker News](https://news.ycombinator.com) |
-| [HackerRank](https://hackerrank.com) | [Hashnode](https://hashnode.com) | [Instagram](https://instagram.com) |
-| [Kaggle](https://kaggle.com) | [Keybase](https://keybase.io) | [Kuaishou](https://kuaishou.com) |
-| [LeetCode](https://leetcode.com) | [Lemmy World](https://lemmy.world) | [Lichess](https://lichess.org) |
-| [LinkedIn](https://linkedin.com) (personal & company) | [Linktree](https://linktr.ee) | [Mastodon](https://mastodon.social) |
-| [Medium](https://medium.com) | [Patreon](https://patreon.com) | [Pinterest](https://pinterest.com) |
-| [Product Hunt](https://producthunt.com) | [PyPI](https://pypi.org) | [Quora](https://quora.com) |
-| [Reddit](https://reddit.com) | [Replit](https://replit.com) | [Rumble](https://rumble.com) |
-| [Signal](https://signal.me) | [SlideShare](https://slideshare.net) | [Snapchat](https://snapchat.com) |
-| [SoundCloud](https://soundcloud.com) | [Spotify](https://spotify.com) | [Stack Overflow](https://stackoverflow.com) |
-| [Steam](https://steamcommunity.com) | [Substack](https://substack.com) | [Telegram](https://telegram.org) |
-| [Threads](https://threads.com) | [TikTok](https://tiktok.com) | [Trello](https://trello.com) |
-| [Tumblr](https://tumblr.com) | [Twitch](https://twitch.tv) | [Unsplash](https://unsplash.com) |
-| [Vimeo](https://vimeo.com) | [VK](https://vk.com) | [WeChat](https://weixin.qq.com) |
-| [Weibo](https://weibo.com) | [Wellfound (AngelList)](https://wellfound.com) | [WhatsApp](https://whatsapp.com) |
-| [WordPress](https://wordpress.com) | [X (Twitter)](https://x.com) | [YouTube](https://youtube.com) |
+| [HackerRank](https://hackerrank.com) | [Hashnode](https://hashnode.com) | [Hugging Face](https://huggingface.co) |
+| [Instagram](https://instagram.com) | [Kaggle](https://kaggle.com) | [Keybase](https://keybase.io) |
+| [Kuaishou](https://kuaishou.com) | [LeetCode](https://leetcode.com) | [Lemmy World](https://lemmy.world) |
+| [Lichess](https://lichess.org) | [LinkedIn](https://linkedin.com) (personal & company) | [Linktree](https://linktr.ee) |
+| [Mastodon](https://mastodon.social) | [Medium](https://medium.com) | [Patreon](https://patreon.com) |
+| [Pinterest](https://pinterest.com) | [Product Hunt](https://producthunt.com) | [PyPI](https://pypi.org) |
+| [Quora](https://quora.com) | [Reddit](https://reddit.com) | [Replit](https://replit.com) |
+| [Rumble](https://rumble.com) | [Signal](https://signal.me) | [SlideShare](https://slideshare.net) |
+| [Snapchat](https://snapchat.com) | [SoundCloud](https://soundcloud.com) | [Spotify](https://spotify.com) |
+| [Stack Overflow](https://stackoverflow.com) | [Steam](https://steamcommunity.com) | [Substack](https://substack.com) |
+| [Telegram](https://telegram.org) | [Threads](https://threads.com) | [TikTok](https://tiktok.com) |
+| [Trello](https://trello.com) | [Tumblr](https://tumblr.com) | [Twitch](https://twitch.tv) |
+| [Unsplash](https://unsplash.com) | [Vimeo](https://vimeo.com) | [VK](https://vk.com) |
+| [WeChat](https://weixin.qq.com) | [Weibo](https://weibo.com) | [Wellfound (AngelList)](https://wellfound.com) |
+| [WhatsApp](https://whatsapp.com) | [WordPress](https://wordpress.com) | [X (Twitter)](https://x.com) |
+| [YouTube](https://youtube.com) |  |  |
 
 <!-- platforms:end -->
 
@@ -109,7 +110,7 @@ The library comes with 65+ predefined platforms:
 
 ## Basic Usage
 
-The simplest way to use social-links is with module-level functions. These work out of the box with 65+ predefined platforms - no configuration needed!
+The simplest way to use social-links is with module-level functions. These work out of the box with 70+ predefined platforms - no configuration needed!
 
 ### Detect Platform
 
@@ -189,7 +190,7 @@ from sociallinks import list_platforms
 # Get all available platforms
 platforms = list_platforms()
 # Returns: ["behance", "dev_to", "dribbble", "github", "linkedin", ...]
-print(f"Supported platforms: {len(platforms)}")  # 65+
+print(f"Supported platforms: {len(platforms)}")  # 70+
 ```
 
 ---

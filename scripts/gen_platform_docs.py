@@ -59,6 +59,7 @@ PLATFORM_META: Dict[str, Tuple[str, str, Optional[str]]] = {
     "hackerrank": ("HackerRank", "https://hackerrank.com", None),
     "hackernews": ("Hacker News", "https://news.ycombinator.com", None),
     "hashnode": ("Hashnode", "https://hashnode.com", None),
+    "huggingface": ("Hugging Face", "https://huggingface.co", None),
     "instagram": ("Instagram", "https://instagram.com", None),
     "kaggle": ("Kaggle", "https://kaggle.com", None),
     "keybase": ("Keybase", "https://keybase.io", None),
