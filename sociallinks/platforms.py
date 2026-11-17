@@ -2158,5 +2158,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://www.researchgate.net/profile/{id}"
         }
+    ],
+    "onlyfans": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?onlyfans\.com/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://onlyfans.com/{id}"
+        }
     ]
 }
