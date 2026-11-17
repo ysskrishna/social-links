@@ -102,6 +102,7 @@ PLATFORM_META: Dict[str, Tuple[str, str, Optional[str]]] = {
     "juejin": ("Juejin", "https://juejin.cn", None),
     "kaggle": ("Kaggle", "https://kaggle.com", None),
     "keybase": ("Keybase", "https://keybase.io", None),
+    "khan_academy": ("Khan Academy", "https://khanacademy.org", None),
     "kick": ("Kick", "https://kick.com", None),
     "ko_fi": ("Ko-fi", "https://ko-fi.com", None),
     "kuaishou": ("Kuaishou", "https://kuaishou.com", None),

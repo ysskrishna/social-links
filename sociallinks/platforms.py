@@ -1543,5 +1543,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://www.udemy.com/user/{id}"
         }
+    ],
+    "khan_academy": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?khanacademy\.org/profile/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.khanacademy.org/profile/{id}"
+        }
     ]
 }
