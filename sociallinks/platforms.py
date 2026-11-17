@@ -1947,5 +1947,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://dzen.ru/id/{id}"
         }
+    ],
+    "ok_ru": [
+        {
+            "patterns": [
+                rf"https?://(?:www\.|m\.)?ok\.ru/profile/{NUMERIC_ID}/?$",
+                rf"^{NUMERIC_ID}$"
+            ],
+            "sanitized": "https://ok.ru/profile/{id}"
+        }
     ]
 }
