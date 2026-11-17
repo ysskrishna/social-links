@@ -134,6 +134,7 @@ HAPPY_PATH = [
     ("roblox", "1", "https://www.roblox.com/users/1/profile", "https://www.roblox.com/users/1/profile"),
     ("rubygems", "dhh", "https://rubygems.org/profiles/dhh", "https://rubygems.org/profiles/dhh"),
     ("rumble", "ysskrishna", "https://rumble.com/user/ysskrishna", "https://rumble.com/user/ysskrishna"),
+    ("rutube", "23704195", "https://rutube.ru/channel/23704195/", "https://rutube.ru/channel/23704195"),
     ("scratch", "griffpatch", "https://scratch.mit.edu/users/griffpatch/", "https://scratch.mit.edu/users/griffpatch"),
     ("semantic_scholar", "1741101", "https://www.semanticscholar.org/author/Oren-Etzioni/1741101", "https://www.semanticscholar.org/author/1741101"),
     ("signal", "abc123xyz", "https://signal.me/#p/abc123xyz", "https://signal.me/#p/abc123xyz"),

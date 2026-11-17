@@ -1669,5 +1669,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://www.douyu.com/{id}"
         }
+    ],
+    "rutube": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?rutube\.ru/channel/{NUMERIC_ID}(?:/(?:videos|about))?/?$",
+                rf"^{NUMERIC_ID}$"
+            ],
+            "sanitized": "https://rutube.ru/channel/{id}"
+        }
     ]
 }
