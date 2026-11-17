@@ -77,6 +77,7 @@ HAPPY_PATH = [
     ("ko_fi", "ysskrishna", "https://ko-fi.com/ysskrishna", "https://ko-fi.com/ysskrishna"),
     ("kuaishou", "3xxdnfw963m6abu", "https://www.kuaishou.com/profile/3xxdnfw963m6abu", "https://www.kuaishou.com/profile/3xxdnfw963m6abu"),
     ("lastfm", "RJ", "https://www.last.fm/user/RJ", "https://www.last.fm/user/RJ"),
+    ("launchpad", "sabdfl", "https://launchpad.net/~sabdfl", "https://launchpad.net/~sabdfl"),
     ("leetcode", "ysskrishna", "https://leetcode.com/ysskrishna", "https://leetcode.com/ysskrishna"),
     ("lemmy_world", "ysskrishna", "https://lemmy.world/u/ysskrishna", "https://lemmy.world/u/ysskrishna"),
     ("lemon8", "lemon8us", "https://www.lemon8-app.com/@lemon8us", "https://www.lemon8-app.com/@lemon8us"),
