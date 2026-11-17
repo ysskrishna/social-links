@@ -1486,5 +1486,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://codesandbox.io/u/{id}"
         }
+    ],
+    "juejin": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?juejin\.cn/user/{NUMERIC_ID}(?:/posts)?/?$",
+                rf"^{NUMERIC_ID}$"
+            ],
+            "sanitized": "https://juejin.cn/user/{id}"
+        }
     ]
 }

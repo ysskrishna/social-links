@@ -72,6 +72,7 @@ def _get_test_profile_id(platform_name: str) -> str:
         "airbnb": "1",
         "carrd": "ysskrishna",
         "blogger": "05229574233543423344",
+        "juejin": "1838039172387262",
     }
     
     return special_ids.get(platform_name, "ysskrishna")
