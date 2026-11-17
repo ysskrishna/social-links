@@ -1660,5 +1660,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://www.huya.com/{id}"
         }
+    ],
+    "douyu": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?douyu\.com/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.douyu.com/{id}"
+        }
     ]
 }
