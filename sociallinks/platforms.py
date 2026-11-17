@@ -1678,5 +1678,16 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://rutube.ru/channel/{id}"
         }
+    ],
+    "soop": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?sooplive\.com/station/{PROFILE_ID}/?$",
+                rf"https?://ch\.sooplive\.co\.kr/{PROFILE_ID}/?$",
+                rf"https?://(?:bj|ch)\.afreecatv\.com/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.sooplive.com/station/{id}"
+        }
     ]
 }
