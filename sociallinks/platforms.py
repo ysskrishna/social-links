@@ -743,5 +743,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://huggingface.co/{id}"
         }
+    ],
+    "replicate": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?replicate\.com/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://replicate.com/{id}"
+        }
     ]
 }
