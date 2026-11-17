@@ -1341,5 +1341,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://www.rednote.com/user/profile/{id}"
         }
+    ],
+    "genius": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?genius\.com/(?!(?:about|login|settings|explore|search|help|pricing|signup|terms|privacy|sign\-up|register|blog|faq|dashboard|account|home|support|contact|careers|legal|discover|features|apps|download|artists|albums|a|songs|videos|tags|new|charts|verified\-artists|static|embed|forums|discussions|contributor_guidelines)/?$)(?![^/?#]*-(?:lyrics|annotated)/?$){PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://genius.com/{id}"
+        }
     ]
 }

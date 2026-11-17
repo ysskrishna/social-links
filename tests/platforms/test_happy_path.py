@@ -48,6 +48,7 @@ HAPPY_PATH = [
     ("fiverr", "ysskrishna", "https://www.fiverr.com/ysskrishna", "https://www.fiverr.com/ysskrishna"),
     ("flickr", "dv-hans", "https://www.flickr.com/people/dv-hans", "https://www.flickr.com/people/dv-hans"),
     ("freelancer", "ysskrishna", "https://www.freelancer.com/u/ysskrishna", "https://www.freelancer.com/u/ysskrishna"),
+    ("genius", "Ferrari_Fairy", "https://genius.com/Ferrari_Fairy", "https://genius.com/Ferrari_Fairy"),
     ("gitee", "openharmony", "https://gitee.com/openharmony", "https://gitee.com/openharmony"),
     ("github", "ysskrishna", "https://github.com/ysskrishna", "https://github.com/ysskrishna"),
     ("gitlab", "ysskrishna", "https://gitlab.com/ysskrishna", "https://gitlab.com/ysskrishna"),
