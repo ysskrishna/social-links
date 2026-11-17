@@ -114,6 +114,7 @@ PLATFORM_META: Dict[str, Tuple[str, str, Optional[str]]] = {
     "gravatar": ("Gravatar", "https://gravatar.com", None),
     "gumroad": ("Gumroad", "https://gumroad.com", None),
     "habr": ("Habr", "https://habr.com", None),
+    "hackerearth": ("HackerEarth", "https://hackerearth.com", None),
     "hackerrank": ("HackerRank", "https://hackerrank.com", None),
     "hackernews": ("Hacker News", "https://news.ycombinator.com", None),
     "hashnode": ("Hashnode", "https://hashnode.com", None),
