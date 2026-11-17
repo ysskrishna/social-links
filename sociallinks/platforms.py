@@ -1956,5 +1956,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://ok.ru/profile/{id}"
         }
+    ],
+    "sharechat": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?sharechat\.com/profile/{PROFILE_ID_UNICODE}/?$",
+                rf"^{PROFILE_ID_UNICODE}$"
+            ],
+            "sanitized": "https://sharechat.com/profile/{id}"
+        }
     ]
 }

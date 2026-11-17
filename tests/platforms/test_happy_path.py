@@ -159,6 +159,7 @@ HAPPY_PATH = [
     ("scratch", "griffpatch", "https://scratch.mit.edu/users/griffpatch/", "https://scratch.mit.edu/users/griffpatch"),
     ("scribd", None, "https://www.scribd.com/user/1/trip", "https://www.scribd.com/user/1/trip"),
     ("semantic_scholar", "1741101", "https://www.semanticscholar.org/author/Oren-Etzioni/1741101", "https://www.semanticscholar.org/author/1741101"),
+    ("sharechat", "sharechat", "https://sharechat.com/profile/sharechat", "https://sharechat.com/profile/sharechat"),
     ("signal", "abc123xyz", "https://signal.me/#p/abc123xyz", "https://signal.me/#p/abc123xyz"),
     ("sketchfab", "sketchfab", "https://sketchfab.com/sketchfab", "https://sketchfab.com/sketchfab"),
     ("slideshare", "michaelyublosky", "https://www.slideshare.net/michaelyublosky", "https://www.slideshare.net/michaelyublosky"),
