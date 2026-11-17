@@ -1359,5 +1359,15 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://www.lemon8-app.com/@{id}"
         }
+    ],
+    "airbnb": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?airbnb\.(?:com|ca|de|fr|es|it|nl|ie|jp|be|at|ch|dk|se|no|fi|pt|pl|gr|mx|cl|co\.uk|co\.in|co\.nz|co\.kr|com\.au|com\.br|com\.sg|com\.hk|com\.mx|com\.ar|com\.co)/users/show/{NUMERIC_ID}/?$",
+                rf"https?://(www\.)?airbnb\.(?:com|ca|de|fr|es|it|nl|ie|jp|be|at|ch|dk|se|no|fi|pt|pl|gr|mx|cl|co\.uk|co\.in|co\.nz|co\.kr|com\.au|com\.br|com\.sg|com\.hk|com\.mx|com\.ar|com\.co)/users/profile/{NUMERIC_ID}/?$",
+                rf"^{NUMERIC_ID}$"
+            ],
+            "sanitized": "https://www.airbnb.com/users/show/{id}"
+        }
     ]
 }
