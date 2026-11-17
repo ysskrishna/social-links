@@ -43,6 +43,7 @@ HAPPY_PATH = [
     ("codecademy", "ysskrishna", "https://www.codecademy.com/profiles/ysskrishna", "https://www.codecademy.com/profiles/ysskrishna"),
     ("codechef", "gennady.korotkevich", "https://www.codechef.com/users/gennady.korotkevich", "https://www.codechef.com/users/gennady.korotkevich"),
     ("codeforces", "tourist", "https://codeforces.com/profile/tourist", "https://codeforces.com/profile/tourist"),
+    ("codementor", "ysskrishna", "https://www.codementor.io/@ysskrishna", "https://www.codementor.io/@ysskrishna"),
     ("codepen", "ysskrishna", "https://codepen.io/ysskrishna", "https://codepen.io/ysskrishna"),
     ("codesandbox", "CompuIves", "https://codesandbox.io/u/CompuIves", "https://codesandbox.io/u/CompuIves"),
     ("codewars", "jhoffner", "https://www.codewars.com/users/jhoffner", "https://www.codewars.com/users/jhoffner"),

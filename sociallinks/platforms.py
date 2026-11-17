@@ -2094,5 +2094,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://contra.com/{id}"
         }
+    ],
+    "codementor": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?codementor\.io/@{PROFILE_ID}/?$",
+                rf"^@?{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.codementor.io/@{id}"
+        }
     ]
 }
