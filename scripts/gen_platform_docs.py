@@ -95,6 +95,7 @@ PLATFORM_META: Dict[str, Tuple[str, str, Optional[str]]] = {
     "misskey": ("Misskey", "https://misskey.io", None),
     "modrinth": ("Modrinth", "https://modrinth.com", None),
     "myanimelist": ("MyAnimeList", "https://myanimelist.net", None),
+    "niconico": ("Niconico", "https://nicovideo.jp", None),
     "nuget": ("NuGet", "https://nuget.org", None),
     "odysee": ("Odysee", "https://odysee.com", None),
     "opensea": ("OpenSea", "https://opensea.io", None),
