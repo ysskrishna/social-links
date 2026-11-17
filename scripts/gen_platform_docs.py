@@ -93,6 +93,7 @@ PLATFORM_META: Dict[str, Tuple[str, str, Optional[str]]] = {
     "snapchat": ("Snapchat", "https://snapchat.com", None),
     "soundcloud": ("SoundCloud", "https://soundcloud.com", None),
     "sourceforge": ("SourceForge", "https://sourceforge.net", None),
+    "sourcehut": ("SourceHut", "https://sr.ht", None),
     "spotify": ("Spotify", "https://spotify.com", None),
     "stackoverflow": ("Stack Overflow", "https://stackoverflow.com", None),
     "steam": ("Steam", "https://steamcommunity.com", None),
