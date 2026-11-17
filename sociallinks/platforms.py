@@ -1789,5 +1789,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://500px.com/p/{id}"
         }
+    ],
+    "redbubble": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?redbubble\.com/(?:[a-z][a-z]/)?people/{PROFILE_ID}(?:/(?:shop|explore|portfolio))?/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.redbubble.com/people/{id}"
+        }
     ]
 }

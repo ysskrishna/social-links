@@ -160,6 +160,7 @@ PLATFORM_META: Dict[str, Tuple[str, str, Optional[str]]] = {
     "qiita": ("Qiita", "https://qiita.com", None),
     "quora": ("Quora", "https://quora.com", None),
     "rateyourmusic": ("RateYourMusic", "https://rateyourmusic.com", None),
+    "redbubble": ("Redbubble", "https://redbubble.com", None),
     "reddit": ("Reddit", "https://reddit.com", None),
     "replicate": ("Replicate", "https://replicate.com", None),
     "replit": ("Replit", "https://replit.com", None),
