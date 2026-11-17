@@ -32,6 +32,7 @@ HAPPY_PATH = [
     ("crunchbase", None, "https://www.crunchbase.com/organization/slack", "https://www.crunchbase.com/organization/slack"),
     ("dailymotion", "ysskrishna", "https://www.dailymotion.com/ysskrishna", "https://www.dailymotion.com/ysskrishna"),
     ("dev_to", "ysskrishna", "https://dev.to/ysskrishna", "https://dev.to/ysskrishna"),
+    ("deviantart", "spyed", "https://www.deviantart.com/spyed", "https://www.deviantart.com/spyed"),
     ("discogs", "ysskrishna", "https://www.discogs.com/user/ysskrishna", "https://www.discogs.com/user/ysskrishna"),
     ("discord", "ysskrishna", "https://discord.gg/ysskrishna", "https://discord.gg/ysskrishna"),
     ("dockerhub", "ysskrishna", "https://hub.docker.com/u/ysskrishna", "https://hub.docker.com/u/ysskrishna"),

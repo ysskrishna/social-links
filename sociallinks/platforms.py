@@ -1313,5 +1313,15 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://anilist.co/user/{id}"
         }
+    ],
+    "deviantart": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?deviantart\.com/(?!(?:about|login|settings|explore|search|help|pricing|signup|terms|privacy|sign\-up|register|blog|faq|dashboard|account|home|support|contact|careers|legal|discover|features|apps|download|join|users|tag|daily\-deviations|watch|notifications|core\-membership|shop|studio|groups|team|popular|topic|art|journal|status|comments|submit)/?$){PROFILE_ID}/?$",
+                r"https?://(?!www\.)(?P<id>[A-Za-z0-9-]+)\.deviantart\.com/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.deviantart.com/{id}"
+        }
     ]
 }
