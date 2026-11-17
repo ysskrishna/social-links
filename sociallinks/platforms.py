@@ -1076,5 +1076,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://scratch.mit.edu/users/{id}"
         }
+    ],
+    "discogs": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?discogs\.com/(?:[a-z][a-z]/)?user/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.discogs.com/user/{id}"
+        }
     ]
 }
