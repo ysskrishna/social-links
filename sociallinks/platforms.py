@@ -2076,5 +2076,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://pf.kakao.com/_{id}"
         }
+    ],
+    "tripadvisor": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?tripadvisor\.(?:com|co\.uk|ca|de|fr|es|it|in|com\.au|co\.nz|ie|nl|jp|com\.sg|com\.br|com\.mx)/Profile/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.tripadvisor.com/Profile/{id}"
+        }
     ]
 }
