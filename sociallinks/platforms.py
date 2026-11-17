@@ -1341,5 +1341,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://www.rednote.com/user/profile/{id}"
         }
+    ],
+    "genius": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?genius\.com/(?![^/?#]*-(?:lyrics|annotated)/?$){PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://genius.com/{id}"
+        }
     ]
 }
