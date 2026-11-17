@@ -1642,5 +1642,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://xdaforums.com/m/{id}"
         }
+    ],
+    "chzzk": [
+        {
+            "patterns": [
+                rf"https?://chzzk\.naver\.com/(?:live/)?{HEX32_ID}/?$",
+                rf"^{HEX32_ID}$"
+            ],
+            "sanitized": "https://chzzk.naver.com/{id}"
+        }
     ]
 }
