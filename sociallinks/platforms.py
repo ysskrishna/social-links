@@ -1113,5 +1113,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://itch.io/profile/{id}"
         }
+    ],
+    "speedrun": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?speedrun\.com/(?:users|user)/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.speedrun.com/users/{id}"
+        }
     ]
 }
