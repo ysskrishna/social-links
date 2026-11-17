@@ -63,6 +63,7 @@ HAPPY_PATH = [
     ("medium", None, "https://medium.com/@ysskrishna", "https://medium.com/@ysskrishna"),
     ("nuget", "Microsoft", "https://www.nuget.org/profiles/Microsoft", "https://www.nuget.org/profiles/Microsoft"),
     ("opensea", "0x1234567890abcdef1234567890abcdef12345678", "https://opensea.io/0x1234567890abcdef1234567890abcdef12345678", "https://opensea.io/0x1234567890abcdef1234567890abcdef12345678"),
+    ("openstreetmap", "Steve%20Coast", "https://www.openstreetmap.org/user/Steve%20Coast", "https://www.openstreetmap.org/user/Steve%20Coast"),
     ("patreon", "ysskrishna", "https://patreon.com/ysskrishna", "https://patreon.com/ysskrishna"),
     ("pinterest", "ysskrishna", "https://pinterest.com/ysskrishna", "https://pinterest.com/ysskrishna"),
     ("poshmark", "ysskrishna", "https://poshmark.com/closet/ysskrishna", "https://poshmark.com/closet/ysskrishna"),

@@ -62,6 +62,7 @@ def _get_test_profile_id(platform_name: str) -> str:
         "stack_exchange": "1",
         "google_scholar": "JicYPdAAAAAJ",
         "primal": "npub180cvv07tjdrrgpa0j7j7tmnyl2yr6yr7l8j4s3evf6u64th6gkwsyjh6w6",
+        "openstreetmap": "SteveC",
     }
     
     return special_ids.get(platform_name, "ysskrishna")

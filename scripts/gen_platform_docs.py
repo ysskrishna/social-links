@@ -87,6 +87,7 @@ PLATFORM_META: Dict[str, Tuple[str, str, Optional[str]]] = {
     "medium": ("Medium", "https://medium.com", None),
     "nuget": ("NuGet", "https://nuget.org", None),
     "opensea": ("OpenSea", "https://opensea.io", None),
+    "openstreetmap": ("OpenStreetMap", "https://openstreetmap.org", None),
     "patreon": ("Patreon", "https://patreon.com", None),
     "pinterest": ("Pinterest", "https://pinterest.com", None),
     "poshmark": ("Poshmark", "https://poshmark.com", None),
