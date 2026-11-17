@@ -120,6 +120,7 @@ HAPPY_PATH = [
     ("lobsters", "jcs", "https://lobste.rs/~jcs", "https://lobste.rs/~jcs"),
     ("mastodon", None, "https://mastodon.social/@ysskrishna", "https://mastodon.social/@ysskrishna"),
     ("medium", None, "https://medium.com/@ysskrishna", "https://medium.com/@ysskrishna"),
+    ("mercari", "123456789", "https://jp.mercari.com/user/profile/123456789", "https://jp.mercari.com/user/profile/123456789"),
     ("misskey", "syuilo", "https://misskey.io/@syuilo", "https://misskey.io/@syuilo"),
     ("modrinth", "jellysquid3", "https://modrinth.com/user/jellysquid3", "https://modrinth.com/user/jellysquid3"),
     ("myanimelist", "Xinil", "https://myanimelist.net/profile/Xinil", "https://myanimelist.net/profile/Xinil"),

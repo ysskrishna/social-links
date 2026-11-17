@@ -143,6 +143,7 @@ PLATFORM_META: Dict[str, Tuple[str, str, Optional[str]]] = {
     "lobsters": ("Lobsters", "https://lobste.rs", None),
     "mastodon": ("Mastodon", "https://mastodon.social", None),
     "medium": ("Medium", "https://medium.com", None),
+    "mercari": ("Mercari", "https://jp.mercari.com", None),
     "misskey": ("Misskey", "https://misskey.io", None),
     "modrinth": ("Modrinth", "https://modrinth.com", None),
     "myanimelist": ("MyAnimeList", "https://myanimelist.net", None),
