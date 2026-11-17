@@ -155,6 +155,7 @@ PLATFORM_META: Dict[str, Tuple[str, str, Optional[str]]] = {
     "unsplash": ("Unsplash", "https://unsplash.com", None),
     "vimeo": ("Vimeo", "https://vimeo.com", None),
     "vk": ("VK", "https://vk.com", None),
+    "wattpad": ("Wattpad", "https://wattpad.com", None),
     "wechat": ("WeChat", "https://weixin.qq.com", None),
     "weibo": ("Weibo", "https://weibo.com", None),
     "wellfound": ("Wellfound (AngelList)", "https://wellfound.com", None),

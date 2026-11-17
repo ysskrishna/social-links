@@ -132,6 +132,7 @@ HAPPY_PATH = [
     ("unsplash", "ysskrishna", "https://unsplash.com/@ysskrishna", "https://unsplash.com/@ysskrishna"),
     ("vimeo", "ysskrishna", "https://vimeo.com/ysskrishna", "https://vimeo.com/ysskrishna"),
     ("vk", None, "https://vk.com/ysskrishna", "https://vk.com/ysskrishna"),
+    ("wattpad", "Wattpad", "https://www.wattpad.com/user/Wattpad", "https://www.wattpad.com/user/Wattpad"),
     ("wechat", "DutchEmbassy_BJ", "https://open.weixin.qq.com/qr/code?username=DutchEmbassy_BJ", "https://open.weixin.qq.com/qr/code?username=DutchEmbassy_BJ"),
     ("weibo", "guanzhilin", "https://weibo.com/guanzhilin", "https://weibo.com/guanzhilin"),
     ("wellfound", "ysskrishna", "https://wellfound.com/u/ysskrishna", "https://wellfound.com/u/ysskrishna"),
