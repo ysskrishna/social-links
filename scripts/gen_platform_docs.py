@@ -158,6 +158,7 @@ PLATFORM_META: Dict[str, Tuple[str, str, Optional[str]]] = {
     "roblox": ("Roblox", "https://roblox.com", None),
     "rubygems": ("RubyGems", "https://rubygems.org", None),
     "rumble": ("Rumble", "https://rumble.com", None),
+    "rutube": ("Rutube", "https://rutube.ru", None),
     "scratch": ("Scratch", "https://scratch.mit.edu", None),
     "semantic_scholar": ("Semantic Scholar", "https://semanticscholar.org", None),
     "signal": ("Signal", "https://signal.me", None),

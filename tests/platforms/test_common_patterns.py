@@ -77,6 +77,7 @@ def _get_test_profile_id(platform_name: str) -> str:
         "semantic_scholar": "1741101",
         "xda": "ysskrishna.123456",
         "chzzk": "458f6ec20b034f49e0fc6d03921646d2",
+        "rutube": "23704195",
     }
     
     return special_ids.get(platform_name, "ysskrishna")
