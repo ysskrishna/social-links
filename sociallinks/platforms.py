@@ -2185,5 +2185,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://liberapay.com/{id}"
         }
+    ],
+    "wordpress_org": [
+        {
+            "patterns": [
+                rf"https?://profiles\.wordpress\.org/(?!(?:about|login|settings|explore|search|help|pricing|signup|terms|privacy)/?$){PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://profiles.wordpress.org/{id}"
+        }
     ]
 }
