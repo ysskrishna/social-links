@@ -115,6 +115,7 @@ PLATFORM_META: Dict[str, Tuple[str, str, Optional[str]]] = {
     "orcid": ("ORCID", "https://orcid.org", None),
     "osu": ("osu!", "https://osu.ppy.sh", None),
     "patreon": ("Patreon", "https://patreon.com", None),
+    "pexels": ("Pexels", "https://pexels.com", None),
     "pinterest": ("Pinterest", "https://pinterest.com", None),
     "pixelfed": ("Pixelfed", "https://pixelfed.social", None),
     "pixiv": ("Pixiv", "https://pixiv.net", None),
