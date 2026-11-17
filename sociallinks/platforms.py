@@ -1268,5 +1268,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://www.codewars.com/users/{id}"
         }
+    ],
+    "codeberg": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?codeberg\.org/(?!(?:about|login|settings|explore|search|help|pricing|signup|terms|privacy|sign\-up|register|blog|faq|dashboard|account|home|support|contact|careers|legal|discover|features|apps|download|user|repo|org|admin|api|assets|notifications|issues|pulls|milestones|swagger|avatars|attachments|\-|codeberg)/?$){PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://codeberg.org/{id}"
+        }
     ]
 }
