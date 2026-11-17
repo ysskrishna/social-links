@@ -2230,5 +2230,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://metacpan.org/author/{id}"
         }
+    ],
+    "indiehackers": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?indiehackers\.com/(?!(?:about|login|settings|explore|search|help|pricing|signup|terms|privacy|sign\-up|register|blog|faq|dashboard|account|home|support|contact|careers|legal|discover|features|apps|download|post|products|product|groups|group|ideas|podcasts|podcast|newsletter|interviews|interview|meetups|sign\-in|start|tags|tag|stories|feed|new|top|milestones)/?$){PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.indiehackers.com/{id}"
+        }
     ]
 }

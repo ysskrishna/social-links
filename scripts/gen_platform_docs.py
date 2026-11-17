@@ -125,6 +125,7 @@ PLATFORM_META: Dict[str, Tuple[str, str, Optional[str]]] = {
     "huya": ("Huya", "https://huya.com", None),
     "imgur": ("Imgur", "https://imgur.com", None),
     "inaturalist": ("iNaturalist", "https://inaturalist.org", None),
+    "indiehackers": ("Indie Hackers", "https://indiehackers.com", None),
     "instagram": ("Instagram", "https://instagram.com", None),
     "instructables": ("Instructables", "https://instructables.com", None),
     "issuu": ("Issuu", "https://issuu.com", None),
