@@ -1753,5 +1753,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://hoo.be/{id}"
         }
+    ],
+    "throne": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?throne\.com/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://throne.com/{id}"
+        }
     ]
 }

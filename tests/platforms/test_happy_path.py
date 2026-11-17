@@ -162,6 +162,7 @@ HAPPY_PATH = [
     ("taplink", "ysskrishna", "https://taplink.cc/ysskrishna", "https://taplink.cc/ysskrishna"),
     ("telegram", "telegram", "https://t.me/telegram", "https://t.me/telegram"),
     ("threads", "ysskrishna", "https://threads.com/@ysskrishna", "https://threads.com/@ysskrishna"),
+    ("throne", "ysskrishna", "https://throne.com/ysskrishna", "https://throne.com/ysskrishna"),
     ("tiktok", None, "https://tiktok.com/@ysskrishna", "https://tiktok.com/@ysskrishna"),
     ("tistory", "notice", "https://notice.tistory.com/", "https://notice.tistory.com"),
     ("topcoder", "tourist", "https://profiles.topcoder.com/tourist", "https://profiles.topcoder.com/tourist"),
