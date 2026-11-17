@@ -109,6 +109,7 @@ PLATFORM_META: Dict[str, Tuple[str, str, Optional[str]]] = {
     "threads": ("Threads", "https://threads.com", None),
     "tiktok": ("TikTok", "https://tiktok.com", None),
     "topcoder": ("Topcoder", "https://topcoder.com", None),
+    "topmate": ("Topmate", "https://topmate.io", None),
     "trello": ("Trello", "https://trello.com", None),
     "tryhackme": ("TryHackMe", "https://tryhackme.com", None),
     "tumblr": ("Tumblr", "https://tumblr.com", None),

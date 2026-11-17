@@ -104,12 +104,12 @@ The library comes with 90+ predefined platforms:
 | [Spotify](https://spotify.com) | [Stack Exchange](https://stackexchange.com) | [Stack Overflow](https://stackoverflow.com) |
 | [Stan Store](https://stan.store) | [Steam](https://steamcommunity.com) | [Substack](https://substack.com) |
 | [Telegram](https://telegram.org) | [Threads](https://threads.com) | [TikTok](https://tiktok.com) |
-| [Topcoder](https://topcoder.com) | [Trello](https://trello.com) | [TryHackMe](https://tryhackme.com) |
-| [Tumblr](https://tumblr.com) | [Twitch](https://twitch.tv) | [Unsplash](https://unsplash.com) |
-| [Vimeo](https://vimeo.com) | [VK](https://vk.com) | [WeChat](https://weixin.qq.com) |
-| [Weibo](https://weibo.com) | [Wellfound (AngelList)](https://wellfound.com) | [WhatsApp](https://whatsapp.com) |
-| [WordPress](https://wordpress.com) | [X (Twitter)](https://x.com) | [YouTube](https://youtube.com) |
-| [Zenn](https://zenn.dev) |  |  |
+| [Topcoder](https://topcoder.com) | [Topmate](https://topmate.io) | [Trello](https://trello.com) |
+| [TryHackMe](https://tryhackme.com) | [Tumblr](https://tumblr.com) | [Twitch](https://twitch.tv) |
+| [Unsplash](https://unsplash.com) | [Vimeo](https://vimeo.com) | [VK](https://vk.com) |
+| [WeChat](https://weixin.qq.com) | [Weibo](https://weibo.com) | [Wellfound (AngelList)](https://wellfound.com) |
+| [WhatsApp](https://whatsapp.com) | [WordPress](https://wordpress.com) | [X (Twitter)](https://x.com) |
+| [YouTube](https://youtube.com) | [Zenn](https://zenn.dev) |  |
 
 <!-- platforms:end -->
 

@@ -937,5 +937,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://www.douban.com/people/{id}"
         }
+    ],
+    "topmate": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?topmate\.io/(?!(?:about|login|settings|explore|search|help|pricing|signup|terms|privacy|dashboard|blog|careers)/?$){PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://topmate.io/{id}"
+        }
     ]
 }
