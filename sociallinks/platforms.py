@@ -1780,5 +1780,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://campsite.bio/{id}"
         }
+    ],
+    "500px": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?500px\.com/p/{PROFILE_ID}(?:/galleries)?/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://500px.com/p/{id}"
+        }
     ]
 }

@@ -9,6 +9,7 @@ import pytest
 
 
 HAPPY_PATH = [
+    ("500px", "ysskrishna", "https://500px.com/p/ysskrishna", "https://500px.com/p/ysskrishna"),
     ("airbnb", "1", "https://www.airbnb.com/users/show/1", "https://www.airbnb.com/users/show/1"),
     ("anilist", "Josh", "https://anilist.co/user/Josh/", "https://anilist.co/user/Josh"),
     ("apple_music", "136975", "https://music.apple.com/artist/136975", "https://music.apple.com/artist/136975"),
