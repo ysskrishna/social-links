@@ -57,6 +57,7 @@ HAPPY_PATH = [
     ("kuaishou", "3xxdnfw963m6abu", "https://www.kuaishou.com/profile/3xxdnfw963m6abu", "https://www.kuaishou.com/profile/3xxdnfw963m6abu"),
     ("leetcode", "ysskrishna", "https://leetcode.com/ysskrishna", "https://leetcode.com/ysskrishna"),
     ("lemmy_world", "ysskrishna", "https://lemmy.world/u/ysskrishna", "https://lemmy.world/u/ysskrishna"),
+    ("letterboxd", "davidehrlich", "https://letterboxd.com/davidehrlich/", "https://letterboxd.com/davidehrlich"),
     ("lichess", "ysskrishna", "https://lichess.org/@/ysskrishna", "https://lichess.org/@/ysskrishna"),
     ("linkedin", "ysskrishna", "https://linkedin.com/in/ysskrishna", "https://linkedin.com/in/ysskrishna"),
     ("linktree", "ysskrishna", "https://linktr.ee/ysskrishna", "https://linktr.ee/ysskrishna"),

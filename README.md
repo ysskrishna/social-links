@@ -94,26 +94,26 @@ The library comes with 100+ predefined platforms:
 | [HackerRank](https://hackerrank.com) | [Hashnode](https://hashnode.com) | [Hey.xyz](https://hey.xyz) |
 | [Hugging Face](https://huggingface.co) | [Instagram](https://instagram.com) | [Kaggle](https://kaggle.com) |
 | [Keybase](https://keybase.io) | [Kick](https://kick.com) | [Kuaishou](https://kuaishou.com) |
-| [LeetCode](https://leetcode.com) | [Lemmy World](https://lemmy.world) | [Lichess](https://lichess.org) |
-| [LinkedIn](https://linkedin.com) (personal & company) | [Linktree](https://linktr.ee) | [Lobsters](https://lobste.rs) |
-| [Mastodon](https://mastodon.social) | [Medium](https://medium.com) | [Misskey](https://misskey.io) |
-| [NuGet](https://nuget.org) | [OpenSea](https://opensea.io) | [OpenStreetMap](https://openstreetmap.org) |
-| [Patreon](https://patreon.com) | [Pinterest](https://pinterest.com) | [Pixelfed](https://pixelfed.social) |
-| [Poshmark](https://poshmark.com) | [Primal](https://primal.net) | [Product Hunt](https://producthunt.com) |
-| [PyPI](https://pypi.org) | [Qiita](https://qiita.com) | [Quora](https://quora.com) |
-| [Reddit](https://reddit.com) | [Replicate](https://replicate.com) | [Replit](https://replit.com) |
-| [RubyGems](https://rubygems.org) | [Rumble](https://rumble.com) | [Signal](https://signal.me) |
-| [SlideShare](https://slideshare.net) | [Snapchat](https://snapchat.com) | [SoundCloud](https://soundcloud.com) |
-| [SourceForge](https://sourceforge.net) | [SourceHut](https://sr.ht) | [Spotify](https://spotify.com) |
-| [Stack Exchange](https://stackexchange.com) | [Stack Overflow](https://stackoverflow.com) | [Stan Store](https://stan.store) |
-| [Steam](https://steamcommunity.com) | [Substack](https://substack.com) | [Telegram](https://telegram.org) |
-| [Threads](https://threads.com) | [TikTok](https://tiktok.com) | [Topcoder](https://topcoder.com) |
-| [Topmate](https://topmate.io) | [Trello](https://trello.com) | [TryHackMe](https://tryhackme.com) |
-| [Tumblr](https://tumblr.com) | [Twitch](https://twitch.tv) | [Unsplash](https://unsplash.com) |
-| [Vimeo](https://vimeo.com) | [VK](https://vk.com) | [WeChat](https://weixin.qq.com) |
-| [Weibo](https://weibo.com) | [Wellfound (AngelList)](https://wellfound.com) | [WhatsApp](https://whatsapp.com) |
-| [WordPress](https://wordpress.com) | [X (Twitter)](https://x.com) | [YouTube](https://youtube.com) |
-| [Zenn](https://zenn.dev) |  |  |
+| [LeetCode](https://leetcode.com) | [Lemmy World](https://lemmy.world) | [Letterboxd](https://letterboxd.com) |
+| [Lichess](https://lichess.org) | [LinkedIn](https://linkedin.com) (personal & company) | [Linktree](https://linktr.ee) |
+| [Lobsters](https://lobste.rs) | [Mastodon](https://mastodon.social) | [Medium](https://medium.com) |
+| [Misskey](https://misskey.io) | [NuGet](https://nuget.org) | [OpenSea](https://opensea.io) |
+| [OpenStreetMap](https://openstreetmap.org) | [Patreon](https://patreon.com) | [Pinterest](https://pinterest.com) |
+| [Pixelfed](https://pixelfed.social) | [Poshmark](https://poshmark.com) | [Primal](https://primal.net) |
+| [Product Hunt](https://producthunt.com) | [PyPI](https://pypi.org) | [Qiita](https://qiita.com) |
+| [Quora](https://quora.com) | [Reddit](https://reddit.com) | [Replicate](https://replicate.com) |
+| [Replit](https://replit.com) | [RubyGems](https://rubygems.org) | [Rumble](https://rumble.com) |
+| [Signal](https://signal.me) | [SlideShare](https://slideshare.net) | [Snapchat](https://snapchat.com) |
+| [SoundCloud](https://soundcloud.com) | [SourceForge](https://sourceforge.net) | [SourceHut](https://sr.ht) |
+| [Spotify](https://spotify.com) | [Stack Exchange](https://stackexchange.com) | [Stack Overflow](https://stackoverflow.com) |
+| [Stan Store](https://stan.store) | [Steam](https://steamcommunity.com) | [Substack](https://substack.com) |
+| [Telegram](https://telegram.org) | [Threads](https://threads.com) | [TikTok](https://tiktok.com) |
+| [Topcoder](https://topcoder.com) | [Topmate](https://topmate.io) | [Trello](https://trello.com) |
+| [TryHackMe](https://tryhackme.com) | [Tumblr](https://tumblr.com) | [Twitch](https://twitch.tv) |
+| [Unsplash](https://unsplash.com) | [Vimeo](https://vimeo.com) | [VK](https://vk.com) |
+| [WeChat](https://weixin.qq.com) | [Weibo](https://weibo.com) | [Wellfound (AngelList)](https://wellfound.com) |
+| [WhatsApp](https://whatsapp.com) | [WordPress](https://wordpress.com) | [X (Twitter)](https://x.com) |
+| [YouTube](https://youtube.com) | [Zenn](https://zenn.dev) |  |
 
 <!-- platforms:end -->
 

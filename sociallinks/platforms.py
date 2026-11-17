@@ -1049,5 +1049,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://space.bilibili.com/{id}"
         }
+    ],
+    "letterboxd": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?letterboxd\.com/(?!(?:about|login|settings|explore|search|help|pricing|signup|terms|privacy|film|films|lists|members|journal|pro|sign\-in|create\-account|apps|legal|contact|activity|showdown|year\-in\-review|welcome|festivals|hq|gift\-guide|actor|director|studio|crew|tag|reviews|patron|upcoming|popular)/?$){PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://letterboxd.com/{id}"
+        }
     ]
 }
