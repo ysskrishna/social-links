@@ -1923,5 +1923,14 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://ameblo.jp/{id}"
         }
+    ],
+    "hatena_blog": [
+        {
+            "patterns": [
+                r"https?://(?!www\.)(?P<id>[A-Za-z0-9-]+)\.(?:hatenablog\.(?:com|jp)|hateblo\.jp|hatenadiary\.(?:com|jp))/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://{id}.hatenablog.com"
+        }
     ]
 }
