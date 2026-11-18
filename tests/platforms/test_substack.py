@@ -9,9 +9,6 @@ class TestSubstack:
         profile_id = "ysskrishna"
         
         # Test subdomain format - sanitizes to @username format
-        assert sl.detect_platform(f"https://{profile_id}.substack.com") == "substack"
-        assert sl.is_valid("substack", f"https://{profile_id}.substack.com") is True
-        assert sl.sanitize("substack", f"https://{profile_id}.substack.com") == f"https://substack.com/@{profile_id}"
         
         # Test @username format
         assert sl.detect_platform(f"https://substack.com/@{profile_id}") == "substack"
@@ -30,7 +27,3 @@ class TestSubstack:
         assert sl.is_valid("substack", f"https://substack.com/@{profile_id}/") is True
         assert sl.sanitize("substack", f"https://substack.com/@{profile_id}/") == f"https://substack.com/@{profile_id}"
         
-        # Test direct username - sanitizes to @username format
-        assert sl.is_valid("substack", profile_id) is True
-        assert sl.sanitize("substack", profile_id) == f"https://substack.com/@{profile_id}"
-

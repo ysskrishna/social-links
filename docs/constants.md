@@ -34,5 +34,7 @@ This page documents all constants and type aliases available in the `social-link
         - PROFILE_ID_UNICODE
         - PROFILE_ID_EXTENDED
         - PHONE_NUMBER
+        - NUMERIC_ID
+        - NOSTR_NPUB
       members_order: source
 

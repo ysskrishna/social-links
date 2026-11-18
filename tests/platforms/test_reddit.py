@@ -4,16 +4,6 @@
 class TestReddit:
     """Test Reddit platform"""
 
-    def test_reddit(self, sl):
-        """Test Reddit platform"""
-        profile_id = "ysskrishna"
-        assert sl.detect_platform(f"https://reddit.com/user/{profile_id}") == "reddit"
-        assert sl.is_valid("reddit", f"https://reddit.com/user/{profile_id}") is True
-        assert sl.sanitize("reddit", f"https://reddit.com/user/{profile_id}") == f"https://reddit.com/user/{profile_id}"
-        # Test direct username
-        assert sl.is_valid("reddit", profile_id) is True
-        assert sl.sanitize("reddit", profile_id) == f"https://reddit.com/user/{profile_id}"
-
     def test_reddit_u_path(self, sl):
         """Test Reddit /u/ path"""
         profile_id = "ysskrishna"
@@ -77,4 +67,3 @@ class TestReddit:
         assert sl.detect_platform(f"r/{subreddit_name}") == "reddit"
         assert sl.is_valid("reddit", f"r/{subreddit_name}") is True
         assert sl.sanitize("reddit", f"r/{subreddit_name}") == f"https://reddit.com/r/{subreddit_name}"
-

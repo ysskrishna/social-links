@@ -4,6 +4,8 @@ from sociallinks.constants import (
     PROFILE_ID_UNICODE,
     PROFILE_ID_EXTENDED,
     PHONE_NUMBER,
+    NUMERIC_ID,
+    NOSTR_NPUB,
     PlatformEntries,
 )
 
@@ -733,6 +735,447 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
                 rf"^{PROFILE_ID}$"
             ],
             "sanitized": "https://trello.com/{id}"
+        }
+    ],
+    "huggingface": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?huggingface\.co/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://huggingface.co/{id}"
+        }
+    ],
+    "replicate": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?replicate\.com/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://replicate.com/{id}"
+        }
+    ],
+    "clawhub": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?clawhub\.ai/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://clawhub.ai/{id}"
+        }
+    ],
+    "lobsters": [
+        {
+            "patterns": [
+                rf"https?://lobste\.rs/~{PROFILE_ID}/?$",
+                rf"https?://lobste\.rs/u/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://lobste.rs/~{id}"
+        }
+    ],
+    "atcoder": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?atcoder\.jp/users/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://atcoder.jp/users/{id}"
+        }
+    ],
+    "codechef": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?codechef\.com/users/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.codechef.com/users/{id}"
+        }
+    ],
+    "topcoder": [
+        {
+            "patterns": [
+                rf"https?://profiles\.topcoder\.com/{PROFILE_ID}/?$",
+                rf"https?://(www\.)?topcoder\.com/members/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://profiles.topcoder.com/{id}"
+        }
+    ],
+    "tryhackme": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?tryhackme\.com/p/{PROFILE_ID_UNICODE}/?$",
+                rf"https?://(www\.)?tryhackme\.com/r/p/{PROFILE_ID_UNICODE}/?$",
+                rf"^{PROFILE_ID_UNICODE}$"
+            ],
+            "sanitized": "https://tryhackme.com/p/{id}"
+        }
+    ],
+    "qiita": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?qiita\.com/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://qiita.com/{id}"
+        }
+    ],
+    "habr": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?habr\.com/(?:(?:en|ru)/)?users/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://habr.com/users/{id}"
+        }
+    ],
+    "zenn": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?zenn\.dev/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://zenn.dev/{id}"
+        }
+    ],
+    "rubygems": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?rubygems\.org/profiles/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://rubygems.org/profiles/{id}"
+        }
+    ],
+    "nuget": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?nuget\.org/profiles/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.nuget.org/profiles/{id}"
+        }
+    ],
+    "sourceforge": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?sourceforge\.net/u/{PROFILE_ID}(?:/profile)?/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://sourceforge.net/u/{id}/profile"
+        }
+    ],
+    "sourcehut": [
+        {
+            "patterns": [
+                rf"https?://((git|hg|todo|lists|man|builds|paste|meta)\.)?sr\.ht/~{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://sr.ht/~{id}"
+        }
+    ],
+    "stack_exchange": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?stackexchange\.com/users/{NUMERIC_ID}(?:/[^/?#]+)?/?$",
+                rf"^{NUMERIC_ID}$"
+            ],
+            "sanitized": "https://stackexchange.com/users/{id}"
+        }
+    ],
+    "google_scholar": [
+        {
+            "patterns": [
+                rf"https?://scholar\.google\.(?:com|[a-z][a-z]|co\.[a-z][a-z]|com\.[a-z][a-z])/citations\?(?:[^#]*&)?user={PROFILE_ID}(?:[&#].*)?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://scholar.google.com/citations?user={id}"
+        }
+    ],
+    "kick": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?kick\.com/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://kick.com/{id}"
+        }
+    ],
+    "stan_store": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?stan\.store/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://stan.store/{id}"
+        }
+    ],
+    "farcaster": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?(?:farcaster\.xyz|warpcast\.com)/{PROFILE_ID}/?$",
+                rf"^@?{PROFILE_ID}$"
+            ],
+            "sanitized": "https://farcaster.xyz/{id}"
+        }
+    ],
+    "figma": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?figma\.com/@{PROFILE_ID}/?$",
+                rf"^@?{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.figma.com/@{id}"
+        }
+    ],
+    "douban": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?douban\.com/people/{PROFILE_ID}/?$",
+                rf"https?://m\.douban\.com/people/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.douban.com/people/{id}"
+        }
+    ],
+    "topmate": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?topmate\.io/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://topmate.io/{id}"
+        }
+    ],
+    "freelancer": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?freelancer\.(?:com|in|ca|de|es|fr|ie|ph|pk|sg|hk|my|mx|cl|co\.uk|com\.au|co\.nz|co\.za|co\.id|com\.bd|com\.jm|com\.ar|com\.pe)/u/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.freelancer.com/u/{id}"
+        }
+    ],
+    "ebay": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?(?:m\.)?ebay\.(?:com|ca|de|fr|it|es|ie|at|ch|nl|be|pl|ph|co\.uk|com\.au|com\.sg|com\.my|com\.hk)/usr/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.ebay.com/usr/{id}"
+        }
+    ],
+    "poshmark": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?poshmark\.(?:com|ca)/closet/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://poshmark.com/closet/{id}"
+        }
+    ],
+    "civitai": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?civitai\.com/user/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://civitai.com/user/{id}"
+        }
+    ],
+    "opensea": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?opensea\.io/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://opensea.io/{id}"
+        }
+    ],
+    "hey_xyz": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?hey\.xyz/u/{PROFILE_ID}/?$",
+                rf"^@?{PROFILE_ID}$"
+            ],
+            "sanitized": "https://hey.xyz/u/{id}"
+        }
+    ],
+    "primal": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?primal\.net/p/{NOSTR_NPUB}/?$",
+                r"https?://(www\.)?primal\.net/p/(?P<id>[0-9a-fA-F]{64})/?$",
+                rf"^{NOSTR_NPUB}$"
+            ],
+            "sanitized": "https://primal.net/p/{id}"
+        }
+    ],
+    "openstreetmap": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?openstreetmap\.org/user/{PROFILE_ID_UNICODE}/?$",
+                rf"^{PROFILE_ID_UNICODE}$"
+            ],
+            "sanitized": "https://www.openstreetmap.org/user/{id}"
+        }
+    ],
+    "pixelfed": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?pixelfed\.social/@{PROFILE_ID}/?$",
+                rf"https?://(www\.)?pixelfed\.social/{PROFILE_ID}/?$",
+                rf"^@?{PROFILE_ID}$"
+            ],
+            "sanitized": "https://pixelfed.social/{id}"
+        }
+    ],
+    "misskey": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?misskey\.io/@{PROFILE_ID}/?$",
+                rf"^@?{PROFILE_ID}$"
+            ],
+            "sanitized": "https://misskey.io/@{id}"
+        }
+    ],
+    "bilibili": [
+        {
+            "patterns": [
+                rf"https?://space\.bilibili\.com/(?:en/)?{NUMERIC_ID}/?$",
+                rf"https?://m\.bilibili\.com/space/{NUMERIC_ID}/?$",
+                rf"^{NUMERIC_ID}$"
+            ],
+            "sanitized": "https://space.bilibili.com/{id}"
+        }
+    ],
+    "letterboxd": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?letterboxd\.com/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://letterboxd.com/{id}"
+        }
+    ],
+    "goodreads": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?goodreads\.com/user/show/{NUMERIC_ID}(?:-[^/?#]*)?/?$",
+                rf"^{NUMERIC_ID}$"
+            ],
+            "sanitized": "https://www.goodreads.com/user/show/{id}"
+        }
+    ],
+    "scratch": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?scratch\.mit\.edu/users/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://scratch.mit.edu/users/{id}"
+        }
+    ],
+    "discogs": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?discogs\.com/(?:[a-z][a-z]/)?user/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.discogs.com/user/{id}"
+        }
+    ],
+    "myanimelist": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?myanimelist\.net/profile/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://myanimelist.net/profile/{id}"
+        }
+    ],
+    "osu": [
+        {
+            "patterns": [
+                rf"https?://osu\.ppy\.sh/(?:users|u)/{PROFILE_ID_UNICODE}(?:/(?:osu|taiko|fruits|mania))?/?$",
+                rf"^{PROFILE_ID_UNICODE}$"
+            ],
+            "sanitized": "https://osu.ppy.sh/users/{id}"
+        }
+    ],
+    "itch_io": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?itch\.io/profile/{PROFILE_ID}/?$",
+                r"https?://(?!www\.)(?P<id>[A-Za-z0-9-]+)\.itch\.io/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://itch.io/profile/{id}"
+        }
+    ],
+    "speedrun": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?speedrun\.com/(?:users|user)/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.speedrun.com/users/{id}"
+        }
+    ],
+    "pixiv": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?pixiv\.net/(?:[a-z][a-z]/)?users/{NUMERIC_ID}/?$",
+                rf"https?://(www\.)?pixiv\.net/member\.php\?id={NUMERIC_ID}(?:[&#].*)?$",
+                rf"^{NUMERIC_ID}$"
+            ],
+            "sanitized": "https://www.pixiv.net/users/{id}"
+        }
+    ],
+    "imgur": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?imgur\.com/user/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://imgur.com/user/{id}"
+        }
+    ],
+    "odysee": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?odysee\.com/@{PROFILE_ID_UNICODE}(?::[0-9A-Fa-f]+)?/?$",
+                rf"^@?{PROFILE_ID_UNICODE}$"
+            ],
+            "sanitized": "https://odysee.com/@{id}"
+        }
+    ],
+    "gog": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?gog\.com/(?:[a-z][a-z]/)?u/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.gog.com/u/{id}"
+        }
+    ],
+    "modrinth": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?modrinth\.com/user/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://modrinth.com/user/{id}"
+        }
+    ],
+    "niconico": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?nicovideo\.jp/user/{NUMERIC_ID}/?$",
+                rf"^{NUMERIC_ID}$"
+            ],
+            "sanitized": "https://www.nicovideo.jp/user/{id}"
         }
     ]
 }
