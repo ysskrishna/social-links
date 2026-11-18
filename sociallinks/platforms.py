@@ -2158,5 +2158,150 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
             ],
             "sanitized": "https://www.researchgate.net/profile/{id}"
         }
+    ],
+    "onlyfans": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?onlyfans\.com/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://onlyfans.com/{id}"
+        }
+    ],
+    "opencollective": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?opencollective\.com/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://opencollective.com/{id}"
+        }
+    ],
+    "liberapay": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?liberapay\.com/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://liberapay.com/{id}"
+        }
+    ],
+    "wordpress_org": [
+        {
+            "patterns": [
+                rf"https?://profiles\.wordpress\.org/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://profiles.wordpress.org/{id}"
+        }
+    ],
+    "instructables": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?instructables\.com/member/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.instructables.com/member/{id}"
+        }
+    ],
+    "tmdb": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?themoviedb\.org/u/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.themoviedb.org/u/{id}"
+        }
+    ],
+    "hex_pm": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?hex\.pm/users/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://hex.pm/users/{id}"
+        }
+    ],
+    "metacpan": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?metacpan\.org/author/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://metacpan.org/author/{id}"
+        }
+    ],
+    "indiehackers": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?indiehackers\.com/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.indiehackers.com/{id}"
+        }
+    ],
+    "hackerearth": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?hackerearth\.com/@{PROFILE_ID}/?$",
+                rf"^@?{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.hackerearth.com/@{id}"
+        }
+    ],
+    "myspace": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?myspace\.com/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://myspace.com/{id}"
+        }
+    ],
+    "about_me": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?about\.me/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://about.me/{id}"
+        }
+    ],
+    "geeksforgeeks": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?geeksforgeeks\.org/(?:user|profile)/{PROFILE_ID}(?:/practice)?/?$",
+                rf"https?://auth\.geeksforgeeks\.org/user/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.geeksforgeeks.org/profile/{id}"
+        }
+    ],
+    "hackerone": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?hackerone\.com/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://hackerone.com/{id}"
+        }
+    ],
+    "bugcrowd": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?bugcrowd\.com/h/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://bugcrowd.com/h/{id}"
+        }
+    ],
+    "anaconda": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?anaconda\.org/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://anaconda.org/{id}"
+        }
     ]
 }
