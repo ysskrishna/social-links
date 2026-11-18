@@ -760,7 +760,7 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
     "clawhub": [
         {
             "patterns": [
-                rf"https?://(www\.)?clawhub\.ai/(?!(?:about|login|settings|explore|search|help|pricing|signup|terms|privacy|skills|upload|docs|stars|souls|import|dashboard|u)/?$){PROFILE_ID}/?$",
+                rf"https?://(www\.)?clawhub\.ai/(?!(?:about|login|settings|explore|search|help|pricing|signup|terms|privacy|skills|upload|docs|stars|souls|import|dashboard|u|manifest\.json|404\-lobster\-detective\.jpg)/?$){PROFILE_ID}/?$",
                 rf"^{PROFILE_ID}$"
             ],
             "sanitized": "https://clawhub.ai/{id}"

@@ -11,6 +11,8 @@ class TestClawhub:
             "https://clawhub.ai/steipete/skills/summarize",
             "https://clawhub.ai/skills",
             "https://clawhub.ai/search",
+            "https://clawhub.ai/manifest.json",
+            "https://clawhub.ai/404-lobster-detective.jpg",
         ],
     )
     def test_clawhub_rejects_non_profile_urls(self, sl, url):

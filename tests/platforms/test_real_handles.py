@@ -46,8 +46,6 @@ REAL_HANDLES = [
     ('replicate', 'https://replicate.com/m1guelpf', 'https://replicate.com/m1guelpf', 'm1guelpf'),  # wayback-200; live 200 (unknown ids 404)
     ('replicate', 'https://replicate.com/sabuhigr', 'https://replicate.com/sabuhigr', 'sabuhigr'),  # wayback-200; live 200 (unknown ids 404)
     # ClawHub
-    ('clawhub', 'https://clawhub.ai/404-lobster-detective.jpg', 'https://clawhub.ai/404-lobster-detective.jpg', '404-lobster-detective.jpg'),  # wayback-200; live 200 (unknown ids 404)
-    ('clawhub', 'https://clawhub.ai/manifest.json', 'https://clawhub.ai/manifest.json', 'manifest.json'),  # wayback-200; live 200 (unknown ids 404)
     ('clawhub', 'https://clawhub.ai/1kalin', 'https://clawhub.ai/1kalin', '1kalin'),  # wayback-200; live 200 (unknown ids 404)
     ('clawhub', 'https://clawhub.ai/mag3nt', 'https://clawhub.ai/mag3nt', 'mag3nt'),  # wayback-200; live 200 (unknown ids 404)
     ('clawhub', 'https://clawhub.ai/sanool', 'https://clawhub.ai/sanool', 'sanool'),  # wayback-200; live 200 (unknown ids 404)
