@@ -35,7 +35,7 @@ uv run mkdocs serve
 uv build
 ```
 
-CI (`.github/workflows/test.yml`) runs `uv sync --group dev`, then pytest on Python 3.8 through 3.13, and `ruff check .`. Docs and PyPI publish on `v*` tags.
+CI (`.github/workflows/test.yml`) runs `uv sync --group dev`, then pytest on Python 3.8 through 3.13, and `ruff check .`. Docs publish on `v*` tags; PyPI and GitHub Releases publish on `v*.*.*` tags.
 
 ## Behavior agents get wrong
 
