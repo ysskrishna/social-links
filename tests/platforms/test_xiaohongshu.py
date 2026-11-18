@@ -1,10 +1,7 @@
-"""Tests for Xiaohongshu (RedNote) platform."""
 import pytest
 
 
 class TestXiaohongshu:
-    """Test Xiaohongshu (RedNote) platform"""
-
     @pytest.mark.parametrize(
         "url,sanitized",
         [

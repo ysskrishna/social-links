@@ -1,10 +1,7 @@
-"""Tests for Scribd platform."""
 import pytest
 
 
 class TestScribd:
-    """Test Scribd platform"""
-
     @pytest.mark.parametrize(
         "url",
         [

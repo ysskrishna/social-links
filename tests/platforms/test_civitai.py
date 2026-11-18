@@ -1,10 +1,7 @@
-"""Tests for Civitai platform."""
 import pytest
 
 
 class TestCivitai:
-    """Test Civitai platform"""
-
     @pytest.mark.parametrize(
         "url",
         [

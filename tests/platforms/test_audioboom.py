@@ -1,10 +1,7 @@
-"""Tests for Audioboom platform."""
 import pytest
 
 
 class TestAudioboom:
-    """Test Audioboom platform"""
-
     @pytest.mark.parametrize(
         "url,sanitized",
         [

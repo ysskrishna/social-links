@@ -1,10 +1,7 @@
-"""Tests for Figma platform."""
 import pytest
 
 
 class TestFigma:
-    """Test Figma platform"""
-
     @pytest.mark.parametrize(
         "url",
         [

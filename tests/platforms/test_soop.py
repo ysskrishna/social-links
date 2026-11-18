@@ -1,10 +1,7 @@
-"""Tests for SOOP (AfreecaTV) platform."""
 import pytest
 
 
 class TestSoop:
-    """Test SOOP (AfreecaTV) platform"""
-
     @pytest.mark.parametrize(
         "url,sanitized",
         [

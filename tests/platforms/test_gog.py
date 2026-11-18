@@ -1,10 +1,7 @@
-"""Tests for GOG platform."""
 import pytest
 
 
 class TestGog:
-    """Test GOG platform"""
-
     @pytest.mark.parametrize(
         "url,sanitized",
         [

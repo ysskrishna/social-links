@@ -1,10 +1,7 @@
-"""Tests for Coursera platform."""
 import pytest
 
 
 class TestCoursera:
-    """Test Coursera platform"""
-
     @pytest.mark.parametrize(
         "url,sanitized",
         [

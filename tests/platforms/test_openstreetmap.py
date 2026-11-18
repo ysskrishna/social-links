@@ -1,10 +1,7 @@
-"""Tests for OpenStreetMap platform."""
 import pytest
 
 
 class TestOpenstreetmap:
-    """Test OpenStreetMap platform"""
-
     @pytest.mark.parametrize(
         "url,sanitized",
         [

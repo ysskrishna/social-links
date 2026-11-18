@@ -1,10 +1,7 @@
-"""Tests for Gitee platform."""
 import pytest
 
 
 class TestGitee:
-    """Test Gitee platform"""
-
     @pytest.mark.parametrize(
         "url",
         [

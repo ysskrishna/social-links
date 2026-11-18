@@ -1,10 +1,7 @@
-"""Tests for Zenn platform."""
 import pytest
 
 
 class TestZenn:
-    """Test Zenn platform"""
-
     @pytest.mark.parametrize(
         "url",
         [

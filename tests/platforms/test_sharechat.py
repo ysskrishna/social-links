@@ -1,10 +1,7 @@
-"""Tests for ShareChat platform."""
 import pytest
 
 
 class TestSharechat:
-    """Test ShareChat platform"""
-
     @pytest.mark.parametrize(
         "url",
         [

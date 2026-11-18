@@ -1,10 +1,7 @@
-"""Tests for Douyu platform."""
 import pytest
 
 
 class TestDouyu:
-    """Test Douyu platform"""
-
     @pytest.mark.parametrize(
         "url,sanitized",
         [

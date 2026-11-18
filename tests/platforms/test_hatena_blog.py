@@ -1,10 +1,7 @@
-"""Tests for Hatena Blog platform."""
 import pytest
 
 
 class TestHatenaBlog:
-    """Test Hatena Blog platform"""
-
     @pytest.mark.parametrize(
         "url,sanitized",
         [

@@ -1,10 +1,7 @@
-"""Tests for crates.io platform."""
 import pytest
 
 
 class TestCratesIo:
-    """Test crates.io platform"""
-
     @pytest.mark.parametrize(
         "url",
         [

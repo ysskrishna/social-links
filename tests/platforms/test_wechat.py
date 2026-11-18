@@ -1,11 +1,5 @@
-"""Tests for WeChat platform."""
-
-
 class TestWechat:
-    """Test WeChat platform"""
-
     def test_wechat_weixin_protocol(self, sl):
-        """Test WeChat with weixin:// protocol"""
         username = "Bright_Writers"
         assert sl.detect_platform(f"weixin://dl/chat?{username}") == "wechat"
         assert sl.is_valid("wechat", f"weixin://dl/chat?{username}") is True

@@ -1,10 +1,7 @@
-"""Tests for NuGet platform."""
 import pytest
 
 
 class TestNuget:
-    """Test NuGet platform"""
-
     @pytest.mark.parametrize(
         "url",
         [

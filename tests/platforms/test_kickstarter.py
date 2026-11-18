@@ -1,10 +1,7 @@
-"""Tests for Kickstarter platform."""
 import pytest
 
 
 class TestKickstarter:
-    """Test Kickstarter platform"""
-
     @pytest.mark.parametrize(
         "url,sanitized",
         [

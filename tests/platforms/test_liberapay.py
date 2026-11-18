@@ -1,10 +1,7 @@
-"""Tests for Liberapay platform."""
 import pytest
 
 
 class TestLiberapay:
-    """Test Liberapay platform"""
-
     @pytest.mark.parametrize(
         "url",
         [

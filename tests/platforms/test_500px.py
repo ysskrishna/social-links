@@ -1,10 +1,7 @@
-"""Tests for 500px platform."""
 import pytest
 
 
 class Test500px:
-    """Test 500px platform"""
-
     @pytest.mark.parametrize(
         "url",
         [

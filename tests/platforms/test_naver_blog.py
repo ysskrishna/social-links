@@ -1,10 +1,7 @@
-"""Tests for Naver Blog platform."""
 import pytest
 
 
 class TestNaverBlog:
-    """Test Naver Blog platform"""
-
     @pytest.mark.parametrize(
         "url,sanitized",
         [

@@ -1,10 +1,7 @@
-"""Tests for CodeSandbox platform."""
 import pytest
 
 
 class TestCodesandbox:
-    """Test CodeSandbox platform"""
-
     @pytest.mark.parametrize(
         "url",
         [

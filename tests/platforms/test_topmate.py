@@ -1,10 +1,7 @@
-"""Tests for Topmate platform."""
 import pytest
 
 
 class TestTopmate:
-    """Test Topmate platform"""
-
     @pytest.mark.parametrize(
         "url",
         [

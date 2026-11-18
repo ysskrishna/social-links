@@ -1,10 +1,7 @@
-"""Tests for HackerOne platform."""
 import pytest
 
 
 class TestHackerone:
-    """Test HackerOne platform"""
-
     @pytest.mark.parametrize(
         "url",
         [

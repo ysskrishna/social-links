@@ -1,10 +1,7 @@
-"""Tests for Misskey platform."""
 import pytest
 
 
 class TestMisskey:
-    """Test Misskey platform"""
-
     @pytest.mark.parametrize(
         "url",
         [

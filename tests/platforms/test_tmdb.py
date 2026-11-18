@@ -1,10 +1,7 @@
-"""Tests for TMDB platform."""
 import pytest
 
 
 class TestTmdb:
-    """Test TMDB platform"""
-
     @pytest.mark.parametrize(
         "url",
         [

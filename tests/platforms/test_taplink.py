@@ -1,10 +1,7 @@
-"""Tests for Taplink platform."""
 import pytest
 
 
 class TestTaplink:
-    """Test Taplink platform"""
-
     @pytest.mark.parametrize(
         "url,sanitized",
         [

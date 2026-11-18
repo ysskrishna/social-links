@@ -1,10 +1,7 @@
-"""Tests for Lemon8 platform."""
 import pytest
 
 
 class TestLemon8:
-    """Test Lemon8 platform"""
-
     @pytest.mark.parametrize(
         "url",
         [

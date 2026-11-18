@@ -1,10 +1,7 @@
-"""Tests for Beacons platform."""
 import pytest
 
 
 class TestBeacons:
-    """Test Beacons platform"""
-
     @pytest.mark.parametrize(
         "url",
         [

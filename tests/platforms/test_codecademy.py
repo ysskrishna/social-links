@@ -1,10 +1,7 @@
-"""Tests for Codecademy platform."""
 import pytest
 
 
 class TestCodecademy:
-    """Test Codecademy platform"""
-
     @pytest.mark.parametrize(
         "url",
         [

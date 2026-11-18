@@ -1,10 +1,7 @@
-"""Tests for AtCoder platform."""
 import pytest
 
 
 class TestAtcoder:
-    """Test AtCoder platform"""
-
     @pytest.mark.parametrize(
         "url,sanitized",
         [

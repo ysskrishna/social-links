@@ -1,10 +1,7 @@
-"""Tests for Airbnb platform."""
 import pytest
 
 
 class TestAirbnb:
-    """Test Airbnb platform"""
-
     @pytest.mark.parametrize(
         "url,sanitized",
         [

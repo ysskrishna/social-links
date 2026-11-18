@@ -1,10 +1,7 @@
-"""Tests for Blogger platform."""
 import pytest
 
 
 class TestBlogger:
-    """Test Blogger platform"""
-
     @pytest.mark.parametrize(
         "url",
         [

@@ -1,10 +1,7 @@
-"""Tests for Instructables platform."""
 import pytest
 
 
 class TestInstructables:
-    """Test Instructables platform"""
-
     @pytest.mark.parametrize(
         "url",
         [

@@ -1,10 +1,7 @@
-"""Tests for Pixiv platform."""
 import pytest
 
 
 class TestPixiv:
-    """Test Pixiv platform"""
-
     @pytest.mark.parametrize(
         "url,sanitized",
         [

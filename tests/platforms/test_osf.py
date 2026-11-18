@@ -1,10 +1,7 @@
-"""Tests for OSF platform."""
 import pytest
 
 
 class TestOsf:
-    """Test OSF platform"""
-
     @pytest.mark.parametrize(
         "url",
         [

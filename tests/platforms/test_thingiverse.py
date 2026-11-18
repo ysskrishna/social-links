@@ -1,10 +1,7 @@
-"""Tests for Thingiverse platform."""
 import pytest
 
 
 class TestThingiverse:
-    """Test Thingiverse platform"""
-
     @pytest.mark.parametrize(
         "url,sanitized",
         [

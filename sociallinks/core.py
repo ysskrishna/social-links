@@ -147,7 +147,6 @@ class SocialLinks:
         if use_predefined_platforms:
             self.platforms.update(PREDEFINED_PLATFORMS)
 
-        # Compile all
         for name, data in self.platforms.items():
             self._compiled[name] = self._compile_platform(name, data)
 

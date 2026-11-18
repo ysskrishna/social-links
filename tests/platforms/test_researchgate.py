@@ -1,10 +1,7 @@
-"""Tests for ResearchGate platform."""
 import pytest
 
 
 class TestResearchgate:
-    """Test ResearchGate platform"""
-
     @pytest.mark.parametrize(
         "url",
         [

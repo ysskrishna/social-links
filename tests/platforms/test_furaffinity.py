@@ -1,10 +1,7 @@
-"""Tests for Fur Affinity platform."""
 import pytest
 
 
 class TestFuraffinity:
-    """Test Fur Affinity platform"""
-
     @pytest.mark.parametrize(
         "url",
         [

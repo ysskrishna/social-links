@@ -1,10 +1,7 @@
-"""Tests for eBay platform."""
 import pytest
 
 
 class TestEbay:
-    """Test eBay platform"""
-
     @pytest.mark.parametrize(
         "url,sanitized",
         [

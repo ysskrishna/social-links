@@ -1,37 +1,25 @@
-"""Tests for LinkedIn platform."""
-
-
 class TestLinkedin:
-    """Test LinkedIn platform"""
-
     def test_linkedin_company(self, sl):
-        """Test LinkedIn company profile"""
         profile_id = "acme"
         assert sl.detect_platform(f"https://linkedin.com/company/{profile_id}") == "linkedin"
         assert sl.is_valid("linkedin", f"https://linkedin.com/company/{profile_id}") is True
         assert sl.sanitize("linkedin", f"https://linkedin.com/company/{profile_id}") == f"https://linkedin.com/company/{profile_id}"
 
     def test_linkedin_mobile(self, sl):
-        """Test LinkedIn mobile platform"""
         profile_id = "ysskrishna"
         assert sl.detect_platform(f"https://linkedin.com/mwlite/in/{profile_id}") == "linkedin"
         assert sl.is_valid("linkedin", f"https://linkedin.com/mwlite/in/{profile_id}") is True
         assert sl.sanitize("linkedin", f"https://linkedin.com/mwlite/in/{profile_id}") == f"https://linkedin.com/in/{profile_id}"
 
     def test_linkedin_localized(self, sl):
-        """Test LinkedIn localized URLs (e.g., de.linkedin.com)"""
         profile_id = "ysskrishna"
-        # Test localized personal profile
         assert sl.is_valid("linkedin", f"https://de.linkedin.com/in/{profile_id}/") is True
         assert sl.sanitize("linkedin", f"https://de.linkedin.com/in/{profile_id}/") == f"https://linkedin.com/in/{profile_id}"
-        # Test localized mobile profile
         assert sl.is_valid("linkedin", f"https://de.linkedin.com/mwlite/in/{profile_id}/") is True
         assert sl.sanitize("linkedin", f"https://de.linkedin.com/mwlite/in/{profile_id}/") == f"https://linkedin.com/in/{profile_id}"
 
     def test_linkedin_additional_test_cases(self, sl):
-        """Test LinkedIn additional test cases from PHP NormalizersTest.php"""
         
-        # LinkedIn profile test cases (from testLinkedinProfileNormalizer)
         profile_test_cases = [
             ('https://www.linkedin.com/in/dealroom/', 'https://linkedin.com/in/dealroom'),
             ('https://www.linkedin.com/in/dealroom', 'https://linkedin.com/in/dealroom'),
@@ -45,7 +33,6 @@ class TestLinkedin:
             result = sl.sanitize("linkedin", source)
             assert result == expected, f"Expected {expected}, got {result} for {source}"
         
-        # LinkedIn company test cases 
         company_test_cases = [
             ('https://www.linkedin.com/company/dealroom/', 'https://linkedin.com/company/dealroom'),
             ('https://www.linkedin.com/company/dealroom', 'https://linkedin.com/company/dealroom'),

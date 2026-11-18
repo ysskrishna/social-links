@@ -1,14 +1,9 @@
-"""Tests for Medium platform."""
 import pytest
 
 
 class TestMedium:
-    """Test Medium platform"""
-
     def test_medium(self, sl):
-        """Test Medium platform"""
         profile_id = "ysskrishna"
-        # Test direct username (with and without @)
         assert sl.is_valid("medium", profile_id) is True
         assert sl.is_valid("medium", f"@{profile_id}") is True
         assert sl.sanitize("medium", profile_id) == f"https://medium.com/@{profile_id}"

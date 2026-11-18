@@ -1,10 +1,7 @@
-"""Tests for Bugcrowd platform."""
 import pytest
 
 
 class TestBugcrowd:
-    """Test Bugcrowd platform"""
-
     @pytest.mark.parametrize(
         "url",
         [

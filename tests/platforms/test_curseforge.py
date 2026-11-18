@@ -1,10 +1,7 @@
-"""Tests for CurseForge platform."""
 import pytest
 
 
 class TestCurseforge:
-    """Test CurseForge platform"""
-
     @pytest.mark.parametrize(
         "url,sanitized",
         [

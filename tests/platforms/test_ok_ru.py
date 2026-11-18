@@ -1,10 +1,7 @@
-"""Tests for OK.ru platform."""
 import pytest
 
 
 class TestOkRu:
-    """Test OK.ru platform"""
-
     @pytest.mark.parametrize(
         "url,sanitized",
         [

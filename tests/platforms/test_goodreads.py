@@ -1,10 +1,7 @@
-"""Tests for Goodreads platform."""
 import pytest
 
 
 class TestGoodreads:
-    """Test Goodreads platform"""
-
     @pytest.mark.parametrize(
         "url,sanitized",
         [

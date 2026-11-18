@@ -1,10 +1,7 @@
-"""Tests for Tistory platform."""
 import pytest
 
 
 class TestTistory:
-    """Test Tistory platform"""
-
     @pytest.mark.parametrize(
         "url",
         [

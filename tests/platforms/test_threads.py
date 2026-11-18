@@ -1,14 +1,7 @@
-"""Tests for Threads platform."""
-
-
 class TestThreads:
-    """Test Threads platform"""
-
     def test_threads(self, sl):
-        """Test Threads platform (current domain: threads.com)"""
         profile_id = "ysskrishna"
         assert sl.sanitize("threads", f"https://www.threads.com/@{profile_id}") == f"https://threads.com/@{profile_id}"
-        # Test direct username (with and without @)
         assert sl.is_valid("threads", f"@{profile_id}") is True
         assert sl.sanitize("threads", f"@{profile_id}") == f"https://threads.com/@{profile_id}"
 

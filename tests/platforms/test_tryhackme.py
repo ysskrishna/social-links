@@ -1,10 +1,7 @@
-"""Tests for TryHackMe platform."""
 import pytest
 
 
 class TestTryhackme:
-    """Test TryHackMe platform"""
-
     @pytest.mark.parametrize(
         "url,sanitized",
         [

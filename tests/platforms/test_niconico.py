@@ -1,10 +1,7 @@
-"""Tests for Niconico platform."""
 import pytest
 
 
 class TestNiconico:
-    """Test Niconico platform"""
-
     @pytest.mark.parametrize(
         "url",
         [

@@ -1,10 +1,7 @@
-"""Tests for Hey.xyz platform."""
 import pytest
 
 
 class TestHeyXyz:
-    """Test Hey.xyz platform"""
-
     @pytest.mark.parametrize(
         "url",
         [

@@ -1,10 +1,7 @@
-"""Tests for Chub.ai platform."""
 import pytest
 
 
 class TestChubAi:
-    """Test Chub.ai platform"""
-
     @pytest.mark.parametrize(
         "url",
         [

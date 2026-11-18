@@ -1,10 +1,7 @@
-"""Tests for Komoot platform."""
 import pytest
 
 
 class TestKomoot:
-    """Test Komoot platform"""
-
     @pytest.mark.parametrize(
         "url,sanitized",
         [

@@ -1,10 +1,7 @@
-"""Tests for Slashdot platform."""
 import pytest
 
 
 class TestSlashdot:
-    """Test Slashdot platform"""
-
     @pytest.mark.parametrize(
         "url,sanitized",
         [

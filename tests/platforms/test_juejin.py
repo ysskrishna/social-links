@@ -1,10 +1,7 @@
-"""Tests for Juejin platform."""
 import pytest
 
 
 class TestJuejin:
-    """Test Juejin platform"""
-
     @pytest.mark.parametrize(
         "url,sanitized",
         [

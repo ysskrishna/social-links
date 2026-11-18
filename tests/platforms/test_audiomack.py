@@ -1,10 +1,7 @@
-"""Tests for Audiomack platform."""
 import pytest
 
 
 class TestAudiomack:
-    """Test Audiomack platform"""
-
     @pytest.mark.parametrize(
         "url",
         [

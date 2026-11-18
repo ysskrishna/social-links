@@ -1,10 +1,7 @@
-"""Tests for Freelancer.com platform."""
 import pytest
 
 
 class TestFreelancer:
-    """Test Freelancer.com platform"""
-
     @pytest.mark.parametrize(
         "url,sanitized",
         [

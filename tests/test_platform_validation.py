@@ -1,4 +1,3 @@
-"""Tests for platform validation and atomic registration."""
 import pytest
 
 from sociallinks import SocialLinks

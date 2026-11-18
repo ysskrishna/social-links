@@ -1,10 +1,7 @@
-"""Tests for Stack Exchange platform."""
 import pytest
 
 
 class TestStackExchange:
-    """Test Stack Exchange platform"""
-
     @pytest.mark.parametrize(
         "url,sanitized",
         [

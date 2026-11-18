@@ -1,10 +1,7 @@
-"""Tests for DeviantArt platform."""
 import pytest
 
 
 class TestDeviantart:
-    """Test DeviantArt platform"""
-
     @pytest.mark.parametrize(
         "url,sanitized",
         [

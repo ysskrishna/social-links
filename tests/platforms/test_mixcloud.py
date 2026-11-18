@@ -1,10 +1,7 @@
-"""Tests for Mixcloud platform."""
 import pytest
 
 
 class TestMixcloud:
-    """Test Mixcloud platform"""
-
     @pytest.mark.parametrize(
         "url",
         [
