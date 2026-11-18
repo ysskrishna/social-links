@@ -11,7 +11,7 @@
 [![Context7](https://img.shields.io/badge/Context7-docs-18181B)](https://context7.com/ysskrishna/social-links)
 [![Ask DeepWiki](https://img.shields.io/badge/DeepWiki-ask-18181B)](https://deepwiki.com/ysskrishna/social-links)
 
-Python library to validate, sanitize, and detect social media URLs. Support for LinkedIn, Instagram, TikTok, X/Twitter, GitHub, Facebook, YouTube, and 115+ platforms. Features automatic URL normalization and zero dependencies. Easy to use, regex-powered, and customizable.
+Python library to validate, sanitize, and detect social media URLs. Support for LinkedIn, Instagram, TikTok, X/Twitter, GitHub, Facebook, YouTube, and 220+ platforms. Features automatic URL normalization and zero dependencies. Easy to use, regex-powered, and customizable.
 
 
 > 🚀 **Try it interactively in your browser!** Test the library with our [Interactive Demo](https://ysskrishna.github.io/social-links/demo/) - no installation required.
@@ -24,7 +24,7 @@ Python library to validate, sanitize, and detect social media URLs. Support for 
 - ✅ **Validate** URLs against specific platforms
 - 🧹 **Sanitize** URLs to canonical format
 - 🆔 **Extract IDs** (usernames, profile IDs) from URLs
-- 🎯 **115+ predefined platforms** (LinkedIn, GitHub, Twitter/X, Facebook, Instagram, YouTube, and more)
+- 🎯 **220+ predefined platforms** (LinkedIn, GitHub, Twitter/X, Facebook, Instagram, YouTube, and more)
 - 🔧 **Customizable** - Add your own platforms with regex patterns
 - 🚀 **Zero dependencies** - Pure Python, no external libraries
 
@@ -63,14 +63,14 @@ print(user_id)  # "ysskrishna"
 
 # List all supported platforms
 platforms = list_platforms()
-print(f"Supported platforms: {len(platforms)}")  # Supported platforms: 115+
+print(f"Supported platforms: {len(platforms)}")  # Supported platforms: 220+
 ```
 
 That's it! For most use cases, you don't need anything more. See [Basic Usage](#basic-usage) for more examples, or [Advanced Usage](#advanced-usage) if you need custom platforms or configurations.
 
 ## Supported Platforms
 
-The library comes with 115+ predefined platforms:
+The library comes with 220+ predefined platforms:
 
 <details>
 <summary><b>Show all supported platforms</b></summary>
@@ -79,45 +79,81 @@ The library comes with 115+ predefined platforms:
 
 | Predefined Platforms | | |
 |---|---|---|
-| [Apple Music](https://music.apple.com) | [ArtStation](https://artstation.com) | [AtCoder](https://atcoder.jp) |
-| [Bandcamp](https://bandcamp.com) | [Behance](https://behance.net) | [Bilibili](https://bilibili.com) |
-| [Bluesky](https://bsky.app) | [Chess.com](https://chess.com) | [Civitai](https://civitai.com) |
-| [ClawHub](https://clawhub.ai) | [CodeChef](https://codechef.com) | [CodePen](https://codepen.io) |
-| [Crunchbase](https://crunchbase.com) | [Dailymotion](https://dailymotion.com) | [Dev.to](https://dev.to) |
+| [500px](https://500px.com) | [Airbnb](https://airbnb.com) | [Ameba Blog](https://ameblo.jp) |
+| [AniList](https://anilist.co) | [Apple Music](https://music.apple.com) | [Are.na](https://are.na) |
+| [ArtStation](https://artstation.com) | [AtCoder](https://atcoder.jp) | [Audioboom](https://audioboom.com) |
+| [Audiomack](https://audiomack.com) | [Bandcamp](https://bandcamp.com) | [Beacons](https://beacons.ai) |
+| [Behance](https://behance.net) | [Bilibili](https://bilibili.com) | [Bio.link](https://bio.link) |
+| [BitChute](https://bitchute.com) | [Blogger](https://blogger.com) | [Bluesky](https://bsky.app) |
+| [Brunch](https://brunch.co.kr) | [Buttondown](https://buttondown.com) | [Buy Me a Coffee](https://buymeacoffee.com) |
+| [Campsite.bio](https://campsite.bio) | [Cara](https://cara.app) | [Carrd](https://carrd.co) |
+| [Character.AI](https://character.ai) | [Chess.com](https://chess.com) | [Chub.ai](https://chub.ai) (NSFW) |
+| [CHZZK](https://chzzk.naver.com) | [Civitai](https://civitai.com) | [ClawHub](https://clawhub.ai) |
+| [Codeberg](https://codeberg.org) | [Codecademy](https://codecademy.com) | [CodeChef](https://codechef.com) |
+| [Codeforces](https://codeforces.com) | [Codementor](https://codementor.io) | [CodePen](https://codepen.io) |
+| [CodeSandbox](https://codesandbox.io) | [Codewars](https://codewars.com) | [Contra](https://contra.com) |
+| [Coursera](https://coursera.org) | [crates.io](https://crates.io) | [Crunchbase](https://crunchbase.com) |
+| [CSDN](https://csdn.net) | [CurseForge](https://curseforge.com) | [Dailymotion](https://dailymotion.com) |
+| [Depop](https://depop.com) | [Dev.to](https://dev.to) | [DeviantArt](https://deviantart.com) |
 | [Discogs](https://discogs.com) | [Discord](https://discord.com) | [Docker Hub](https://hub.docker.com) |
-| [Douban](https://douban.com) | [Douyin](https://douyin.com) | [Dribbble](https://dribbble.com) |
-| [eBay](https://ebay.com) | [Etsy](https://etsy.com) | [Exercism](https://exercism.org) |
-| [Facebook](https://facebook.com) | [Farcaster](https://farcaster.xyz) | [Figma](https://figma.com) |
-| [Fiverr](https://fiverr.com) | [Flickr](https://flickr.com) | [Freelancer.com](https://freelancer.com) |
-| [GitHub](https://github.com) | [GitLab](https://gitlab.com) | [GOG](https://gog.com) |
-| [Goodreads](https://goodreads.com) | [Google Scholar](https://scholar.google.com) | [Gravatar](https://gravatar.com) |
-| [Gumroad](https://gumroad.com) | [Habr](https://habr.com) | [Hacker News](https://news.ycombinator.com) |
-| [HackerRank](https://hackerrank.com) | [Hashnode](https://hashnode.com) | [Hey.xyz](https://hey.xyz) |
-| [Hugging Face](https://huggingface.co) | [Imgur](https://imgur.com) | [Instagram](https://instagram.com) |
-| [itch.io](https://itch.io) | [Kaggle](https://kaggle.com) | [Keybase](https://keybase.io) |
-| [Kick](https://kick.com) | [Kuaishou](https://kuaishou.com) | [LeetCode](https://leetcode.com) |
-| [Lemmy World](https://lemmy.world) | [Letterboxd](https://letterboxd.com) | [Lichess](https://lichess.org) |
-| [LinkedIn](https://linkedin.com) (personal & company) | [Linktree](https://linktr.ee) | [Lobsters](https://lobste.rs) |
-| [Mastodon](https://mastodon.social) | [Medium](https://medium.com) | [Misskey](https://misskey.io) |
-| [Modrinth](https://modrinth.com) | [MyAnimeList](https://myanimelist.net) | [Niconico](https://nicovideo.jp) |
-| [NuGet](https://nuget.org) | [Odysee](https://odysee.com) | [OpenSea](https://opensea.io) |
-| [OpenStreetMap](https://openstreetmap.org) | [osu!](https://osu.ppy.sh) | [Patreon](https://patreon.com) |
-| [Pinterest](https://pinterest.com) | [Pixelfed](https://pixelfed.social) | [Pixiv](https://pixiv.net) |
-| [Poshmark](https://poshmark.com) | [Primal](https://primal.net) | [Product Hunt](https://producthunt.com) |
-| [PyPI](https://pypi.org) | [Qiita](https://qiita.com) | [Quora](https://quora.com) |
-| [Reddit](https://reddit.com) | [Replicate](https://replicate.com) | [Replit](https://replit.com) |
-| [RubyGems](https://rubygems.org) | [Rumble](https://rumble.com) | [Scratch](https://scratch.mit.edu) |
-| [Signal](https://signal.me) | [SlideShare](https://slideshare.net) | [Snapchat](https://snapchat.com) |
+| [Douban](https://douban.com) | [Douyin](https://douyin.com) | [Douyu](https://douyu.com) |
+| [Dribbble](https://dribbble.com) | [Dzen](https://dzen.ru) | [eBay](https://ebay.com) |
+| [Etsy](https://etsy.com) | [Exercism](https://exercism.org) | [Facebook](https://facebook.com) |
+| [FACEIT](https://faceit.com) | [Fanfix](https://fanfix.io) (NSFW) | [Farcaster](https://farcaster.xyz) |
+| [Figma](https://figma.com) | [Fiverr](https://fiverr.com) | [Flickr](https://flickr.com) |
+| [Flipboard](https://flipboard.com) | [freeCodeCamp](https://freecodecamp.org) | [Freelancer.com](https://freelancer.com) |
+| [Fur Affinity](https://furaffinity.net) (NSFW) | [Game Jolt](https://gamejolt.com) | [Genius](https://genius.com) |
+| [Gitee](https://gitee.com) | [GitHub](https://github.com) | [GitLab](https://gitlab.com) |
+| [GOG](https://gog.com) | [Goodreads](https://goodreads.com) | [Google Scholar](https://scholar.google.com) |
+| [Gravatar](https://gravatar.com) | [Gumroad](https://gumroad.com) | [Habr](https://habr.com) |
+| [Hacker News](https://news.ycombinator.com) | [HackerRank](https://hackerrank.com) | [Hashnode](https://hashnode.com) |
+| [Hatena Blog](https://hatenablog.com) | [Hey.xyz](https://hey.xyz) | [Hoo.be](https://hoo.be) |
+| [Hugging Face](https://huggingface.co) | [Huya](https://huya.com) | [Imgur](https://imgur.com) |
+| [iNaturalist](https://inaturalist.org) | [Instagram](https://instagram.com) | [Issuu](https://issuu.com) |
+| [itch.io](https://itch.io) | [Jamendo](https://jamendo.com) | [Juejin](https://juejin.cn) |
+| [Kaggle](https://kaggle.com) | [KakaoTalk Channel](https://pf.kakao.com) | [Keybase](https://keybase.io) |
+| [Khan Academy](https://khanacademy.org) | [Kick](https://kick.com) | [Kickstarter](https://kickstarter.com) |
+| [Ko-fi](https://ko-fi.com) | [Komoot](https://komoot.com) | [Kuaishou](https://kuaishou.com) |
+| [Last.fm](https://last.fm) | [Launchpad](https://launchpad.net) | [LeetCode](https://leetcode.com) |
+| [Lemmy World](https://lemmy.world) | [Lemon8](https://lemon8-app.com) | [Letterboxd](https://letterboxd.com) |
+| [Lichess](https://lichess.org) | [LINE](https://line.me) | [LinkedIn](https://linkedin.com) (personal & company) |
+| [Linktree](https://linktr.ee) | [Lobsters](https://lobste.rs) | [Malt](https://malt.com) |
+| [Mastodon](https://mastodon.social) | [Medium](https://medium.com) | [Mercari](https://jp.mercari.com) |
+| [Minds](https://minds.com) | [Misskey](https://misskey.io) | [Mixcloud](https://mixcloud.com) |
+| [Modrinth](https://modrinth.com) | [MyAnimeList](https://myanimelist.net) | [Naver Blog](https://blog.naver.com) |
+| [Niconico](https://nicovideo.jp) | [Nimo TV](https://nimo.tv) | [note](https://note.com) |
+| [npm](https://npmjs.com) | [NuGet](https://nuget.org) | [Odysee](https://odysee.com) |
+| [OK.ru](https://ok.ru) | [Ollama](https://ollama.com) | [OpenSea](https://opensea.io) |
+| [OpenStreetMap](https://openstreetmap.org) | [ORCID](https://orcid.org) | [OSF](https://osf.io) |
+| [osu!](https://osu.ppy.sh) | [Packagist](https://packagist.org) | [Paragraph](https://paragraph.com) |
+| [Patreon](https://patreon.com) | [Pexels](https://pexels.com) | [Pinterest](https://pinterest.com) |
+| [Pixelfed](https://pixelfed.social) | [Pixiv](https://pixiv.net) | [Poshmark](https://poshmark.com) |
+| [Primal](https://primal.net) | [Product Hunt](https://producthunt.com) | [PyPI](https://pypi.org) |
+| [Qiita](https://qiita.com) | [Quora](https://quora.com) | [RateYourMusic](https://rateyourmusic.com) |
+| [Redbubble](https://redbubble.com) | [Reddit](https://reddit.com) | [Replicate](https://replicate.com) |
+| [Replit](https://replit.com) | [ResearchGate](https://researchgate.net) | [Roblox](https://roblox.com) |
+| [Royal Road](https://royalroad.com) | [RubyGems](https://rubygems.org) | [Rumble](https://rumble.com) |
+| [Rutube](https://rutube.ru) | [Scratch](https://scratch.mit.edu) | [Scribd](https://scribd.com) |
+| [Semantic Scholar](https://semanticscholar.org) | [ShareChat](https://sharechat.com) | [Signal](https://signal.me) |
+| [Sketchfab](https://sketchfab.com) | [Slashdot](https://slashdot.org) | [SlideShare](https://slideshare.net) |
+| [Snapchat](https://snapchat.com) | [solo.to](https://solo.to) | [SOOP (AfreecaTV)](https://sooplive.com) |
 | [SoundCloud](https://soundcloud.com) | [SourceForge](https://sourceforge.net) | [SourceHut](https://sr.ht) |
 | [Speedrun.com](https://speedrun.com) | [Spotify](https://spotify.com) | [Stack Exchange](https://stackexchange.com) |
-| [Stack Overflow](https://stackoverflow.com) | [Stan Store](https://stan.store) | [Steam](https://steamcommunity.com) |
-| [Substack](https://substack.com) | [Telegram](https://telegram.org) | [Threads](https://threads.com) |
-| [TikTok](https://tiktok.com) | [Topcoder](https://topcoder.com) | [Topmate](https://topmate.io) |
-| [Trello](https://trello.com) | [TryHackMe](https://tryhackme.com) | [Tumblr](https://tumblr.com) |
-| [Twitch](https://twitch.tv) | [Unsplash](https://unsplash.com) | [Vimeo](https://vimeo.com) |
-| [VK](https://vk.com) | [WeChat](https://weixin.qq.com) | [Weibo](https://weibo.com) |
-| [Wellfound (AngelList)](https://wellfound.com) | [WhatsApp](https://whatsapp.com) | [WordPress](https://wordpress.com) |
-| [X (Twitter)](https://x.com) | [YouTube](https://youtube.com) | [Zenn](https://zenn.dev) |
+| [Stack Overflow](https://stackoverflow.com) | [Stan Store](https://stan.store) | [start.gg](https://start.gg) |
+| [Steam](https://steamcommunity.com) | [Substack](https://substack.com) | [Taplink](https://taplink.cc) |
+| [Telegram](https://telegram.org) | [The StoryGraph](https://thestorygraph.com) | [Thingiverse](https://thingiverse.com) |
+| [Threads](https://threads.com) | [Throne](https://throne.com) (NSFW) | [TikTok](https://tiktok.com) |
+| [Tistory](https://tistory.com) | [Topcoder](https://topcoder.com) | [Topmate](https://topmate.io) |
+| [Toyhouse](https://toyhou.se) | [Trakt](https://trakt.tv) | [Trello](https://trello.com) |
+| [Tripadvisor](https://tripadvisor.com) | [Trustpilot](https://trustpilot.com) | [Truth Social](https://truthsocial.com) |
+| [TryHackMe](https://tryhackme.com) | [Tumblr](https://tumblr.com) | [Twitch](https://twitch.tv) |
+| [Udemy](https://udemy.com) | [Unsplash](https://unsplash.com) | [Untappd](https://untappd.com) |
+| [Velog](https://velog.io) | [Vimeo](https://vimeo.com) | [Vinted](https://vinted.com) |
+| [VK](https://vk.com) | [Wattpad](https://wattpad.com) | [WeChat](https://weixin.qq.com) |
+| [Weibo](https://weibo.com) | [Weights & Biases](https://wandb.ai) | [Wellfound (AngelList)](https://wellfound.com) |
+| [WhatsApp](https://whatsapp.com) | [WordPress](https://wordpress.com) | [X (Twitter)](https://x.com) |
+| [XDA Forums](https://xdaforums.com) | [Xiaohongshu (RedNote)](https://www.xiaohongshu.com) | [XING](https://xing.com) |
+| [YouTube](https://youtube.com) | [Zenn](https://zenn.dev) |  |
 
 <!-- platforms:end -->
 
@@ -125,7 +161,7 @@ The library comes with 115+ predefined platforms:
 
 ## Basic Usage
 
-The simplest way to use social-links is with module-level functions. These work out of the box with 115+ predefined platforms - no configuration needed!
+The simplest way to use social-links is with module-level functions. These work out of the box with 220+ predefined platforms - no configuration needed!
 
 ### Detect Platform
 
@@ -205,7 +241,7 @@ from sociallinks import list_platforms
 # Get all available platforms
 platforms = list_platforms()
 # Returns: ["behance", "dev_to", "dribbble", "github", "linkedin", ...]
-print(f"Supported platforms: {len(platforms)}")  # 115+
+print(f"Supported platforms: {len(platforms)}")  # 220+
 ```
 
 ---

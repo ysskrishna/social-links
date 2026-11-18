@@ -6,6 +6,8 @@ from sociallinks.constants import (
     PHONE_NUMBER,
     NUMERIC_ID,
     NOSTR_NPUB,
+    ORCID_ID,
+    HEX32_ID,
     PlatformEntries,
 )
 
@@ -1176,6 +1178,985 @@ PREDEFINED_PLATFORMS: PlatformEntries = {
                 rf"^{NUMERIC_ID}$"
             ],
             "sanitized": "https://www.nicovideo.jp/user/{id}"
+        }
+    ],
+    "roblox": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?(?:web\.)?roblox\.com/(?:[a-z][a-z]/)?users/{NUMERIC_ID}(?:/profile)?/?$",
+                rf"^{NUMERIC_ID}$"
+            ],
+            "sanitized": "https://www.roblox.com/users/{id}/profile"
+        }
+    ],
+    "truth_social": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?truthsocial\.com/@{PROFILE_ID}/?$",
+                rf"^@?{PROFILE_ID}$"
+            ],
+            "sanitized": "https://truthsocial.com/@{id}"
+        }
+    ],
+    "buymeacoffee": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?buymeacoffee\.com/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://buymeacoffee.com/{id}"
+        }
+    ],
+    "ko_fi": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?ko-fi\.com/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://ko-fi.com/{id}"
+        }
+    ],
+    "lastfm": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?last\.fm/(?:[a-z][a-z]/)?user/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.last.fm/user/{id}"
+        }
+    ],
+    "orcid": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?orcid\.org/{ORCID_ID}/?$",
+                rf"^{ORCID_ID}$"
+            ],
+            "sanitized": "https://orcid.org/{id}"
+        }
+    ],
+    "npm": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?npmjs\.com/~{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.npmjs.com/~{id}"
+        }
+    ],
+    "beacons": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?beacons\.ai/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://beacons.ai/{id}"
+        }
+    ],
+    "codeforces": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?(?:m[0-9]\.)?codeforces\.com/profile/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://codeforces.com/profile/{id}"
+        }
+    ],
+    "codewars": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?codewars\.com/users/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.codewars.com/users/{id}"
+        }
+    ],
+    "codeberg": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?codeberg\.org/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://codeberg.org/{id}"
+        }
+    ],
+    "crates_io": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?crates\.io/users/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://crates.io/users/{id}"
+        }
+    ],
+    "gitee": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?gitee\.com/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://gitee.com/{id}"
+        }
+    ],
+    "wattpad": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?wattpad\.com/user/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.wattpad.com/user/{id}"
+        }
+    ],
+    "anilist": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?anilist\.co/user/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://anilist.co/user/{id}"
+        }
+    ],
+    "deviantart": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?deviantart\.com/{PROFILE_ID}/?$",
+                r"https?://(?!www\.)(?P<id>[A-Za-z0-9-]+)\.deviantart\.com/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.deviantart.com/{id}"
+        }
+    ],
+    "pexels": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?pexels\.com/(?:[a-z][a-z](?:-[a-z][a-z])?/)?@{PROFILE_ID}/?$",
+                rf"^@?{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.pexels.com/@{id}"
+        }
+    ],
+    "xiaohongshu": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?(?:xiaohongshu|rednote)\.com/user/profile/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.rednote.com/user/profile/{id}"
+        }
+    ],
+    "genius": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?genius\.com/(?![^/?#]*-(?:lyrics|annotated)/?$){PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://genius.com/{id}"
+        }
+    ],
+    "lemon8": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?lemon8-app\.com/(?:[a-z][a-z](?:-[a-z][a-z])?/)?@{PROFILE_ID}/?$",
+                rf"^@?{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.lemon8-app.com/@{id}"
+        }
+    ],
+    "airbnb": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?airbnb\.(?:com|ca|de|fr|es|it|nl|ie|jp|be|at|ch|dk|se|no|fi|pt|pl|gr|mx|cl|co\.uk|co\.in|co\.nz|co\.kr|com\.au|com\.br|com\.sg|com\.hk|com\.mx|com\.ar|com\.co)/users/show/{NUMERIC_ID}/?$",
+                rf"https?://(www\.)?airbnb\.(?:com|ca|de|fr|es|it|nl|ie|jp|be|at|ch|dk|se|no|fi|pt|pl|gr|mx|cl|co\.uk|co\.in|co\.nz|co\.kr|com\.au|com\.br|com\.sg|com\.hk|com\.mx|com\.ar|com\.co)/users/profile/{NUMERIC_ID}/?$",
+                rf"^{NUMERIC_ID}$"
+            ],
+            "sanitized": "https://www.airbnb.com/users/show/{id}"
+        }
+    ],
+    "trustpilot": [
+        {
+            "patterns": [
+                rf"https?://(?:(?:www|[a-z][a-z])\.)?trustpilot\.com/users/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.trustpilot.com/users/{id}"
+        }
+    ],
+    "carrd": [
+        {
+            "patterns": [
+                r"https?://(?!www\.)(?P<id>[A-Za-z0-9-]+)\.carrd\.co/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://{id}.carrd.co"
+        }
+    ],
+    "blogger": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?blogger\.com/profile/{NUMERIC_ID}/?$",
+                rf"^{NUMERIC_ID}$"
+            ],
+            "sanitized": "https://www.blogger.com/profile/{id}"
+        }
+    ],
+    "tistory": [
+        {
+            "patterns": [
+                r"https?://(?!www\.)(?P<id>[A-Za-z0-9-]+)\.tistory\.com/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://{id}.tistory.com"
+        }
+    ],
+    "untappd": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?untappd\.com/user/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://untappd.com/user/{id}"
+        }
+    ],
+    "storygraph": [
+        {
+            "patterns": [
+                rf"https?://(?:app\.)?thestorygraph\.com/profile/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://app.thestorygraph.com/profile/{id}"
+        }
+    ],
+    "rateyourmusic": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?rateyourmusic\.com/~{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://rateyourmusic.com/~{id}"
+        }
+    ],
+    "flipboard": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?flipboard\.com/@{PROFILE_ID}/?$",
+                rf"^@?{PROFILE_ID}$"
+            ],
+            "sanitized": "https://flipboard.com/@{id}"
+        }
+    ],
+    "character_ai": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?character\.ai/profile/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://character.ai/profile/{id}"
+        }
+    ],
+    "ollama": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?ollama\.com/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://ollama.com/{id}"
+        }
+    ],
+    "depop": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?depop\.com/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.depop.com/{id}"
+        }
+    ],
+    "launchpad": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?launchpad\.net/~{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://launchpad.net/~{id}"
+        }
+    ],
+    "codesandbox": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?codesandbox\.io/u/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://codesandbox.io/u/{id}"
+        }
+    ],
+    "juejin": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?juejin\.cn/user/{NUMERIC_ID}(?:/posts)?/?$",
+                rf"^{NUMERIC_ID}$"
+            ],
+            "sanitized": "https://juejin.cn/user/{id}"
+        }
+    ],
+    "csdn": [
+        {
+            "patterns": [
+                rf"https?://blog\.csdn\.net/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://blog.csdn.net/{id}"
+        }
+    ],
+    "wandb": [
+        {
+            "patterns": [
+                rf"https?://forge\.coreweave\.com/profile/{PROFILE_ID}/?$",
+                rf"https?://(www\.)?wandb\.ai/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://forge.coreweave.com/profile/{id}"
+        }
+    ],
+    "chub_ai": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?chub\.ai/users/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://chub.ai/users/{id}"
+        }
+    ],
+    "coursera": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?coursera\.org/user/{HEX32_ID}/?$",
+                rf"https?://(www\.)?coursera\.org/user/i/{HEX32_ID}/?$",
+                rf"^{HEX32_ID}$"
+            ],
+            "sanitized": "https://www.coursera.org/user/{id}"
+        }
+    ],
+    "udemy": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?udemy\.com/user/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.udemy.com/user/{id}"
+        }
+    ],
+    "khan_academy": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?khanacademy\.org/profile/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.khanacademy.org/profile/{id}"
+        }
+    ],
+    "codecademy": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?codecademy\.com/profiles/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.codecademy.com/profiles/{id}"
+        }
+    ],
+    "freecodecamp": [
+        {
+            "patterns": [
+                rf"https?://forum\.freecodecamp\.org/u/{PROFILE_ID}(?:/summary)?/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://forum.freecodecamp.org/u/{id}"
+        }
+    ],
+    "semantic_scholar": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?semanticscholar\.org/author/(?:[^/?#]+/)?{NUMERIC_ID}/?$",
+                rf"^{NUMERIC_ID}$"
+            ],
+            "sanitized": "https://www.semanticscholar.org/author/{id}"
+        }
+    ],
+    "osf": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?osf\.io/user/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://osf.io/user/{id}"
+        }
+    ],
+    "inaturalist": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?inaturalist\.org/people/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.inaturalist.org/people/{id}"
+        }
+    ],
+    "faceit": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?faceit\.com/(?:[a-z][a-z](?:-[a-z][a-z])?/)?players/{PROFILE_ID}(?:/stats(?:/[a-z0-9]+)?)?/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.faceit.com/en/players/{id}"
+        }
+    ],
+    "gamejolt": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?gamejolt\.com/@{PROFILE_ID}/?$",
+                rf"^@?{PROFILE_ID}$"
+            ],
+            "sanitized": "https://gamejolt.com/@{id}"
+        }
+    ],
+    "start_gg": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?(?:start|smash)\.gg/user/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.start.gg/user/{id}"
+        }
+    ],
+    "curseforge": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?curseforge\.com/members/{PROFILE_ID}(?:/projects)?/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.curseforge.com/members/{id}"
+        }
+    ],
+    "xda": [
+        {
+            "patterns": [
+                r"https?://(?:xdaforums\.com|forum\.xda-developers\.com)/m/(?P<id>[A-Za-z0-9_.-]+\.[0-9]+)/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://xdaforums.com/m/{id}"
+        }
+    ],
+    "chzzk": [
+        {
+            "patterns": [
+                rf"https?://chzzk\.naver\.com/(?:live/)?{HEX32_ID}/?$",
+                rf"^{HEX32_ID}$"
+            ],
+            "sanitized": "https://chzzk.naver.com/{id}"
+        }
+    ],
+    "huya": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?huya\.com/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.huya.com/{id}"
+        }
+    ],
+    "douyu": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?douyu\.com/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.douyu.com/{id}"
+        }
+    ],
+    "rutube": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?rutube\.ru/channel/{NUMERIC_ID}(?:/(?:videos|about))?/?$",
+                rf"^{NUMERIC_ID}$"
+            ],
+            "sanitized": "https://rutube.ru/channel/{id}"
+        }
+    ],
+    "soop": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?sooplive\.com/station/{PROFILE_ID}/?$",
+                rf"https?://ch\.sooplive\.co\.kr/{PROFILE_ID}/?$",
+                rf"https?://(?:bj|ch)\.afreecatv\.com/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.sooplive.com/station/{id}"
+        }
+    ],
+    "nimo_tv": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?nimo\.tv/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.nimo.tv/{id}"
+        }
+    ],
+    "audioboom": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?audioboom\.com/channels/{NUMERIC_ID}(?:-[^/?#]*)?/?$",
+                rf"^{NUMERIC_ID}$"
+            ],
+            "sanitized": "https://audioboom.com/channels/{id}"
+        }
+    ],
+    "jamendo": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?jamendo\.com/user/{NUMERIC_ID}(?:/[^/?#]+)?/?$",
+                rf"https?://(www\.)?jamendo\.com/user/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.jamendo.com/user/{id}"
+        }
+    ],
+    "bio_link": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?bio\.link/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://bio.link/{id}"
+        }
+    ],
+    "taplink": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?taplink\.(?:cc|at|ws|me)/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://taplink.cc/{id}"
+        }
+    ],
+    "solo_to": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?solo\.to/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://solo.to/{id}"
+        }
+    ],
+    "hoo_be": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?hoo\.be/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://hoo.be/{id}"
+        }
+    ],
+    "throne": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?throne\.com/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://throne.com/{id}"
+        }
+    ],
+    "fanfix": [
+        {
+            "patterns": [
+                rf"https?://app\.fanfix\.io/@{PROFILE_ID}/?$",
+                rf"^@?{PROFILE_ID}$"
+            ],
+            "sanitized": "https://app.fanfix.io/@{id}"
+        }
+    ],
+    "campsite_bio": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?campsite\.bio/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://campsite.bio/{id}"
+        }
+    ],
+    "500px": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?500px\.com/p/{PROFILE_ID}(?:/galleries)?/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://500px.com/p/{id}"
+        }
+    ],
+    "redbubble": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?redbubble\.com/(?:[a-z][a-z]/)?people/{PROFILE_ID}(?:/(?:shop|explore|portfolio))?/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.redbubble.com/people/{id}"
+        }
+    ],
+    "cara": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?cara\.app/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://cara.app/{id}"
+        }
+    ],
+    "sketchfab": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?sketchfab\.com/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://sketchfab.com/{id}"
+        }
+    ],
+    "thingiverse": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?thingiverse\.com/{PROFILE_ID}(?:/designs)?/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.thingiverse.com/{id}"
+        }
+    ],
+    "furaffinity": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?furaffinity\.net/user/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.furaffinity.net/user/{id}"
+        }
+    ],
+    "toyhouse": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?toyhou\.se/(?![0-9]+\.){PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://toyhou.se/{id}"
+        }
+    ],
+    "are_na": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?are\.na/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.are.na/{id}"
+        }
+    ],
+    "buttondown": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?buttondown\.(?:com|email)/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://buttondown.com/{id}"
+        }
+    ],
+    "paragraph": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?paragraph\.(?:com|xyz)/@{PROFILE_ID_UNICODE}/?$",
+                rf"^@?{PROFILE_ID_UNICODE}$"
+            ],
+            "sanitized": "https://paragraph.com/@{id}"
+        }
+    ],
+    "royal_road": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?royalroad\.com/profile/{NUMERIC_ID}/?$",
+                rf"^{NUMERIC_ID}$"
+            ],
+            "sanitized": "https://www.royalroad.com/profile/{id}"
+        }
+    ],
+    "scribd": [
+        {
+            "patterns": [
+                r"https?://(www\.)?scribd\.com/user/(?P<id>[0-9]+/[A-Za-z0-9_.-]+)/?$"
+            ],
+            "sanitized": "https://www.scribd.com/user/{id}"
+        }
+    ],
+    "issuu": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?issuu\.com/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://issuu.com/{id}"
+        }
+    ],
+    "velog": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?velog\.io/@{PROFILE_ID_UNICODE}(?:/posts)?/?$",
+                rf"^@?{PROFILE_ID_UNICODE}$"
+            ],
+            "sanitized": "https://velog.io/@{id}"
+        }
+    ],
+    "brunch": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?brunch\.co\.kr/@{PROFILE_ID_UNICODE}/?$",
+                rf"^@?{PROFILE_ID_UNICODE}$"
+            ],
+            "sanitized": "https://brunch.co.kr/@{id}"
+        }
+    ],
+    "ameblo": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?ameblo\.jp/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://ameblo.jp/{id}"
+        }
+    ],
+    "hatena_blog": [
+        {
+            "patterns": [
+                r"https?://(?!www\.)(?P<id>[A-Za-z0-9-]+)\.(?:hatenablog\.(?:com|jp)|hateblo\.jp|hatenadiary\.(?:com|jp))/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://{id}.hatenablog.com"
+        }
+    ],
+    "dzen": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?(?:dzen\.ru|zen\.yandex\.ru)/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://dzen.ru/{id}"
+        },
+        {
+            "patterns": [
+                rf"https?://(www\.)?(?:dzen\.ru|zen\.yandex\.ru)/id/{PROFILE_ID}/?$"
+            ],
+            "sanitized": "https://dzen.ru/id/{id}"
+        }
+    ],
+    "ok_ru": [
+        {
+            "patterns": [
+                rf"https?://(?:www\.|m\.)?ok\.ru/profile/{NUMERIC_ID}/?$",
+                rf"^{NUMERIC_ID}$"
+            ],
+            "sanitized": "https://ok.ru/profile/{id}"
+        }
+    ],
+    "sharechat": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?sharechat\.com/profile/{PROFILE_ID_UNICODE}/?$",
+                rf"^{PROFILE_ID_UNICODE}$"
+            ],
+            "sanitized": "https://sharechat.com/profile/{id}"
+        }
+    ],
+    "mercari": [
+        {
+            "patterns": [
+                rf"https?://jp\.mercari\.com/user/profile/{NUMERIC_ID}/?$",
+                rf"^{NUMERIC_ID}$"
+            ],
+            "sanitized": "https://jp.mercari.com/user/profile/{id}"
+        }
+    ],
+    "vinted": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?vinted\.(?:com|fr|de|es|it|nl|be|pl|lt|cz|at|pt|sk|lu|hu|ro|se|fi|dk|gr|hr|ie|co\.uk)/member/{NUMERIC_ID}(?:-[^/?#]*)?/?$",
+                rf"^{NUMERIC_ID}$"
+            ],
+            "sanitized": "https://www.vinted.com/member/{id}"
+        }
+    ],
+    "xing": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?xing\.com/profile/{PROFILE_ID_UNICODE}(?:/cv)?/?$",
+                rf"^{PROFILE_ID_UNICODE}$"
+            ],
+            "sanitized": "https://www.xing.com/profile/{id}"
+        }
+    ],
+    "malt": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?malt\.(?:fr|com|de|es|be|nl|ch|uk|it)/profile/{PROFILE_ID_UNICODE}/?$",
+                rf"^{PROFILE_ID_UNICODE}$"
+            ],
+            "sanitized": "https://www.malt.fr/profile/{id}"
+        }
+    ],
+    "komoot": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?komoot\.(?:com|de)/(?:[a-z][a-z](?:-[a-z][a-z])?/)?user/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.komoot.com/user/{id}"
+        }
+    ],
+    "note_com": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?note\.com/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://note.com/{id}"
+        }
+    ],
+    "naver_blog": [
+        {
+            "patterns": [
+                rf"https?://(?:m\.)?blog\.naver\.com/{PROFILE_ID}/?$",
+                rf"https?://(?:m\.)?blog\.naver\.com/(?:PostList\.naver|prologue/PrologueList\.naver)\?(?:[^#]*&)?blogId={PROFILE_ID}(?:[&#].*)?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://blog.naver.com/{id}"
+        }
+    ],
+    "mixcloud": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?mixcloud\.com/{PROFILE_ID_UNICODE}/?$",
+                rf"https?://m\.mixcloud\.com/{PROFILE_ID_UNICODE}/?$",
+                rf"^{PROFILE_ID_UNICODE}$"
+            ],
+            "sanitized": "https://www.mixcloud.com/{id}"
+        }
+    ],
+    "audiomack": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?audiomack\.com/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://audiomack.com/{id}"
+        }
+    ],
+    "bitchute": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?bitchute\.com/channel/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.bitchute.com/channel/{id}"
+        }
+    ],
+    "line": [
+        {
+            "patterns": [
+                rf"https?://page\.line\.me/{PROFILE_ID}/?$",
+                rf"https?://line\.me/R/ti/p/(?:@|%40){PROFILE_ID}/?$",
+                rf"^@?{PROFILE_ID}$"
+            ],
+            "sanitized": "https://page.line.me/{id}"
+        }
+    ],
+    "kakaotalk_channel": [
+        {
+            "patterns": [
+                rf"https?://pf\.kakao\.com/_{PROFILE_ID}(?:/(?:posts|chat))?/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://pf.kakao.com/_{id}"
+        }
+    ],
+    "tripadvisor": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?tripadvisor\.(?:com|co\.uk|ca|de|fr|es|it|in|com\.au|co\.nz|ie|nl|jp|com\.sg|com\.br|com\.mx)/Profile/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.tripadvisor.com/Profile/{id}"
+        }
+    ],
+    "contra": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?contra\.com/{PROFILE_ID}(?:/work)?/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://contra.com/{id}"
+        }
+    ],
+    "codementor": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?codementor\.io/@{PROFILE_ID}/?$",
+                rf"^@?{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.codementor.io/@{id}"
+        }
+    ],
+    "trakt": [
+        {
+            "patterns": [
+                rf"https?://app\.trakt\.tv/profile/{PROFILE_ID}/?$",
+                rf"https?://(www\.)?trakt\.tv/users/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://app.trakt.tv/profile/{id}"
+        }
+    ],
+    "minds": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?minds\.com/{PROFILE_ID}/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.minds.com/{id}"
+        }
+    ],
+    "kickstarter": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?kickstarter\.com/profile/{PROFILE_ID}(?:/about|/created)?/?$",
+                rf"^{PROFILE_ID}$"
+            ],
+            "sanitized": "https://www.kickstarter.com/profile/{id}"
+        }
+    ],
+    "packagist": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?packagist\.org/users/{PROFILE_ID_UNICODE}/?$",
+                rf"^{PROFILE_ID_UNICODE}$"
+            ],
+            "sanitized": "https://packagist.org/users/{id}"
+        }
+    ],
+    "slashdot": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?slashdot\.org/~{PROFILE_ID_UNICODE}/?$",
+                rf"^{PROFILE_ID_UNICODE}$"
+            ],
+            "sanitized": "https://slashdot.org/~{id}"
+        }
+    ],
+    "researchgate": [
+        {
+            "patterns": [
+                rf"https?://(www\.)?researchgate\.net/profile/{PROFILE_ID_UNICODE}(?:/research)?/?$",
+                rf"^{PROFILE_ID_UNICODE}$"
+            ],
+            "sanitized": "https://www.researchgate.net/profile/{id}"
         }
     ]
 }

@@ -170,3 +170,23 @@ Used for Primal profile URLs.
 Example matches:
     - ``npub180cvv07tjdrrgpa0j7j7tmnyl2yr6yr7l8j4s3evf6u64th6gkwsyjh6w6``
 """
+
+ORCID_ID = r"(?P<id>\d{4}-\d{4}-\d{4}-\d{3}[\dX])"
+"""ORCID iD regex pattern.
+
+Matches the 16-digit ORCID identifier in four hyphen-separated groups. The
+last character is a checksum digit or ``X``.
+
+Example matches:
+    - ``0000-0002-1825-0097``
+    - ``0000-0002-1694-233X``
+"""
+
+HEX32_ID = r"(?P<id>[0-9a-fA-F]{32})"
+"""32-character hexadecimal ID regex pattern.
+
+Used for platforms with hashed account ids (Coursera profiles, CHZZK channels).
+
+Example matches:
+    - ``85dca6cc1c1ccacdb8d6cbc3853c8eff``
+"""
