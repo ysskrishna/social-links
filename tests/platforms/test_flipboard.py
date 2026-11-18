@@ -1,10 +1,7 @@
-"""Tests for Flipboard platform."""
 import pytest
 
 
 class TestFlipboard:
-    """Test Flipboard platform"""
-
     @pytest.mark.parametrize(
         "url",
         [

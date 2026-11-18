@@ -1,10 +1,7 @@
-"""Tests for MetaCPAN platform."""
 import pytest
 
 
 class TestMetacpan:
-    """Test MetaCPAN platform"""
-
     @pytest.mark.parametrize(
         "url",
         [

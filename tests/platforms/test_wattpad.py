@@ -1,10 +1,7 @@
-"""Tests for Wattpad platform."""
 import pytest
 
 
 class TestWattpad:
-    """Test Wattpad platform"""
-
     @pytest.mark.parametrize(
         "url",
         [

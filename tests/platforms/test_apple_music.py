@@ -1,11 +1,5 @@
-"""Tests for Apple Music platform."""
-
-
 class TestAppleMusic:
-    """Test Apple Music platform"""
-
     def test_apple_music(self, sl):
-        """Test Apple Music platform"""
         
         
         test_cases = [

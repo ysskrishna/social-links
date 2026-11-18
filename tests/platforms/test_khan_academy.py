@@ -1,10 +1,7 @@
-"""Tests for Khan Academy platform."""
 import pytest
 
 
 class TestKhanAcademy:
-    """Test Khan Academy platform"""
-
     @pytest.mark.parametrize(
         "url",
         [

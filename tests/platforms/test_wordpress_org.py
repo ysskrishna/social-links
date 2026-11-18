@@ -1,10 +1,7 @@
-"""Tests for WordPress.org platform."""
 import pytest
 
 
 class TestWordpressOrg:
-    """Test WordPress.org platform"""
-
     @pytest.mark.parametrize(
         "url",
         [

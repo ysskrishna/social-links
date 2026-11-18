@@ -1,10 +1,7 @@
-"""Tests for Character.AI platform."""
 import pytest
 
 
 class TestCharacterAi:
-    """Test Character.AI platform"""
-
     @pytest.mark.parametrize(
         "url",
         [

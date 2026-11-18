@@ -8,12 +8,9 @@ from sociallinks.exceptions import (
 
 
 class TestExtractIdClassMethod:
-    """Test SocialLinks.extract_id() class method — success cases across platforms"""
-
     def setup_method(self):
         self.sl = SocialLinks()
 
-    # LinkedIn variants
     def test_linkedin_personal(self):
         assert self.sl.extract_id("linkedin", "https://www.linkedin.com/in/johndoe/") == "johndoe"
 
@@ -32,7 +29,6 @@ class TestExtractIdClassMethod:
     def test_linkedin_unicode(self):
         assert self.sl.extract_id("linkedin", "https://www.linkedin.com/in/josé-garcía/") == "josé-garcía"
 
-    # GitHub
     def test_github(self):
         assert self.sl.extract_id("github", "https://github.com/username") == "username"
 
@@ -42,7 +38,6 @@ class TestExtractIdClassMethod:
     def test_github_http(self):
         assert self.sl.extract_id("github", "http://github.com/my-user") == "my-user"
 
-    # X / Twitter
     def test_x_native(self):
         assert self.sl.extract_id("x", "https://x.com/elonmusk") == "elonmusk"
 
@@ -52,21 +47,18 @@ class TestExtractIdClassMethod:
     def test_x_mobile_twitter(self):
         assert self.sl.extract_id("x", "https://mobile.twitter.com/username") == "username"
 
-    # Facebook
     def test_facebook(self):
         assert self.sl.extract_id("facebook", "https://www.facebook.com/johndoe/") == "johndoe"
 
     def test_facebook_http(self):
         assert self.sl.extract_id("facebook", "http://facebook.com/janedoe") == "janedoe"
 
-    # Instagram
     def test_instagram(self):
         assert self.sl.extract_id("instagram", "https://www.instagram.com/johndoe/") == "johndoe"
 
     def test_instagram_http(self):
         assert self.sl.extract_id("instagram", "http://instagram.com/janedoe") == "janedoe"
 
-    # YouTube
     def test_youtube_handle(self):
         assert self.sl.extract_id("youtube", "https://www.youtube.com/@channel") == "@channel"
 
@@ -76,8 +68,6 @@ class TestExtractIdClassMethod:
 
 
 class TestExtractIdModuleFunction:
-    """Test module-level extract_id() convenience function"""
-
     def test_module_function_works(self):
         assert module_extract_id("github", "https://github.com/username") == "username"
 
@@ -97,12 +87,9 @@ class TestExtractIdModuleFunction:
 
 
 class TestExtractIdErrorHandling:
-    """Test all error paths for extract_id()"""
-
     def setup_method(self):
         self.sl = SocialLinks()
 
-    # TypeError — non-string inputs
     def test_type_error_none_url(self):
         with pytest.raises(TypeError, match="url must be str, not NoneType"):
             self.sl.extract_id("linkedin", None)
@@ -131,7 +118,6 @@ class TestExtractIdErrorHandling:
         with pytest.raises(TypeError, match="platform_name must be str, not int"):
             self.sl.extract_id(123, "https://linkedin.com/in/johndoe")
 
-    # PlatformNotFoundError
     def test_platform_not_found(self):
         with pytest.raises(PlatformNotFoundError, match="Unknown platform"):
             self.sl.extract_id("unknown_platform", "https://example.com/user")
@@ -140,7 +126,6 @@ class TestExtractIdErrorHandling:
         with pytest.raises(PlatformNotFoundError, match="Unknown platform"):
             self.sl.extract_id("", "https://example.com/user")
 
-    # URLMismatchError
     def test_url_mismatch(self):
         with pytest.raises(URLMismatchError, match="does not match platform"):
             self.sl.extract_id("linkedin", "https://example.com")
@@ -159,8 +144,6 @@ class TestExtractIdErrorHandling:
 
 
 class TestExtractIdEdgeCases:
-    """Test edge cases for extract_id()"""
-
     def setup_method(self):
         self.sl = SocialLinks()
 

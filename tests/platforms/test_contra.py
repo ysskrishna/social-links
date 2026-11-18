@@ -1,10 +1,7 @@
-"""Tests for Contra platform."""
 import pytest
 
 
 class TestContra:
-    """Test Contra platform"""
-
     @pytest.mark.parametrize(
         "url,sanitized",
         [

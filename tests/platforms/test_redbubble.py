@@ -1,10 +1,7 @@
-"""Tests for Redbubble platform."""
 import pytest
 
 
 class TestRedbubble:
-    """Test Redbubble platform"""
-
     @pytest.mark.parametrize(
         "url,sanitized",
         [

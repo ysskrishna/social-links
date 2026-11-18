@@ -1,10 +1,7 @@
-"""Tests for Nimo TV platform."""
 import pytest
 
 
 class TestNimoTv:
-    """Test Nimo TV platform"""
-
     @pytest.mark.parametrize(
         "url",
         [

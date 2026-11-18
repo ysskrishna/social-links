@@ -1,10 +1,7 @@
-"""Tests for Packagist platform."""
 import pytest
 
 
 class TestPackagist:
-    """Test Packagist platform"""
-
     @pytest.mark.parametrize(
         "url",
         [

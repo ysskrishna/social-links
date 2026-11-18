@@ -1,10 +1,7 @@
-"""Tests for Genius platform."""
 import pytest
 
 
 class TestGenius:
-    """Test Genius platform"""
-
     @pytest.mark.parametrize(
         "url",
         [

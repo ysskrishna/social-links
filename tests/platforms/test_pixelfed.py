@@ -1,10 +1,7 @@
-"""Tests for Pixelfed platform."""
 import pytest
 
 
 class TestPixelfed:
-    """Test Pixelfed platform"""
-
     @pytest.mark.parametrize(
         "url,sanitized",
         [

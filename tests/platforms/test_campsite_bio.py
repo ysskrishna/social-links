@@ -1,10 +1,7 @@
-"""Tests for Campsite.bio platform."""
 import pytest
 
 
 class TestCampsiteBio:
-    """Test Campsite.bio platform"""
-
     @pytest.mark.parametrize(
         "url",
         [

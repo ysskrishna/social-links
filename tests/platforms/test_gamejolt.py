@@ -1,10 +1,7 @@
-"""Tests for Game Jolt platform."""
 import pytest
 
 
 class TestGamejolt:
-    """Test Game Jolt platform"""
-
     @pytest.mark.parametrize(
         "url",
         [

@@ -1,10 +1,7 @@
-"""Tests for iNaturalist platform."""
 import pytest
 
 
 class TestInaturalist:
-    """Test iNaturalist platform"""
-
     @pytest.mark.parametrize(
         "url,sanitized",
         [

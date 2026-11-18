@@ -1,10 +1,7 @@
-"""Tests for Google Scholar platform."""
 import pytest
 
 
 class TestGoogleScholar:
-    """Test Google Scholar platform"""
-
     @pytest.mark.parametrize(
         "url,sanitized",
         [

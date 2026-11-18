@@ -1,10 +1,7 @@
-"""Tests for CHZZK platform."""
 import pytest
 
 
 class TestChzzk:
-    """Test CHZZK platform"""
-
     @pytest.mark.parametrize(
         "url,sanitized",
         [

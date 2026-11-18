@@ -1,10 +1,7 @@
-"""Tests for Launchpad platform."""
 import pytest
 
 
 class TestLaunchpad:
-    """Test Launchpad platform"""
-
     @pytest.mark.parametrize(
         "url",
         [

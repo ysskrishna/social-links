@@ -1,10 +1,7 @@
-"""Tests for Bio.link platform."""
 import pytest
 
 
 class TestBioLink:
-    """Test Bio.link platform"""
-
     @pytest.mark.parametrize(
         "url",
         [

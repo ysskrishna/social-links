@@ -1,9 +1,4 @@
-"""Tests for Exercism platform."""
-
-
 class TestExercism:
-    """Test Exercism platform"""
-
     def test_exercism_legacy_io_domain(self, sl):
         """exercism.io redirects (301) to exercism.org and is still accepted as input"""
         profile_id = "ysskrishna"

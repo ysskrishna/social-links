@@ -1,10 +1,7 @@
-"""Tests for AniList platform."""
 import pytest
 
 
 class TestAnilist:
-    """Test AniList platform"""
-
     @pytest.mark.parametrize(
         "url",
         [

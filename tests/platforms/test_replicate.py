@@ -1,10 +1,7 @@
-"""Tests for Replicate platform."""
 import pytest
 
 
 class TestReplicate:
-    """Test Replicate platform"""
-
     @pytest.mark.parametrize(
         "url",
         [

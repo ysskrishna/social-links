@@ -1,10 +1,7 @@
-"""Tests for Hex platform."""
 import pytest
 
 
 class TestHexPm:
-    """Test Hex platform"""
-
     @pytest.mark.parametrize(
         "url",
         [

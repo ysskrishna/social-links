@@ -1,10 +1,7 @@
-"""Tests for Paragraph platform."""
 import pytest
 
 
 class TestParagraph:
-    """Test Paragraph platform"""
-
     @pytest.mark.parametrize(
         "url,sanitized",
         [

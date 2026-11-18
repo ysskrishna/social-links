@@ -1,10 +1,7 @@
-"""Tests for start.gg platform."""
 import pytest
 
 
 class TestStartGg:
-    """Test start.gg platform"""
-
     @pytest.mark.parametrize(
         "url,sanitized",
         [

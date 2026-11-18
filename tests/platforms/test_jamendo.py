@@ -1,10 +1,7 @@
-"""Tests for Jamendo platform."""
 import pytest
 
 
 class TestJamendo:
-    """Test Jamendo platform"""
-
     @pytest.mark.parametrize(
         "url,sanitized",
         [

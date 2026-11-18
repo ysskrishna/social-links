@@ -1,10 +1,7 @@
-"""Tests for Ameba Blog platform."""
 import pytest
 
 
 class TestAmeblo:
-    """Test Ameba Blog platform"""
-
     @pytest.mark.parametrize(
         "url",
         [

@@ -1,10 +1,7 @@
-"""Tests for Untappd platform."""
 import pytest
 
 
 class TestUntappd:
-    """Test Untappd platform"""
-
     @pytest.mark.parametrize(
         "url",
         [

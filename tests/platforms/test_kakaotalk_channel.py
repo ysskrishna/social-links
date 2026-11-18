@@ -1,10 +1,7 @@
-"""Tests for KakaoTalk Channel platform."""
 import pytest
 
 
 class TestKakaotalkChannel:
-    """Test KakaoTalk Channel platform"""
-
     @pytest.mark.parametrize(
         "url,sanitized",
         [

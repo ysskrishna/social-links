@@ -1,10 +1,7 @@
-"""Tests for XDA Forums platform."""
 import pytest
 
 
 class TestXda:
-    """Test XDA Forums platform"""
-
     @pytest.mark.parametrize(
         "url,sanitized",
         [

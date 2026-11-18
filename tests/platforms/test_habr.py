@@ -1,10 +1,7 @@
-"""Tests for Habr platform."""
 import pytest
 
 
 class TestHabr:
-    """Test Habr platform"""
-
     @pytest.mark.parametrize(
         "url,sanitized",
         [

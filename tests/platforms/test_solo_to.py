@@ -1,10 +1,7 @@
-"""Tests for solo.to platform."""
 import pytest
 
 
 class TestSoloTo:
-    """Test solo.to platform"""
-
     @pytest.mark.parametrize(
         "url",
         [

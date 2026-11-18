@@ -1,10 +1,7 @@
-"""Tests for npm platform."""
 import pytest
 
 
 class TestNpm:
-    """Test npm platform"""
-
     @pytest.mark.parametrize(
         "url",
         [

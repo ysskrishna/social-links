@@ -1,10 +1,7 @@
-"""Tests for OpenSea platform."""
 import pytest
 
 
 class TestOpensea:
-    """Test OpenSea platform"""
-
     @pytest.mark.parametrize(
         "url,sanitized",
         [

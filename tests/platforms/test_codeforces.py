@@ -1,10 +1,7 @@
-"""Tests for Codeforces platform."""
 import pytest
 
 
 class TestCodeforces:
-    """Test Codeforces platform"""
-
     @pytest.mark.parametrize(
         "url,sanitized",
         [

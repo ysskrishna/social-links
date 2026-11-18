@@ -1,10 +1,7 @@
-"""Tests for Primal platform."""
 import pytest
 
 
 class TestPrimal:
-    """Test Primal platform"""
-
     @pytest.mark.parametrize(
         "url,sanitized",
         [

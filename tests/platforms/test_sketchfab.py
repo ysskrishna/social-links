@@ -1,10 +1,7 @@
-"""Tests for Sketchfab platform."""
 import pytest
 
 
 class TestSketchfab:
-    """Test Sketchfab platform"""
-
     @pytest.mark.parametrize(
         "url",
         [

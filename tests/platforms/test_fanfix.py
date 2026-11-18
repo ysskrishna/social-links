@@ -1,10 +1,7 @@
-"""Tests for Fanfix platform."""
 import pytest
 
 
 class TestFanfix:
-    """Test Fanfix platform"""
-
     @pytest.mark.parametrize(
         "url",
         [

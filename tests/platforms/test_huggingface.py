@@ -1,10 +1,7 @@
-"""Tests for Hugging Face platform."""
 import pytest
 
 
 class TestHuggingface:
-    """Test Hugging Face platform"""
-
     def test_huggingface_accepts_profile_shaped_names(self, sl):
         assert sl.is_valid("huggingface", "https://huggingface.co/settings") is True
 

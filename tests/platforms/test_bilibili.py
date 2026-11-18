@@ -1,10 +1,7 @@
-"""Tests for Bilibili platform."""
 import pytest
 
 
 class TestBilibili:
-    """Test Bilibili platform"""
-
     @pytest.mark.parametrize(
         "url,sanitized",
         [

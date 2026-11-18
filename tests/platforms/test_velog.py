@@ -1,10 +1,7 @@
-"""Tests for Velog platform."""
 import pytest
 
 
 class TestVelog:
-    """Test Velog platform"""
-
     @pytest.mark.parametrize(
         "url,sanitized",
         [

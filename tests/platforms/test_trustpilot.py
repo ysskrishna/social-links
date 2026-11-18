@@ -1,10 +1,7 @@
-"""Tests for Trustpilot platform."""
 import pytest
 
 
 class TestTrustpilot:
-    """Test Trustpilot platform"""
-
     @pytest.mark.parametrize(
         "url,sanitized",
         [

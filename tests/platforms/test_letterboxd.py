@@ -1,10 +1,7 @@
-"""Tests for Letterboxd platform."""
 import pytest
 
 
 class TestLetterboxd:
-    """Test Letterboxd platform"""
-
     @pytest.mark.parametrize(
         "url",
         [

@@ -1,10 +1,7 @@
-"""Tests for RateYourMusic platform."""
 import pytest
 
 
 class TestRateyourmusic:
-    """Test RateYourMusic platform"""
-
     @pytest.mark.parametrize(
         "url",
         [

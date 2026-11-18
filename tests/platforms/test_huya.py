@@ -1,10 +1,7 @@
-"""Tests for Huya platform."""
 import pytest
 
 
 class TestHuya:
-    """Test Huya platform"""
-
     @pytest.mark.parametrize(
         "url,sanitized",
         [

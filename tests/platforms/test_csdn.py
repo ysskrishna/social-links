@@ -1,10 +1,7 @@
-"""Tests for CSDN platform."""
 import pytest
 
 
 class TestCsdn:
-    """Test CSDN platform"""
-
     @pytest.mark.parametrize(
         "url",
         [

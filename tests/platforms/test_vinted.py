@@ -1,10 +1,7 @@
-"""Tests for Vinted platform."""
 import pytest
 
 
 class TestVinted:
-    """Test Vinted platform"""
-
     @pytest.mark.parametrize(
         "url,sanitized",
         [

@@ -1,29 +1,19 @@
-"""Tests for Substack platform."""
-
-
 class TestSubstack:
-    """Test Substack platform"""
-
     def test_substack(self, sl):
         """Test Substack platform - all formats sanitize to @username format"""
         profile_id = "ysskrishna"
         
-        # Test subdomain format - sanitizes to @username format
         
-        # Test @username format
         assert sl.detect_platform(f"https://substack.com/@{profile_id}") == "substack"
         assert sl.is_valid("substack", f"https://substack.com/@{profile_id}") is True
         assert sl.sanitize("substack", f"https://substack.com/@{profile_id}") == f"https://substack.com/@{profile_id}"
         
-        # Test with www subdomain
         assert sl.is_valid("substack", f"https://www.substack.com/@{profile_id}") is True
         assert sl.sanitize("substack", f"https://www.substack.com/@{profile_id}") == f"https://substack.com/@{profile_id}"
         
-        # Test http protocol
         assert sl.is_valid("substack", f"http://substack.com/@{profile_id}") is True
         assert sl.sanitize("substack", f"http://substack.com/@{profile_id}") == f"https://substack.com/@{profile_id}"
         
-        # Test with trailing slash
         assert sl.is_valid("substack", f"https://substack.com/@{profile_id}/") is True
         assert sl.sanitize("substack", f"https://substack.com/@{profile_id}/") == f"https://substack.com/@{profile_id}"
         

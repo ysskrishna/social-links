@@ -1,10 +1,7 @@
-"""Tests for Last.fm platform."""
 import pytest
 
 
 class TestLastfm:
-    """Test Last.fm platform"""
-
     @pytest.mark.parametrize(
         "url,sanitized",
         [

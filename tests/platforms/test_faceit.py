@@ -1,10 +1,7 @@
-"""Tests for FACEIT platform."""
 import pytest
 
 
 class TestFaceit:
-    """Test FACEIT platform"""
-
     @pytest.mark.parametrize(
         "url,sanitized",
         [

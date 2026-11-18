@@ -1,10 +1,7 @@
-"""Tests for Speedrun.com platform."""
 import pytest
 
 
 class TestSpeedrun:
-    """Test Speedrun.com platform"""
-
     @pytest.mark.parametrize(
         "url,sanitized",
         [

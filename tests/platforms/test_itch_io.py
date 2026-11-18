@@ -1,10 +1,7 @@
-"""Tests for itch.io platform."""
 import pytest
 
 
 class TestItchIo:
-    """Test itch.io platform"""
-
     @pytest.mark.parametrize(
         "url,sanitized",
         [

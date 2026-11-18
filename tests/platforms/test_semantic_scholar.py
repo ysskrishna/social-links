@@ -1,10 +1,7 @@
-"""Tests for Semantic Scholar platform."""
 import pytest
 
 
 class TestSemanticScholar:
-    """Test Semantic Scholar platform"""
-
     @pytest.mark.parametrize(
         "url,sanitized",
         [

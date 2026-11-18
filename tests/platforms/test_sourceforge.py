@@ -1,10 +1,7 @@
-"""Tests for SourceForge platform."""
 import pytest
 
 
 class TestSourceforge:
-    """Test SourceForge platform"""
-
     @pytest.mark.parametrize(
         "url,sanitized",
         [

@@ -1,10 +1,7 @@
-"""Tests for Anaconda.org platform."""
 import pytest
 
 
 class TestAnaconda:
-    """Test Anaconda.org platform"""
-
     @pytest.mark.parametrize(
         "url",
         [

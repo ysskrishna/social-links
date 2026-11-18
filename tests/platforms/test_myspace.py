@@ -1,10 +1,7 @@
-"""Tests for Myspace platform."""
 import pytest
 
 
 class TestMyspace:
-    """Test Myspace platform"""
-
     @pytest.mark.parametrize(
         "url",
         [

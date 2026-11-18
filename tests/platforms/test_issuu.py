@@ -1,10 +1,7 @@
-"""Tests for Issuu platform."""
 import pytest
 
 
 class TestIssuu:
-    """Test Issuu platform"""
-
     @pytest.mark.parametrize(
         "url",
         [

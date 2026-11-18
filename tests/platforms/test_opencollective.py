@@ -1,10 +1,7 @@
-"""Tests for Open Collective platform."""
 import pytest
 
 
 class TestOpencollective:
-    """Test Open Collective platform"""
-
     @pytest.mark.parametrize(
         "url",
         [

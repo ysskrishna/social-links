@@ -1,10 +1,7 @@
-"""Tests for ORCID platform."""
 import pytest
 
 
 class TestOrcid:
-    """Test ORCID platform"""
-
     @pytest.mark.parametrize(
         "url,sanitized",
         [

@@ -1,10 +1,7 @@
-"""Tests for Discogs platform."""
 import pytest
 
 
 class TestDiscogs:
-    """Test Discogs platform"""
-
     @pytest.mark.parametrize(
         "url,sanitized",
         [

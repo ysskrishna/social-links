@@ -1,10 +1,7 @@
-"""Tests for RubyGems platform."""
 import pytest
 
 
 class TestRubygems:
-    """Test RubyGems platform"""
-
     @pytest.mark.parametrize(
         "url",
         [

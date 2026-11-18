@@ -1,10 +1,7 @@
-"""Tests for Mercari platform."""
 import pytest
 
 
 class TestMercari:
-    """Test Mercari platform"""
-
     @pytest.mark.parametrize(
         "url",
         [

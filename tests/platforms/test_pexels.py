@@ -1,10 +1,7 @@
-"""Tests for Pexels platform."""
 import pytest
 
 
 class TestPexels:
-    """Test Pexels platform"""
-
     @pytest.mark.parametrize(
         "url,sanitized",
         [

@@ -1,10 +1,7 @@
-"""Tests for The StoryGraph platform."""
 import pytest
 
 
 class TestStorygraph:
-    """Test The StoryGraph platform"""
-
     @pytest.mark.parametrize(
         "url",
         [

@@ -1,10 +1,7 @@
-"""Tests for Tripadvisor platform."""
 import pytest
 
 
 class TestTripadvisor:
-    """Test Tripadvisor platform"""
-
     @pytest.mark.parametrize(
         "url,sanitized",
         [

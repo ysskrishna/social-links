@@ -1,10 +1,7 @@
-"""Tests for Modrinth platform."""
 import pytest
 
 
 class TestModrinth:
-    """Test Modrinth platform"""
-
     @pytest.mark.parametrize(
         "url",
         [

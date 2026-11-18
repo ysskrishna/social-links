@@ -1,10 +1,7 @@
-"""Tests for OnlyFans platform."""
 import pytest
 
 
 class TestOnlyfans:
-    """Test OnlyFans platform"""
-
     @pytest.mark.parametrize(
         "url",
         [

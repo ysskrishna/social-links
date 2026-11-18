@@ -1,10 +1,7 @@
-"""Tests for Roblox platform."""
 import pytest
 
 
 class TestRoblox:
-    """Test Roblox platform"""
-
     @pytest.mark.parametrize(
         "url,sanitized",
         [

@@ -1,10 +1,7 @@
-"""Tests for note platform."""
 import pytest
 
 
 class TestNoteCom:
-    """Test note platform"""
-
     @pytest.mark.parametrize(
         "url",
         [

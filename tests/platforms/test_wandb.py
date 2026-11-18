@@ -1,10 +1,7 @@
-"""Tests for Weights & Biases platform."""
 import pytest
 
 
 class TestWandb:
-    """Test Weights & Biases platform"""
-
     @pytest.mark.parametrize(
         "url,sanitized",
         [

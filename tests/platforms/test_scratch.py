@@ -1,10 +1,7 @@
-"""Tests for Scratch platform."""
 import pytest
 
 
 class TestScratch:
-    """Test Scratch platform"""
-
     @pytest.mark.parametrize(
         "url",
         [

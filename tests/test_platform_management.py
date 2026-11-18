@@ -9,10 +9,7 @@ from sociallinks.exceptions import (
 
 
 class TestSetPlatform:
-    """Test set_platform method"""
-
     def test_set_platform_new(self):
-        """Test adding a new platform"""
         sl = SocialLinks(use_predefined_platforms=False)
         platform_data = [{
             "patterns": ["https?://(www\\.)?twitter\\.com/(?P<id>[A-Za-z0-9_]+)/?$"],
@@ -23,7 +20,6 @@ class TestSetPlatform:
         assert sl.detect_platform("https://www.twitter.com/johndoe") == "twitter"
 
     def test_set_platform_override_false(self):
-        """Test that setting existing platform without override raises error"""
         sl = SocialLinks()
         platform_data = [{
             "patterns": ["https?://(www\\.)?twitter\\.com/(?P<id>[A-Za-z0-9_]+)/?$"],
@@ -33,7 +29,6 @@ class TestSetPlatform:
             sl.set_platform("linkedin", platform_data)
 
     def test_set_platform_override_true(self):
-        """Test overriding existing platform"""
         sl = SocialLinks()
         platform_data = [{
             "patterns": ["https?://(www\\.)?linkedin\\.com/custom/(?P<id>[A-Za-z0-9_]+)/?$"],
@@ -44,7 +39,6 @@ class TestSetPlatform:
         assert sl.detect_platform("https://www.linkedin.com/in/johndoe") is None
 
     def test_set_platform_with_list(self):
-        """Test setting platform with list of patterns"""
         sl = SocialLinks(use_predefined_platforms=False)
         platform_data = [
             {
@@ -61,7 +55,6 @@ class TestSetPlatform:
         assert sl.detect_platform("https://twitter.com/x/johndoe") == "twitter"
 
     def test_set_platform_invalid_patterns(self):
-        """Test setting platform with invalid patterns"""
         sl = SocialLinks(use_predefined_platforms=False)
         platform_data = [{
             "patterns": [],
@@ -71,7 +64,6 @@ class TestSetPlatform:
             sl.set_platform("example", platform_data)
 
     def test_set_platform_missing_sanitized(self):
-        """Test setting platform without sanitized template"""
         sl = SocialLinks(use_predefined_platforms=False)
         platform_data = [{
             "patterns": ["https?://example\\.com/(?P<id>[A-Za-z0-9_]+)/?$"]
@@ -80,7 +72,6 @@ class TestSetPlatform:
             sl.set_platform("example", platform_data)
 
     def test_set_platform_invalid_regex_pattern(self):
-        """Test setting platform with invalid regex pattern syntax"""
         sl = SocialLinks(use_predefined_platforms=False)
         platform_data = [{
             "patterns": ["[invalid regex["],  # Unclosed bracket
@@ -90,7 +81,6 @@ class TestSetPlatform:
             sl.set_platform("example", platform_data)
 
     def test_set_platform_invalid_regex_pattern_with_platform_name(self):
-        """Test that InvalidPlatformRegexError includes platform name in message"""
         sl = SocialLinks(use_predefined_platforms=False)
         platform_data = [{
             "patterns": ["(unclosed group"],  # Unclosed parenthesis
@@ -101,10 +91,7 @@ class TestSetPlatform:
 
 
 class TestDeletePlatform:
-    """Test delete_platform method"""
-
     def test_delete_platform(self):
-        """Test deleting a platform"""
         sl = SocialLinks()
         assert "linkedin" in sl.platforms
         sl.delete_platform("linkedin")
@@ -112,17 +99,13 @@ class TestDeletePlatform:
         assert "linkedin" not in sl._compiled
 
     def test_delete_platform_not_found(self):
-        """Test deleting non-existent platform"""
         sl = SocialLinks()
         with pytest.raises(PlatformNotFoundError, match="not found"):
             sl.delete_platform("nonexistent")
 
 
 class TestSetPlatforms:
-    """Test set_platforms method"""
-
     def test_set_platforms_new(self):
-        """Test bulk adding new platforms"""
         sl = SocialLinks(use_predefined_platforms=False)
         platforms = {
             "twitter": [{
@@ -139,7 +122,6 @@ class TestSetPlatforms:
         assert "instagram" in sl.platforms
 
     def test_set_platforms_with_conflicts(self):
-        """Test bulk adding platforms with conflicts"""
         sl = SocialLinks()
         platforms = {
             "linkedin": [{
@@ -151,7 +133,6 @@ class TestSetPlatforms:
             sl.set_platforms(platforms)
 
     def test_set_platforms_override(self):
-        """Test bulk adding platforms with override"""
         sl = SocialLinks()
         platforms = {
             "linkedin": [{
@@ -164,10 +145,7 @@ class TestSetPlatforms:
 
 
 class TestDeletePlatforms:
-    """Test delete_platforms method"""
-
     def test_delete_platforms(self):
-        """Test bulk deleting platforms"""
         sl = SocialLinks()
         assert "linkedin" in sl.platforms
         assert "facebook" in sl.platforms
@@ -176,17 +154,13 @@ class TestDeletePlatforms:
         assert "facebook" not in sl.platforms
 
     def test_delete_platforms_missing(self):
-        """Test bulk deleting with missing platforms"""
         sl = SocialLinks()
         with pytest.raises(PlatformNotFoundError, match="not found"):
             sl.delete_platforms(["linkedin", "nonexistent"])
 
 
 class TestClearPlatforms:
-    """Test clear_platforms method"""
-
     def test_clear_platforms(self):
-        """Test clearing all platforms"""
         sl = SocialLinks()
         assert len(sl.platforms) > 0
         sl.clear_platforms()
@@ -195,33 +169,24 @@ class TestClearPlatforms:
 
 
 class TestGetPlatform:
-    """Test get_platform method"""
-
     def test_get_platform(self):
-        """Test getting a platform"""
         sl = SocialLinks()
         platform = sl.get_platform("linkedin")
         assert platform is not None
         assert isinstance(platform, list)
 
     def test_get_platform_not_found(self):
-        """Test getting non-existent platform"""
         sl = SocialLinks()
         with pytest.raises(PlatformNotFoundError, match="not found"):
             sl.get_platform("nonexistent")
 
 
 class TestListPlatforms:
-    """Test list_platforms method"""
-
     def test_list_platforms(self):
-        """Test listing all platforms"""
         sl = SocialLinks()
         platforms = sl.list_platforms()
         assert isinstance(platforms, list)
-        # Should have all 25 predefined platforms
         assert len(platforms) >= 25
-        # Verify some key platforms exist
         assert "linkedin" in platforms
         assert "facebook" in platforms
         assert "github" in platforms
@@ -232,7 +197,6 @@ class TestListPlatforms:
         assert "dev_to" in platforms
 
     def test_list_platforms_empty(self):
-        """Test listing platforms when empty"""
         sl = SocialLinks(use_predefined_platforms=False)
         platforms = sl.list_platforms()
         assert platforms == []

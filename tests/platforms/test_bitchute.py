@@ -1,10 +1,7 @@
-"""Tests for BitChute platform."""
 import pytest
 
 
 class TestBitchute:
-    """Test BitChute platform"""
-
     @pytest.mark.parametrize(
         "url",
         [

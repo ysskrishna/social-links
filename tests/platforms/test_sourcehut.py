@@ -1,10 +1,7 @@
-"""Tests for SourceHut platform."""
 import pytest
 
 
 class TestSourcehut:
-    """Test SourceHut platform"""
-
     @pytest.mark.parametrize(
         "url,sanitized",
         [

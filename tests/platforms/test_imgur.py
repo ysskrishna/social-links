@@ -1,10 +1,7 @@
-"""Tests for Imgur platform."""
 import pytest
 
 
 class TestImgur:
-    """Test Imgur platform"""
-
     @pytest.mark.parametrize(
         "url",
         [

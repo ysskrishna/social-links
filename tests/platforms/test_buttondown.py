@@ -1,10 +1,7 @@
-"""Tests for Buttondown platform."""
 import pytest
 
 
 class TestButtondown:
-    """Test Buttondown platform"""
-
     @pytest.mark.parametrize(
         "url,sanitized",
         [

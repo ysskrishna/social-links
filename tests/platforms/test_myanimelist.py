@@ -1,10 +1,7 @@
-"""Tests for MyAnimeList platform."""
 import pytest
 
 
 class TestMyanimelist:
-    """Test MyAnimeList platform"""
-
     @pytest.mark.parametrize(
         "url",
         [

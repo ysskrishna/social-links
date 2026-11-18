@@ -1,10 +1,7 @@
-"""Tests for osu! platform."""
 import pytest
 
 
 class TestOsu:
-    """Test osu! platform"""
-
     @pytest.mark.parametrize(
         "url,sanitized",
         [

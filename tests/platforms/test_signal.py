@@ -1,9 +1,4 @@
-"""Tests for Signal platform."""
-
-
 class TestSignal:
-    """Test Signal platform"""
-
     def test_signal_phone_number(self, sl):
         """Signal phone links contain a leading +"""
         url = "https://signal.me/#p/+15555555555"

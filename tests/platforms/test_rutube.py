@@ -1,10 +1,7 @@
-"""Tests for Rutube platform."""
 import pytest
 
 
 class TestRutube:
-    """Test Rutube platform"""
-
     @pytest.mark.parametrize(
         "url,sanitized",
         [

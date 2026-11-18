@@ -1,10 +1,7 @@
-"""Tests for Poshmark platform."""
 import pytest
 
 
 class TestPoshmark:
-    """Test Poshmark platform"""
-
     @pytest.mark.parametrize(
         "url,sanitized",
         [

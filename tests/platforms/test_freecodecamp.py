@@ -1,10 +1,7 @@
-"""Tests for freeCodeCamp platform."""
 import pytest
 
 
 class TestFreecodecamp:
-    """Test freeCodeCamp platform"""
-
     @pytest.mark.parametrize(
         "url,sanitized",
         [

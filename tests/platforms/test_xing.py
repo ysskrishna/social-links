@@ -1,10 +1,7 @@
-"""Tests for XING platform."""
 import pytest
 
 
 class TestXing:
-    """Test XING platform"""
-
     @pytest.mark.parametrize(
         "url,sanitized",
         [

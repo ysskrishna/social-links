@@ -1,10 +1,7 @@
-"""Tests for Codewars platform."""
 import pytest
 
 
 class TestCodewars:
-    """Test Codewars platform"""
-
     @pytest.mark.parametrize(
         "url",
         [

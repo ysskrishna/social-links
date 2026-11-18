@@ -1,10 +1,7 @@
-"""Tests for Kick platform."""
 import pytest
 
 
 class TestKick:
-    """Test Kick platform"""
-
     @pytest.mark.parametrize(
         "url",
         [

@@ -1,10 +1,7 @@
-"""Tests for Ko-fi platform."""
 import pytest
 
 
 class TestKoFi:
-    """Test Ko-fi platform"""
-
     @pytest.mark.parametrize(
         "url",
         [

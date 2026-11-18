@@ -1,10 +1,7 @@
-"""Tests for LINE platform."""
 import pytest
 
 
 class TestLine:
-    """Test LINE platform"""
-
     @pytest.mark.parametrize(
         "url,sanitized",
         [
